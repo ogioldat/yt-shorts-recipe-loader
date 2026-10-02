@@ -47,6 +47,7 @@ ingredients:
   quantity: 1
   unit: tsp
   note: kebab
+  fitatu_product_id: '117075815'
 - name: garam masala
   quantity: 1
   unit: tsp
@@ -109,6 +110,7 @@ ingredients:
   quantity: 0.5
   unit: tsp
   note: chutney mayo
+  fitatu_product_id: '117075815'
 - name: mayo
   quantity: 1
   unit: cup

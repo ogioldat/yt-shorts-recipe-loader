@@ -41,6 +41,7 @@ ingredients:
   quantity: 2
   unit: cup
   note: pesto
+  fitatu_product_id: '79573737'
 - name: garlic
   quantity: 3
   unit: piece

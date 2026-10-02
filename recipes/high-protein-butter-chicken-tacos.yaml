@@ -25,6 +25,7 @@ ingredients:
   quantity: null
   unit: null
   note: marinade
+  fitatu_product_id: '117075815'
 - name: lemon juice
   quantity: null
   unit: null

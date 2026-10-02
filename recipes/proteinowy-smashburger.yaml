@@ -25,6 +25,7 @@ ingredients:
   quantity: null
   unit: null
   note: dowolne
+  fitatu_product_id: '116930870'
 - name: olej w sprayu
   quantity: null
   unit: null

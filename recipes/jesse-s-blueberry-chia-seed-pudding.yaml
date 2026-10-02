@@ -17,6 +17,7 @@ ingredients:
   quantity: 90
   unit: ml
   note: your choice; unsweetened almond used
+  fitatu_product_id: '117383847'
 - name: high-protein vanilla or Greek yoghurt
   quantity: 160
   unit: g

@@ -1064,6 +1064,20 @@ products:
     measures: []
     query: olej w sprayu
     resolved_at: '2026-10-02'
+  coriander:
+    fitatu_product_id: '117075815'
+    display_name: Kolendra, świeża
+    brand: null
+    source: public
+    verified: true
+    default_measure:
+      measure_id: '41'
+      measure_name: handful
+      weight_g: 1
+      kcal: 0.23
+    measures: []
+    query: kolendra świeża
+    resolved_at: '2026-10-02'
   corn starch:
     fitatu_product_id: '1677'
     display_name: Skrobia kukurydziana
@@ -1749,6 +1763,20 @@ products:
       kcal: 17.15
     measures: []
     query: mąka pszenna
+    resolved_at: '2026-10-02'
+  fresh basil:
+    fitatu_product_id: '79573737'
+    display_name: Bazylia liść
+    brand: Promienie słońca
+    source: public
+    verified: false
+    default_measure:
+      measure_id: '2'
+      measure_name: package
+      weight_g: 50
+      kcal: 116.5
+    measures: []
+    query: liście bazylii
     resolved_at: '2026-10-02'
   fresh chillies:
     fitatu_product_id: '2132'
@@ -3234,6 +3262,20 @@ products:
     measures: []
     query: mielona wieprzowina
     resolved_at: '2026-10-02'
+  milk:
+    fitatu_product_id: '117383847'
+    display_name: Mleko 2%
+    brand: null
+    source: public
+    verified: true
+    default_measure:
+      measure_id: '32'
+      measure_name: glass
+      weight_g: 230
+      kcal: 115
+    measures: []
+    query: mleko 2%
+    resolved_at: '2026-10-02'
   minced cabbage:
     fitatu_product_id: '116722490'
     display_name: Kapusta biała
@@ -3934,6 +3976,20 @@ products:
     measures: []
     query: orzeszki ziemne
     resolved_at: '2026-10-02'
+  owoce:
+    fitatu_product_id: '120009289'
+    display_name: Borówki amerykańskie
+    brand: null
+    source: public
+    verified: true
+    default_measure:
+      measure_id: '41'
+      measure_name: handful
+      weight_g: 50
+      kcal: 28.5
+    measures: []
+    query: borówka amerykańska
+    resolved_at: '2026-10-02'
   oyster sauce:
     fitatu_product_id: '14135'
     display_name: Sos ostrygowy
@@ -4549,6 +4605,20 @@ products:
       kcal: 25
     measures: []
     query: przyprawa do mięs
+    resolved_at: '2026-10-02'
+  przyprawy do kurczaka:
+    fitatu_product_id: '53820032'
+    display_name: Piotr i Pawel Przyprawa do Kurczaka
+    brand: Piotr i Pawel
+    source: public
+    verified: true
+    default_measure:
+      measure_id: '19'
+      measure_name: teaspoon
+      weight_g: 5
+      kcal: 7.55
+    measures: []
+    query: przyprawa do kurczaka
     resolved_at: '2026-10-02'
   puff pastry:
     fitatu_product_id: '95505295'
@@ -6104,6 +6174,20 @@ products:
     measures: []
     query: czekolada gorzka
     resolved_at: '2026-10-02'
+  vegetables:
+    fitatu_product_id: '116930870'
+    display_name: Warzywa mrożone
+    brand: null
+    source: public
+    verified: true
+    default_measure:
+      measure_id: '39'
+      measure_name: portion
+      weight_g: 150
+      kcal: 45
+    measures: []
+    query: warzywa mrożone
+    resolved_at: '2026-10-02'
   vinegar:
     fitatu_product_id: '49137480'
     display_name: Ocet Jabłkowy
@@ -6159,6 +6243,20 @@ products:
       kcal: 1722.6
     measures: []
     query: chlebek pita
+    resolved_at: '2026-10-02'
+  warzywa:
+    fitatu_product_id: '116930870'
+    display_name: Warzywa mrożone
+    brand: null
+    source: public
+    verified: true
+    default_measure:
+      measure_id: '39'
+      measure_name: portion
+      weight_g: 150
+      kcal: 45
+    measures: []
+    query: warzywa mrożone
     resolved_at: '2026-10-02'
   white onion:
     fitatu_product_id: '116696504'
@@ -6495,9 +6593,6 @@ unresolved:
   brown stevia:
     reason: ambiguous
     checked_at: '2026-10-02'
-  coriander:
-    reason: ambiguous
-    checked_at: '2026-10-02'
   dodatki:
     reason: no_match
     checked_at: '2026-10-02'
@@ -6505,9 +6600,6 @@ unresolved:
     reason: no_match
     checked_at: '2026-10-02'
   fish parts:
-    reason: no_match
-    checked_at: '2026-10-02'
-  fresh basil:
     reason: no_match
     checked_at: '2026-10-02'
   glutaminian sodu (msg):
@@ -6522,16 +6614,7 @@ unresolved:
   letnia woda:
     reason: not_a_food
     checked_at: '2026-10-02'
-  milk:
-    reason: ambiguous
-    checked_at: '2026-10-02'
-  owoce:
-    reason: no_match
-    checked_at: '2026-10-02'
   pickle juice:
-    reason: no_match
-    checked_at: '2026-10-02'
-  przyprawy do kurczaka:
     reason: no_match
     checked_at: '2026-10-02'
   rotisserie chicken carcass:
@@ -6559,12 +6642,6 @@ unresolved:
     reason: not_a_food
     checked_at: '2026-10-02'
   tajín:
-    reason: no_match
-    checked_at: '2026-10-02'
-  vegetables:
-    reason: no_match
-    checked_at: '2026-10-02'
-  warzywa:
     reason: no_match
     checked_at: '2026-10-02'
   water:

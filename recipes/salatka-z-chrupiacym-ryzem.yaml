@@ -41,6 +41,7 @@ ingredients:
   quantity: null
   unit: null
   note: ulubione
+  fitatu_product_id: '53820032'
 - name: mrożony groszek
   quantity: 150
   unit: g

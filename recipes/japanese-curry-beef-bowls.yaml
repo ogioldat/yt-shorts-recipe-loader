@@ -48,6 +48,7 @@ ingredients:
   quantity: 1
   unit: cup
   note: 1 to 1.5 cups
+  fitatu_product_id: '117383847'
 - name: frozen peas
   quantity: 0.5
   unit: cup

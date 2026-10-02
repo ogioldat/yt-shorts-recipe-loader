@@ -38,6 +38,7 @@ ingredients:
   quantity: null
   unit: null
   note: optional, a little if you want it thinner
+  fitatu_product_id: '117383847'
 - name: yoghurt
   quantity: 70
   unit: g
