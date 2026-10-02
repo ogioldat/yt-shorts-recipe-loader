@@ -487,6 +487,13 @@ def main(argv: list[str] | None = None) -> int:
     )
     args = parser.parse_args(argv)
 
+    # A full --until-complete run takes many minutes. Block buffering would hide
+    # all progress until it finished, making a working run look hung.
+    try:
+        sys.stdout.reconfigure(line_buffering=True)
+    except (AttributeError, ValueError):
+        pass
+
     videos = ledger.load()
 
     if args.video:
