@@ -1,0 +1,85 @@
+id: pad-thai-z-kurczakiem
+title: Pad Thai z kurczakiem
+title_en: Chicken pad thai
+language: pl
+servings: 4
+ingredients:
+- name: kurczak
+  quantity: 480
+  unit: g
+  note: lub tofu / krewetki / chuda wołowina / pierś z kurczaka
+- name: makaron ryżowy 5 mm
+  quantity: 200
+  unit: g
+- name: jajko
+  quantity: 4
+  unit: piece
+- name: ząbek czosnku
+  quantity: 4
+  unit: piece
+- name: szalotka lub cebula
+  quantity: 60
+  unit: g
+- name: olej do smażenia
+  quantity: 20
+  unit: g
+- name: sos sojowy
+  quantity: 20
+  unit: g
+  note: do mięsa
+- name: sól
+  quantity: null
+  unit: null
+- name: pieprz
+  quantity: null
+  unit: null
+- name: pasta z tamaryndowca
+  quantity: 72
+  unit: g
+  note: sos
+- name: sos sojowy
+  quantity: 40
+  unit: g
+  note: sos
+- name: sos rybny
+  quantity: 40
+  unit: g
+  note: sos
+- name: cukier brązowy
+  quantity: 40
+  unit: g
+  note: sos; w nagraniu także miód
+- name: sok z limonki
+  quantity: 40
+  unit: g
+  note: sos
+- name: płatki chili
+  quantity: 1
+  unit: tsp
+  note: sos
+- name: kiełki fasoli mung
+  quantity: 120
+  unit: g
+  note: dodatki
+- name: orzechy arachidowe
+  quantity: 40
+  unit: g
+  note: dodatki, rozdrobnione
+- name: limonka
+  quantity: 1
+  unit: piece
+  note: dodatki
+- name: szczypiorek
+  quantity: null
+  unit: null
+  note: dodatki
+source:
+  video_id: ZofXafjf8QM
+  url: https://www.youtube.com/shorts/ZofXafjf8QM
+  channel: Policzona Szama
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+  - subtitles
+extracted_at: '2026-10-02'

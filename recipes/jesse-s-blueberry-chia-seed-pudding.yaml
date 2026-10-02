@@ -1,0 +1,39 @@
+id: jesse-s-blueberry-chia-seed-pudding
+title: Jesse's Blueberry Chia Seed Pudding
+language: en
+servings: 1
+ingredients:
+- name: blueberries
+  quantity: 125
+  unit: g
+  note: 4.4 oz
+- name: chia seeds
+  quantity: 30
+  unit: g
+  note: 1.1 oz
+- name: milk
+  quantity: 90
+  unit: ml
+  note: your choice; unsweetened almond used
+- name: high-protein vanilla or Greek yoghurt
+  quantity: 160
+  unit: g
+  note: 5.6 oz
+- name: honey or maple syrup
+  quantity: 10
+  unit: g
+  note: 0.35 oz
+- name: lemon
+  quantity: 0.5
+  unit: piece
+  note: optional, juice & zest
+source:
+  video_id: knzwo4uEFEk
+  url: https://www.youtube.com/shorts/knzwo4uEFEk
+  channel: Jesse Stathakis
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+  - subtitles
+extracted_at: '2026-10-02'

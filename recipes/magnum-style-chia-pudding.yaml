@@ -1,0 +1,60 @@
+id: magnum-style-chia-pudding
+title: Magnum-Style Chia Pudding
+language: en
+servings: null
+ingredients:
+- name: thick greek yoghurt or skyr
+  quantity: 200
+  unit: g
+  note: chia pudding
+- name: cocoa powder
+  quantity: 10
+  unit: g
+- name: chocolate protein powder
+  quantity: 15
+  unit: g
+  note: optional
+- name: chia seeds
+  quantity: 30
+  unit: g
+- name: vanilla extract
+  quantity: null
+  unit: null
+  note: splash
+- name: salt
+  quantity: 1
+  unit: pinch
+- name: syrup
+  quantity: null
+  unit: null
+  note: to taste; maple used, blended dates also recommended
+- name: milk
+  quantity: null
+  unit: null
+  note: optional, a little if you want it thinner
+- name: yoghurt
+  quantity: 70
+  unit: g
+  note: yoghurt layer
+- name: maple syrup
+  quantity: 1
+  unit: tsp
+  note: yoghurt layer
+- name: melted dark chocolate
+  quantity: 20
+  unit: g
+  note: 20–25 g, shell
+- name: berries
+  quantity: null
+  unit: null
+  note: to serve
+source:
+  video_id: TbqEoiT5bu0
+  url: https://www.youtube.com/shorts/TbqEoiT5bu0
+  channel: Juliana Ksander
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+  - subtitles
+extracted_at: '2026-10-02'

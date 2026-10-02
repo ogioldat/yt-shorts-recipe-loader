@@ -1,0 +1,38 @@
+id: tosty-z-kurczakiem-bbq
+title: Tosty z kurczakiem BBQ
+title_en: BBQ chicken toasts
+language: pl
+servings: null
+ingredients:
+- name: pierś z kurczaka
+  quantity: 500
+  unit: g
+  note: 2 duże piersi (~500 g)
+- name: przyprawa do kurczaka
+  quantity: 1
+  unit: tbsp
+- name: czerwona cebula
+  quantity: 1
+  unit: piece
+  note: posiekana
+- name: sos BBQ bez cukru
+  quantity: 120
+  unit: g
+- name: ser proteinowy
+  quantity: 120
+  unit: g
+  note: starty
+- name: chleb pszenny
+  quantity: 4
+  unit: piece
+  note: kromki
+source:
+  video_id: GPSgECsKC7E
+  url: https://www.youtube.com/shorts/GPSgECsKC7E
+  channel: Coocharz
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+  - subtitles
+extracted_at: '2026-10-02'

@@ -1,0 +1,60 @@
+id: pierogi-bez-lepienia
+title: Pierogi bez lepienia
+title_en: No-fold dumplings
+language: pl
+servings: null
+ingredients:
+- name: mielona wieprzowina
+  quantity: 600
+  unit: g
+- name: sól
+  quantity: 1
+  unit: tsp
+- name: pieprz
+  quantity: 1
+  unit: tsp
+- name: cukier
+  quantity: 1
+  unit: tsp
+- name: wędzona papryka
+  quantity: 1
+  unit: tsp
+- name: starty imbir
+  quantity: 1
+  unit: tsp
+- name: ząbek czosnku
+  quantity: 2
+  unit: piece
+  note: starte
+- name: sos sojowy
+  quantity: 1
+  unit: tbsp
+- name: olej sezamowy
+  quantity: 0.5
+  unit: tsp
+- name: szczypiorek
+  quantity: null
+  unit: null
+  note: 1 pęczek, posiekany
+- name: mąka pszenna
+  quantity: 1
+  unit: cup
+  note: 1 szklanka, do obtaczania
+- name: sól
+  quantity: 1
+  unit: tsp
+  note: do mąki
+- name: dodatki
+  quantity: null
+  unit: null
+  note: ulubione dodatki
+source:
+  video_id: rA7L-OshHZ4
+  url: https://www.youtube.com/shorts/rA7L-OshHZ4
+  channel: Coocharz
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+  - subtitles
+extracted_at: '2026-10-02'

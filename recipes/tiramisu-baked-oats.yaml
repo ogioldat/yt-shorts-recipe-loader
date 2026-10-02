@@ -1,0 +1,25 @@
+id: tiramisu-baked-oats
+title: Tiramisu Baked Oats
+language: en
+servings: null
+ingredients:
+- name: oats
+  quantity: null
+  unit: null
+- name: coffee
+  quantity: null
+  unit: null
+  note: a shot of coffee
+- name: protein yogurt
+  quantity: null
+  unit: null
+  note: frosting
+source:
+  video_id: 68rgfmwsPkA
+  url: https://www.youtube.com/shorts/68rgfmwsPkA
+  channel: Liz Douglas - Plant-Based Foodie
+  recipe_index: 1
+  extracted_from:
+  - title
+  - subtitles
+extracted_at: '2026-10-02'

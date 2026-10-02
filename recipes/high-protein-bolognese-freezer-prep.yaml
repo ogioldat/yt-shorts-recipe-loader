@@ -1,0 +1,55 @@
+id: high-protein-bolognese-freezer-prep
+title: High-Protein Bolognese (freezer prep)
+language: en
+servings: 12
+ingredients:
+- name: extra lean ground beef
+  quantity: 1800
+  unit: g
+- name: whole tomatoes
+  quantity: 1800
+  unit: ml
+  note: 2 × 900 ml cans
+- name: extra virgin olive oil
+  quantity: 3
+  unit: tbsp
+- name: onions
+  quantity: 2
+  unit: piece
+  note: medium (~490 g), diced
+- name: garlic
+  quantity: 10
+  unit: piece
+  note: cloves, minced
+- name: tomato paste
+  quantity: 0.5
+  unit: cup
+- name: beef broth
+  quantity: 2.5
+  unit: cup
+- name: Fairlife milk
+  quantity: 2
+  unit: cup
+- name: Italian seasoning
+  quantity: 2
+  unit: tsp
+- name: bay leaves
+  quantity: 2
+  unit: piece
+- name: salt
+  quantity: null
+  unit: null
+  note: to taste
+- name: pepper
+  quantity: null
+  unit: null
+  note: to taste
+source:
+  video_id: fV1CcSwnqZ4
+  url: https://www.youtube.com/shorts/fV1CcSwnqZ4
+  channel: Shredded & Fed
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+extracted_at: '2026-10-02'

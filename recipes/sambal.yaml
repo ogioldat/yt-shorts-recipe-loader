@@ -1,0 +1,54 @@
+id: sambal
+title: Sambal
+language: en
+servings: null
+ingredients:
+- name: dried chillies
+  quantity: 40
+  unit: piece
+  note: seeds shaken out, soaked
+- name: fresh chillies
+  quantity: 4
+  unit: piece
+  note: sliced
+- name: lemongrass
+  quantity: 1
+  unit: piece
+  note: 1 stick, diced small
+- name: brown sugar
+  quantity: 2
+  unit: tbsp
+- name: tamarind purée
+  quantity: 3
+  unit: tbsp
+- name: shallots
+  quantity: 3
+  unit: piece
+  note: large, sliced
+- name: garlic
+  quantity: 8
+  unit: piece
+  note: cloves, peeled and crushed
+- name: shrimp paste (Belacan)
+  quantity: 50
+  unit: g
+- name: kaffir lime leaves
+  quantity: 8
+  unit: piece
+  note: centre stems removed
+- name: peanut oil
+  quantity: 3
+  unit: tbsp
+- name: salt
+  quantity: null
+  unit: null
+  note: if needed
+source:
+  video_id: GyfVT1fMMh4
+  url: https://www.youtube.com/shorts/GyfVT1fMMh4
+  channel: Andy Cooks
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+extracted_at: '2026-10-02'

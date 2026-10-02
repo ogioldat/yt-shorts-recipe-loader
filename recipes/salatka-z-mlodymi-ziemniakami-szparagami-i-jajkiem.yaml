@@ -1,0 +1,32 @@
+id: salatka-z-mlodymi-ziemniakami-szparagami-i-jajkiem
+title: Sałatka z młodymi ziemniakami, szparagami i jajkiem
+title_en: New potato, asparagus and egg salad
+language: pl
+servings: null
+ingredients:
+- name: młode ziemniaki
+  quantity: null
+  unit: null
+  note: w mundurkach
+- name: szparagi
+  quantity: null
+  unit: null
+- name: jajko
+  quantity: null
+  unit: null
+  note: sadzone
+- name: rukola
+  quantity: null
+  unit: null
+- name: sos jogurtowy
+  quantity: null
+  unit: null
+source:
+  video_id: olqgx_i-Wz0
+  url: https://www.youtube.com/shorts/olqgx_i-Wz0
+  channel: Policzona Szama
+  recipe_index: 1
+  extracted_from:
+  - description
+  - subtitles
+extracted_at: '2026-10-02'

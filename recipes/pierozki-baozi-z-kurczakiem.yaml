@@ -1,0 +1,68 @@
+id: pierozki-baozi-z-kurczakiem
+title: Pierożki Baozi z kurczakiem
+title_en: Chicken baozi buns
+language: pl
+servings: 4
+ingredients:
+- name: mąka pszenna
+  quantity: 230
+  unit: g
+  note: ciasto
+- name: jogurt grecki
+  quantity: 200
+  unit: g
+  note: ciasto
+- name: mięso mielone z kurczaka
+  quantity: 200
+  unit: g
+  note: farsz
+- name: czerwona cebula
+  quantity: 50
+  unit: g
+  note: farsz
+- name: marchewka
+  quantity: 0.5
+  unit: piece
+  note: farsz, starta
+- name: ząbek czosnku
+  quantity: 1
+  unit: piece
+  note: farsz
+- name: szczypiorek
+  quantity: 15
+  unit: g
+  note: farsz
+- name: sos sojowy
+  quantity: 50
+  unit: g
+  note: farsz
+- name: sos sriracha
+  quantity: 20
+  unit: g
+  note: farsz
+- name: pieprz
+  quantity: null
+  unit: null
+  note: do smaku
+- name: oliwa z oliwek
+  quantity: 8
+  unit: ml
+  note: do podsmażenia
+- name: czarny sezam
+  quantity: 5
+  unit: g
+  note: do posypania
+- name: mąka pszenna
+  quantity: null
+  unit: null
+  note: odrobina do podsypania
+source:
+  video_id: Ox6jDu3bJ9o
+  url: https://www.youtube.com/shorts/Ox6jDu3bJ9o
+  channel: Ikbenhubert
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+  - subtitles
+extracted_at: '2026-10-02'

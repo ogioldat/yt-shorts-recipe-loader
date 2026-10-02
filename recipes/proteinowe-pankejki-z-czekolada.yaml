@@ -1,0 +1,43 @@
+id: proteinowe-pankejki-z-czekolada
+title: Proteinowe pankejki z czekoladą
+title_en: High-protein chocolate pancakes
+language: pl
+servings: null
+ingredients:
+- name: jogurt skyr
+  quantity: null
+  unit: null
+- name: serek wiejski
+  quantity: null
+  unit: null
+- name: jajko
+  quantity: 2
+  unit: piece
+- name: wanilia
+  quantity: null
+  unit: null
+- name: mąka
+  quantity: null
+  unit: null
+- name: erytrytol
+  quantity: null
+  unit: null
+- name: proszek do pieczenia
+  quantity: null
+  unit: null
+- name: czekolada
+  quantity: null
+  unit: null
+- name: owoce
+  quantity: null
+  unit: null
+  note: do podania
+source:
+  video_id: Vn5Tl60ATis
+  url: https://www.youtube.com/shorts/Vn5Tl60ATis
+  channel: Michał Wrzosek
+  recipe_index: 1
+  extracted_from:
+  - title
+  - subtitles
+extracted_at: '2026-10-02'

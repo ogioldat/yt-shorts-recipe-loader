@@ -1,0 +1,88 @@
+id: kanapka-banh-mi-z-kurczakiem
+title: Kanapka Banh mi z kurczakiem
+title_en: Chicken banh mi sandwich
+language: pl
+servings: 5
+ingredients:
+- name: półbagietka
+  quantity: 5
+  unit: piece
+- name: marchew
+  quantity: 2
+  unit: piece
+  note: w 2 mm plasterkach
+- name: ogórek zielony
+  quantity: 1
+  unit: piece
+  note: duży, cienko pokrojony
+- name: rzodkiewka
+  quantity: 10
+  unit: piece
+- name: cebula czerwona
+  quantity: 0.5
+  unit: piece
+- name: woda
+  quantity: null
+  unit: null
+  note: zalewa
+- name: ocet ryżowy
+  quantity: null
+  unit: null
+  note: zalewa; możesz użyć octu jabłkowego
+- name: cukier biały
+  quantity: null
+  unit: null
+  note: zalewa
+- name: sól
+  quantity: null
+  unit: null
+  note: zalewa
+- name: filet z piersi kurczaka
+  quantity: 750
+  unit: g
+- name: oliwa
+  quantity: 25
+  unit: g
+  note: kurczak
+- name: papryka słodka, zmielona
+  quantity: 1
+  unit: tbsp
+  note: kurczak
+- name: papryka ostra, zmielona
+  quantity: 1
+  unit: tbsp
+  note: kurczak
+- name: czosnek suszony / granulowany
+  quantity: 1
+  unit: tsp
+  note: kurczak
+- name: sól
+  quantity: null
+  unit: null
+  note: kurczak
+- name: jogurt naturalny
+  quantity: 75
+  unit: g
+  note: sos
+- name: majonez lekki
+  quantity: 50
+  unit: g
+  note: sos
+- name: sos Sriracha
+  quantity: 50
+  unit: g
+  note: sos
+- name: kolendra (natka)
+  quantity: null
+  unit: null
+  note: topping, do dekoracji
+source:
+  video_id: EHaym9GuvKA
+  url: https://www.youtube.com/shorts/EHaym9GuvKA
+  channel: Policzona Szama
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+  - subtitles
+extracted_at: '2026-10-02'

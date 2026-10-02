@@ -1,0 +1,34 @@
+id: tofu-z-ryzem-i-warzywami-z-sosem-orzechowym
+title: Tofu z ryżem i warzywami z sosem orzechowym
+title_en: Tofu with rice, vegetables and peanut sauce
+language: pl
+servings: null
+ingredients:
+- name: tofu
+  quantity: null
+  unit: null
+  note: chrupiące
+- name: ryż basmati
+  quantity: null
+  unit: null
+- name: papryka
+  quantity: null
+  unit: null
+  note: w słupkach
+- name: marchewka
+  quantity: null
+  unit: null
+  note: w słupkach
+- name: sos orzechowy
+  quantity: null
+  unit: null
+  note: tajski
+source:
+  video_id: olqgx_i-Wz0
+  url: https://www.youtube.com/shorts/olqgx_i-Wz0
+  channel: Policzona Szama
+  recipe_index: 4
+  extracted_from:
+  - description
+  - subtitles
+extracted_at: '2026-10-02'

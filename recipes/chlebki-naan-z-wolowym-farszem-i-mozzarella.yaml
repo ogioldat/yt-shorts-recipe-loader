@@ -1,0 +1,130 @@
+id: chlebki-naan-z-wolowym-farszem-i-mozzarella
+title: Chlebki naan z wołowym farszem i mozzarellą
+title_en: Naan breads stuffed with beef and mozzarella
+language: pl
+servings: 8
+ingredients:
+- name: mąka pszenna
+  quantity: 1
+  unit: tbsp
+  note: rozczyn
+- name: świeże drożdże
+  quantity: 15
+  unit: g
+  note: rozczyn
+- name: letnia woda
+  quantity: 50
+  unit: ml
+  note: rozczyn
+- name: cukier
+  quantity: 1
+  unit: tsp
+  note: rozczyn
+- name: mąka pszenna
+  quantity: 470
+  unit: g
+  note: ciasto
+- name: letnia woda
+  quantity: 125
+  unit: ml
+  note: ciasto
+- name: gęsty jogurt naturalny
+  quantity: 125
+  unit: g
+  note: ciasto
+- name: sól
+  quantity: 1
+  unit: tbsp
+  note: 1 płaska łyżka, ciasto
+- name: miękkie masło
+  quantity: 2
+  unit: tbsp
+  note: ciasto
+- name: mięso wołowe mielone
+  quantity: 400
+  unit: g
+  note: farsz
+- name: oliwa
+  quantity: 1
+  unit: tbsp
+  note: farsz
+- name: biała cebula
+  quantity: 2
+  unit: piece
+  note: farsz
+- name: ząbek czosnku
+  quantity: 3
+  unit: piece
+  note: farsz
+- name: czerwona papryka
+  quantity: 1
+  unit: piece
+  note: farsz
+- name: świeża pietruszka
+  quantity: null
+  unit: null
+  note: garść, posiekana
+- name: garam masala
+  quantity: 1
+  unit: tbsp
+  note: farsz
+- name: sól
+  quantity: null
+  unit: null
+  note: farsz
+- name: pieprz
+  quantity: null
+  unit: null
+  note: farsz
+- name: ketchup
+  quantity: 50
+  unit: ml
+  note: farsz; w nagraniu też przecier pomidorowy
+- name: sos sriracha
+  quantity: 30
+  unit: ml
+  note: farsz
+- name: gęsty jogurt naturalny
+  quantity: 100
+  unit: g
+  note: sos czosnkowy
+- name: majonez
+  quantity: 2
+  unit: tbsp
+  note: sos czosnkowy
+- name: ząbek czosnku
+  quantity: 1
+  unit: piece
+  note: sos czosnkowy
+- name: sól
+  quantity: null
+  unit: null
+  note: sos czosnkowy
+- name: pieprz
+  quantity: null
+  unit: null
+  note: sos czosnkowy
+- name: szczypiorek
+  quantity: null
+  unit: null
+  note: garść, sos czosnkowy
+- name: tarta mozzarella
+  quantity: 300
+  unit: g
+- name: panierka kukurydziana
+  quantity: null
+  unit: null
+  note: bułka tarta kukurydziana do obtoczenia
+- name: oliwa
+  quantity: null
+  unit: null
+  note: do smażenia
+source:
+  video_id: UiTuJ7VjK1E
+  url: https://www.youtube.com/shorts/UiTuJ7VjK1E
+  channel: Sara Moritz
+  recipe_index: 1
+  extracted_from:
+  - description
+  - subtitles
+extracted_at: '2026-10-02'

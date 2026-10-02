@@ -1,0 +1,62 @@
+id: sheetpan-kefta-sandwich
+title: Sheetpan Kefta Sandwich
+language: en
+servings: null
+ingredients:
+- name: ground meat
+  quantity: null
+  unit: null
+  note: for the kefta; type not stated
+- name: onion
+  quantity: null
+  unit: null
+  note: kefta mix
+- name: parsley
+  quantity: null
+  unit: null
+  note: kefta mix
+- name: garlic
+  quantity: null
+  unit: null
+  note: kefta mix
+- name: spices
+  quantity: null
+  unit: null
+  note: just a few spices
+- name: tomatoes
+  quantity: null
+  unit: null
+  note: quartered, roasted alongside
+- name: olive oil
+  quantity: null
+  unit: null
+  note: a good glug
+- name: onion
+  quantity: null
+  unit: null
+  note: for the quick sumac onions
+- name: sumac
+  quantity: null
+  unit: null
+  note: quick sumac onions
+- name: harissa
+  quantity: null
+  unit: null
+  note: harissa tahini
+- name: tahini
+  quantity: null
+  unit: null
+  note: harissa tahini
+- name: bread
+  quantity: null
+  unit: null
+  note: bread of choice
+source:
+  video_id: WAWsgmxduT4
+  url: https://www.youtube.com/shorts/WAWsgmxduT4
+  channel: Zachary Neman
+  recipe_index: 1
+  extracted_from:
+  - title
+  - subtitles
+extracted_at: '2026-10-02'

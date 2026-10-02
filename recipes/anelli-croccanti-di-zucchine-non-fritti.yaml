@@ -1,0 +1,63 @@
+id: anelli-croccanti-di-zucchine-non-fritti
+title: Anelli croccanti di zucchine (non fritti)
+title_en: Crispy baked courgette rings
+language: en
+servings: null
+ingredients:
+- name: zucchine
+  quantity: 3
+  unit: piece
+  note: tagliate a rondelle
+- name: farina
+  quantity: 300
+  unit: g
+  note: pastella
+- name: acqua
+  quantity: null
+  unit: null
+  note: 300 – unità non indicata nella ricetta, pastella
+- name: cornflakes
+  quantity: 100
+  unit: g
+  note: sbriciolati, panatura
+- name: olio
+  quantity: null
+  unit: null
+  note: qb
+- name: sale
+  quantity: null
+  unit: null
+  note: qb
+- name: pepe
+  quantity: null
+  unit: null
+  note: qb
+- name: spezie
+  quantity: null
+  unit: null
+  note: a piacere, qb
+- name: avanzi di zucchina cotti
+  quantity: null
+  unit: null
+  note: salsina – i dischetti centrali cotti in padella
+- name: yogurt greco 0%
+  quantity: 100
+  unit: g
+  note: salsina
+- name: menta
+  quantity: null
+  unit: null
+  note: salsina
+- name: succo di limone
+  quantity: null
+  unit: null
+  note: salsina
+source:
+  video_id: TSJI6-nV-t0
+  url: https://www.youtube.com/shorts/TSJI6-nV-t0
+  channel: 2foodfitlovers
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+extracted_at: '2026-10-02'

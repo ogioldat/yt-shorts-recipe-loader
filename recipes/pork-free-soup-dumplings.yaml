@@ -1,0 +1,86 @@
+id: pork-free-soup-dumplings
+title: Pork-Free Soup Dumplings
+language: en
+servings: null
+ingredients:
+- name: chicken feet
+  quantity: null
+  unit: null
+  note: gelatin broth, a must
+- name: rotisserie chicken carcass
+  quantity: null
+  unit: null
+  note: gelatin broth
+- name: ginger
+  quantity: null
+  unit: null
+  note: broth
+- name: scallion
+  quantity: null
+  unit: null
+  note: broth
+- name: water
+  quantity: null
+  unit: null
+  note: broth, simmered 3–4 hours
+- name: ground meat
+  quantity: null
+  unit: null
+  note: transcript garbled ("ground ve…") – the meat is not identifiable
+- name: green onion
+  quantity: null
+  unit: null
+  note: filling
+- name: garlic
+  quantity: null
+  unit: null
+  note: filling
+- name: ginger
+  quantity: null
+  unit: null
+  note: filling
+- name: soy sauce
+  quantity: null
+  unit: null
+  note: filling
+- name: apple cider vinegar
+  quantity: null
+  unit: null
+  note: filling
+- name: sesame oil
+  quantity: null
+  unit: null
+  note: filling
+- name: white pepper
+  quantity: null
+  unit: null
+  note: filling
+- name: salt
+  quantity: null
+  unit: null
+  note: filling
+- name: sugar
+  quantity: null
+  unit: null
+  note: filling
+- name: dumpling wrappers
+  quantity: null
+  unit: null
+  note: store-bought or homemade dough
+- name: chili oil
+  quantity: null
+  unit: null
+  note: garnish
+- name: green onions
+  quantity: null
+  unit: null
+  note: garnish
+source:
+  video_id: 3vdoB5LW7jE
+  url: https://www.youtube.com/shorts/3vdoB5LW7jE
+  channel: Sara - Nutrient Matters
+  recipe_index: 1
+  extracted_from:
+  - title
+  - subtitles
+extracted_at: '2026-10-02'

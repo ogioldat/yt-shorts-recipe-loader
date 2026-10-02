@@ -1,0 +1,74 @@
+id: garlic-chicken-stir-fry
+title: Garlic Chicken Stir Fry
+language: en
+servings: null
+ingredients:
+- name: chicken thighs
+  quantity: null
+  unit: null
+  note: cubed, marinated 15 minutes
+- name: Shaoxing wine
+  quantity: null
+  unit: null
+  note: marinade
+- name: salt
+  quantity: null
+  unit: null
+  note: marinade
+- name: cornstarch
+  quantity: null
+  unit: null
+  note: marinade
+- name: garlic
+  quantity: null
+  unit: null
+  note: finely minced
+- name: onions
+  quantity: null
+  unit: null
+  note: cut into thick wedges
+- name: scallions
+  quantity: null
+  unit: null
+  note: 1/2-inch pieces, whites and greens separated
+- name: dark soy sauce
+  quantity: null
+  unit: null
+  note: sauce
+- name: light soy sauce
+  quantity: null
+  unit: null
+  note: sauce
+- name: oyster sauce
+  quantity: null
+  unit: null
+  note: sauce
+- name: chicken bouillon
+  quantity: null
+  unit: null
+  note: sauce
+- name: sugar
+  quantity: null
+  unit: null
+  note: sauce
+- name: water
+  quantity: null
+  unit: null
+  note: sauce
+- name: oil
+  quantity: null
+  unit: null
+  note: for the pan
+- name: rice
+  quantity: null
+  unit: null
+  note: to serve, optional
+source:
+  video_id: nSLH57ksftk
+  url: https://www.youtube.com/shorts/nSLH57ksftk
+  channel: iamneverfull
+  recipe_index: 1
+  extracted_from:
+  - title
+  - subtitles
+extracted_at: '2026-10-02'

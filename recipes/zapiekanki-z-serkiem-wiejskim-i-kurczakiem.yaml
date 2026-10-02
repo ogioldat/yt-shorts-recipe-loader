@@ -1,0 +1,38 @@
+id: zapiekanki-z-serkiem-wiejskim-i-kurczakiem
+title: Zapiekanki z serkiem wiejskim i kurczakiem
+title_en: Cottage cheese and chicken open toasts
+language: pl
+servings: null
+ingredients:
+- name: chleb
+  quantity: null
+  unit: null
+  note: kromki
+- name: passata pomidorowa
+  quantity: null
+  unit: null
+- name: suszona bazylia
+  quantity: null
+  unit: null
+  note: do smaku
+- name: szynka z piersi kurczaka
+  quantity: null
+  unit: null
+- name: pieczarki
+  quantity: null
+  unit: null
+- name: serek wiejski wysokobiałkowy
+  quantity: null
+  unit: null
+- name: żółty ser
+  quantity: null
+  unit: null
+  note: starty, do posypania
+source:
+  video_id: IY2koK83Rg0
+  url: https://www.youtube.com/shorts/IY2koK83Rg0
+  channel: Klaudia x Michał
+  recipe_index: 1
+  extracted_from:
+  - subtitles
+extracted_at: '2026-10-02'

@@ -1,0 +1,77 @@
+id: high-protein-butter-chicken-tacos
+title: High Protein Butter Chicken Tacos
+language: en
+servings: null
+ingredients:
+- name: diced chicken breast
+  quantity: null
+  unit: null
+- name: Greek yogurt
+  quantity: null
+  unit: null
+  note: marinade
+- name: seasonings
+  quantity: null
+  unit: null
+  note: '"these seasonings" – not named in the video'
+- name: ginger and garlic paste
+  quantity: null
+  unit: null
+  note: marinade
+- name: coriander
+  quantity: null
+  unit: null
+  note: marinade
+- name: lemon juice
+  quantity: null
+  unit: null
+  note: marinade
+- name: cooking spray
+  quantity: null
+  unit: null
+- name: light butter
+  quantity: null
+  unit: null
+- name: diced onion
+  quantity: null
+  unit: null
+  note: sauce
+- name: garlic
+  quantity: null
+  unit: null
+  note: sauce
+- name: tomato paste
+  quantity: null
+  unit: null
+  note: sauce, toasted 2 minutes
+- name: chopped tomatoes
+  quantity: null
+  unit: null
+  note: sauce
+- name: light cream cheese
+  quantity: null
+  unit: null
+  note: sauce
+- name: chicken bone broth
+  quantity: null
+  unit: null
+  note: sauce
+- name: mini tortillas
+  quantity: null
+  unit: null
+- name: low-fat cheese
+  quantity: null
+  unit: null
+- name: seasonings
+  quantity: null
+  unit: null
+  note: rubbed on the tortillas via the greased sheet pan – not named
+source:
+  video_id: wK5IIFVJ6Fc
+  url: https://www.youtube.com/shorts/wK5IIFVJ6Fc
+  channel: Panacea Palm
+  recipe_index: 1
+  extracted_from:
+  - title
+  - subtitles
+extracted_at: '2026-10-02'

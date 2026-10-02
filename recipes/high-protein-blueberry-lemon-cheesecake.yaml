@@ -1,0 +1,36 @@
+id: high-protein-blueberry-lemon-cheesecake
+title: High-Protein Blueberry Lemon Cheesecake
+language: en
+servings: 2
+ingredients:
+- name: cottage cheese
+  quantity: null
+  unit: null
+  note: 8 oz
+- name: Greek yogurt
+  quantity: 0.25
+  unit: cup
+- name: egg
+  quantity: 1
+  unit: piece
+  note: large
+- name: lemon
+  quantity: 0.5
+  unit: piece
+  note: juice of 1/2 lemon
+- name: sweetener
+  quantity: 0.25
+  unit: cup
+- name: blueberries
+  quantity: null
+  unit: null
+source:
+  video_id: ERdTRSd91a4
+  url: https://www.youtube.com/shorts/ERdTRSd91a4
+  channel: We Are Recipes
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+  - subtitles
+extracted_at: '2026-10-02'

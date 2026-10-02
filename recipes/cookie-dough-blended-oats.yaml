@@ -1,0 +1,49 @@
+id: cookie-dough-blended-oats
+title: Cookie Dough Blended Oats
+language: en
+servings: 1
+ingredients:
+- name: chickpeas
+  quantity: 0.5
+  unit: cup
+- name: frozen cauliflower
+  quantity: 1
+  unit: cup
+- name: oats
+  quantity: 0.5
+  unit: cup
+- name: ripe banana
+  quantity: 1
+  unit: piece
+- name: dates
+  quantity: 1
+  unit: piece
+  note: 1–2 dates
+- name: unsweetened plant milk
+  quantity: 0.333
+  unit: cup
+  note: ⅓ cup
+- name: vanilla
+  quantity: 1
+  unit: tsp
+- name: salt
+  quantity: 1
+  unit: pinch
+- name: baking powder
+  quantity: null
+  unit: null
+  note: tiny bit, added in the video
+- name: dark chocolate
+  quantity: null
+  unit: null
+  note: optional, melted for the shell
+source:
+  video_id: _4eSfZoB-oU
+  url: https://www.youtube.com/shorts/_4eSfZoB-oU
+  channel: Broccoli Mum
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+  - subtitles
+extracted_at: '2026-10-02'

@@ -1,0 +1,100 @@
+id: jednogarnkowe-pulpety-w-sosie-pomidorowym-z-muszelkami
+title: Jednogarnkowe pulpety w sosie pomidorowym z muszelkami
+title_en: One-pot turkey meatballs in tomato sauce with shell pasta
+language: pl
+servings: null
+ingredients:
+- name: mięso mielone z indyka
+  quantity: 600
+  unit: g
+  note: pulpety; lub inne na pulpety
+- name: jajko
+  quantity: 1
+  unit: piece
+  note: pulpety
+- name: bułka tarta
+  quantity: 30
+  unit: g
+  note: pulpety
+- name: musztarda Dijon
+  quantity: 30
+  unit: g
+  note: pulpety
+- name: mleko 1,5%
+  quantity: 30
+  unit: g
+  note: pulpety
+- name: przyprawa do mięs
+  quantity: 2
+  unit: tbsp
+  note: lub Szama Tuning
+- name: sól
+  quantity: null
+  unit: null
+  note: pulpety
+- name: pieprz
+  quantity: null
+  unit: null
+  note: pulpety
+- name: oliwa
+  quantity: 20
+  unit: g
+  note: sos
+- name: cebula czerwona
+  quantity: 0.5
+  unit: piece
+  note: sos
+- name: ząbek czosnku
+  quantity: 2
+  unit: piece
+  note: sos
+- name: szpinak w liściach, świeży
+  quantity: 100
+  unit: g
+  note: pół paczki
+- name: przecier pomidorowy
+  quantity: null
+  unit: null
+  note: 1 kartonik
+- name: śmietana 18%
+  quantity: 200
+  unit: g
+  note: 1 kubek
+- name: pomidory suszone z oleju
+  quantity: 60
+  unit: g
+- name: bulion drobiowy, koncentrat
+  quantity: 30
+  unit: g
+- name: sól
+  quantity: null
+  unit: null
+  note: sos
+- name: pieprz
+  quantity: null
+  unit: null
+  note: sos
+- name: oregano suszone
+  quantity: 2
+  unit: tsp
+  note: sos
+- name: makaron muszelki
+  quantity: 240
+  unit: g
+- name: woda
+  quantity: 320
+  unit: ml
+- name: natka pietruszki
+  quantity: null
+  unit: null
+  note: topping
+source:
+  video_id: F-JITkz3QQg
+  url: https://www.youtube.com/shorts/F-JITkz3QQg
+  channel: Policzona Szama
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+  - subtitles
+extracted_at: '2026-10-02'

@@ -1,0 +1,26 @@
+id: high-protein-chicken-katsu
+title: High Protein Chicken Katsu
+language: en
+servings: null
+ingredients:
+- name: chicken
+  quantity: null
+  unit: null
+  note: breaded and air fried
+- name: breadcrumbs
+  quantity: null
+  unit: null
+  note: '"electrically charged" breadcrumbs in the video'
+- name: vegetables
+  quantity: null
+  unit: null
+  note: '"the veg" blended into the katsu sauce – not named; the creator made about 1 litre of sauce'
+source:
+  video_id: a2HJqbqcAzg
+  url: https://www.youtube.com/shorts/a2HJqbqcAzg
+  channel: Callum Dymond
+  recipe_index: 1
+  extracted_from:
+  - title
+  - subtitles
+extracted_at: '2026-10-02'

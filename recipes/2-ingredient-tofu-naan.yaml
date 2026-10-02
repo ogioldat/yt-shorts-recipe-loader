@@ -1,0 +1,30 @@
+id: 2-ingredient-tofu-naan
+title: 2-Ingredient Tofu Naan
+language: en
+servings: 8
+ingredients:
+- name: soft tofu
+  quantity: 300
+  unit: g
+  note: or silken tofu, mashed
+- name: self-rising flour
+  quantity: 300
+  unit: g
+  note: 300 g to 350 g; with plain flour use 350 g + 4 tsp baking powder + a pinch of salt
+- name: salt
+  quantity: null
+  unit: null
+  note: added with the flour in the method
+- name: butter
+  quantity: null
+  unit: null
+  note: or vegan butter, for brushing
+source:
+  video_id: dmc9_QB_fJQ
+  url: https://www.youtube.com/shorts/dmc9_QB_fJQ
+  channel: Momma's Kitchen Lab
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+extracted_at: '2026-10-02'

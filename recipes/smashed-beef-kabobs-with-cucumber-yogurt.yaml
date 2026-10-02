@@ -1,0 +1,64 @@
+id: smashed-beef-kabobs-with-cucumber-yogurt
+title: Smashed Beef Kabobs with Cucumber Yogurt
+language: en
+servings: null
+ingredients:
+- name: Greek yogurt
+  quantity: 2
+  unit: cup
+- name: mini cucumbers
+  quantity: 2
+  unit: piece
+  note: grated
+- name: mint
+  quantity: 3
+  unit: tbsp
+  note: chopped
+- name: garlic
+  quantity: 1
+  unit: piece
+  note: large clove, grated
+- name: ground beef
+  quantity: null
+  unit: null
+  note: 1 pound (80/20)
+- name: yellow onion
+  quantity: 1
+  unit: piece
+  note: small, grated
+- name: ground turmeric
+  quantity: 0.5
+  unit: tsp
+- name: salt
+  quantity: 2
+  unit: tsp
+  note: 1 tsp in the beef, 1 tsp in the yogurt
+- name: black pepper
+  quantity: null
+  unit: null
+  note: plenty
+- name: walnut halves
+  quantity: 0.25
+  unit: cup
+- name: cranberries
+  quantity: 2
+  unit: tbsp
+  note: ingredient list says cranberries, method says raisins
+- name: pomegranate molasses
+  quantity: null
+  unit: null
+  note: optional, for serving
+- name: warmed pita or white rice
+  quantity: null
+  unit: null
+  note: for serving
+source:
+  video_id: 7I3HVij8GQI
+  url: https://www.youtube.com/shorts/7I3HVij8GQI
+  channel: Foodiligence
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+  - subtitles
+extracted_at: '2026-10-02'

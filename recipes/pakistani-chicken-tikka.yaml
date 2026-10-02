@@ -1,0 +1,82 @@
+id: pakistani-chicken-tikka
+title: Pakistani Chicken Tikka
+language: en
+servings: null
+ingredients:
+- name: chicken thighs
+  quantity: null
+  unit: null
+  note: 4 lbs
+- name: full fat yogurt
+  quantity: 1
+  unit: cup
+  note: marinade
+- name: garlic
+  quantity: 8
+  unit: piece
+  note: cloves, mashed
+- name: ginger
+  quantity: null
+  unit: null
+  note: 1 inch, mashed
+- name: kasuri methi
+  quantity: null
+  unit: null
+  note: description reads 'Q tbsp' – quantity unclear; creator says more went in by accident
+- name: cilantro
+  quantity: 0.25
+  unit: cup
+  note: marinade
+- name: mustard oil
+  quantity: 2
+  unit: tsp
+  note: regular oil is fine
+- name: chicken tikka spices
+  quantity: null
+  unit: null
+  note: 1 packet
+- name: lemon
+  quantity: 0.5
+  unit: piece
+  note: juiced
+- name: salt
+  quantity: null
+  unit: null
+  note: to taste
+- name: yogurt
+  quantity: 2
+  unit: cup
+  note: yogurt chutney
+- name: cilantro
+  quantity: null
+  unit: null
+  note: 1 bundle, chutney
+- name: garlic
+  quantity: 2
+  unit: piece
+  note: cloves, chutney
+- name: jalapeño
+  quantity: 1
+  unit: piece
+  note: or 2 tsp crushed jalapeño dust, chutney
+- name: lemon
+  quantity: 1
+  unit: piece
+  note: juiced, chutney
+- name: salt
+  quantity: null
+  unit: null
+  note: to taste, chutney
+- name: garlic cilantro butter
+  quantity: null
+  unit: null
+  note: optional, for brushing
+source:
+  video_id: GsOkYawqXjM
+  url: https://www.youtube.com/shorts/GsOkYawqXjM
+  channel: The Golden Balance
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+extracted_at: '2026-10-02'

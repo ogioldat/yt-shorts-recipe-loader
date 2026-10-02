@@ -1,0 +1,29 @@
+id: fajita-lime-chicken-freezer-marinade
+title: Fajita Lime Chicken (freezer marinade)
+language: en
+servings: 2
+ingredients:
+- name: chicken
+  quantity: 500
+  unit: g
+- name: fajita seasoning
+  quantity: 1
+  unit: tbsp
+- name: lime juice
+  quantity: 2
+  unit: tbsp
+- name: extra virgin olive oil
+  quantity: 1
+  unit: tbsp
+- name: cilantro
+  quantity: 1
+  unit: tbsp
+source:
+  video_id: 0Scbx56dBb0
+  url: https://www.youtube.com/shorts/0Scbx56dBb0
+  channel: Shredded & Fed
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+extracted_at: '2026-10-02'

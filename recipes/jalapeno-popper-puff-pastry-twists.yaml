@@ -1,0 +1,41 @@
+id: jalapeno-popper-puff-pastry-twists
+title: Jalapeño Popper Puff Pastry Twists
+language: en
+servings: null
+ingredients:
+- name: puff pastry
+  quantity: null
+  unit: null
+  note: thawed
+- name: cream cheese
+  quantity: null
+  unit: null
+  note: very softened
+- name: jalapeños
+  quantity: null
+  unit: null
+  note: plus extra on top
+- name: cheddar
+  quantity: null
+  unit: null
+  note: plus extra on top
+- name: bacon
+  quantity: null
+  unit: null
+- name: egg
+  quantity: null
+  unit: null
+  note: for the egg wash
+- name: ranch
+  quantity: null
+  unit: null
+  note: for dipping
+source:
+  video_id: VAhvHYsJu5w
+  url: https://www.youtube.com/shorts/VAhvHYsJu5w
+  channel: Lauren I A Bright Moment
+  recipe_index: 1
+  extracted_from:
+  - title
+  - subtitles
+extracted_at: '2026-10-02'

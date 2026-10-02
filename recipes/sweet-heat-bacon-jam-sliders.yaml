@@ -1,0 +1,61 @@
+id: sweet-heat-bacon-jam-sliders
+title: Sweet Heat Bacon Jam Sliders
+language: en
+servings: 24
+ingredients:
+- name: 96/4 ground beef
+  quantity: null
+  unit: null
+  note: 6 lb
+- name: kosher salt
+  quantity: 3
+  unit: tbsp
+  note: beef
+- name: black pepper
+  quantity: 1
+  unit: tbsp
+  note: beef
+- name: garlic powder
+  quantity: 3
+  unit: tbsp
+  note: beef
+- name: paprika
+  quantity: 1
+  unit: tbsp
+  note: beef
+- name: turkey bacon
+  quantity: 15
+  unit: piece
+  note: slices, bacon onion jam
+- name: white onion
+  quantity: 1
+  unit: piece
+  note: large, diced, jam
+- name: honey
+  quantity: 2
+  unit: tbsp
+  note: jam
+- name: brown stevia
+  quantity: 0.333
+  unit: cup
+  note: 1/3 cup, jam
+- name: low fat American cheese
+  quantity: 18
+  unit: piece
+  note: slices
+- name: light mayo
+  quantity: 0.25
+  unit: cup
+- name: slider rolls
+  quantity: 24
+  unit: piece
+source:
+  video_id: 0zZNmhRjJ3k
+  url: https://www.youtube.com/shorts/0zZNmhRjJ3k
+  channel: Noah Perlo
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+  - subtitles
+extracted_at: '2026-10-02'

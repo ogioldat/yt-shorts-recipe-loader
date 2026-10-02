@@ -1,0 +1,72 @@
+id: padakjeon-koreanski-placek-z-kurczaka
+title: Padakjeon – koreański placek z kurczaka
+title_en: Padakjeon – Korean chicken pancake
+language: pl
+servings: 1
+ingredients:
+- name: pierś z kurczaka
+  quantity: 250
+  unit: g
+  note: pokrojona
+- name: woda
+  quantity: 50
+  unit: ml
+- name: skrobia ziemniaczana
+  quantity: 50
+  unit: g
+- name: sól
+  quantity: 0.5
+  unit: tsp
+- name: pieprz
+  quantity: 0.5
+  unit: tsp
+- name: cebula dymka
+  quantity: null
+  unit: null
+  note: garść
+- name: glutaminian sodu (MSG)
+  quantity: null
+  unit: null
+  note: wspomniany w nagraniu, ilość nie podana
+- name: pasta gochujang
+  quantity: 30
+  unit: g
+  note: sos (2 porcje)
+- name: sos sojowy
+  quantity: 20
+  unit: g
+  note: sos
+- name: ocet ryżowy
+  quantity: 4
+  unit: g
+  note: sos
+- name: erytrytol
+  quantity: 5
+  unit: g
+  note: sos
+- name: olej sezamowy
+  quantity: 2
+  unit: g
+  note: sos
+- name: ząbek czosnku
+  quantity: 1
+  unit: piece
+  note: starty, do sosu
+- name: woda
+  quantity: 30
+  unit: ml
+  note: sos
+- name: sezam
+  quantity: null
+  unit: null
+  note: dodatek do posypania
+source:
+  video_id: 1mBgoHMtQS8
+  url: https://www.youtube.com/shorts/1mBgoHMtQS8
+  channel: Coocharz
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+  - subtitles
+extracted_at: '2026-10-02'

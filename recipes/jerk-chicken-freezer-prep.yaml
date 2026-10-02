@@ -1,0 +1,73 @@
+id: jerk-chicken-freezer-prep
+title: Jerk Chicken (freezer prep)
+language: en
+servings: 5
+ingredients:
+- name: boneless skinless chicken thighs
+  quantity: 1000
+  unit: g
+- name: green onions
+  quantity: 3
+  unit: piece
+- name: shallot
+  quantity: 1
+  unit: piece
+- name: scotch bonnet
+  quantity: 1
+  unit: piece
+  note: 1–2
+- name: ginger
+  quantity: null
+  unit: null
+  note: 1 inch
+- name: garlic
+  quantity: 3
+  unit: piece
+  note: cloves
+- name: dried thyme
+  quantity: 2
+  unit: tbsp
+- name: allspice
+  quantity: 1
+  unit: tbsp
+- name: nutmeg
+  quantity: 0.5
+  unit: tsp
+- name: soy sauce
+  quantity: 1
+  unit: tbsp
+- name: brown sugar
+  quantity: 1
+  unit: tbsp
+- name: salt
+  quantity: 0.5
+  unit: tbsp
+- name: black pepper
+  quantity: 0.5
+  unit: tbsp
+- name: extra virgin olive oil
+  quantity: 1
+  unit: tbsp
+- name: vinegar
+  quantity: 0.5
+  unit: tbsp
+- name: lime
+  quantity: 0.5
+  unit: piece
+  note: juice of ½ lime
+- name: orange
+  quantity: 0.25
+  unit: piece
+  note: juice of ¼ orange
+- name: water
+  quantity: 1
+  unit: tbsp
+source:
+  video_id: rwLTEqFnw8A
+  url: https://www.youtube.com/shorts/rwLTEqFnw8A
+  channel: Shredded & Fed
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+extracted_at: '2026-10-02'

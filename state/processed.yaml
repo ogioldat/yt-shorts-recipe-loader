@@ -6,27 +6,31 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - high-protein-double-mcchicken
   0Scbx56dBb0:
     title: The Anti-Boring Meal Prep System | Teriyaki, Sesame Ginger, Fajita Lime & Cilantro Lime Marinades
     fetched_at: '2026-10-02'
     description_sha256: 25d97a85fcc9147717bd434ae3ddbe4a92d47f1059c8bf6dfcda580c05e2d230
     subtitles: []
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - fajita-lime-chicken-freezer-marinade
+    - sesame-ginger-chicken-freezer-marinade
+    - cilantro-lime-chicken-freezer-marinade
+    - teriyaki-chicken-freezer-marinade
   0mZh9D9K2mY:
     title: AFK Massaman Curry
     fetched_at: '2026-10-02'
     description_sha256: da939ef3d4c9fb57fb35429e35a6bc552f5db54344def12d42067bf34d0d60f8
-    subtitles:
-    - subs.en.txt
-    - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    subtitles: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - afk-massaman-curry
   0zZNmhRjJ3k:
     title: DO This Once Per Week
     fetched_at: '2026-10-02'
@@ -34,9 +38,10 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - sweet-heat-bacon-jam-sliders
   1mBgoHMtQS8:
     title: 'PROTEINOWY PONIEDZIAŁEK: Padakjeon 🇰🇷 #coocharz #shorts'
     fetched_at: '2026-10-02'
@@ -44,9 +49,10 @@ videos:
     subtitles:
     - subs.pl.txt
     - subs.pl.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - padakjeon-koreanski-placek-z-kurczaka
   2DJRQHv4oeI:
     title: ORANGE chicken
     fetched_at: '2026-10-02'
@@ -54,9 +60,10 @@ videos:
     subtitles:
     - subs.pl.txt
     - subs.pl.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - orange-chicken-z-chrupiaca-skora
   2EakCIaFAOg:
     title: These rice paper burger pops have 75g of protein! 😎
     fetched_at: '2026-10-02'
@@ -64,9 +71,10 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - rice-paper-burger-pops
   3vdoB5LW7jE:
     title: This is how you make soup dumplings without any pork
     fetched_at: '2026-10-02'
@@ -74,9 +82,10 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: needs_review
+    extracted_at: '2026-10-02'
+    recipes:
+    - pork-free-soup-dumplings
   68rgfmwsPkA:
     title: 'Tiramisu Baked Oats ☕🍫: https://glow-diaries.com/tiramisu-baked-oats/'
     fetched_at: '2026-10-02'
@@ -84,9 +93,10 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: needs_review
+    extracted_at: '2026-10-02'
+    recipes:
+    - tiramisu-baked-oats
   7I3HVij8GQI:
     title: Cooking Every Recipe on the NYT Top 50 List of 2025 | Smashed Beef Kabobs with Cucumber Yogurt
     fetched_at: '2026-10-02'
@@ -94,16 +104,15 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - smashed-beef-kabobs-with-cucumber-yogurt
   9-MeT8rRBMM:
     title: 'Stir Fried Shrimp recipe 🦐 #recipe #cooking #foodlovers'
     fetched_at: '2026-10-02'
     description_sha256: 73834aaf57701bc755dc78bf1abbd5389c8b1b8071fb3f6ddccb2a5c18803bf4
-    subtitles:
-    - subs.en.txt
-    - subs.en.vtt
+    subtitles: []
     status: complete
     extracted_at: null
     recipes: []
@@ -112,8 +121,8 @@ videos:
     fetched_at: '2026-10-02'
     description_sha256: e0141cee5c2f2286ce3b2954dfaa1058b25a15553b3f47bda269effce829845a
     subtitles: []
-    status: complete
-    extracted_at: null
+    status: no_recipe_found
+    extracted_at: '2026-10-02'
     recipes: []
   9xXny_QbFLQ:
     title: Breakfast sandwich meal prep
@@ -123,34 +132,33 @@ videos:
     - subs.en.txt
     - subs.pl.txt
     - subs.pl.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - maple-turkey-sausage-breakfast-sandwiches
   ANHQ428tkSM:
     title: Sheet Pan Kebab Wraps
     fetched_at: '2026-10-02'
     description_sha256: c2f03fa05708e043da4074a3697210c57d43a7c77b4e04fca5265b9ce2fdbadf
-    subtitles:
-    - subs.en.txt
-    - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    subtitles: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - sheet-pan-seekh-kebab-wraps
   AgAEBn3prrA:
     title: EASY CHICKPEA COOKIE / Vegan Weight Loss
     fetched_at: '2026-10-02'
     description_sha256: 809539ce959cf835e30625c4fcbb59242df4693d44432c194790d9b231282c4a
     subtitles: []
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - easy-chickpea-peanut-butter-cookies
   BC8k0kHD8XA:
     title: How to Make the Perfect Paella @NickDiGiovanni
     fetched_at: '2026-10-02'
     description_sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-    subtitles:
-    - subs.en.txt
-    - subs.en.vtt
+    subtitles: []
     status: complete
     extracted_at: null
     recipes: []
@@ -161,9 +169,10 @@ videos:
     subtitles:
     - subs.pl.txt
     - subs.pl.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - kanapka-banh-mi-z-kurczakiem
   ERdTRSd91a4:
     title: 'High-Protein Blueberry Lemon Cheesecake | Creamy & Fresh #easyrecipe'
     fetched_at: '2026-10-02'
@@ -171,9 +180,10 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - high-protein-blueberry-lemon-cheesecake
   F-JITkz3QQg:
     title: 'JEDNOGARNKOWE PULPETY W SOSIE POMIDOROWYM  #policzonaszama #mealprep'
     fetched_at: '2026-10-02'
@@ -181,9 +191,10 @@ videos:
     subtitles:
     - subs.pl.txt
     - subs.pl.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - jednogarnkowe-pulpety-w-sosie-pomidorowym-z-muszelkami
   GPSgECsKC7E:
     title: 'PROTEINOWY PONIEDZIAŁEK: Tosty z kurczakiem BBQ 🐔 #coocharz #fitprzepisy #tosty #jedzenie
       #shorts'
@@ -192,29 +203,28 @@ videos:
     subtitles:
     - subs.pl.txt
     - subs.pl.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - tosty-z-kurczakiem-bbq
   GsOkYawqXjM:
     title: Pakistani Chicken Tikka
     fetched_at: '2026-10-02'
     description_sha256: fd3117796284b609fd9df932462058ee4b3b4a35e3542506ce11a205b035c6e0
-    subtitles:
-    - subs.en.txt
-    - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    subtitles: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - pakistani-chicken-tikka
   GyfVT1fMMh4:
     title: Sambal
     fetched_at: '2026-10-02'
     description_sha256: 2be098a1962b145eaf547d090ed12c798bf428766063ea515ee75d2a01952567
-    subtitles:
-    - subs.en.txt
-    - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    subtitles: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - sambal
   H_zRb7qiNI0:
     title: healthy high protein low calorie harissa chicken burrito meal prep for muscle growth and weight
       loss
@@ -223,9 +233,10 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - harissa-chicken-burritos-with-pineapple-salsa
   IY2koK83Rg0:
     title: 'Cały przepis w komentarzu 🙌🏽 #przepis'
     fetched_at: '2026-10-02'
@@ -233,9 +244,10 @@ videos:
     subtitles:
     - subs.pl.txt
     - subs.pl.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - zapiekanki-z-serkiem-wiejskim-i-kurczakiem
   IqykEcDRWyc:
     title: 'PROTEINOWY PONIEDZIAŁEK: Pizzerki z serka wiejskiego 🍕 #coocharz #przepisy #jedzenie #shorts'
     fetched_at: '2026-10-02'
@@ -243,16 +255,17 @@ videos:
     subtitles:
     - subs.pl.txt
     - subs.pl.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - pizzerki-z-serka-wiejskiego
   J2Top4Mhtdo:
     title: '5 High Protein meals for weight loss🔑 #weightlossdiet #weightlosstips #highproteinmeals #gymdiet'
     fetched_at: '2026-10-02'
     description_sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
     subtitles: []
-    status: complete
-    extracted_at: null
+    status: no_recipe_found
+    extracted_at: '2026-10-02'
     recipes: []
   L6j4_em2Lew:
     title: Eat good, make it healthy!! No chicken and rice over here.
@@ -261,8 +274,8 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
-    extracted_at: null
+    status: no_recipe_found
+    extracted_at: '2026-10-02'
     recipes: []
   MfJlhW09JLg:
     title: 14 Days Of Burrito Meal Prep | High Protein Low Calorie
@@ -271,9 +284,10 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - tajin-steak-cilantro-lime-burritos
   MulKG_WAXWk:
     title: 'The BEST ground beef recipe you’ll make! #cooking #recipe #food #shorts #groundbeef'
     fetched_at: '2026-10-02'
@@ -281,9 +295,10 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - korean-ground-beef
   NFhyClWqiO8:
     title: healthy high protein easy and delicious meal prep mongolian beef meal prep for weight loss
       and muscl
@@ -294,9 +309,10 @@ videos:
     - subs.en.vtt
     - subs.pl.txt
     - subs.pl.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - mongolian-beef-meal-prep
   OY2yryw-5sc:
     title: 'KURCZAK SŁODKO OSTRY  #policzonaszama #grill'
     fetched_at: '2026-10-02'
@@ -304,9 +320,10 @@ videos:
     subtitles:
     - subs.pl.txt
     - subs.pl.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - kurczak-slodko-pikantny-z-salsa-z-mango
   Ox6jDu3bJ9o:
     title: Przepis na Pierożki Baozi z Kurczakiem 🐔
     fetched_at: '2026-10-02'
@@ -314,19 +331,19 @@ videos:
     subtitles:
     - subs.pl.txt
     - subs.pl.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - pierozki-baozi-z-kurczakiem
   Pdz-CbeqYQ4:
     title: 'Recipes Every Home Cook Should Know Ep 18 | Japanese Curry Beef Bowls #cooking #recipe'
     fetched_at: '2026-10-02'
     description_sha256: e4757454670621944756e9dc0d9c1c5531b6d9b6326807ad6dae39a588addddd
-    subtitles:
-    - subs.en.txt
-    - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    subtitles: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - japanese-curry-beef-bowls
   RmVYMF0IfF8:
     title: 'Chocolate Mousse 🍫: https://glow-diaries.com/chocolate-mousse/'
     fetched_at: '2026-10-02'
@@ -334,27 +351,30 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: needs_review
+    extracted_at: '2026-10-02'
+    recipes:
+    - tofu-chocolate-mousse
   TSJI6-nV-t0:
     title: 'Anelli CROCCANTI di zucchine 🥒 NON FRITTI ❌ #shorts'
     fetched_at: '2026-10-02'
     description_sha256: 6378ed9c36fc0d40bd8458490e261ac0f0274837597ca270b74713cdf509b8d7
     subtitles: []
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: needs_review
+    extracted_at: '2026-10-02'
+    recipes:
+    - anelli-croccanti-di-zucchine-non-fritti
   TbqEoiT5bu0:
     title: is this a MAGNificent recipe??
     fetched_at: '2026-10-02'
     description_sha256: e2fe03d76fb7af5e1b608a51b2277cf089289f60b6190ad570ca2a1dc14c2874
     subtitles:
-    - subs.en.txt
-    - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    - subs.pl.txt
+    - subs.pl.vtt
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - magnum-style-chia-pudding
   UiTuJ7VjK1E:
     title: Zrób je swojej żonie na obiad 🤤
     fetched_at: '2026-10-02'
@@ -362,9 +382,10 @@ videos:
     subtitles:
     - subs.pl.txt
     - subs.pl.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - chlebki-naan-z-wolowym-farszem-i-mozzarella
   VAhvHYsJu5w:
     title: 'Jalapeño Popper Puff Pastry Twists  I  #gameday #superbowl #puffpastryrecipe'
     fetched_at: '2026-10-02'
@@ -372,9 +393,10 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - jalapeno-popper-puff-pastry-twists
   Vn5Tl60ATis:
     title: Proteinowe pankejki z czekoladą, czyli co jem, żeby być w formie!
     fetched_at: '2026-10-02'
@@ -382,9 +404,10 @@ videos:
     subtitles:
     - subs.pl.txt
     - subs.pl.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - proteinowe-pankejki-z-czekolada
   WAWsgmxduT4:
     title: Sheetpan Kefta | Dishes You'd Actually Cook
     fetched_at: '2026-10-02'
@@ -392,9 +415,10 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - sheetpan-kefta-sandwich
   X24IcIrJ1X4:
     title: healthy high protein low calorie korean fried chicken sandwich meal prep for muscle growth
       weight lo
@@ -403,9 +427,10 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - korean-fried-chicken-sandwich-meal-prep
   ZofXafjf8QM:
     title: Jak zrobić PAD THAI
     fetched_at: '2026-10-02'
@@ -413,9 +438,10 @@ videos:
     subtitles:
     - subs.pl.txt
     - subs.pl.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - pad-thai-z-kurczakiem
   _4eSfZoB-oU:
     title: COOKIE DOUGH BLENDED OATS
     fetched_at: '2026-10-02'
@@ -423,9 +449,10 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - cookie-dough-blended-oats
   a2HJqbqcAzg:
     title: High protein chicken katsu - healthy food for building muscle and losing fat
     fetched_at: '2026-10-02'
@@ -435,9 +462,10 @@ videos:
     - subs.en.vtt
     - subs.pl.txt
     - subs.pl.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: needs_review
+    extracted_at: '2026-10-02'
+    recipes:
+    - high-protein-chicken-katsu
   aWaEn30qUoY:
     title: High Protein Chocolate Crispie Treats ✨ A healthier version of your childhood fav!
     fetched_at: '2026-10-02'
@@ -445,29 +473,27 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
-    extracted_at: null
+    status: no_recipe_found
+    extracted_at: '2026-10-02'
     recipes: []
   c-GTYrwkRv8:
     title: 'High-Protein Strawberry Cheesecake Ice Cream | Creamy & Easy #easyrecipe'
     fetched_at: '2026-10-02'
     description_sha256: bab0cf181d3dfdc6225b6be7705fa47465bc2b4f1ad73422ff446bf396a1f4c6
-    subtitles:
-    - subs.en.txt
-    - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    subtitles: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - high-protein-strawberry-cheesecake-ice-cream
   c03NaWMb7ZY:
     title: 'Protein Strawberry Ice Cream Bites | High-Protein Treat #easyrecipe'
     fetched_at: '2026-10-02'
     description_sha256: c6db880024ef46f346dce824866d1c82dcc024d5fa8f1fbeffccd8161f28928c
-    subtitles:
-    - subs.en.txt
-    - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    subtitles: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - protein-strawberry-ice-cream-bites
   dmc9_QB_fJQ:
     title: 2-Ingredient Tofu Naan! 🫓 (High-Protein & No-Yeast)
     fetched_at: '2026-10-02'
@@ -475,17 +501,19 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - 2-ingredient-tofu-naan
   fV1CcSwnqZ4:
     title: The Anti-Boring Meal Prep System | High -Protein Bolognese
     fetched_at: '2026-10-02'
     description_sha256: 50c03203c3ba055d4aebfc5c85105f4ed5000e37089f5b5d68af64bd58044c21
     subtitles: []
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - high-protein-bolognese-freezer-prep
   hREGP15njIg:
     title: 'Double Chocolate High-Protein Cheesecake #bakedlean'
     fetched_at: '2026-10-02'
@@ -493,29 +521,28 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - double-chocolate-high-protein-cheesecake
   jDp-XVPEh5o:
     title: 'High Protein Mapo Egg Tofu Bowl Recipe #lowcalorie #highprotein #healthyrecipes'
     fetched_at: '2026-10-02'
     description_sha256: cfe4120cb394c026f4c6de5ff3fdd268d3635131f2c6c6cc0deb34e019ddda7d
-    subtitles:
-    - subs.en.txt
-    - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    subtitles: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - high-protein-mapo-egg-tofu-bowl
   jjay3BVVzks:
     title: Healthy High Protein English Muffin Meal Prep
     fetched_at: '2026-10-02'
     description_sha256: e9af130f38046cd1987c80a37cc6b15f950ac17f0f19ac584fb1f85574cd413f
-    subtitles:
-    - subs.en.txt
-    - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    subtitles: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - healthy-high-protein-english-muffins
   knzwo4uEFEk:
     title: Jesse's Blueberry Chia Seed Pudding
     fetched_at: '2026-10-02'
@@ -523,9 +550,10 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - jesse-s-blueberry-chia-seed-pudding
   lWZSwMBvY6c:
     title: High Protein Pasta! (50g PROTEIN) 🍝
     fetched_at: '2026-10-02'
@@ -533,9 +561,10 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: needs_review
+    extracted_at: '2026-10-02'
+    recipes:
+    - high-protein-cottage-cheese-pasta
   mHprniQUjzk:
     title: siekany STEK wołowy
     fetched_at: '2026-10-02'
@@ -543,9 +572,10 @@ videos:
     subtitles:
     - subs.pl.txt
     - subs.pl.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - siekany-stek-wolowy-z-sosem-z-zielonego-pieprzu
   nSLH57ksftk:
     title: 'One of the BEST dishes you can make! #cooking #recipe #food #shorts'
     fetched_at: '2026-10-02'
@@ -553,9 +583,10 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - garlic-chicken-stir-fry
   o9ugpWIiyn0:
     title: 'PROTEINOWY PONIEDZIAŁEK: Smashburger 🍔 #coocharz #przepisy #smashburger #burger #jedzenie'
     fetched_at: '2026-10-02'
@@ -563,9 +594,10 @@ videos:
     subtitles:
     - subs.pl.txt
     - subs.pl.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - proteinowy-smashburger
   oFHPVZ_ROlg:
     title: 1000x BETTER Than Starbucks + MORE PROTEIN 💪💪
     fetched_at: '2026-10-02'
@@ -575,9 +607,10 @@ videos:
     - subs.en.vtt
     - subs.pl.txt
     - subs.pl.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - copycat-spinach-feta-egg-white-wrap
   oRCYPKS8H3w:
     title: When life gives you limes make lemonade!
     fetched_at: '2026-10-02'
@@ -595,9 +628,10 @@ videos:
     subtitles:
     - subs.pl.txt
     - subs.pl.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - spaghetti-z-bialym-ragu
   olqgx_i-Wz0:
     title: WIOSENNY MEAL PREP
     fetched_at: '2026-10-02'
@@ -605,9 +639,13 @@ videos:
     subtitles:
     - subs.pl.txt
     - subs.pl.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: needs_review
+    extracted_at: '2026-10-02'
+    recipes:
+    - salatka-z-mlodymi-ziemniakami-szparagami-i-jajkiem
+    - 5-skladnikowy-sernik-na-zimno-z-truskawkami
+    - lasagne-pomidorowo-ricotta-z-cukinia-i-feta
+    - tofu-z-ryzem-i-warzywami-z-sosem-orzechowym
   qZdw0b_L5cA:
     title: 'PROTEINOWY PONIEDZIAŁEK: McChicken 🐔 #coocharz #makaron #mchicken #przepisy #fitprzepisy #shorts'
     fetched_at: '2026-10-02'
@@ -615,9 +653,10 @@ videos:
     subtitles:
     - subs.pl.txt
     - subs.pl.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - domowy-mcchicken-proteinowy
   rA7L-OshHZ4:
     title: 'Pierogi bez lepienia! 🥟 #coocharz #pierogi #prosteprzepisy #jedzenie #gotowanie #shorts'
     fetched_at: '2026-10-02'
@@ -625,24 +664,26 @@ videos:
     subtitles:
     - subs.pl.txt
     - subs.pl.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - pierogi-bez-lepienia
   rwLTEqFnw8A:
     title: The Anti-Boring Meal Prep System | Jerk Chicken
     fetched_at: '2026-10-02'
     description_sha256: ca450773b2365761cce34f3d0b8274f5f2170ff91dc06781df2a438eebcf6dec
     subtitles: []
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - jerk-chicken-freezer-prep
   tdpViO9ipDY:
     title: 'NASI GORENG INDONESIA - INDONESIA FRIED RICE #SHORTS'
     fetched_at: '2026-10-02'
     description_sha256: 02179f00ce5a5e69932c4d3395f07ea5cc8b5154c4bae252f54f543947fa21cc
     subtitles: []
-    status: complete
-    extracted_at: null
+    status: no_recipe_found
+    extracted_at: '2026-10-02'
     recipes: []
   uPenFX4QagY:
     title: 'Sałatka z chrupiącym ryżem 🥒 #coocharz #sałatka #przepisy #jedzenie'
@@ -651,9 +692,10 @@ videos:
     subtitles:
     - subs.pl.txt
     - subs.pl.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - salatka-z-chrupiacym-ryzem
   wK5IIFVJ6Fc:
     title: The TASTIEST High Protein Butter Chicken Tacos!🔥🥘🌮 24g Protein each ONLY 252 cals!
     fetched_at: '2026-10-02'
@@ -661,9 +703,10 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - high-protein-butter-chicken-tacos
   x50Vmhls_Co:
     title: Make This Once Per Week
     fetched_at: '2026-10-02'
@@ -671,16 +714,15 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - pesto-chicken-paninis
   xjGEWVNL0r0:
     title: Indonesia’s Beef Rendang - voted the most delicious dish in the world 🇮🇩
     fetched_at: '2026-10-02'
     description_sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-    subtitles:
-    - subs.en.txt
-    - subs.en.vtt
+    subtitles: []
     status: complete
     extracted_at: null
     recipes: []
@@ -691,6 +733,6 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
-    extracted_at: null
+    status: no_recipe_found
+    extracted_at: '2026-10-02'
     recipes: []

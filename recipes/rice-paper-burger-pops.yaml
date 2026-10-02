@@ -1,0 +1,81 @@
+id: rice-paper-burger-pops
+title: Rice Paper Burger Pops
+language: en
+servings: 1
+ingredients:
+- name: 97% lean ground beef
+  quantity: null
+  unit: null
+  note: 7 oz, raw
+- name: salt
+  quantity: 0.5
+  unit: tsp
+- name: black pepper
+  quantity: 2
+  unit: tsp
+- name: minced garlic
+  quantity: 0.5
+  unit: tbsp
+- name: onion powder
+  quantity: 2
+  unit: tsp
+- name: rice paper
+  quantity: 3
+  unit: piece
+  note: sheets
+- name: eggs
+  quantity: 2
+  unit: piece
+  note: whisked
+- name: red onion
+  quantity: 0.25
+  unit: piece
+  note: finely diced
+- name: green leaf lettuce
+  quantity: 6
+  unit: piece
+  note: leaves
+- name: low-fat mozzarella cheese
+  quantity: 3
+  unit: tsp
+- name: spray oil
+  quantity: null
+  unit: null
+- name: 0% fat greek yogurt
+  quantity: 0.5
+  unit: cup
+  note: dipping sauce
+- name: ketchup
+  quantity: 3
+  unit: tbsp
+  note: dipping sauce
+- name: worcestershire sauce
+  quantity: 2
+  unit: tsp
+  note: dipping sauce
+- name: pickle juice
+  quantity: 2
+  unit: tsp
+  note: dipping sauce
+- name: dijon mustard
+  quantity: 1
+  unit: tbsp
+  note: dipping sauce
+- name: garlic powder
+  quantity: 1
+  unit: tsp
+  note: dipping sauce
+- name: onion powder
+  quantity: 1
+  unit: tsp
+  note: dipping sauce
+source:
+  video_id: 2EakCIaFAOg
+  url: https://www.youtube.com/shorts/2EakCIaFAOg
+  channel: Joe Chu
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+  - subtitles
+extracted_at: '2026-10-02'

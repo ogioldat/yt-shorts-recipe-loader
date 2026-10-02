@@ -1,0 +1,26 @@
+id: healthy-high-protein-english-muffins
+title: Healthy High Protein English Muffins
+language: en
+servings: 20
+ingredients:
+- name: self rising flour
+  quantity: 600
+  unit: g
+- name: low/non fat cottage cheese
+  quantity: 650
+  unit: g
+- name: garlic paste
+  quantity: 3
+  unit: tbsp
+- name: salt
+  quantity: 1
+  unit: tbsp
+source:
+  video_id: jjay3BVVzks
+  url: https://www.youtube.com/shorts/jjay3BVVzks
+  channel: Noah Perlo
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+extracted_at: '2026-10-02'

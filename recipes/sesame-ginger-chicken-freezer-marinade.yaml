@@ -1,0 +1,33 @@
+id: sesame-ginger-chicken-freezer-marinade
+title: Sesame Ginger Chicken (freezer marinade)
+language: en
+servings: 2
+ingredients:
+- name: chicken
+  quantity: 500
+  unit: g
+- name: sesame oil
+  quantity: 1
+  unit: tbsp
+- name: soy sauce
+  quantity: 0.25
+  unit: cup
+- name: ginger
+  quantity: 1
+  unit: tbsp
+- name: garlic
+  quantity: 1
+  unit: piece
+  note: clove
+- name: green onion
+  quantity: 3
+  unit: piece
+source:
+  video_id: 0Scbx56dBb0
+  url: https://www.youtube.com/shorts/0Scbx56dBb0
+  channel: Shredded & Fed
+  recipe_index: 2
+  extracted_from:
+  - title
+  - description
+extracted_at: '2026-10-02'

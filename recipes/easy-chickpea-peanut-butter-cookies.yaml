@@ -1,0 +1,41 @@
+id: easy-chickpea-peanut-butter-cookies
+title: Easy Chickpea Peanut Butter Cookies
+language: en
+servings: null
+ingredients:
+- name: chickpeas
+  quantity: null
+  unit: null
+  note: 1 tin, drained
+- name: medjool dates
+  quantity: 6
+  unit: piece
+- name: peanut butter powder
+  quantity: 0.25
+  unit: cup
+- name: vanilla
+  quantity: 1
+  unit: tsp
+- name: plant milk
+  quantity: null
+  unit: null
+  note: splash
+- name: baking powder
+  quantity: 1
+  unit: tsp
+- name: salt
+  quantity: 1
+  unit: pinch
+- name: vegan chocolate chips
+  quantity: null
+  unit: null
+  note: optional
+source:
+  video_id: AgAEBn3prrA
+  url: https://www.youtube.com/shorts/AgAEBn3prrA
+  channel: Broccoli Mum
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+extracted_at: '2026-10-02'

@@ -1,0 +1,28 @@
+id: lasagne-pomidorowo-ricotta-z-cukinia-i-feta
+title: Lasagne pomidorowo-ricotta z cukinią i fetą
+title_en: Tomato and ricotta lasagne with courgette and feta
+language: pl
+servings: null
+ingredients:
+- name: sos pomidorowy
+  quantity: null
+  unit: null
+  note: 'z nazwy przepisu: lasagne pomidorowa'
+- name: ricotta
+  quantity: null
+  unit: null
+- name: cukinia
+  quantity: null
+  unit: null
+- name: feta
+  quantity: null
+  unit: null
+source:
+  video_id: olqgx_i-Wz0
+  url: https://www.youtube.com/shorts/olqgx_i-Wz0
+  channel: Policzona Szama
+  recipe_index: 3
+  extracted_from:
+  - description
+  - subtitles
+extracted_at: '2026-10-02'

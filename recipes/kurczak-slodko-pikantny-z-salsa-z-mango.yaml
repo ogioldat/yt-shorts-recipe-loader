@@ -1,0 +1,78 @@
+id: kurczak-slodko-pikantny-z-salsa-z-mango
+title: Kurczak słodko-pikantny z salsą z mango
+title_en: Sweet and spicy chicken with mango salsa
+language: pl
+servings: 1
+ingredients:
+- name: mięso z uda kurczaka
+  quantity: 200
+  unit: g
+- name: oliwa
+  quantity: 2
+  unit: g
+  note: marynata
+- name: ząbek czosnku
+  quantity: 1
+  unit: piece
+  note: marynata
+- name: miód
+  quantity: 10
+  unit: g
+  note: marynata
+- name: sos sojowy
+  quantity: 5
+  unit: g
+  note: marynata
+- name: ketchup
+  quantity: 10
+  unit: g
+  note: marynata
+- name: musztarda sarepska
+  quantity: 5
+  unit: g
+  note: marynata
+- name: papryka mielona chili
+  quantity: 0.25
+  unit: tsp
+  note: marynata
+- name: sól
+  quantity: null
+  unit: null
+- name: pieprz
+  quantity: null
+  unit: null
+  note: świeżo mielony
+- name: mango
+  quantity: 100
+  unit: g
+  note: salsa, w kostce
+- name: pomidor
+  quantity: null
+  unit: null
+  note: salsa, bez miąższu, w kostce
+- name: cebula czerwona
+  quantity: null
+  unit: null
+  note: salsa
+- name: sok z limonki
+  quantity: null
+  unit: null
+  note: salsa
+- name: oliwa
+  quantity: 2
+  unit: g
+  note: salsa
+- name: kolendra (natka)
+  quantity: null
+  unit: null
+  note: salsa, świeża
+source:
+  video_id: OY2yryw-5sc
+  url: https://www.youtube.com/shorts/OY2yryw-5sc
+  channel: Policzona Szama
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+  - subtitles
+extracted_at: '2026-10-02'

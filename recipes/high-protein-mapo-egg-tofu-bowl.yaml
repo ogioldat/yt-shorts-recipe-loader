@@ -1,0 +1,64 @@
+id: high-protein-mapo-egg-tofu-bowl
+title: High Protein Mapo Egg Tofu Bowl
+language: en
+servings: 2
+ingredients:
+- name: jalapeño
+  quantity: 0.25
+  unit: piece
+  note: 1/4–1/2 depending on spice level
+- name: firm tofu
+  quantity: 1
+  unit: piece
+  note: medium, 13.5 oz
+- name: toban djan paste
+  quantity: 1
+  unit: tbsp
+  note: Lee Kum Kee chili bean sauce
+- name: eggs
+  quantity: 3
+  unit: piece
+- name: green onion
+  quantity: 0.5
+  unit: piece
+  note: diced
+- name: soy sauce
+  quantity: 1.5
+  unit: tbsp
+- name: oyster sauce
+  quantity: 1
+  unit: tbsp
+- name: corn starch
+  quantity: 0.5
+  unit: tsp
+  note: slurry
+- name: water
+  quantity: 2
+  unit: tsp
+  note: slurry
+- name: minced garlic
+  quantity: 1
+  unit: tbsp
+- name: salt
+  quantity: 0.5
+  unit: tsp
+- name: black pepper
+  quantity: 0.5
+  unit: tsp
+- name: 95% lean ground beef
+  quantity: null
+  unit: null
+  note: 8 oz, raw
+- name: spray oil
+  quantity: null
+  unit: null
+  note: 1/3 second spray
+source:
+  video_id: jDp-XVPEh5o
+  url: https://www.youtube.com/shorts/jDp-XVPEh5o
+  channel: Joe
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+extracted_at: '2026-10-02'

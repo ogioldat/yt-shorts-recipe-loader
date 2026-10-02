@@ -1,0 +1,58 @@
+id: japanese-curry-beef-bowls
+title: Japanese Curry Beef Bowls
+language: en
+servings: null
+ingredients:
+- name: ground beef
+  quantity: null
+  unit: null
+  note: 1 lb
+- name: oil
+  quantity: 1
+  unit: tbsp
+- name: salt
+  quantity: 1
+  unit: tsp
+  note: to taste
+- name: black pepper
+  quantity: 1
+  unit: tsp
+- name: yellow onion
+  quantity: 1
+  unit: piece
+- name: carrot
+  quantity: 1
+  unit: piece
+  note: large
+- name: garlic
+  quantity: 6
+  unit: piece
+  note: cloves
+- name: frozen ginger
+  quantity: null
+  unit: null
+  note: 1 inch
+- name: spicy Japanese curry
+  quantity: 2
+  unit: piece
+  note: 2-3 blocks
+- name: milk
+  quantity: 1
+  unit: cup
+  note: 1 to 1.5 cups
+- name: frozen peas
+  quantity: 0.5
+  unit: cup
+- name: tonkatsu sauce
+  quantity: 1
+  unit: tbsp
+  note: 1–2 tbsp tonkatsu sauce, ketchup, or ½ apple
+source:
+  video_id: Pdz-CbeqYQ4
+  url: https://www.youtube.com/shorts/Pdz-CbeqYQ4
+  channel: Foodiligence
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+extracted_at: '2026-10-02'

@@ -1,0 +1,55 @@
+id: korean-ground-beef
+title: Korean Ground Beef
+language: en
+servings: null
+ingredients:
+- name: oil
+  quantity: null
+  unit: null
+  note: for the pan
+- name: minced garlic
+  quantity: null
+  unit: null
+- name: ground beef
+  quantity: null
+  unit: null
+- name: gochujang
+  quantity: null
+  unit: null
+- name: dark soy sauce
+  quantity: null
+  unit: null
+- name: light soy sauce
+  quantity: null
+  unit: null
+- name: sesame oil
+  quantity: null
+  unit: null
+- name: sugar
+  quantity: null
+  unit: null
+- name: rice
+  quantity: null
+  unit: null
+  note: to serve
+- name: sesame seeds
+  quantity: null
+  unit: null
+  note: optional garnish
+- name: scallions
+  quantity: null
+  unit: null
+  note: optional garnish
+- name: fried egg
+  quantity: null
+  unit: null
+  note: optional garnish
+source:
+  video_id: MulKG_WAXWk
+  url: https://www.youtube.com/shorts/MulKG_WAXWk
+  channel: iamneverfull
+  recipe_index: 1
+  extracted_from:
+  - title
+  - subtitles
+extracted_at: '2026-10-02'

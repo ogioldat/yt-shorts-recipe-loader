@@ -1,0 +1,77 @@
+id: siekany-stek-wolowy-z-sosem-z-zielonego-pieprzu
+title: Siekany stek wołowy z sosem z zielonego pieprzu
+title_en: Chopped beef steak with green peppercorn sauce
+language: pl
+servings: null
+ingredients:
+- name: wołowina siekana black angus
+  quantity: 250
+  unit: g
+- name: tłuszcz do smażenia
+  quantity: 1
+  unit: tbsp
+- name: masło
+  quantity: null
+  unit: null
+  note: do bastowania, odlewane po smażeniu
+- name: czosnek
+  quantity: null
+  unit: null
+  note: do bastowania masłem
+- name: zielony pieprz
+  quantity: null
+  unit: null
+  note: sos
+- name: alkohol
+  quantity: null
+  unit: null
+  note: coś mocniejszego, do flambirowania
+- name: śmietanka 30%
+  quantity: 60
+  unit: ml
+  note: sos
+- name: sos worcestershire
+  quantity: 1
+  unit: tsp
+  note: sos
+- name: sól
+  quantity: null
+  unit: null
+- name: kalafior
+  quantity: 1
+  unit: piece
+  note: puree (5 porcji), duża sztuka
+- name: serek wysokobiałkowy
+  quantity: 200
+  unit: g
+  note: do całej partii puree
+- name: musztarda francuska
+  quantity: 1
+  unit: tsp
+  note: puree
+- name: mleko
+  quantity: 2
+  unit: tbsp
+  note: 2–3 łyżki, puree
+- name: pieprz
+  quantity: null
+  unit: null
+  note: puree
+- name: sól
+  quantity: null
+  unit: null
+  note: puree
+- name: czosnek suszony
+  quantity: null
+  unit: null
+  note: puree
+source:
+  video_id: mHprniQUjzk
+  url: https://www.youtube.com/shorts/mHprniQUjzk
+  channel: Mariusz Mac
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+  - subtitles
+extracted_at: '2026-10-02'

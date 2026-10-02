@@ -1,0 +1,46 @@
+id: copycat-spinach-feta-egg-white-wrap
+title: Copycat Spinach Feta Egg White Wrap
+language: en
+servings: 1
+ingredients:
+- name: cooking spray
+  quantity: null
+  unit: null
+- name: chopped baby spinach
+  quantity: 0.667
+  unit: cup
+  note: ⅔ cup, lightly packed
+- name: sun dried tomatoes in oil
+  quantity: 2
+  unit: tbsp
+  note: patted dry and diced small
+- name: egg whites
+  quantity: 0.5
+  unit: cup
+- name: Italian seasoning
+  quantity: 0.25
+  unit: tsp
+- name: salt
+  quantity: null
+  unit: null
+  note: to taste
+- name: whole wheat tortilla
+  quantity: 1
+  unit: piece
+  note: large
+- name: shredded mozzarella cheese
+  quantity: 0.25
+  unit: cup
+- name: crumbled feta cheese
+  quantity: 2
+  unit: tbsp
+source:
+  video_id: oFHPVZ_ROlg
+  url: https://www.youtube.com/shorts/oFHPVZ_ROlg
+  channel: Miranda Galati, MHSc, RD
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+  - subtitles
+extracted_at: '2026-10-02'

@@ -1,0 +1,55 @@
+id: high-protein-cottage-cheese-pasta
+title: High Protein Cottage Cheese Pasta
+language: en
+servings: 5
+ingredients:
+- name: protein pasta
+  quantity: null
+  unit: null
+  note: a whole box
+- name: chicken Italian sausage
+  quantity: null
+  unit: null
+- name: jarred tomato sauce
+  quantity: null
+  unit: null
+  note: canned tomatoes work and are lower calorie
+- name: low-fat cottage cheese
+  quantity: null
+  unit: null
+  note: sauce base; plus 20 g for garnish
+- name: parmigiano
+  quantity: null
+  unit: null
+  note: sauce base; plus 5 g for garnish
+- name: milk
+  quantity: null
+  unit: null
+  note: a little, to thin the sauce
+- name: garlic powder
+  quantity: null
+  unit: null
+- name: oregano
+  quantity: null
+  unit: null
+- name: black pepper
+  quantity: null
+  unit: null
+- name: salt
+  quantity: null
+  unit: null
+  note: a little
+- name: olive oil
+  quantity: null
+  unit: null
+  note: drizzle, not included in the macros
+source:
+  video_id: lWZSwMBvY6c
+  url: https://www.youtube.com/shorts/lWZSwMBvY6c
+  channel: Rafi Fronzaglia
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+  - subtitles
+extracted_at: '2026-10-02'

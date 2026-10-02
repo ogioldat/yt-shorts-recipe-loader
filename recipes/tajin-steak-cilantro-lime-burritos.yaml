@@ -1,0 +1,66 @@
+id: tajin-steak-cilantro-lime-burritos
+title: Tajín Steak Cilantro Lime Burritos
+language: en
+servings: 14
+ingredients:
+- name: lean steak
+  quantity: 1800
+  unit: g
+  note: 1.8 kg, fully fat trimmed
+- name: salt
+  quantity: null
+  unit: null
+  note: to taste
+- name: pepper
+  quantity: null
+  unit: null
+  note: to taste
+- name: paprika
+  quantity: null
+  unit: null
+- name: garlic powder
+  quantity: null
+  unit: null
+- name: cumin
+  quantity: null
+  unit: null
+- name: Tajín
+  quantity: null
+  unit: null
+  note: heavily seasoned
+- name: rice
+  quantity: 3
+  unit: cup
+  note: dry measurement
+- name: cilantro
+  quantity: null
+  unit: null
+  note: full bunch, chopped
+- name: lime
+  quantity: 1
+  unit: piece
+  note: juice of one lime
+- name: low fat Mexican cheese
+  quantity: 400
+  unit: g
+- name: low carb tortillas
+  quantity: 14
+  unit: piece
+- name: canned corn
+  quantity: null
+  unit: null
+  note: 2 large cans, drained
+- name: sauce
+  quantity: null
+  unit: null
+  note: any sauce you like; leftover green sauce in the video
+source:
+  video_id: MfJlhW09JLg
+  url: https://www.youtube.com/shorts/MfJlhW09JLg
+  channel: Noah Perlo
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+  - subtitles
+extracted_at: '2026-10-02'

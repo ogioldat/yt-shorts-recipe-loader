@@ -1,0 +1,81 @@
+id: proteinowy-smashburger
+title: Proteinowy smashburger
+title_en: High-protein smashburger
+language: pl
+servings: 1
+ingredients:
+- name: chuda mielona wołowina
+  quantity: 200
+  unit: g
+- name: musztarda angielska
+  quantity: 20
+  unit: g
+- name: ser proteinowy
+  quantity: 2
+  unit: piece
+  note: plastry
+- name: bułka do burgerów
+  quantity: 1
+  unit: piece
+- name: warzywa
+  quantity: null
+  unit: null
+  note: dowolne
+- name: olej w sprayu
+  quantity: null
+  unit: null
+  note: w razie potrzeby
+- name: sól
+  quantity: null
+  unit: null
+  note: do doprawienia kotletów
+- name: pieprz
+  quantity: null
+  unit: null
+  note: do doprawienia kotletów
+- name: majonez light
+  quantity: 120
+  unit: g
+  note: sos – porcja na kilka sztuk
+- name: skyr naturalny
+  quantity: 100
+  unit: g
+  note: sos
+- name: ketchup
+  quantity: 60
+  unit: g
+  note: sos
+- name: musztarda angielska
+  quantity: 20
+  unit: g
+  note: sos
+- name: sos worcestershire
+  quantity: 10
+  unit: ml
+  note: sos
+- name: wędzona papryka
+  quantity: 1
+  unit: tsp
+  note: sos
+- name: czosnek
+  quantity: 0.5
+  unit: tsp
+  note: sos
+- name: cebula
+  quantity: 0.25
+  unit: piece
+  note: 1/4 posiekanej cebulki, do sosu
+- name: ogórek konserwowy
+  quantity: 1
+  unit: piece
+  note: posiekany, do sosu
+source:
+  video_id: o9ugpWIiyn0
+  url: https://www.youtube.com/shorts/o9ugpWIiyn0
+  channel: Coocharz
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+  - subtitles
+extracted_at: '2026-10-02'

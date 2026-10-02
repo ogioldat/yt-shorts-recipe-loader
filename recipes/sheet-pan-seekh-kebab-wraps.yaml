@@ -1,0 +1,138 @@
+id: sheet-pan-seekh-kebab-wraps
+title: Sheet Pan Seekh Kebab Wraps
+language: en
+servings: null
+ingredients:
+- name: ground lamb or beef
+  quantity: null
+  unit: null
+  note: 2 lbs (80/20)
+- name: red onions
+  quantity: 3
+  unit: piece
+  note: grated and squeezed dry
+- name: cilantro
+  quantity: 0.5
+  unit: cup
+  note: finely chopped, kebab
+- name: mint
+  quantity: 0.25
+  unit: cup
+  note: finely chopped, kebab
+- name: garlic
+  quantity: 4
+  unit: piece
+  note: cloves, grated
+- name: fresh ginger
+  quantity: 1.5
+  unit: tbsp
+  note: grated
+- name: serrano
+  quantity: 1
+  unit: piece
+  note: finely minced, kebab
+- name: cumin
+  quantity: 1
+  unit: tsp
+  note: kebab
+- name: coriander
+  quantity: 1
+  unit: tsp
+  note: kebab
+- name: garam masala
+  quantity: 1
+  unit: tsp
+  note: kebab
+- name: smoked paprika
+  quantity: 1
+  unit: tsp
+  note: kebab
+- name: salt
+  quantity: 1.5
+  unit: tsp
+  note: kebab
+- name: black pepper
+  quantity: 1
+  unit: tsp
+  note: kebab
+- name: garlic bulb
+  quantity: 1
+  unit: piece
+  note: roasted
+- name: olive oil
+  quantity: null
+  unit: null
+  note: for the roasted garlic
+- name: salt
+  quantity: null
+  unit: null
+  note: for the roasted garlic
+- name: cilantro
+  quantity: 0.5
+  unit: cup
+  note: chutney mayo
+- name: mint
+  quantity: 0.5
+  unit: cup
+  note: chutney mayo
+- name: lemon
+  quantity: 1
+  unit: piece
+  note: juice of 1 lemon, chutney mayo
+- name: serrano
+  quantity: 1
+  unit: piece
+  note: chutney mayo
+- name: cumin
+  quantity: 0.5
+  unit: tsp
+  note: chutney mayo
+- name: coriander
+  quantity: 0.5
+  unit: tsp
+  note: chutney mayo
+- name: mayo
+  quantity: 1
+  unit: cup
+  note: chutney mayo
+- name: salt
+  quantity: null
+  unit: null
+  note: to taste, chutney mayo
+- name: pepper
+  quantity: null
+  unit: null
+  note: to taste, chutney mayo
+- name: wrap bread
+  quantity: null
+  unit: null
+  note: bread of choice
+- name: pickles
+  quantity: null
+  unit: null
+  note: wrap topping
+- name: tomato
+  quantity: null
+  unit: null
+  note: wrap topping
+- name: red onion
+  quantity: null
+  unit: null
+  note: wrap topping
+- name: cilantro
+  quantity: null
+  unit: null
+  note: wrap topping
+- name: mint
+  quantity: null
+  unit: null
+  note: wrap topping
+source:
+  video_id: ANHQ428tkSM
+  url: https://www.youtube.com/shorts/ANHQ428tkSM
+  channel: Zachary Neman
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+extracted_at: '2026-10-02'

@@ -1,0 +1,43 @@
+id: double-chocolate-high-protein-cheesecake
+title: Double Chocolate High-Protein Cheesecake
+language: en
+servings: 8
+ingredients:
+- name: low-fat cream cheese
+  quantity: null
+  unit: null
+  note: 16 oz, softened
+- name: fat-free cottage cheese
+  quantity: 2
+  unit: cup
+- name: eggs
+  quantity: 4
+  unit: piece
+- name: Splenda
+  quantity: 1
+  unit: cup
+  note: or sweetener of choice
+- name: chocolate protein powder
+  quantity: null
+  unit: null
+  note: 2 scoops
+- name: unsweetened cocoa powder
+  quantity: 0.25
+  unit: cup
+- name: salt
+  quantity: 1
+  unit: pinch
+- name: chocolate frosting
+  quantity: 0.25
+  unit: cup
+  note: melted and swirled; zero-sugar in the video
+source:
+  video_id: hREGP15njIg
+  url: https://www.youtube.com/shorts/hREGP15njIg
+  channel: Baked Lean
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+  - subtitles
+extracted_at: '2026-10-02'

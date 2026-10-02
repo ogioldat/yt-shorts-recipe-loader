@@ -1,0 +1,90 @@
+id: korean-fried-chicken-sandwich-meal-prep
+title: Korean Fried Chicken Sandwich Meal Prep
+language: en
+servings: 16
+ingredients:
+- name: chicken thigh
+  quantity: 2400
+  unit: g
+  note: 150 g per sandwich, about 2400 g total
+- name: AP flour
+  quantity: 300
+  unit: g
+  note: bowl 1; not all will stick
+- name: salt
+  quantity: null
+  unit: null
+  note: bowl 1
+- name: pepper
+  quantity: null
+  unit: null
+  note: bowl 1
+- name: garlic powder
+  quantity: null
+  unit: null
+  note: bowl 1
+- name: paprika
+  quantity: null
+  unit: null
+  note: bowl 1
+- name: large eggs
+  quantity: 5
+  unit: piece
+  note: bowl 2
+- name: egg whites
+  quantity: 100
+  unit: g
+  note: bowl 2
+- name: crushed cornflakes
+  quantity: 600
+  unit: g
+  note: bowl 3
+- name: sesame oil
+  quantity: 1
+  unit: tbsp
+  note: slaw
+- name: light mayo
+  quantity: 4
+  unit: tbsp
+  note: slaw
+- name: kimchi
+  quantity: null
+  unit: null
+  note: slaw
+- name: minced cabbage
+  quantity: null
+  unit: null
+  note: slaw
+- name: low cal sweet chili sauce
+  quantity: 0.667
+  unit: cup
+  note: 2/3 cup, Korean glaze
+- name: sriracha
+  quantity: 6
+  unit: tbsp
+  note: glaze
+- name: soy sauce
+  quantity: 6
+  unit: tbsp
+  note: glaze
+- name: honey
+  quantity: 0.25
+  unit: cup
+  note: glaze
+- name: bread of choice
+  quantity: null
+  unit: null
+  note: sesame roll in the video
+- name: pickles
+  quantity: null
+  unit: null
+source:
+  video_id: X24IcIrJ1X4
+  url: https://www.youtube.com/shorts/X24IcIrJ1X4
+  channel: Noah Perlo
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+  - subtitles
+extracted_at: '2026-10-02'

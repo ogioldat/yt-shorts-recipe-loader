@@ -1,0 +1,69 @@
+id: salatka-z-chrupiacym-ryzem
+title: Sałatka z chrupiącym ryżem
+title_en: Crispy rice salad
+language: pl
+servings: 4
+ingredients:
+- name: ryż jaśminowy
+  quantity: 200
+  unit: g
+  note: waga przed ugotowaniem
+- name: sos sojowy
+  quantity: 3
+  unit: tbsp
+  note: do ryżu
+- name: olej chilli
+  quantity: 1
+  unit: tbsp
+  note: do ryżu
+- name: olej sezamowy
+  quantity: 1
+  unit: tbsp
+  note: do ryżu
+- name: ogórek
+  quantity: 2
+  unit: piece
+  note: duże, w cienkich plasterkach
+- name: awokado
+  quantity: 1
+  unit: piece
+- name: pierś z kurczaka
+  quantity: 2
+  unit: piece
+- name: przyprawy do kurczaka
+  quantity: null
+  unit: null
+  note: ulubione
+- name: mrożony groszek
+  quantity: 150
+  unit: g
+  note: lub edamame
+- name: cebula dymka
+  quantity: null
+  unit: null
+  note: 1 pęczek
+- name: prażony sezam
+  quantity: 2
+  unit: tbsp
+- name: majonez light
+  quantity: 60
+  unit: g
+  note: sos
+- name: jogurt grecki
+  quantity: 50
+  unit: g
+  note: sos
+- name: sos sweet chilli
+  quantity: 60
+  unit: g
+  note: sos
+source:
+  video_id: uPenFX4QagY
+  url: https://www.youtube.com/shorts/uPenFX4QagY
+  channel: Coocharz
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+  - subtitles
+extracted_at: '2026-10-02'

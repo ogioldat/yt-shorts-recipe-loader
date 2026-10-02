@@ -1,0 +1,43 @@
+id: cilantro-lime-chicken-freezer-marinade
+title: Cilantro Lime Chicken (freezer marinade)
+language: en
+servings: 2
+ingredients:
+- name: chicken
+  quantity: 500
+  unit: g
+- name: extra virgin olive oil
+  quantity: 1
+  unit: tbsp
+- name: cilantro
+  quantity: 0.25
+  unit: cup
+- name: lime
+  quantity: 1
+  unit: piece
+  note: juice + zest
+- name: garlic
+  quantity: 1
+  unit: piece
+  note: clove
+- name: cumin
+  quantity: 0.5
+  unit: tsp
+- name: chili
+  quantity: 0.25
+  unit: tsp
+- name: salt
+  quantity: 0.5
+  unit: tsp
+- name: pepper
+  quantity: 0.25
+  unit: tsp
+source:
+  video_id: 0Scbx56dBb0
+  url: https://www.youtube.com/shorts/0Scbx56dBb0
+  channel: Shredded & Fed
+  recipe_index: 3
+  extracted_from:
+  - title
+  - description
+extracted_at: '2026-10-02'

@@ -1,0 +1,36 @@
+id: teriyaki-chicken-freezer-marinade
+title: Teriyaki Chicken (freezer marinade)
+language: en
+servings: 2
+ingredients:
+- name: chicken
+  quantity: 500
+  unit: g
+- name: tamari
+  quantity: 1
+  unit: tbsp
+- name: sesame oil
+  quantity: 1
+  unit: tbsp
+- name: rice vinegar
+  quantity: 1
+  unit: tbsp
+- name: green onion
+  quantity: 1
+  unit: piece
+- name: ginger
+  quantity: 2
+  unit: tsp
+- name: garlic
+  quantity: 2
+  unit: piece
+  note: cloves
+source:
+  video_id: 0Scbx56dBb0
+  url: https://www.youtube.com/shorts/0Scbx56dBb0
+  channel: Shredded & Fed
+  recipe_index: 4
+  extracted_from:
+  - title
+  - description
+extracted_at: '2026-10-02'

@@ -1,0 +1,23 @@
+id: tofu-chocolate-mousse
+title: Tofu Chocolate Mousse
+language: en
+servings: null
+ingredients:
+- name: tofu
+  quantity: null
+  unit: null
+- name: peanut butter
+  quantity: null
+  unit: null
+- name: dark chocolate
+  quantity: null
+  unit: null
+source:
+  video_id: RmVYMF0IfF8
+  url: https://www.youtube.com/shorts/RmVYMF0IfF8
+  channel: Liz Douglas - Plant-Based Foodie
+  recipe_index: 1
+  extracted_from:
+  - title
+  - subtitles
+extracted_at: '2026-10-02'

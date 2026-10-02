@@ -1,0 +1,50 @@
+id: afk-massaman-curry
+title: AFK Massaman Curry
+language: en
+servings: 4
+ingredients:
+- name: lean lamb leg
+  quantity: 1000
+  unit: g
+  note: 1 kg, divided into 4 pieces; lean chuck or skinless thigh also work
+- name: Massaman curry paste
+  quantity: 60
+  unit: g
+  note: Maesri or similar
+- name: full-fat coconut milk
+  quantity: 200
+  unit: ml
+- name: water
+  quantity: 300
+  unit: ml
+- name: onion
+  quantity: 1
+  unit: piece
+  note: sliced 2 cm thick
+- name: cocktail potatoes
+  quantity: 600
+  unit: g
+  note: halved if using chicken thigh
+- name: star anise
+  quantity: 2
+  unit: piece
+- name: cinnamon stick
+  quantity: 1
+  unit: piece
+- name: chilli
+  quantity: null
+  unit: null
+  note: over the top before serving
+- name: coriander
+  quantity: null
+  unit: null
+  note: over the top before serving
+source:
+  video_id: 0mZh9D9K2mY
+  url: https://www.youtube.com/shorts/0mZh9D9K2mY
+  channel: Rice Bender
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+extracted_at: '2026-10-02'

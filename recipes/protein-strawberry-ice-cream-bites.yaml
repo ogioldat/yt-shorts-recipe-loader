@@ -1,0 +1,28 @@
+id: protein-strawberry-ice-cream-bites
+title: Protein Strawberry Ice Cream Bites
+language: en
+servings: null
+ingredients:
+- name: cottage cheese
+  quantity: 1
+  unit: cup
+- name: strawberries
+  quantity: 1
+  unit: cup
+- name: sugar-free sweetener
+  quantity: 2
+  unit: tbsp
+  note: optional
+- name: sugar-free chocolate chips
+  quantity: 0.5
+  unit: cup
+  note: melted
+source:
+  video_id: c03NaWMb7ZY
+  url: https://www.youtube.com/shorts/c03NaWMb7ZY
+  channel: We Are Recipes
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+extracted_at: '2026-10-02'
