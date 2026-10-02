@@ -77,17 +77,41 @@ console script, so options are passed as data and failures arrive as typed
 exceptions. Dependencies are uv-managed via `pyproject.toml`.
 
 1. List playlist entries: `yt-dlp --flat-playlist --print "%(id)s"`.
-2. Diff against `state/processed.yaml`; skip videos already present in the
-   ledger unless `--refresh` is passed. **Id presence is the only possible gate
-   here** — flat playlist extraction returns ids and nothing else, so the
-   description hash cannot be known at this point. The hash gates re-extraction
-   in Stage 2, not fetching.
-3. For each new video, with media download skipped:
+2. Select videos that are **incomplete**, via `completeness.py`: metadata
+   missing, or the original caption track absent. A video is complete when it has
+   metadata and its original track, **or has no captions at all** — that last
+   clause is what makes the retry loop terminate. Note what cannot gate this:
+   flat playlist extraction returns ids and nothing else, so the description hash
+   is unknowable here. It gates re-extraction in Stage 2, never fetching.
+3. For each video with something missing, media download skipped:
    - capture the info dict in memory, prune it, write `raw/<id>/meta.json`
-   - request **both** manual (`writesubtitles`) and automatic
-     (`writeautomaticsub`) captions for `pl,en`, converted to vtt →
-     `raw/<id>/subs.<lang>.vtt`. Manual captions are a separate and better
-     track, common on recipe content where creators want ingredients legible.
+   - request **only the original caption track**, converted to vtt and then to
+     plain text → `raw/<id>/subs.<lang>.txt`
+
+**Only the original captions are fetched.** Measured on real videos: YouTube
+lists auto-captions in ~157 languages, but exactly one is genuine speech
+recognition output, marked with an `-orig` suffix (`pl-orig`, `en-orig`). Every
+other entry is machine-translated from it. Requesting `pl` on an English video
+returns a Polish translation of English speech — this happened to video
+`9xXny_QbFLQ` before the fix, and such a file is a markedly worse source for
+ingredient names than the English original. A manual, human-written track in the
+original language is preferred when it exists.
+
+`original_langs` in config is therefore an **allowlist of languages the user can
+read**, not a list of languages to request. Many saved shorts carry only one
+language, and completeness accounts for that.
+
+**Transcripts are stored as plain text** (`subtitle_output: text|vtt|both`,
+default `text`). Auto-caption VTT is a rolling window that repeats each completed
+line and timestamps every individual word; the timings are used nowhere in this
+project. Conversion also decodes YouTube's double-encoded entities, since one
+pass turns `&amp;oacute;` into `&oacute;` and silently drops the diacritic.
+
+**The stage is additive.** It never deletes what an earlier run fetched,
+re-reads an existing `meta.json` instead of refetching, and requests only what is
+absent. With `fetch_until_complete` it makes repeated passes until nothing is
+missing, bounded by `max_passes`, `pass_delay_seconds` and `max_stalled_passes` —
+a permanently throttled playlist would otherwise loop forever.
 4. Record `fetched_at` and `description_sha256` in the ledger.
 
 Subtitles are best-effort: a video with none is still fetched and still
@@ -249,6 +273,8 @@ reviewed commit, and committing the lockfile, is the mitigation. The server expo
 ├── docs/superpowers/specs/
 ├── recipe_library/
 │   ├── fetch.py                   # stage 1, yt_dlp Python API
+│   ├── completeness.py            # what still needs fetching
+│   ├── subtitles.py               # VTT -> plain text
 │   ├── ledger.py                  # the two processing gates
 │   ├── schema.py                  # recipe validation rules
 │   ├── slugs.py                   # Polish-aware recipe ids

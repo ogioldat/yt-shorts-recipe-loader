@@ -9,9 +9,8 @@
   "duration": 58,
   "upload_date": "20260328",
   "shorts_url": "https://www.youtube.com/shorts/ZofXafjf8QM",
+  "original_lang": "pl",
+  "caption_track": "pl-orig",
   "manual_sub_langs": [],
-  "auto_sub_langs": [
-    "pl"
-  ],
   "has_auto_captions": true
 }
