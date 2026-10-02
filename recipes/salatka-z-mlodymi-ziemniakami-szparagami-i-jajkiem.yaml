@@ -25,6 +25,7 @@ ingredients:
 - name: sos jogurtowy
   quantity: null
   unit: null
+  fitatu_product_id: '24881725'
 source:
   video_id: olqgx_i-Wz0
   url: https://www.youtube.com/shorts/olqgx_i-Wz0

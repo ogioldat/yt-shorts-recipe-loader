@@ -33,6 +33,7 @@ ingredients:
   quantity: null
   unit: null
   note: to taste; maple used, blended dates also recommended
+  fitatu_product_id: '146632422'
 - name: milk
   quantity: null
   unit: null
@@ -56,6 +57,7 @@ ingredients:
   quantity: null
   unit: null
   note: to serve
+  fitatu_product_id: '120009289'
 source:
   video_id: TbqEoiT5bu0
   url: https://www.youtube.com/shorts/TbqEoiT5bu0

@@ -21,10 +21,12 @@ ingredients:
   quantity: 160
   unit: g
   note: 5.6 oz
+  fitatu_product_id: '147761856'
 - name: honey or maple syrup
   quantity: 10
   unit: g
   note: 0.35 oz
+  fitatu_product_id: '1896'
 - name: lemon
   quantity: 0.5
   unit: piece

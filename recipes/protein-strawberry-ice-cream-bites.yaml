@@ -15,6 +15,7 @@ ingredients:
   quantity: 2
   unit: tbsp
   note: optional
+  fitatu_product_id: '96419490'
 - name: sugar-free chocolate chips
   quantity: 0.5
   unit: cup

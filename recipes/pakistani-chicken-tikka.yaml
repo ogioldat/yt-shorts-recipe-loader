@@ -85,6 +85,7 @@ ingredients:
   quantity: null
   unit: null
   note: optional, for brushing
+  fitatu_product_id: '1322'
 source:
   video_id: GsOkYawqXjM
   url: https://www.youtube.com/shorts/GsOkYawqXjM

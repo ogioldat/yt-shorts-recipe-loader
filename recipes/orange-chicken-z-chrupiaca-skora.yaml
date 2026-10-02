@@ -112,6 +112,7 @@ ingredients:
   quantity: null
   unit: null
   note: pasek, do gotowania ryżu
+  fitatu_product_id: '66312266'
 - name: sezam
   quantity: null
   unit: null

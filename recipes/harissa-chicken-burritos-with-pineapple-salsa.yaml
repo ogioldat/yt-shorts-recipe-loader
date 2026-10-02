@@ -23,6 +23,7 @@ ingredients:
 - name: ground cumin
   quantity: 2
   unit: tsp
+  fitatu_product_id: '146462556'
 - name: garlic powder
   quantity: 2
   unit: tsp

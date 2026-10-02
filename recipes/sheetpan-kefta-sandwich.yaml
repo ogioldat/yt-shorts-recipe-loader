@@ -7,6 +7,7 @@ ingredients:
   quantity: null
   unit: null
   note: for the kefta; type not stated
+  fitatu_product_id: '61286861'
 - name: onion
   quantity: null
   unit: null

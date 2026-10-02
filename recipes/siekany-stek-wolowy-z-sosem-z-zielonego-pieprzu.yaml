@@ -11,6 +11,7 @@ ingredients:
 - name: tłuszcz do smażenia
   quantity: 1
   unit: tbsp
+  fitatu_product_id: '68553191'
 - name: masło
   quantity: null
   unit: null

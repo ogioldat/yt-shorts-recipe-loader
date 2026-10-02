@@ -26,6 +26,7 @@ ingredients:
 - name: kmin rzymski
   quantity: 0.25
   unit: tsp
+  fitatu_product_id: '146462556'
 - name: płatki kukurydziane
   quantity: 50
   unit: g

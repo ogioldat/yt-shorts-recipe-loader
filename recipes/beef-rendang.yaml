@@ -76,6 +76,7 @@ ingredients:
   quantity: null
   unit: null
   note: 'transcript says "charisic": shredded coconut toasted brown and pounded fine, added after 90 minutes'
+  fitatu_product_id: '116884783'
 - name: white rice
   quantity: null
   unit: null

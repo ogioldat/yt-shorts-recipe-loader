@@ -7,6 +7,7 @@ ingredients:
   quantity: null
   unit: null
   note: 2 lbs (80/20)
+  fitatu_product_id: '115368039'
 - name: red onions
   quantity: 3
   unit: piece
@@ -41,6 +42,7 @@ ingredients:
   quantity: 1
   unit: tsp
   note: kebab
+  fitatu_product_id: '146462556'
 - name: coriander
   quantity: 1
   unit: tsp
@@ -102,6 +104,7 @@ ingredients:
   quantity: 0.5
   unit: tsp
   note: chutney mayo
+  fitatu_product_id: '146462556'
 - name: coriander
   quantity: 0.5
   unit: tsp
@@ -124,6 +127,7 @@ ingredients:
   quantity: null
   unit: null
   note: bread of choice
+  fitatu_product_id: '106313688'
 - name: pickles
   quantity: null
   unit: null

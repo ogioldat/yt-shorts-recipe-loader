@@ -71,6 +71,7 @@ ingredients:
   quantity: 0.667
   unit: cup
   note: 2/3 cup, Korean glaze
+  fitatu_product_id: '97781655'
 - name: sriracha
   quantity: 6
   unit: tbsp
@@ -90,6 +91,7 @@ ingredients:
   quantity: null
   unit: null
   note: sesame roll in the video
+  fitatu_product_id: '16190414'
 - name: pickles
   quantity: null
   unit: null

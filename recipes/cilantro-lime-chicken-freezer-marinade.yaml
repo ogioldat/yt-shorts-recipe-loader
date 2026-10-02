@@ -6,6 +6,7 @@ ingredients:
 - name: chicken
   quantity: 500
   unit: g
+  fitatu_product_id: '108062220'
 - name: extra virgin olive oil
   quantity: 1
   unit: tbsp
@@ -27,6 +28,7 @@ ingredients:
 - name: cumin
   quantity: 0.5
   unit: tsp
+  fitatu_product_id: '146462556'
 - name: chili
   quantity: 0.25
   unit: tsp

@@ -25,6 +25,7 @@ ingredients:
 - name: sweetener
   quantity: 0.25
   unit: cup
+  fitatu_product_id: '96419490'
 - name: blueberries
   quantity: null
   unit: null

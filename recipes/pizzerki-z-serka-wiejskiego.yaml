@@ -32,6 +32,7 @@ ingredients:
 - name: sos do pizzy lub passata pomidorowa
   quantity: 60
   unit: g
+  fitatu_product_id: '109959820'
 - name: oregano
   quantity: null
   unit: null

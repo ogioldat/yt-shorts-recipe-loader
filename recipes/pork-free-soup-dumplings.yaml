@@ -30,6 +30,7 @@ ingredients:
   quantity: null
   unit: null
   note: transcript garbled ("ground ve…") – the meat is not identifiable
+  fitatu_product_id: '61286861'
 - name: green onion
   quantity: null
   unit: null

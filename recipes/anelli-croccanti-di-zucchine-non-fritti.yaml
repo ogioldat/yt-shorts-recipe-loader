@@ -45,6 +45,7 @@ ingredients:
   quantity: null
   unit: null
   note: salsina – i dischetti centrali cotti in padella
+  fitatu_product_id: '116930395'
 - name: yogurt greco 0%
   quantity: 100
   unit: g

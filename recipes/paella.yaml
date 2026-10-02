@@ -92,6 +92,7 @@ ingredients:
   quantity: null
   unit: null
   note: nestled into the rice
+  fitatu_product_id: '110118450'
 - name: parsley
   quantity: null
   unit: null

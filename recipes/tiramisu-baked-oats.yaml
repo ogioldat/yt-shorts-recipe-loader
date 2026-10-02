@@ -11,6 +11,7 @@ ingredients:
   quantity: null
   unit: null
   note: a shot of coffee
+  fitatu_product_id: '67465415'
 - name: protein yogurt
   quantity: null
   unit: null

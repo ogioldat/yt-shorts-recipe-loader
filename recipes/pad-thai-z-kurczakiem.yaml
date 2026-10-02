@@ -8,6 +8,7 @@ ingredients:
   quantity: 480
   unit: g
   note: lub tofu / krewetki / chuda wołowina / pierś z kurczaka
+  fitatu_product_id: '108062220'
 - name: makaron ryżowy 5 mm
   quantity: 200
   unit: g
@@ -23,6 +24,7 @@ ingredients:
 - name: szalotka lub cebula
   quantity: 60
   unit: g
+  fitatu_product_id: '116965051'
 - name: olej do smażenia
   quantity: 20
   unit: g

@@ -17,6 +17,7 @@ ingredients:
   quantity: null
   unit: null
   note: do smaku
+  fitatu_product_id: '117509031'
 - name: szynka z piersi kurczaka
   quantity: null
   unit: null

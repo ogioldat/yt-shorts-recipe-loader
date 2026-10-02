@@ -28,6 +28,7 @@ ingredients:
 - name: cumin
   quantity: null
   unit: null
+  fitatu_product_id: '146462556'
 - name: Tajín
   quantity: null
   unit: null

@@ -6,6 +6,7 @@ ingredients:
 - name: chicken
   quantity: 500
   unit: g
+  fitatu_product_id: '108062220'
 - name: tamari
   quantity: 1
   unit: tbsp

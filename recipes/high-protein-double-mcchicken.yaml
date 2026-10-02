@@ -16,6 +16,7 @@ ingredients:
   quantity: null
   unit: null
   note: sweetener of choice
+  fitatu_product_id: '96419490'
 - name: light mayo
   quantity: null
   unit: null

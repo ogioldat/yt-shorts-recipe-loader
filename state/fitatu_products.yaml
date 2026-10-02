@@ -112,6 +112,20 @@ products:
     measures: []
     query: ocet jabłkowy
     resolved_at: '2026-10-02'
+  avanzi di zucchina cotti:
+    fitatu_product_id: '116930395'
+    display_name: Cukinia
+    brand: null
+    source: public
+    verified: true
+    default_measure:
+      measure_id: '46'
+      measure_name: piece
+      weight_g: 240
+      kcal: 40.8
+    measures: []
+    query: cukinia
+    resolved_at: '2026-10-02'
   avocado:
     fitatu_product_id: '116807743'
     display_name: Awokado
@@ -252,6 +266,20 @@ products:
     measures: []
     query: łopatka wołowa
     resolved_at: '2026-10-02'
+  berries:
+    fitatu_product_id: '120009289'
+    display_name: Borówki amerykańskie
+    brand: null
+    source: public
+    verified: true
+    default_measure:
+      measure_id: '41'
+      measure_name: handful
+      weight_g: 50
+      kcal: 28.5
+    measures: []
+    query: borówka amerykańska
+    resolved_at: '2026-10-02'
   biała cebula:
     fitatu_product_id: '116696504'
     display_name: Cebula
@@ -365,6 +393,20 @@ products:
     query: udo z kurczaka bez skóry
     resolved_at: '2026-10-02'
   bread:
+    fitatu_product_id: '16190414'
+    display_name: Chleb pszenny
+    brand: null
+    source: public
+    verified: true
+    default_measure:
+      measure_id: '13'
+      measure_name: slice of bread
+      weight_g: 30
+      kcal: 78.6
+    measures: []
+    query: chleb pszenny
+    resolved_at: '2026-10-02'
+  bread of choice:
     fitatu_product_id: '16190414'
     display_name: Chleb pszenny
     brand: null
@@ -601,6 +643,20 @@ products:
       kcal: 48.6
     measures: []
     query: nasiona chia
+    resolved_at: '2026-10-02'
+  chicken:
+    fitatu_product_id: '108062220'
+    display_name: Pierś z kurczaka
+    brand: null
+    source: public
+    verified: true
+    default_measure:
+      measure_id: '46'
+      measure_name: piece
+      weight_g: 100
+      kcal: 99
+    measures: []
+    query: pierś z kurczaka
     resolved_at: '2026-10-02'
   chicken bone broth:
     fitatu_product_id: '119969703'
@@ -966,6 +1022,20 @@ products:
     measures: []
     query: mleko kokosowe
     resolved_at: '2026-10-02'
+  coffee:
+    fitatu_product_id: '67465415'
+    display_name: Espresso
+    brand: Starbucks
+    source: public
+    verified: true
+    default_measure:
+      measure_id: '39'
+      measure_name: portion
+      weight_g: 30
+      kcal: 0.6
+    measures: []
+    query: espresso
+    resolved_at: '2026-10-02'
   cooking oil:
     fitatu_product_id: '68553191'
     display_name: Uniwersalny rafinowany olej roślinny
@@ -1203,6 +1273,20 @@ products:
       kcal: 40.8
     measures: []
     query: cukinia
+    resolved_at: '2026-10-02'
+  cumin:
+    fitatu_product_id: '146462556'
+    display_name: Prymat Kminek cały 20 g
+    brand: Prymat
+    source: public
+    verified: false
+    default_measure:
+      measure_id: '2'
+      measure_name: package
+      weight_g: 20
+      kcal: 75
+    measures: []
+    query: kminek rzymski
     resolved_at: '2026-10-02'
   cytryna:
     fitatu_product_id: '116885261'
@@ -1876,6 +1960,20 @@ products:
     measures: []
     query: czosnek
     resolved_at: '2026-10-02'
+  garlic cilantro butter:
+    fitatu_product_id: '1322'
+    display_name: Masło
+    brand: null
+    source: public
+    verified: true
+    default_measure:
+      measure_id: '19'
+      measure_name: teaspoon
+      weight_g: 5
+      kcal: 37.4
+    measures: []
+    query: masło
+    resolved_at: '2026-10-02'
   garlic paste:
     fitatu_product_id: '109305786'
     display_name: Pasta czosnkowa
@@ -2044,6 +2142,48 @@ products:
     measures: []
     query: mięso mielone wołowe
     resolved_at: '2026-10-02'
+  ground cumin:
+    fitatu_product_id: '146462556'
+    display_name: Prymat Kminek cały 20 g
+    brand: Prymat
+    source: public
+    verified: false
+    default_measure:
+      measure_id: '2'
+      measure_name: package
+      weight_g: 20
+      kcal: 75
+    measures: []
+    query: kminek rzymski
+    resolved_at: '2026-10-02'
+  ground lamb or beef:
+    fitatu_product_id: '115368039'
+    display_name: Mięso mielone wołowe
+    brand: WestfalenLand
+    source: public
+    verified: false
+    default_measure:
+      measure_id: '2'
+      measure_name: package
+      weight_g: 1000
+      kcal: 2560
+    measures: []
+    query: mięso mielone wołowe 20%
+    resolved_at: '2026-10-02'
+  ground meat:
+    fitatu_product_id: '61286861'
+    display_name: Wołowina chuda mielona
+    brand: Asda Extra Special
+    source: public
+    verified: true
+    default_measure:
+      measure_id: '2'
+      measure_name: package
+      weight_g: 125
+      kcal: 163.75
+    measures: []
+    query: wołowina mielona chuda
+    resolved_at: '2026-10-02'
   ground turmeric:
     fitatu_product_id: '118476396'
     display_name: Kurkuma w proszku
@@ -2100,7 +2240,35 @@ products:
     measures: []
     query: harissa
     resolved_at: '2026-10-02'
+  high-protein vanilla or greek yoghurt:
+    fitatu_product_id: '147761856'
+    display_name: Skyr naturalny
+    brand: Classic
+    source: public
+    verified: false
+    default_measure:
+      measure_id: '39'
+      measure_name: portion
+      weight_g: 80
+      kcal: 52.8
+    measures: []
+    query: skyr naturalny
+    resolved_at: '2026-10-02'
   honey:
+    fitatu_product_id: '1896'
+    display_name: Miód pszczeli
+    brand: null
+    source: public
+    verified: true
+    default_measure:
+      measure_id: '19'
+      measure_name: teaspoon
+      weight_g: 12
+      kcal: 38.28
+    measures: []
+    query: miód pszczeli
+    resolved_at: '2026-10-02'
+  honey or maple syrup:
     fitatu_product_id: '1896'
     display_name: Miód pszczeli
     brand: null
@@ -2282,6 +2450,20 @@ products:
     measures: []
     query: kozieradka
     resolved_at: '2026-10-02'
+  kerisik:
+    fitatu_product_id: '116884783'
+    display_name: Wiórki kokosowe
+    brand: null
+    source: public
+    verified: true
+    default_measure:
+      measure_id: '20'
+      measure_name: tablespoon
+      weight_g: 4
+      kcal: 26.28
+    measures: []
+    query: wiórki kokosowe
+    resolved_at: '2026-10-02'
   ketchup:
     fitatu_product_id: '96869175'
     display_name: Ketchup tomato
@@ -2324,6 +2506,20 @@ products:
     measures: []
     query: kimchi
     resolved_at: '2026-10-02'
+  kmin rzymski:
+    fitatu_product_id: '146462556'
+    display_name: Prymat Kminek cały 20 g
+    brand: Prymat
+    source: public
+    verified: false
+    default_measure:
+      measure_id: '2'
+      measure_name: package
+      weight_g: 20
+      kcal: 75
+    measures: []
+    query: kminek rzymski
+    resolved_at: '2026-10-02'
   kolendra (natka):
     fitatu_product_id: '117075815'
     display_name: Kolendra, świeża
@@ -2337,6 +2533,34 @@ products:
       kcal: 0.23
     measures: []
     query: kolendra świeża
+    resolved_at: '2026-10-02'
+  kombu:
+    fitatu_product_id: '66312266'
+    display_name: Wodorosty Kombu
+    brand: null
+    source: public
+    verified: false
+    default_measure:
+      measure_id: '1'
+      measure_name: g
+      weight_g: 50
+      kcal: 23
+    measures: []
+    query: wodorosty kombu
+    resolved_at: '2026-10-02'
+  kurczak:
+    fitatu_product_id: '108062220'
+    display_name: Pierś z kurczaka
+    brand: null
+    source: public
+    verified: true
+    default_measure:
+      measure_id: '46'
+      measure_name: piece
+      weight_g: 100
+      kcal: 99
+    measures: []
+    query: pierś z kurczaka
     resolved_at: '2026-10-02'
   large eggs:
     fitatu_product_id: '24881865'
@@ -2631,6 +2855,20 @@ products:
       kcal: 54
     measures: []
     query: ryż biały
+    resolved_at: '2026-10-02'
+  low cal sweet chili sauce:
+    fitatu_product_id: '97781655'
+    display_name: Sweet Chili Sauce Sugar free
+    brand: Suree
+    source: public
+    verified: false
+    default_measure:
+      measure_id: '2'
+      measure_name: package
+      weight_g: 100
+      kcal: 19
+    measures: []
+    query: sos chili słodki bez cukru
     resolved_at: '2026-10-02'
   low carb tortillas:
     fitatu_product_id: '63390294'
@@ -3738,6 +3976,20 @@ products:
     measures: []
     query: płatki kukurydziane
     resolved_at: '2026-10-02'
+  panini bread or sourdough:
+    fitatu_product_id: '16190414'
+    display_name: Chleb pszenny
+    brand: null
+    source: public
+    verified: true
+    default_measure:
+      measure_id: '13'
+      measure_name: slice of bread
+      weight_g: 30
+      kcal: 78.6
+    measures: []
+    query: chleb pszenny
+    resolved_at: '2026-10-02'
   paprika:
     fitatu_product_id: '114168129'
     display_name: Kamis Papryka słodka mielona 16 g
@@ -4101,6 +4353,20 @@ products:
       kcal: 39.2
     measures: []
     query: pietruszka korzeń
+    resolved_at: '2026-10-02'
+  pine nuts or walnuts:
+    fitatu_product_id: '8381'
+    display_name: Orzeszki pinii
+    brand: Piotr i Paweł
+    source: public
+    verified: false
+    default_measure:
+      measure_id: '19'
+      measure_name: teaspoon
+      weight_g: 5
+      kcal: 36.35
+    measures: []
+    query: orzeszki pinii
     resolved_at: '2026-10-02'
   pineapple:
     fitatu_product_id: '116500859'
@@ -4858,6 +5124,20 @@ products:
     measures: []
     query: wino ryżowe shaoxing
     resolved_at: '2026-10-02'
+  shellfish:
+    fitatu_product_id: '110118450'
+    display_name: Owoce morza mrożone
+    brand: null
+    source: public
+    verified: false
+    default_measure:
+      measure_id: '1'
+      measure_name: g
+      weight_g: 100
+      kcal: 40
+    measures: []
+    query: owoce morza mrożone
+    resolved_at: '2026-10-02'
   shredded mozzarella cheese:
     fitatu_product_id: '27562647'
     display_name: Ser mozzarella
@@ -5011,6 +5291,48 @@ products:
       kcal: 59.5
     measures: []
     query: sos bbq bez cukru
+    resolved_at: '2026-10-02'
+  sos do pizzy lub passata pomidorowa:
+    fitatu_product_id: '109959820'
+    display_name: Passata pomidorowa
+    brand: null
+    source: public
+    verified: true
+    default_measure:
+      measure_id: '39'
+      measure_name: portion
+      weight_g: 100
+      kcal: 30
+    measures: []
+    query: passata pomidorowa
+    resolved_at: '2026-10-02'
+  sos jogurtowy:
+    fitatu_product_id: '24881725'
+    display_name: Jogurt naturalny
+    brand: null
+    source: public
+    verified: true
+    default_measure:
+      measure_id: '2'
+      measure_name: package
+      weight_g: 150
+      kcal: 90
+    measures: []
+    query: jogurt naturalny
+    resolved_at: '2026-10-02'
+  sos orzechowy:
+    fitatu_product_id: '111142286'
+    display_name: Satay Sauce
+    brand: Exotic Food
+    source: public
+    verified: false
+    default_measure:
+      measure_id: '2'
+      measure_name: package
+      weight_g: 250
+      kcal: 500
+    measures: []
+    query: sos satay
     resolved_at: '2026-10-02'
   sos ostrygowy:
     fitatu_product_id: '14135'
@@ -5292,6 +5614,20 @@ products:
     measures: []
     query: syrop klonowy bez cukru
     resolved_at: '2026-10-02'
+  sugar-free sweetener:
+    fitatu_product_id: '96419490'
+    display_name: Erytrytol
+    brand: null
+    source: public
+    verified: true
+    default_measure:
+      measure_id: '19'
+      measure_name: teaspoon
+      weight_g: 5
+      kcal: 0
+    measures: []
+    query: erytrytol
+    resolved_at: '2026-10-02'
   sumac:
     fitatu_product_id: '75155189'
     display_name: Kotányi Sumak mielony 10 g
@@ -5320,6 +5656,20 @@ products:
     measures: []
     query: pomidory suszone w oleju
     resolved_at: '2026-10-02'
+  suszona bazylia:
+    fitatu_product_id: '117509031'
+    display_name: Bazylia suszona
+    brand: Mikado
+    source: public
+    verified: false
+    default_measure:
+      measure_id: '2'
+      measure_name: package
+      weight_g: 10
+      kcal: 23.3
+    measures: []
+    query: bazylia suszona
+    resolved_at: '2026-10-02'
   sweetened condensed milk:
     fitatu_product_id: '113919683'
     display_name: Mleko kondensowane słodzone
@@ -5333,6 +5683,20 @@ products:
       kcal: 64.4
     measures: []
     query: mleko skondensowane słodzone
+    resolved_at: '2026-10-02'
+  sweetener:
+    fitatu_product_id: '96419490'
+    display_name: Erytrytol
+    brand: null
+    source: public
+    verified: true
+    default_measure:
+      measure_id: '19'
+      measure_name: teaspoon
+      weight_g: 5
+      kcal: 0
+    measures: []
+    query: erytrytol
     resolved_at: '2026-10-02'
   swiss cheese:
     fitatu_product_id: '13649'
@@ -5348,7 +5712,35 @@ products:
     measures: []
     query: ser szwajcarski
     resolved_at: '2026-10-02'
+  syrup:
+    fitatu_product_id: '146632422'
+    display_name: Syrop klonowy
+    brand: null
+    source: public
+    verified: false
+    default_measure:
+      measure_id: '2'
+      measure_name: package
+      weight_g: 1330
+      kcal: 3497.9
+    measures: []
+    query: syrop klonowy
+    resolved_at: '2026-10-02'
   szalotka:
+    fitatu_product_id: '116965051'
+    display_name: Szalotka
+    brand: null
+    source: public
+    verified: true
+    default_measure:
+      measure_id: '46'
+      measure_name: piece
+      weight_g: 20
+      kcal: 14.2
+    measures: []
+    query: szalotka
+    resolved_at: '2026-10-02'
+  szalotka lub cebula:
     fitatu_product_id: '116965051'
     display_name: Szalotka
     brand: null
@@ -5614,6 +6006,20 @@ products:
     measures: []
     query: kurkuma
     resolved_at: '2026-10-02'
+  tłuszcz do smażenia:
+    fitatu_product_id: '68553191'
+    display_name: Uniwersalny rafinowany olej roślinny
+    brand: null
+    source: public
+    verified: false
+    default_measure:
+      measure_id: '39'
+      measure_name: portion
+      weight_g: 10
+      kcal: 90
+    measures: []
+    query: olej roślinny
+    resolved_at: '2026-10-02'
   udko z kurczaka bez kości i skóry:
     fitatu_product_id: '89311698'
     display_name: Udo z kurczaka bez skóry surowe
@@ -5740,6 +6146,20 @@ products:
     measures: []
     query: ekstrakt waniliowy
     resolved_at: '2026-10-02'
+  warmed pita or white rice:
+    fitatu_product_id: '147155187'
+    display_name: Pita chlebek
+    brand: Snack
+    source: public
+    verified: false
+    default_measure:
+      measure_id: '2'
+      measure_name: package
+      weight_g: 660
+      kcal: 1722.6
+    measures: []
+    query: chlebek pita
+    resolved_at: '2026-10-02'
   white onion:
     fitatu_product_id: '116696504'
     display_name: Cebula
@@ -5851,6 +6271,20 @@ products:
       kcal: 198
     measures: []
     query: wołowina mielona
+    resolved_at: '2026-10-02'
+  wrap bread:
+    fitatu_product_id: '106313688'
+    display_name: Tortilla pszenna 25cm
+    brand: null
+    source: public
+    verified: false
+    default_measure:
+      measure_id: '2'
+      measure_name: package
+      weight_g: 1080
+      kcal: 3348
+    measures: []
+    query: tortilla pszenna
     resolved_at: '2026-10-02'
   wędzona papryka:
     fitatu_product_id: '147786378'
@@ -6058,29 +6492,11 @@ unresolved:
   allspice:
     reason: no_match
     checked_at: '2026-10-02'
-  avanzi di zucchina cotti:
-    reason: compound
-    checked_at: '2026-10-02'
-  berries:
-    reason: no_match
-    checked_at: '2026-10-02'
-  bread of choice:
-    reason: ambiguous
-    checked_at: '2026-10-02'
   brown stevia:
     reason: ambiguous
     checked_at: '2026-10-02'
-  chicken:
-    reason: ambiguous
-    checked_at: '2026-10-02'
-  coffee:
-    reason: no_match
-    checked_at: '2026-10-02'
   coriander:
     reason: ambiguous
-    checked_at: '2026-10-02'
-  cumin:
-    reason: no_match
     checked_at: '2026-10-02'
   dodatki:
     reason: no_match
@@ -6094,50 +6510,17 @@ unresolved:
   fresh basil:
     reason: no_match
     checked_at: '2026-10-02'
-  garlic cilantro butter:
-    reason: compound
-    checked_at: '2026-10-02'
   glutaminian sodu (msg):
     reason: no_match
-    checked_at: '2026-10-02'
-  ground cumin:
-    reason: no_match
-    checked_at: '2026-10-02'
-  ground lamb or beef:
-    reason: ambiguous
-    checked_at: '2026-10-02'
-  ground meat:
-    reason: ambiguous
-    checked_at: '2026-10-02'
-  high-protein vanilla or greek yoghurt:
-    reason: ambiguous
-    checked_at: '2026-10-02'
-  honey or maple syrup:
-    reason: ambiguous
     checked_at: '2026-10-02'
   ice:
     reason: not_a_food
     checked_at: '2026-10-02'
-  kerisik:
-    reason: compound
-    checked_at: '2026-10-02'
-  kmin rzymski:
-    reason: no_match
-    checked_at: '2026-10-02'
-  kombu:
-    reason: no_match
-    checked_at: '2026-10-02'
   kosher salt:
     reason: not_a_food
     checked_at: '2026-10-02'
-  kurczak:
-    reason: ambiguous
-    checked_at: '2026-10-02'
   letnia woda:
     reason: not_a_food
-    checked_at: '2026-10-02'
-  low cal sweet chili sauce:
-    reason: no_match
     checked_at: '2026-10-02'
   milk:
     reason: ambiguous
@@ -6145,14 +6528,8 @@ unresolved:
   owoce:
     reason: no_match
     checked_at: '2026-10-02'
-  panini bread or sourdough:
-    reason: ambiguous
-    checked_at: '2026-10-02'
   pickle juice:
     reason: no_match
-    checked_at: '2026-10-02'
-  pine nuts or walnuts:
-    reason: ambiguous
     checked_at: '2026-10-02'
   przyprawy do kurczaka:
     reason: no_match
@@ -6172,38 +6549,11 @@ unresolved:
   seasonings:
     reason: no_match
     checked_at: '2026-10-02'
-  shellfish:
-    reason: ambiguous
-    checked_at: '2026-10-02'
-  sos do pizzy lub passata pomidorowa:
-    reason: ambiguous
-    checked_at: '2026-10-02'
-  sos jogurtowy:
-    reason: compound
-    checked_at: '2026-10-02'
-  sos orzechowy:
-    reason: compound
-    checked_at: '2026-10-02'
   spezie:
     reason: no_match
     checked_at: '2026-10-02'
   spices:
     reason: no_match
-    checked_at: '2026-10-02'
-  sugar-free sweetener:
-    reason: ambiguous
-    checked_at: '2026-10-02'
-  suszona bazylia:
-    reason: no_match
-    checked_at: '2026-10-02'
-  sweetener:
-    reason: ambiguous
-    checked_at: '2026-10-02'
-  syrup:
-    reason: ambiguous
-    checked_at: '2026-10-02'
-  szalotka lub cebula:
-    reason: ambiguous
     checked_at: '2026-10-02'
   sól:
     reason: not_a_food
@@ -6211,14 +6561,8 @@ unresolved:
   tajín:
     reason: no_match
     checked_at: '2026-10-02'
-  tłuszcz do smażenia:
-    reason: ambiguous
-    checked_at: '2026-10-02'
   vegetables:
     reason: no_match
-    checked_at: '2026-10-02'
-  warmed pita or white rice:
-    reason: ambiguous
     checked_at: '2026-10-02'
   warzywa:
     reason: no_match
@@ -6228,7 +6572,4 @@ unresolved:
     checked_at: '2026-10-02'
   woda:
     reason: not_a_food
-    checked_at: '2026-10-02'
-  wrap bread:
-    reason: ambiguous
     checked_at: '2026-10-02'
