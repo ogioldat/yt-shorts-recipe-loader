@@ -97,6 +97,16 @@ Upstream ships no prepared `dist/` and has no `prepare` script, so npm cannot
 build it on install. A `postinstall` hook does that step. This is why the entry
 point is `mcp/fitatu/node_modules/fitatu-mcp/dist/index.js`.
 
+A clean `npm install` in `mcp/fitatu/` does rebuild that entry point — verified
+from an empty `node_modules/`. But note the limit of the reproducibility claim:
+the committed `package-lock.json` pins the outer tree, while the nested build
+step resolves upstream's own devDependencies (vite, typescript) fresh each time
+and is **not** pinned. An upstream toolchain break would surface here.
+
+`.mcp.json` holds **absolute paths** for this machine. It is committed for
+convenience, not portability; on another checkout the paths need regenerating or
+the server fails silently.
+
 It is **unofficial** third-party code that holds real account credentials in
 plaintext and logs into a live account. Review upstream's diff before moving the
 pin in `package.json`. Credentials live only in the gitignored
