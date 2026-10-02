@@ -139,6 +139,27 @@ actually matched in `query`.
 **A blank is better than a wrong id.** An unresolved name is a normal outcome; a
 wrong product silently corrupts the nutrition data the library exists to produce.
 
+## The recipes-library MCP server
+
+`recipe_library/mcp_server.py` serves this repository's collection over MCP, so a
+client can browse it without reading 70 YAML files. Read-only; it never writes to
+`recipes/`. Registered in `.mcp.json` as `recipes-library`.
+
+One tool, `list`: a summary per recipe (id, title, language, servings, ingredient
+count, how many lack a quantity, how many are mapped to a Fitatu product, import
+status, source video) plus collection-wide totals. Ingredients are omitted unless
+`include_ingredients` is true, because the collection holds 847 of them. Filters:
+`language`, `import_status`, `limit`.
+
+```bash
+uv run python -m recipe_library.mcp_server   # stdio
+```
+
+The listing lives in `recipe_library/recipes.py` and is tested directly, with no
+protocol in the way. Note that **mcp 2.x renamed `FastMCP` to `MCPServer`** and
+its model fields are snake_case (`read_only_hint`, `server_info`,
+`structured_content`), not the camelCase of the wire format.
+
 ## Importing into Fitatu
 
 `recipe_library/fitatu_import/` creates Fitatu recipes from `recipes/*.yaml`. It

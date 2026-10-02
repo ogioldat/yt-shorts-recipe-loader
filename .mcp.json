@@ -9,6 +9,17 @@
       "env": {
         "MCP_TRANSPORT": "stdio"
       }
+    },
+    "recipes-library": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "/Users/tomekogiolda/Projects/recipe-library",
+        "python",
+        "-m",
+        "recipe_library.mcp_server"
+      ]
     }
   }
 }

@@ -2,7 +2,7 @@
 description: Import recipes from recipes/ into Fitatu, recording import_status
 ---
 
-Import recipes into Fitatu using the `import_recipes_to_fitatu` skill.
+Import recipes into Fitatu using the `import-recipes-to-fitatu` skill.
 
 Always run `--dry-run` first and report what would fail before sending anything.
 Fitatu's recipe creation is not idempotent, so never re-send a recipe whose

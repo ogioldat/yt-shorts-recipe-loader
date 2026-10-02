@@ -1,5 +1,5 @@
 ---
-name: import_recipes_to_fitatu
+name: import-recipes-to-fitatu
 description: Use when importing recipes from recipes/ into Fitatu as real Fitatu recipes - runs recipe_library.fitatu_import, which uses the fitatu-api HTTP client directly, and records import_status ok/error/not_imported on each recipe. Covers the duplicate hazard, gram-to-measure conversion, and reading the dry run before sending anything.
 ---
 
