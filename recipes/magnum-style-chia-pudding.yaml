@@ -29,6 +29,7 @@ ingredients:
 - name: salt
   quantity: 1
   unit: pinch
+  fitatu_product_id: '5270094'
 - name: syrup
   quantity: null
   unit: null
@@ -69,3 +70,7 @@ source:
   - description
   - subtitles
 extracted_at: '2026-10-02'
+import_status: ok
+fitatu_recipe_id: '176257083'
+imported_at: '2026-10-02'
+import_note: imported outside this session; id recovered from Fitatu by matching the title

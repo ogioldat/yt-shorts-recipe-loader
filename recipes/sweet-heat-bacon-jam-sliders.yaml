@@ -4,14 +4,15 @@ language: en
 servings: 24
 ingredients:
 - name: 96/4 ground beef
-  quantity: null
-  unit: null
+  quantity: 2722
+  unit: g
   note: 6 lb
   fitatu_product_id: '61286861'
 - name: kosher salt
   quantity: 3
   unit: tbsp
   note: beef
+  fitatu_product_id: '5270094'
 - name: black pepper
   quantity: 1
   unit: tbsp
@@ -21,7 +22,7 @@ ingredients:
   quantity: 3
   unit: tbsp
   note: beef
-  fitatu_product_id: '75531888'
+  fitatu_product_id: '103420935'
 - name: paprika
   quantity: 1
   unit: tbsp
@@ -69,3 +70,8 @@ source:
   - description
   - subtitles
 extracted_at: '2026-10-02'
+prep_time_minutes: 90
+prep_time_source: estimated during import; not stated in the video
+import_status: ok
+fitatu_recipe_id: '176264457'
+imported_at: '2026-10-02'

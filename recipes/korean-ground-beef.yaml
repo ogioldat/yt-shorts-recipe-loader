@@ -27,7 +27,7 @@ ingredients:
 - name: light soy sauce
   quantity: null
   unit: null
-  fitatu_product_id: '117075611'
+  fitatu_product_id: '149649810'
 - name: sesame oil
   quantity: null
   unit: null
@@ -65,3 +65,12 @@ source:
   - title
   - subtitles
 extracted_at: '2026-10-02'
+import_status: error
+import_error: 'oil: no quantity stated in the source video; minced garlic: no quantity stated in the source
+  video; ground beef: no quantity stated in the source video; gochujang: no quantity stated in the source
+  video; dark soy sauce: no quantity stated in the source video; light soy sauce: no quantity stated in
+  the source video; sesame oil: no quantity stated in the source video; sugar: no quantity stated in the
+  source video; rice: no quantity stated in the source video; sesame seeds: no quantity stated in the
+  source video; scallions: no quantity stated in the source video; fried egg: no quantity stated in the
+  source video; <recipe>: no ingredients could be converted'
+imported_at: '2026-10-02'

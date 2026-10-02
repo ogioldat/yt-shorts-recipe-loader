@@ -22,6 +22,7 @@ ingredients:
   quantity: 4
   unit: tbsp
   note: patty
+  fitatu_product_id: '5270094'
 - name: black pepper
   quantity: 1
   unit: tbsp
@@ -45,6 +46,7 @@ ingredients:
   quantity: null
   unit: null
   note: to taste, eggs
+  fitatu_product_id: '5270094'
 - name: pepper
   quantity: null
   unit: null
@@ -94,3 +96,7 @@ source:
   - description
   - subtitles
 extracted_at: '2026-10-02'
+import_status: ok
+fitatu_recipe_id: '176257086'
+imported_at: '2026-10-02'
+import_note: imported outside this session; id recovered from Fitatu by matching the title

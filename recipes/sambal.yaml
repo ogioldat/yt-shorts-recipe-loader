@@ -7,7 +7,7 @@ ingredients:
   quantity: 40
   unit: piece
   note: seeds shaken out, soaked
-  fitatu_product_id: '116418723'
+  fitatu_product_id: '120099888'
 - name: fresh chillies
   quantity: 4
   unit: piece
@@ -53,6 +53,7 @@ ingredients:
   quantity: null
   unit: null
   note: if needed
+  fitatu_product_id: '5270094'
 source:
   video_id: GyfVT1fMMh4
   url: https://www.youtube.com/shorts/GyfVT1fMMh4
@@ -62,3 +63,7 @@ source:
   - title
   - description
 extracted_at: '2026-10-02'
+import_status: ok
+fitatu_recipe_id: '176257116'
+imported_at: '2026-10-02'
+import_note: imported outside this session; id recovered from Fitatu by matching the title

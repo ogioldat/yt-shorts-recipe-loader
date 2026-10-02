@@ -9,7 +9,11 @@ resolved.
 Two rules shape everything here, and both exist to protect the nutrition data:
 
 **No guessed conversions.** `1 piece` or `2 tbsp` cannot become grams without
-knowing what one onion weighs, and this module will not invent it.
+knowing what one onion weighs, and this module will not invent it. What it does
+do is carry a quantity across to a measure that means the same thing: a count
+into a per-item measure (piece, slice, clove), and a spoon or cup into another
+spoon or cup by the definition of those volumes. Both are exact, and the weight
+per unit still comes from the product, so no density is ever assumed.
 
 **A recipe imports whole or not at all.** A recipe landing in Fitatu with three
 of its eight ingredients would silently under-report calories, which is the one
@@ -23,6 +27,42 @@ from dataclasses import dataclass, field
 UNCONVERTIBLE_UNITS = ("piece", "tbsp", "tsp", "cup", "pinch")
 
 ML_MEASURE_NAMES = ("ml", "mililitr", "millilitre", "milliliter")
+
+# Fitatu's measure ids. The *names* are localised -- the same measure comes back
+# as "glass" or "szklanka" depending on the request -- so everything here keys on
+# the id, which is stable.
+MEASURE_GRAM = "1"
+MEASURE_PINCH = "14"
+MEASURE_ML = "17"
+
+# Measures where one unit is one item of the ingredient, so a count maps across
+# unchanged: `2 piece` of a product measured in slices is 2 slices. A cache entry
+# may also opt in with `per_item: true`, for a `portion` or `package` that a human
+# checked really is one muffin, one tortilla, one half-baguette.
+PER_ITEM_MEASURE_IDS = {
+    "46",  # piece / sztuka
+    "8",  # slice / plaster
+    "25",  # clove / ząbek
+    "5",  # floret / różyczka
+    "13",  # slice of bread / kromka
+    "182",  # cube / kostka
+}
+
+# A spoon or a cup only converts into *the same* spoon or cup. Scaling between
+# different ones looks exact on paper but is not: Fitatu's per-spoon weights are
+# kitchen figures, not volumetric. Kotányi granulated garlic lists a teaspoon at
+# 10 g and a tablespoon at 20 g -- a ratio of 2, where the volumes say 3. So
+# multiplying one into the other would inject up to 50% error, and resolving a
+# product that carries the measure the recipe actually uses is the fix instead.
+#
+# The one exception is a 240 ml cup against a Polish 250 ml `szklanka`, kept
+# because the measures really are the same kind of thing and the gap is 4%.
+UNIT_MEASURE_IDS = {
+    "tsp": {"19", "11"},  # teaspoon / łyżeczka, level teaspoon
+    "tbsp": {"20"},  # tablespoon / łyżka
+    "cup": {"32"},  # glass / szklanka
+}
+CUP_TO_GLASS = 240.0 / 250.0
 
 QUANTITY_DECIMALS = 3
 
@@ -53,10 +93,60 @@ class BuildResult:
 
 def _is_ml_measure(measure: dict) -> bool:
     """Whether one unit of this measure is a millilitre."""
+    if str(measure.get("measure_id") or "").strip() == MEASURE_ML:
+        return True
     return any(
         (measure.get(key) or "").strip().lower() in ML_MEASURE_NAMES
         for key in ("unit", "measure_name")
     )
+
+
+def _measure_name(measure: dict) -> str:
+    """A human label for error messages only; never matched on."""
+    return (measure.get("measure_name") or measure.get("measure_id") or "?").strip()
+
+
+def _measure_id(measure: dict) -> str:
+    return str(measure.get("measure_id") or "").strip()
+
+
+def _is_per_item_measure(measure: dict) -> bool:
+    """Whether one unit of this measure is one item of the ingredient."""
+    return bool(measure.get("per_item")) or _measure_id(measure) in PER_ITEM_MEASURE_IDS
+
+
+UNIT_WANTED_MEASURE_IDS = {
+    "g": {MEASURE_GRAM},
+    "ml": {MEASURE_ML},
+    "pinch": {MEASURE_PINCH},
+    "piece": PER_ITEM_MEASURE_IDS,
+    "tsp": UNIT_MEASURE_IDS["tsp"],
+    "tbsp": UNIT_MEASURE_IDS["tbsp"],
+    "cup": UNIT_MEASURE_IDS["cup"],
+}
+
+
+def select_measure(entry: dict, unit: str | None) -> dict:
+    """Pick the cached measure that matches how the recipe states the amount.
+
+    A cache entry holds every measure Fitatu offers for the product, because one
+    ingredient is written in different units across recipes -- garlic powder by
+    the teaspoon in one and by the tablespoon in another. Picking the matching
+    measure is what makes those exact instead of a scaled guess. Falls back to
+    the entry's default measure, which keeps the old behaviour.
+    """
+    default = entry.get("default_measure") or {}
+    wanted = UNIT_WANTED_MEASURE_IDS.get(unit or "")
+    if not wanted:
+        return default
+    if str(default.get("measure_id") or "") in wanted or (
+        unit == "piece" and default.get("per_item")
+    ):
+        return default
+    for candidate in entry.get("measures") or []:
+        if str(candidate.get("measure_id") or "") in wanted and candidate.get("weight_g"):
+            return candidate
+    return default
 
 
 def measure_quantity(
@@ -91,6 +181,31 @@ def measure_quantity(
             return None, f"{quantity} g rounds to zero units of a {weight_g} g measure"
         return value, None
 
+    if unit == "piece":
+        if _is_per_item_measure(measure):
+            return round(float(quantity), QUANTITY_DECIMALS), None
+        return None, (
+            f"a count of pieces, but the Fitatu measure is "
+            f"{_measure_name(measure)!r}, which is not one item"
+        )
+
+    if unit in UNIT_MEASURE_IDS:
+        if _measure_id(measure) in UNIT_MEASURE_IDS[unit]:
+            factor = CUP_TO_GLASS if unit == "cup" else 1.0
+            value = round(float(quantity) * factor, QUANTITY_DECIMALS)
+            if value <= 0:
+                return None, f"{quantity} {unit} rounds to zero units of that measure"
+            return value, None
+        return None, (
+            f"the recipe measures this in {unit}, but the mapped product's measure "
+            f"is {_measure_name(measure)!r}; resolve a product that has a {unit}"
+        )
+
+    if unit == "pinch":
+        if _measure_id(measure) == MEASURE_PINCH:
+            return round(float(quantity), QUANTITY_DECIMALS), None
+        return None, "a pinch has no defined volume, so it converts to nothing else"
+
     if unit in UNCONVERTIBLE_UNITS:
         return None, f"unit {unit!r} has no mass; Fitatu needs a weight or a volume"
     if unit is None:
@@ -113,7 +228,12 @@ def _description(recipe: dict) -> str:
 
 
 def build_recipe_kwargs(
-    recipe: dict, products: dict, *, shared: bool = False, allow_partial: bool = False
+    recipe: dict,
+    products: dict,
+    *,
+    shared: bool = False,
+    allow_partial: bool = False,
+    tags: list[str] | None = None,
 ) -> BuildResult:
     """Build `create_recipe` keyword arguments from a recipe and the product cache.
 
@@ -145,7 +265,7 @@ def build_recipe_kwargs(
             problems.append(Problem(label, "cache entry has no product id"))
             continue
 
-        measure = entry.get("default_measure") or {}
+        measure = select_measure(entry, ing.get("unit"))
         value, reason = measure_quantity(ing.get("quantity"), ing.get("unit"), measure)
         if reason is not None:
             problems.append(Problem(label, reason))
@@ -181,14 +301,26 @@ def build_recipe_kwargs(
             "(--allow-partial), so Fitatu will under-report this recipe"
         )
 
-    return BuildResult(
-        {
-            "name": name,
-            "items": items,
-            "serving": str(servings),
-            "shared": shared,
-            "recipe_description": _description(recipe),
-        },
-        problems,
-        warnings,
-    )
+    kwargs = {
+        "name": name,
+        "items": items,
+        "serving": str(servings),
+        "shared": shared,
+        "recipe_description": _description(recipe),
+    }
+
+    # Fitatu's `tags` field only accepts values from its own fixed vocabulary
+    # (cuisines, diet types). Posting a custom one makes the API answer 500, so
+    # the tag goes into the description, which is free text and searchable.
+    if tags:
+        kwargs["recipe_description"] = " — ".join(
+            [kwargs["recipe_description"], " ".join(f"#{t}" for t in tags)]
+        )
+
+    minutes = recipe.get("prep_time_minutes")
+    if isinstance(minutes, int) and not isinstance(minutes, bool) and minutes > 0:
+        kwargs["cooking_time"] = minutes
+    elif minutes is not None:
+        warnings.append(f"ignoring prep_time_minutes: {minutes!r} is not a positive integer")
+
+    return BuildResult(kwargs, problems, warnings)

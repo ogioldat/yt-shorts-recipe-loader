@@ -41,6 +41,13 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="do not retry recipes whose last attempt failed",
     )
+    parser.add_argument(
+        "--tag",
+        action="append",
+        dest="tags",
+        help="tag to set on each imported recipe; repeatable. Fitatu's tag list is "
+        "a fixed vocabulary, so a custom tag is also appended to the description",
+    )
     parser.add_argument("--status", action="store_true", help="show the tally and exit")
     args = parser.parse_args(argv)
 
@@ -62,6 +69,7 @@ def main(argv: list[str] | None = None) -> int:
         dry_run=args.dry_run,
         force=args.force,
         include_errors=not args.skip_errors,
+        tags=args.tags,
     )
     print(
         "\nDone. "

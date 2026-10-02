@@ -24,3 +24,8 @@ source:
   - title
   - subtitles
 extracted_at: '2026-10-02'
+import_status: error
+import_error: 'tofu: no quantity stated in the source video; peanut butter: no quantity stated in the
+  source video; dark chocolate: no quantity stated in the source video; <recipe>: no ingredients could
+  be converted'
+imported_at: '2026-10-02'

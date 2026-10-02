@@ -33,10 +33,11 @@ ingredients:
   quantity: 20
   unit: g
   note: do mięsa
-  fitatu_product_id: '117075611'
+  fitatu_product_id: '149649810'
 - name: sól
   quantity: null
   unit: null
+  fitatu_product_id: '5270094'
 - name: pieprz
   quantity: null
   unit: null
@@ -50,7 +51,7 @@ ingredients:
   quantity: 40
   unit: g
   note: sos
-  fitatu_product_id: '117075611'
+  fitatu_product_id: '149649810'
 - name: sos rybny
   quantity: 40
   unit: g
@@ -70,7 +71,7 @@ ingredients:
   quantity: 1
   unit: tsp
   note: sos
-  fitatu_product_id: '116418723'
+  fitatu_product_id: '120099888'
 - name: kiełki fasoli mung
   quantity: 120
   unit: g
@@ -101,3 +102,7 @@ source:
   - description
   - subtitles
 extracted_at: '2026-10-02'
+import_status: ok
+fitatu_recipe_id: '176257092'
+imported_at: '2026-10-02'
+import_note: imported outside this session; id recovered from Fitatu by matching the title

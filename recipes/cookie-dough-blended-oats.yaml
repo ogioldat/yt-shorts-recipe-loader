@@ -36,6 +36,7 @@ ingredients:
 - name: salt
   quantity: 1
   unit: pinch
+  fitatu_product_id: '5270094'
 - name: baking powder
   quantity: null
   unit: null
@@ -56,3 +57,8 @@ source:
   - description
   - subtitles
 extracted_at: '2026-10-02'
+prep_time_minutes: 10
+prep_time_source: estimated during import; not stated in the video
+import_status: ok
+fitatu_recipe_id: '176264376'
+imported_at: '2026-10-02'

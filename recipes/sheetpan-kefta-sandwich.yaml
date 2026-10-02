@@ -51,7 +51,7 @@ ingredients:
   quantity: null
   unit: null
   note: harissa tahini
-  fitatu_product_id: '80556660'
+  fitatu_product_id: '94525834'
 - name: tahini
   quantity: null
   unit: null
@@ -71,3 +71,11 @@ source:
   - title
   - subtitles
 extracted_at: '2026-10-02'
+import_status: error
+import_error: 'ground meat: no quantity stated in the source video; onion: no quantity stated in the source
+  video; parsley: no quantity stated in the source video; garlic: no quantity stated in the source video;
+  spices: no Fitatu product mapped; tomatoes: no quantity stated in the source video; olive oil: no quantity
+  stated in the source video; onion: no quantity stated in the source video; sumac: no quantity stated
+  in the source video; harissa: no quantity stated in the source video; tahini: no quantity stated in
+  the source video; bread: no quantity stated in the source video; <recipe>: no ingredients could be converted'
+imported_at: '2026-10-02'

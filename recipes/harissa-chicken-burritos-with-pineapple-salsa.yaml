@@ -4,14 +4,14 @@ language: en
 servings: 12
 ingredients:
 - name: boneless skinless chicken breast
-  quantity: null
-  unit: null
+  quantity: 1588
+  unit: g
   note: 3.5 lb
   fitatu_product_id: '108062220'
 - name: harissa
   quantity: 3
   unit: tbsp
-  fitatu_product_id: '80556660'
+  fitatu_product_id: '94525834'
 - name: olive oil
   quantity: 1
   unit: tbsp
@@ -23,11 +23,11 @@ ingredients:
 - name: ground cumin
   quantity: 2
   unit: tsp
-  fitatu_product_id: '146462556'
+  fitatu_product_id: '74562866'
 - name: garlic powder
   quantity: 2
   unit: tsp
-  fitatu_product_id: '75531888'
+  fitatu_product_id: '103420935'
 - name: limes
   quantity: 2
   unit: piece
@@ -37,6 +37,7 @@ ingredients:
   quantity: 2
   unit: tsp
   note: chicken
+  fitatu_product_id: '5270094'
 - name: black pepper
   quantity: 1
   unit: tsp
@@ -56,11 +57,12 @@ ingredients:
   quantity: 0.5
   unit: tsp
   note: salsa
-  fitatu_product_id: '116418723'
+  fitatu_product_id: '120099888'
 - name: salt
   quantity: 1
   unit: pinch
   note: salsa
+  fitatu_product_id: '5270094'
 - name: nonfat Greek yogurt
   quantity: 1.5
   unit: cup
@@ -85,6 +87,7 @@ ingredients:
   quantity: 0.5
   unit: tsp
   note: sauce
+  fitatu_product_id: '5270094'
 - name: large low carb tortillas
   quantity: 12
   unit: piece
@@ -104,3 +107,8 @@ source:
   - description
   - subtitles
 extracted_at: '2026-10-02'
+prep_time_minutes: 60
+prep_time_source: estimated during import; not stated in the video
+import_status: ok
+fitatu_recipe_id: '176264397'
+imported_at: '2026-10-02'

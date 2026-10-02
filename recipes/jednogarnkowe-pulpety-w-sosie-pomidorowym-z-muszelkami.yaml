@@ -38,6 +38,7 @@ ingredients:
   quantity: null
   unit: null
   note: pulpety
+  fitatu_product_id: '5270094'
 - name: pieprz
   quantity: null
   unit: null
@@ -85,6 +86,7 @@ ingredients:
   quantity: null
   unit: null
   note: sos
+  fitatu_product_id: '5270094'
 - name: pieprz
   quantity: null
   unit: null
@@ -117,3 +119,7 @@ source:
   - description
   - subtitles
 extracted_at: '2026-10-02'
+import_status: ok
+fitatu_recipe_id: '176257062'
+imported_at: '2026-10-02'
+import_note: imported outside this session; id recovered from Fitatu by matching the title

@@ -32,6 +32,7 @@ ingredients:
   quantity: null
   unit: null
   note: qb
+  fitatu_product_id: '5270094'
 - name: pepe
   quantity: null
   unit: null
@@ -70,3 +71,8 @@ source:
   - title
   - description
 extracted_at: '2026-10-02'
+prep_time_minutes: 40
+prep_time_source: estimated during import; not stated in the video
+import_status: ok
+fitatu_recipe_id: '176264373'
+imported_at: '2026-10-02'

@@ -17,6 +17,7 @@ ingredients:
   quantity: null
   unit: null
   note: marinade
+  fitatu_product_id: '5270094'
 - name: cornstarch
   quantity: null
   unit: null
@@ -46,7 +47,7 @@ ingredients:
   quantity: null
   unit: null
   note: sauce
-  fitatu_product_id: '117075611'
+  fitatu_product_id: '149649810'
 - name: oyster sauce
   quantity: null
   unit: null
@@ -85,3 +86,13 @@ source:
   - title
   - subtitles
 extracted_at: '2026-10-02'
+import_status: error
+import_error: 'chicken thighs: no quantity stated in the source video; Shaoxing wine: no quantity stated
+  in the source video; salt: no quantity stated in the source video; cornstarch: no quantity stated in
+  the source video; garlic: no quantity stated in the source video; onions: no quantity stated in the
+  source video; scallions: no quantity stated in the source video; dark soy sauce: no quantity stated
+  in the source video; light soy sauce: no quantity stated in the source video; oyster sauce: no quantity
+  stated in the source video; chicken bouillon: no quantity stated in the source video; sugar: no quantity
+  stated in the source video; water: no Fitatu product mapped; oil: no quantity stated in the source video;
+  rice: no quantity stated in the source video; <recipe>: no ingredients could be converted'
+imported_at: '2026-10-02'

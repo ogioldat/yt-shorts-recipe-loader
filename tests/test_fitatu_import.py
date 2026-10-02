@@ -97,11 +97,13 @@ def test_missing_quantity_is_refused():
 
 
 @pytest.mark.parametrize("unit", ["piece", "tbsp", "tsp", "cup", "pinch"])
-def test_countable_and_spoon_units_are_refused(unit):
-    # "1 onion" has no mass. Guessing one would corrupt the nutrition data.
+def test_countable_and_spoon_units_are_refused_against_a_mass(unit):
+    # "1 onion" has no mass. Guessing one would corrupt the nutrition data. Such
+    # a unit only converts into a measure that means the same thing, which a
+    # gram is not.
     value, reason = measure_quantity(1, unit, GRAM)
     assert value is None
-    assert "no mass" in reason
+    assert reason
 
 
 def test_measure_without_a_gram_weight_is_refused():
@@ -470,3 +472,162 @@ def test_offset_applies_to_pending_not_to_the_whole_collection(tmp_path, monkeyp
 
     tally = runner.run(recipes_dir=tmp_path, offset=1, dry_run=True)
     assert tally["would_import"] == 1  # only c: a is done, b was skipped by the offset
+
+
+# --- units that mean the same thing on both sides ---------------------------
+#
+# These are the conversions that are exact rather than guessed: a count into a
+# per-item measure, and a spoon or cup into another spoon or cup. The weight per
+# unit still comes from the product, so no density is ever assumed.
+
+PIECE = {"measure_id": "46", "measure_name": "piece", "weight_g": 100}
+CLOVE = {"measure_id": "25", "measure_name": "clove", "weight_g": 5}
+TEASPOON = {"measure_id": "19", "measure_name": "teaspoon", "weight_g": 5}
+TABLESPOON = {"measure_id": "20", "measure_name": "tablespoon", "weight_g": 10}
+GLASS = {"measure_id": "32", "measure_name": "glass", "weight_g": 230}
+PINCH = {"measure_id": "14", "measure_name": "pinch", "weight_g": 1}
+PER_ITEM_PORTION = {
+    "measure_id": "39",
+    "measure_name": "portion",
+    "weight_g": 57,
+    "per_item": True,
+}
+
+
+@pytest.mark.parametrize("measure", [PIECE, CLOVE])
+def test_a_count_carries_into_a_per_item_measure(measure):
+    assert measure_quantity(3, "piece", measure) == (3.0, None)
+
+
+def test_a_count_needs_the_measure_to_be_one_item():
+    value, reason = measure_quantity(2, "piece", PORTION)
+    assert value is None
+    assert "not one item" in reason
+
+
+def test_a_portion_can_be_declared_one_item():
+    assert measure_quantity(14, "piece", PER_ITEM_PORTION) == (14.0, None)
+
+
+def test_a_spoon_matches_the_same_spoon():
+    assert measure_quantity(2, "tsp", TEASPOON) == (2.0, None)
+    assert measure_quantity(1.5, "tbsp", TABLESPOON) == (1.5, None)
+
+
+def test_spoon_sizes_are_never_scaled_into_each_other():
+    # Fitatu's per-spoon weights are kitchen figures, not volumetric: the same
+    # product can list a 10 g teaspoon and a 20 g tablespoon. Multiplying one
+    # into the other would inject that inconsistency into the nutrition data.
+    value, reason = measure_quantity(1, "tbsp", TEASPOON)
+    assert value is None
+    assert "resolve a product that has a tbsp" in reason
+
+    value, reason = measure_quantity(1, "cup", TABLESPOON)
+    assert value is None
+    assert "resolve a product that has a cup" in reason
+
+
+def test_a_cup_is_close_enough_to_a_polish_glass():
+    assert measure_quantity(1, "cup", GLASS) == (0.96, None)
+
+
+def test_a_spoon_will_not_become_a_mass():
+    value, reason = measure_quantity(2, "tbsp", GRAM)
+    assert value is None
+    assert "resolve a product that has a tbsp" in reason
+
+
+def test_a_pinch_only_matches_a_pinch():
+    assert measure_quantity(1, "pinch", PINCH) == (1.0, None)
+    value, reason = measure_quantity(1, "pinch", TEASPOON)
+    assert value is None
+    assert "no defined volume" in reason
+
+
+# --- tag and preparation time -----------------------------------------------
+
+
+def test_a_custom_tag_goes_into_the_description_not_the_tags_field():
+    # Fitatu answers 500 for a tag outside its own vocabulary, so the field is
+    # left alone and the description carries the marker instead.
+    built = build_recipe_kwargs(
+        recipe([{"name": "mleko", "quantity": 100, "unit": "g"}]),
+        products(mleko=("1", GRAM)),
+        tags=["AI-YT-shorts"],
+    )
+    assert built.ok
+    assert "tags" not in built.kwargs
+    assert "#AI-YT-shorts" in built.kwargs["recipe_description"]
+
+
+def test_prep_time_is_passed_as_cooking_time():
+    built = build_recipe_kwargs(
+        recipe(
+            [{"name": "mleko", "quantity": 100, "unit": "g"}], prep_time_minutes=25
+        ),
+        products(mleko=("1", GRAM)),
+    )
+    assert built.kwargs["cooking_time"] == 25
+
+
+def test_a_nonsense_prep_time_is_dropped_with_a_warning():
+    built = build_recipe_kwargs(
+        recipe(
+            [{"name": "mleko", "quantity": 100, "unit": "g"}], prep_time_minutes="soon"
+        ),
+        products(mleko=("1", GRAM)),
+    )
+    assert "cooking_time" not in built.kwargs
+    assert any("prep_time_minutes" in w for w in built.warnings)
+
+
+# --- picking the measure that matches the recipe ----------------------------
+
+
+def test_the_measure_matching_the_recipe_unit_is_chosen():
+    from recipe_library.fitatu_import.payload import select_measure
+
+    entry = {
+        "default_measure": {"measure_id": "20", "measure_name": "łyżka", "weight_g": 20},
+        "measures": [
+            {"measure_id": "20", "measure_name": "łyżka", "weight_g": 20, "kcal": 72.6},
+            {"measure_id": "19", "measure_name": "łyżeczka", "weight_g": 10, "kcal": 36.3},
+            {"measure_id": "1", "measure_name": "g", "weight_g": 1, "kcal": 3.63},
+        ],
+    }
+    # The same ingredient, written three ways, resolves to three real measures
+    # instead of being scaled from one of them.
+    assert select_measure(entry, "tbsp")["measure_id"] == "20"
+    assert select_measure(entry, "tsp")["measure_id"] == "19"
+    assert select_measure(entry, "g")["measure_id"] == "1"
+
+
+def test_measure_selection_falls_back_to_the_default():
+    from recipe_library.fitatu_import.payload import select_measure
+
+    entry = {"default_measure": {"measure_id": "2", "weight_g": 200}, "measures": []}
+    assert select_measure(entry, "cup")["measure_id"] == "2"
+
+
+def test_a_recipe_using_two_units_of_one_ingredient_still_converts():
+    built = build_recipe_kwargs(
+        recipe(
+            [
+                {"name": "czosnek w proszku", "quantity": 1, "unit": "tbsp"},
+                {"name": "czosnek w proszku", "quantity": 2, "unit": "tsp"},
+            ]
+        ),
+        {
+            "czosnek w proszku": {
+                "fitatu_product_id": "7",
+                "default_measure": {"measure_id": "20", "weight_g": 20},
+                "measures": [
+                    {"measure_id": "20", "weight_g": 20},
+                    {"measure_id": "19", "weight_g": 10},
+                ],
+            }
+        },
+    )
+    assert built.ok
+    assert [i["measureId"] for i in built.kwargs["items"]] == ["20", "19"]
+    assert [i["measureQuantity"] for i in built.kwargs["items"]] == [1.0, 2.0]

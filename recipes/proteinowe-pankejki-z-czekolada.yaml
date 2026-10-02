@@ -11,7 +11,7 @@ ingredients:
 - name: serek wiejski
   quantity: null
   unit: null
-  fitatu_product_id: '148549731'
+  fitatu_product_id: '14369199'
 - name: jajko
   quantity: 2
   unit: piece
@@ -50,3 +50,8 @@ source:
   - title
   - subtitles
 extracted_at: '2026-10-02'
+prep_time_minutes: 20
+prep_time_source: estimated during import; not stated in the video
+import_status: ok
+fitatu_recipe_id: '176264433'
+imported_at: '2026-10-02'

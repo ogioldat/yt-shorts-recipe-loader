@@ -6,7 +6,7 @@ ingredients:
 - name: cottage cheese
   quantity: 1
   unit: cup
-  fitatu_product_id: '148549731'
+  fitatu_product_id: '14369199'
 - name: strawberries
   quantity: 1
   unit: cup
@@ -30,3 +30,8 @@ source:
   - title
   - description
 extracted_at: '2026-10-02'
+prep_time_minutes: 15
+prep_time_source: estimated during import; not stated in the video
+import_status: ok
+fitatu_recipe_id: '176264430'
+imported_at: '2026-10-02'

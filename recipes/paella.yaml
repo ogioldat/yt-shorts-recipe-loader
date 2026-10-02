@@ -84,6 +84,7 @@ ingredients:
   quantity: null
   unit: null
   note: sprinkle
+  fitatu_product_id: '5270094'
 - name: lima beans
   quantity: null
   unit: null
@@ -112,3 +113,16 @@ source:
   - title
   - subtitles
 extracted_at: '2026-10-02'
+import_status: error
+import_error: 'olive oil: no quantity stated in the source video; shrimp: no quantity stated in the source
+  video; fish parts: no Fitatu product mapped; onions: no quantity stated in the source video; carrots:
+  no quantity stated in the source video; garlic: no quantity stated in the source video; tomatoes: no
+  quantity stated in the source video; bay leaf: no quantity stated in the source video; parsley stems:
+  no quantity stated in the source video; peppercorns: no quantity stated in the source video; water:
+  no Fitatu product mapped; saffron: no quantity stated in the source video; beans: no quantity stated
+  in the source video; red pepper: no quantity stated in the source video; grated tomato: no quantity
+  stated in the source video; bomba rice: no quantity stated in the source video; salt: no quantity stated
+  in the source video; lima beans: no quantity stated in the source video; shellfish: no quantity stated
+  in the source video; parsley: no quantity stated in the source video; lemon: no quantity stated in the
+  source video; <recipe>: no ingredients could be converted'
+imported_at: '2026-10-02'

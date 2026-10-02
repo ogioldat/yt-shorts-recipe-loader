@@ -11,6 +11,7 @@ ingredients:
 - name: sól
   quantity: 1
   unit: tsp
+  fitatu_product_id: '5270094'
 - name: pieprz
   quantity: 1
   unit: tsp
@@ -35,7 +36,7 @@ ingredients:
 - name: sos sojowy
   quantity: 1
   unit: tbsp
-  fitatu_product_id: '117075611'
+  fitatu_product_id: '149649810'
 - name: olej sezamowy
   quantity: 0.5
   unit: tsp
@@ -54,6 +55,7 @@ ingredients:
   quantity: 1
   unit: tsp
   note: do mąki
+  fitatu_product_id: '5270094'
 - name: dodatki
   quantity: null
   unit: null
@@ -68,3 +70,7 @@ source:
   - description
   - subtitles
 extracted_at: '2026-10-02'
+import_status: ok
+fitatu_recipe_id: '176257101'
+imported_at: '2026-10-02'
+import_note: imported outside this session; id recovered from Fitatu by matching the title

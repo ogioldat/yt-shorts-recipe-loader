@@ -44,7 +44,7 @@ ingredients:
 - name: soy sauce
   quantity: 1
   unit: tbsp
-  fitatu_product_id: '117075611'
+  fitatu_product_id: '149649810'
 - name: brown sugar
   quantity: 1
   unit: tbsp
@@ -52,6 +52,7 @@ ingredients:
 - name: salt
   quantity: 0.5
   unit: tbsp
+  fitatu_product_id: '5270094'
 - name: black pepper
   quantity: 0.5
   unit: tbsp
@@ -86,3 +87,7 @@ source:
   - title
   - description
 extracted_at: '2026-10-02'
+import_status: ok
+fitatu_recipe_id: '176257065'
+imported_at: '2026-10-02'
+import_note: imported outside this session; id recovered from Fitatu by matching the title

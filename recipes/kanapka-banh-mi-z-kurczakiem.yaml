@@ -44,6 +44,7 @@ ingredients:
   quantity: null
   unit: null
   note: zalewa
+  fitatu_product_id: '5270094'
 - name: filet z piersi kurczaka
   quantity: 750
   unit: g
@@ -67,11 +68,12 @@ ingredients:
   quantity: 1
   unit: tsp
   note: kurczak
-  fitatu_product_id: '75531888'
+  fitatu_product_id: '103420935'
 - name: sól
   quantity: null
   unit: null
   note: kurczak
+  fitatu_product_id: '5270094'
 - name: jogurt naturalny
   quantity: 75
   unit: g
@@ -102,3 +104,7 @@ source:
   - description
   - subtitles
 extracted_at: '2026-10-02'
+import_status: ok
+fitatu_recipe_id: '176257074'
+imported_at: '2026-10-02'
+import_note: imported outside this session; id recovered from Fitatu by matching the title

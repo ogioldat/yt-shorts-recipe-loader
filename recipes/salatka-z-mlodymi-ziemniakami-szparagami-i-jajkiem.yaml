@@ -35,3 +35,8 @@ source:
   - description
   - subtitles
 extracted_at: '2026-10-02'
+import_status: error
+import_error: 'młode ziemniaki: no quantity stated in the source video; szparagi: no quantity stated in
+  the source video; jajko: no quantity stated in the source video; rukola: no quantity stated in the source
+  video; sos jogurtowy: no quantity stated in the source video; <recipe>: no ingredients could be converted'
+imported_at: '2026-10-02'

@@ -4,8 +4,8 @@ language: en
 servings: null
 ingredients:
 - name: ground beef
-  quantity: null
-  unit: null
+  quantity: 454
+  unit: g
   note: 1 lb
   fitatu_product_id: '115368039'
 - name: oil
@@ -16,6 +16,7 @@ ingredients:
   quantity: 1
   unit: tsp
   note: to taste
+  fitatu_product_id: '5270094'
 - name: black pepper
   quantity: 1
   unit: tsp
@@ -67,3 +68,8 @@ source:
   - title
   - description
 extracted_at: '2026-10-02'
+prep_time_minutes: 45
+prep_time_source: estimated during import; not stated in the video
+import_status: ok
+fitatu_recipe_id: '176264415'
+imported_at: '2026-10-02'

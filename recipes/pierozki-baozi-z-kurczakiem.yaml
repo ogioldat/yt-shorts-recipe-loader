@@ -43,7 +43,7 @@ ingredients:
   quantity: 50
   unit: g
   note: farsz
-  fitatu_product_id: '117075611'
+  fitatu_product_id: '149649810'
 - name: sos sriracha
   quantity: 20
   unit: g
@@ -79,3 +79,7 @@ source:
   - description
   - subtitles
 extracted_at: '2026-10-02'
+import_status: ok
+fitatu_recipe_id: '176257104'
+imported_at: '2026-10-02'
+import_note: imported outside this session; id recovered from Fitatu by matching the title

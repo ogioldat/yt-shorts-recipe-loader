@@ -90,3 +90,15 @@ source:
   - title
   - subtitles
 extracted_at: '2026-10-02'
+import_status: error
+import_error: 'diced chicken breast: no quantity stated in the source video; Greek yogurt: no quantity
+  stated in the source video; seasonings: no Fitatu product mapped; ginger and garlic paste: no quantity
+  stated in the source video; coriander: no quantity stated in the source video; lemon juice: no quantity
+  stated in the source video; cooking spray: no quantity stated in the source video; light butter: no
+  quantity stated in the source video; diced onion: no quantity stated in the source video; garlic: no
+  quantity stated in the source video; tomato paste: no quantity stated in the source video; chopped tomatoes:
+  no quantity stated in the source video; light cream cheese: no quantity stated in the source video;
+  chicken bone broth: no quantity stated in the source video; mini tortillas: no quantity stated in the
+  source video; low-fat cheese: no quantity stated in the source video; seasonings: no Fitatu product
+  mapped; <recipe>: no ingredients could be converted'
+imported_at: '2026-10-02'

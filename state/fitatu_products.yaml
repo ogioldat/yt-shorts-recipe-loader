@@ -11,7 +11,15 @@ products:
       measure_name: package
       weight_g: 200
       kcal: 122
-    measures: []
+    measures: &id062
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 200
+      kcal: 122
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.61
     query: jogurt grecki 0%
     resolved_at: '2026-10-02'
   93/7 ground beef:
@@ -23,9 +31,21 @@ products:
     default_measure:
       measure_id: '2'
       measure_name: package
-      weight_g: 125
-      kcal: 163.75
-    measures: []
+      weight_g: 500
+      kcal: 655
+    measures: &id001
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 500
+      kcal: 655
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 100
+      kcal: 131
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.31
     query: wołowina mielona chuda
     resolved_at: '2026-10-02'
   95% lean ground beef:
@@ -37,9 +57,9 @@ products:
     default_measure:
       measure_id: '2'
       measure_name: package
-      weight_g: 125
-      kcal: 163.75
-    measures: []
+      weight_g: 500
+      kcal: 655
+    measures: *id001
     query: wołowina mielona chuda
     resolved_at: '2026-10-02'
   96/4 ground beef:
@@ -51,9 +71,9 @@ products:
     default_measure:
       measure_id: '2'
       measure_name: package
-      weight_g: 125
-      kcal: 163.75
-    measures: []
+      weight_g: 500
+      kcal: 655
+    measures: *id001
     query: wołowina mielona chuda
     resolved_at: '2026-10-02'
   96/4 ground turkey:
@@ -67,7 +87,15 @@ products:
       measure_name: package
       weight_g: 400
       kcal: 520
-    measures: []
+    measures: &id014
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 400
+      kcal: 520
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.3
     query: mięso mielone z indyka
     resolved_at: '2026-10-02'
   97% lean ground beef:
@@ -79,9 +107,9 @@ products:
     default_measure:
       measure_id: '2'
       measure_name: package
-      weight_g: 125
-      kcal: 163.75
-    measures: []
+      weight_g: 500
+      kcal: 655
+    measures: *id001
     query: wołowina mielona chuda
     resolved_at: '2026-10-02'
   ap flour:
@@ -95,7 +123,27 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 17.15
-    measures: []
+    measures: &id026
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 5
+      kcal: 17.15
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 10
+      kcal: 34.3
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 130
+      kcal: 445.9
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 1000
+      kcal: 3430
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.43
     query: mąka pszenna
     resolved_at: '2026-10-02'
   apple cider vinegar:
@@ -109,7 +157,23 @@ products:
       measure_name: tablespoon
       weight_g: 10
       kcal: 2.1
-    measures: []
+    measures: &id109
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 10
+      kcal: 2.1
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 300
+      kcal: 63
+    - measure_id: '17'
+      measure_name: ml
+      weight_g: 1
+      kcal: 0.21
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.21
     query: ocet jabłkowy
     resolved_at: '2026-10-02'
   avanzi di zucchina cotti:
@@ -123,7 +187,19 @@ products:
       measure_name: piece
       weight_g: 240
       kcal: 40.8
-    measures: []
+    measures: &id020
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 240
+      kcal: 40.8
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.17
+    - measure_id: '8'
+      measure_name: plaster
+      weight_g: 30
+      kcal: 5.1
     query: cukinia
     resolved_at: '2026-10-02'
   avocado:
@@ -137,7 +213,19 @@ products:
       measure_name: piece
       weight_g: 140
       kcal: 236.6
-    measures: []
+    measures: &id002
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 140
+      kcal: 236.6
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 25
+      kcal: 42.25
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.69
     query: awokado
     resolved_at: '2026-10-02'
   avocado oil:
@@ -151,7 +239,23 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 44.2
-    measures: []
+    measures:
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 5
+      kcal: 44.2
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 10
+      kcal: 88.4
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 210
+      kcal: 1856.4
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 8.84
     query: olej z awokado
     resolved_at: '2026-10-02'
   awokado:
@@ -165,7 +269,7 @@ products:
       measure_name: piece
       weight_g: 140
       kcal: 236.6
-    measures: []
+    measures: *id002
     query: awokado
     resolved_at: '2026-10-02'
   bacon:
@@ -179,7 +283,15 @@ products:
       measure_name: package
       weight_g: 552
       kcal: 1683.6
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 552
+      kcal: 1683.6
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.05
     query: boczek wędzony
     resolved_at: '2026-10-02'
   baking powder:
@@ -193,7 +305,15 @@ products:
       measure_name: teaspoon
       weight_g: 4
       kcal: 2.12
-    measures: []
+    measures: &id080
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 4
+      kcal: 2.12
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.53
     query: proszek do pieczenia
     resolved_at: '2026-10-02'
   bay leaf:
@@ -207,7 +327,15 @@ products:
       measure_name: piece
       weight_g: 1
       kcal: 3.13
-    measures: []
+    measures: &id003
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 1
+      kcal: 3.13
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.13
     query: liść laurowy
     resolved_at: '2026-10-02'
   bay leaves:
@@ -221,7 +349,7 @@ products:
       measure_name: piece
       weight_g: 1
       kcal: 3.13
-    measures: []
+    measures: *id003
     query: liść laurowy
     resolved_at: '2026-10-02'
   beans:
@@ -233,9 +361,13 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 100
-      kcal: 37
-    measures: []
+      weight_g: 1
+      kcal: 0.37
+    measures:
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.37
     query: fasolka szparagowa
     resolved_at: '2026-10-02'
   beef broth:
@@ -247,9 +379,17 @@ products:
     default_measure:
       measure_id: '32'
       measure_name: glass
-      weight_g: 120
-      kcal: 7.2
-    measures: []
+      weight_g: 240
+      kcal: 14.4
+    measures:
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 240
+      kcal: 14.4
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.06
     query: bulion wołowy
     resolved_at: '2026-10-02'
   beef chuck:
@@ -263,7 +403,15 @@ products:
       measure_name: portion
       weight_g: 100
       kcal: 207
-    measures: []
+    measures:
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 100
+      kcal: 207
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.07
     query: łopatka wołowa
     resolved_at: '2026-10-02'
   berries:
@@ -277,7 +425,23 @@ products:
       measure_name: handful
       weight_g: 50
       kcal: 28.5
-    measures: []
+    measures: &id004
+    - measure_id: '41'
+      measure_name: garść
+      weight_g: 50
+      kcal: 28.5
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 140
+      kcal: 79.8
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 250
+      kcal: 142.5
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.57
     query: borówka amerykańska
     resolved_at: '2026-10-02'
   biała cebula:
@@ -291,7 +455,19 @@ products:
       measure_name: piece
       weight_g: 100
       kcal: 33
-    measures: []
+    measures: &id009
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 100
+      kcal: 33
+    - measure_id: '8'
+      measure_name: plaster
+      weight_g: 15
+      kcal: 4.95
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.33
     query: cebula
     resolved_at: '2026-10-02'
   białko jajka:
@@ -305,7 +481,17 @@ products:
       measure_name: portion
       weight_g: 35
       kcal: 16.8
-    measures: []
+      per_item: true
+      per_item_note: portion of 35 g is one egg white
+    measures: &id024
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 35
+      kcal: 16.8
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.48
     query: białko jaja
     resolved_at: '2026-10-02'
   biały pieprz:
@@ -319,7 +505,15 @@ products:
       measure_name: pinch
       weight_g: 1
       kcal: 2.96
-    measures: []
+    measures: &id111
+    - measure_id: '14'
+      measure_name: szczypta
+      weight_g: 1
+      kcal: 2.96
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.96
     query: pieprz biały
     resolved_at: '2026-10-02'
   black pepper:
@@ -329,11 +523,23 @@ products:
     source: public
     verified: true
     default_measure:
-      measure_id: '14'
-      measure_name: pinch
+      measure_id: '19'
+      measure_name: teaspoon
+      weight_g: 1
+      kcal: 2.51
+    measures: &id075
+    - measure_id: '14'
+      measure_name: szczypta
       weight_g: 0.3
-      kcal: 0.75
-    measures: []
+      kcal: 0.753
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 1
+      kcal: 2.51
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.51
     query: pieprz czarny
     resolved_at: '2026-10-02'
   blueberries:
@@ -347,7 +553,7 @@ products:
       measure_name: handful
       weight_g: 50
       kcal: 28.5
-    measures: []
+    measures: *id004
     query: borówka amerykańska
     resolved_at: '2026-10-02'
   bomba rice:
@@ -361,7 +567,23 @@ products:
       measure_name: tablespoon
       weight_g: 15
       kcal: 54
-    measures: []
+    measures: &id047
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 15
+      kcal: 54
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 100
+      kcal: 360
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 180
+      kcal: 648
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.6
     query: ryż biały
     resolved_at: '2026-10-02'
   boneless skinless chicken breast:
@@ -373,9 +595,17 @@ products:
     default_measure:
       measure_id: '46'
       measure_name: piece
-      weight_g: 100
-      kcal: 99
-    measures: []
+      weight_g: 200
+      kcal: 198
+    measures: &id010
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 200
+      kcal: 198
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.99
     query: pierś z kurczaka
     resolved_at: '2026-10-02'
   boneless skinless chicken thighs:
@@ -387,9 +617,13 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 100
-      kcal: 121
-    measures: []
+      weight_g: 1
+      kcal: 1.21
+    measures: &id013
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.21
     query: udo z kurczaka bez skóry
     resolved_at: '2026-10-02'
   bread:
@@ -403,7 +637,15 @@ products:
       measure_name: slice of bread
       weight_g: 30
       kcal: 78.6
-    measures: []
+    measures: &id005
+    - measure_id: '13'
+      measure_name: kromka
+      weight_g: 30
+      kcal: 78.6
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.62
     query: chleb pszenny
     resolved_at: '2026-10-02'
   bread of choice:
@@ -417,7 +659,7 @@ products:
       measure_name: slice of bread
       weight_g: 30
       kcal: 78.6
-    measures: []
+    measures: *id005
     query: chleb pszenny
     resolved_at: '2026-10-02'
   breadcrumbs:
@@ -431,7 +673,23 @@ products:
       measure_name: tablespoon
       weight_g: 8
       kcal: 28.64
-    measures: []
+    measures: &id007
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 8
+      kcal: 28.64
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 110
+      kcal: 393.8
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 400
+      kcal: 1432
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.58
     query: bułka tarta
     resolved_at: '2026-10-02'
   brioche bun:
@@ -445,7 +703,19 @@ products:
       measure_name: piece
       weight_g: 83
       kcal: 239.04
-    measures: []
+    measures: &id006
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 330
+      kcal: 950.4
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 83
+      kcal: 239.04
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.88
     query: bułka do burgera
     resolved_at: '2026-10-02'
   brown sugar:
@@ -459,7 +729,15 @@ products:
       measure_name: package
       weight_g: 500
       kcal: 2025
-    measures: []
+    measures: &id019
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 500
+      kcal: 2025
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 4.05
     query: cukier brązowy
     resolved_at: '2026-10-02'
   bulion drobiowy:
@@ -473,7 +751,19 @@ products:
       measure_name: portion
       weight_g: 250
       kcal: 12.5
-    measures: []
+    measures: &id011
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 250
+      kcal: 12.5
+    - measure_id: '17'
+      measure_name: ml
+      weight_g: 1
+      kcal: 0.05
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.05
     query: bulion drobiowy
     resolved_at: '2026-10-02'
   bulion drobiowy, koncentrat:
@@ -487,7 +777,19 @@ products:
       measure_name: package
       weight_g: 140
       kcal: 201.6
-    measures: []
+    measures: &id012
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 140
+      kcal: 201.6
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 140
+      kcal: 201.6
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.44
     query: bulion drobiowy koncentrat
     resolved_at: '2026-10-02'
   butter:
@@ -501,7 +803,23 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 37.4
-    measures: []
+    measures: &id032
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 5
+      kcal: 37.4
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 12
+      kcal: 89.76
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 7.48
+    - measure_id: '182'
+      measure_name: kostka
+      weight_g: 250
+      kcal: 1870
     query: masło
     resolved_at: '2026-10-02'
   bułka do burgerów:
@@ -515,7 +833,7 @@ products:
       measure_name: piece
       weight_g: 83
       kcal: 239.04
-    measures: []
+    measures: *id006
     query: bułka do burgera
     resolved_at: '2026-10-02'
   bułka tarta:
@@ -529,7 +847,7 @@ products:
       measure_name: tablespoon
       weight_g: 8
       kcal: 28.64
-    measures: []
+    measures: *id007
     query: bułka tarta
     resolved_at: '2026-10-02'
   canned corn:
@@ -543,7 +861,23 @@ products:
       measure_name: tablespoon
       weight_g: 15
       kcal: 16.35
-    measures: []
+    measures:
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 15
+      kcal: 16.35
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 170
+      kcal: 185.3
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 220
+      kcal: 239.8
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.09
     query: kukurydza konserwowa
     resolved_at: '2026-10-02'
   carrot:
@@ -557,7 +891,15 @@ products:
       measure_name: piece
       weight_g: 45
       kcal: 14.85
-    measures: []
+    measures: &id008
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 45
+      kcal: 14.85
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.33
     query: marchew
     resolved_at: '2026-10-02'
   carrots:
@@ -571,7 +913,7 @@ products:
       measure_name: piece
       weight_g: 45
       kcal: 14.85
-    measures: []
+    measures: *id008
     query: marchew
     resolved_at: '2026-10-02'
   cebula:
@@ -585,7 +927,7 @@ products:
       measure_name: piece
       weight_g: 100
       kcal: 33
-    measures: []
+    measures: *id009
     query: cebula
     resolved_at: '2026-10-02'
   cebula czerwona:
@@ -599,7 +941,15 @@ products:
       measure_name: piece
       weight_g: 100
       kcal: 33
-    measures: []
+    measures: &id021
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.33
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 100
+      kcal: 33
     query: cebula czerwona
     resolved_at: '2026-10-02'
   cebula dymka:
@@ -613,7 +963,19 @@ products:
       measure_name: slice
       weight_g: 15
       kcal: 4.5
-    measures: []
+    measures: &id035
+    - measure_id: '8'
+      measure_name: plaster
+      weight_g: 15
+      kcal: 4.5
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 105
+      kcal: 31.5
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.3
     query: cebula dymka
     resolved_at: '2026-10-02'
   cheddar:
@@ -625,9 +987,13 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 100
-      kcal: 374
-    measures: []
+      weight_g: 1
+      kcal: 3.74
+    measures:
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.74
     query: ser cheddar
     resolved_at: '2026-10-02'
   chia seeds:
@@ -641,7 +1007,15 @@ products:
       measure_name: tablespoon
       weight_g: 10
       kcal: 48.6
-    measures: []
+    measures:
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 10
+      kcal: 48.6
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 4.86
     query: nasiona chia
     resolved_at: '2026-10-02'
   chicken:
@@ -653,9 +1027,9 @@ products:
     default_measure:
       measure_id: '46'
       measure_name: piece
-      weight_g: 100
-      kcal: 99
-    measures: []
+      weight_g: 200
+      kcal: 198
+    measures: *id010
     query: pierś z kurczaka
     resolved_at: '2026-10-02'
   chicken bone broth:
@@ -669,7 +1043,7 @@ products:
       measure_name: portion
       weight_g: 250
       kcal: 12.5
-    measures: []
+    measures: *id011
     query: bulion drobiowy
     resolved_at: '2026-10-02'
   chicken bouillon:
@@ -683,7 +1057,7 @@ products:
       measure_name: package
       weight_g: 140
       kcal: 201.6
-    measures: []
+    measures: *id012
     query: bulion drobiowy koncentrat
     resolved_at: '2026-10-02'
   chicken feet:
@@ -695,9 +1069,13 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 100
-      kcal: 215
-    measures: []
+      weight_g: 1
+      kcal: 2.15
+    measures:
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.15
     query: łapki kurze
     resolved_at: '2026-10-02'
   chicken italian sausage:
@@ -711,7 +1089,15 @@ products:
       measure_name: package
       weight_g: 400
       kcal: 564
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 400
+      kcal: 564
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.41
     query: kiełbasa z kurczaka
     resolved_at: '2026-10-02'
   chicken thigh:
@@ -723,9 +1109,9 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 100
-      kcal: 121
-    measures: []
+      weight_g: 1
+      kcal: 1.21
+    measures: *id013
     query: udo z kurczaka bez skóry
     resolved_at: '2026-10-02'
   chicken thighs:
@@ -737,9 +1123,9 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 100
-      kcal: 121
-    measures: []
+      weight_g: 1
+      kcal: 1.21
+    measures: *id013
     query: udo z kurczaka bez skóry
     resolved_at: '2026-10-02'
   chicken tikka spices:
@@ -753,7 +1139,19 @@ products:
       measure_name: teaspoon
       weight_g: 10
       kcal: 22.8
-    measures: []
+    measures:
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 10
+      kcal: 22.8
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 20
+      kcal: 45.6
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.28
     query: przyprawa tikka masala
     resolved_at: '2026-10-02'
   chickpeas:
@@ -767,7 +1165,31 @@ products:
       measure_name: package
       weight_g: 240
       kcal: 276
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 240
+      kcal: 276
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 120
+      kcal: 138
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 12
+      kcal: 13.8
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 25
+      kcal: 28.75
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 170
+      kcal: 195.5
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.15
     query: ciecierzyca z puszki
     resolved_at: '2026-10-02'
   chili:
@@ -781,7 +1203,23 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 15.55
-    measures: []
+    measures: &id069
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 5
+      kcal: 15.55
+    - measure_id: '14'
+      measure_name: szczypta
+      weight_g: 1
+      kcal: 3.11
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 100
+      kcal: 311
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.11
     query: papryka mielona pikantna
     resolved_at: '2026-10-02'
   chili oil:
@@ -795,7 +1233,19 @@ products:
       measure_name: portion
       weight_g: 100
       kcal: 824
-    measures: []
+    measures: &id064
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 100
+      kcal: 824
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 8.24
+    - measure_id: '17'
+      measure_name: ml
+      weight_g: 1
+      kcal: 8.24
     query: olej chili
     resolved_at: '2026-10-02'
   chilli:
@@ -809,7 +1259,15 @@ products:
       measure_name: piece
       weight_g: 20
       kcal: 8
-    measures: []
+    measures: &id028
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 20
+      kcal: 8
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.4
     query: papryczka chili
     resolved_at: '2026-10-02'
   chleb:
@@ -823,7 +1281,7 @@ products:
       measure_name: slice of bread
       weight_g: 30
       kcal: 78.6
-    measures: []
+    measures: *id005
     query: chleb pszenny
     resolved_at: '2026-10-02'
   chleb pszenny:
@@ -837,7 +1295,7 @@ products:
       measure_name: slice of bread
       weight_g: 30
       kcal: 78.6
-    measures: []
+    measures: *id005
     query: chleb pszenny
     resolved_at: '2026-10-02'
   chocolate frosting:
@@ -850,8 +1308,20 @@ products:
       measure_id: '19'
       measure_name: teaspoon
       weight_g: 10
-      kcal: 45.72
-    measures: []
+      kcal: 45.718999999999994
+    measures:
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 10
+      kcal: 45.718999999999994
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 15
+      kcal: 68.5785
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 4.5719
     query: polewa czekoladowa
     resolved_at: '2026-10-02'
   chocolate protein powder:
@@ -864,8 +1334,20 @@ products:
       measure_id: '39'
       measure_name: portion
       weight_g: 30
-      kcal: 116.8
-    measures: []
+      kcal: 116.79899999999999
+    measures:
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 30
+      kcal: 116.79899999999999
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 30
+      kcal: 116.79899999999999
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.8933
     query: odżywka białkowa czekoladowa
     resolved_at: '2026-10-02'
   chopped baby spinach:
@@ -879,7 +1361,15 @@ products:
       measure_name: package
       weight_g: 200
       kcal: 44
-    measures: []
+    measures: &id103
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 200
+      kcal: 44
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.22
     query: szpinak świeży
     resolved_at: '2026-10-02'
   chopped cilantro:
@@ -893,7 +1383,15 @@ products:
       measure_name: handful
       weight_g: 1
       kcal: 0.23
-    measures: []
+    measures: &id015
+    - measure_id: '41'
+      measure_name: garść
+      weight_g: 1
+      kcal: 0.23
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.23
     query: kolendra świeża
     resolved_at: '2026-10-02'
   chopped tomatoes:
@@ -907,7 +1405,23 @@ products:
       measure_name: glass
       weight_g: 240
       kcal: 76.8
-    measures: []
+    measures: &id112
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 240
+      kcal: 76.8
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 15
+      kcal: 4.8
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 400
+      kcal: 128
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.32
     query: pomidory z puszki
     resolved_at: '2026-10-02'
   chuda mielona wołowina:
@@ -919,9 +1433,9 @@ products:
     default_measure:
       measure_id: '2'
       measure_name: package
-      weight_g: 125
-      kcal: 163.75
-    measures: []
+      weight_g: 500
+      kcal: 655
+    measures: *id001
     query: wołowina mielona chuda
     resolved_at: '2026-10-02'
   chude mielone mięso z kurczaka:
@@ -933,9 +1447,9 @@ products:
     default_measure:
       measure_id: '46'
       measure_name: piece
-      weight_g: 100
-      kcal: 99
-    measures: []
+      weight_g: 200
+      kcal: 198
+    measures: *id010
     query: pierś z kurczaka
     resolved_at: '2026-10-02'
   chudy mielony indyk:
@@ -949,7 +1463,7 @@ products:
       measure_name: package
       weight_g: 400
       kcal: 520
-    measures: []
+    measures: *id014
     query: mięso mielone z indyka
     resolved_at: '2026-10-02'
   cilantro:
@@ -963,7 +1477,7 @@ products:
       measure_name: handful
       weight_g: 1
       kcal: 0.23
-    measures: []
+    measures: *id015
     query: kolendra świeża
     resolved_at: '2026-10-02'
   cinnamon stick:
@@ -977,7 +1491,19 @@ products:
       measure_name: pinch
       weight_g: 1
       kcal: 2.47
-    measures: []
+    measures:
+    - measure_id: '14'
+      measure_name: szczypta
+      weight_g: 1
+      kcal: 2.47
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 3
+      kcal: 7.41
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.47
     query: cynamon
     resolved_at: '2026-10-02'
   cocktail potatoes:
@@ -991,7 +1517,19 @@ products:
       measure_name: portion
       weight_g: 100
       kcal: 71
-    measures: []
+    measures: &id061
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 100
+      kcal: 71
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.71
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 50
+      kcal: 35.5
     query: młode ziemniaki
     resolved_at: '2026-10-02'
   cocoa powder:
@@ -1005,7 +1543,23 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 22.95
-    measures: []
+    measures: &id107
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 5
+      kcal: 22.95
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 10
+      kcal: 45.9
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 4.59
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 150
+      kcal: 688.5
     query: kakao
     resolved_at: '2026-10-02'
   coconut cream:
@@ -1019,7 +1573,15 @@ products:
       measure_name: package
       weight_g: 165
       kcal: 303.6
-    measures: []
+    measures: &id030
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 165
+      kcal: 303.6
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.84
     query: mleko kokosowe
     resolved_at: '2026-10-02'
   coffee:
@@ -1033,7 +1595,19 @@ products:
       measure_name: portion
       weight_g: 30
       kcal: 0.6
-    measures: []
+    measures:
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 30
+      kcal: 0.6
+    - measure_id: '17'
+      measure_name: ml
+      weight_g: 1
+      kcal: 0.02
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.02
     query: espresso
     resolved_at: '2026-10-02'
   cooking oil:
@@ -1047,7 +1621,19 @@ products:
       measure_name: portion
       weight_g: 10
       kcal: 90
-    measures: []
+    measures: &id059
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 10
+      kcal: 90
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 500
+      kcal: 4500
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 9
     query: olej roślinny
     resolved_at: '2026-10-02'
   cooking spray:
@@ -1061,7 +1647,15 @@ products:
       measure_name: package
       weight_g: 200
       kcal: 1620
-    measures: []
+    measures: &id065
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 200
+      kcal: 1620
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 8.1
     query: olej w sprayu
     resolved_at: '2026-10-02'
   coriander:
@@ -1075,7 +1669,7 @@ products:
       measure_name: handful
       weight_g: 1
       kcal: 0.23
-    measures: []
+    measures: *id015
     query: kolendra świeża
     resolved_at: '2026-10-02'
   corn starch:
@@ -1089,7 +1683,23 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 17.65
-    measures: []
+    measures: &id016
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 5
+      kcal: 17.65
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 10
+      kcal: 35.3
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 130
+      kcal: 458.9
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.53
     query: skrobia kukurydziana
     resolved_at: '2026-10-02'
   cornflakes:
@@ -1103,7 +1713,19 @@ products:
       measure_name: tablespoon
       weight_g: 3
       kcal: 11.19
-    measures: []
+    measures: &id017
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 3
+      kcal: 11.19
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 30
+      kcal: 111.9
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.73
     query: płatki kukurydziane
     resolved_at: '2026-10-02'
   cornstarch:
@@ -1117,22 +1739,34 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 17.65
-    measures: []
+    measures: *id016
     query: skrobia kukurydziana
     resolved_at: '2026-10-02'
   cottage cheese:
-    fitatu_product_id: '148549731'
-    display_name: Serek wiejski
-    brand: Piotr i Paweł
+    fitatu_product_id: '14369199'
+    display_name: Serek wiejski naturalny
+    brand: null
     source: public
-    verified: false
+    verified: true
     default_measure:
-      measure_id: '2'
-      measure_name: package
+      measure_id: '20'
+      measure_name: tablespoon
+      weight_g: 20
+      kcal: 19.4
+    measures: &id087
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 20
+      kcal: 19.4
+    - measure_id: '2'
+      measure_name: opakowanie
       weight_g: 200
       kcal: 194
-    measures: []
-    query: serek wiejski
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.97
+    query: serek wiejski naturalny
     resolved_at: '2026-10-02'
   crab paste in soy bean oil:
     fitatu_product_id: '31820385'
@@ -1145,7 +1779,15 @@ products:
       measure_name: package
       weight_g: 100
       kcal: 440
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 100
+      kcal: 440
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 4.4
     query: pasta krabowa
     resolved_at: '2026-10-02'
   cranberries:
@@ -1159,7 +1801,23 @@ products:
       measure_name: handful
       weight_g: 40
       kcal: 123.2
-    measures: []
+    measures:
+    - measure_id: '41'
+      measure_name: garść
+      weight_g: 40
+      kcal: 123.2
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 12
+      kcal: 36.96
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 100
+      kcal: 308
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.08
     query: żurawina suszona
     resolved_at: '2026-10-02'
   cream cheese:
@@ -1173,7 +1831,15 @@ products:
       measure_name: package
       weight_g: 200
       kcal: 486
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 200
+      kcal: 486
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.43
     query: serek śmietankowy
     resolved_at: '2026-10-02'
   crumbled feta cheese:
@@ -1187,7 +1853,23 @@ products:
       measure_name: slice
       weight_g: 20
       kcal: 55
-    measures: []
+    measures: &id027
+    - measure_id: '8'
+      measure_name: plaster
+      weight_g: 20
+      kcal: 55
+    - measure_id: '41'
+      measure_name: garść
+      weight_g: 30
+      kcal: 82.5
+    - measure_id: '182'
+      measure_name: kostka
+      weight_g: 2
+      kcal: 5.5
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.75
     query: feta
     resolved_at: '2026-10-02'
   crushed corn flakes:
@@ -1201,7 +1883,7 @@ products:
       measure_name: tablespoon
       weight_g: 3
       kcal: 11.19
-    measures: []
+    measures: *id017
     query: płatki kukurydziane
     resolved_at: '2026-10-02'
   crushed cornflakes:
@@ -1215,7 +1897,7 @@ products:
       measure_name: tablespoon
       weight_g: 3
       kcal: 11.19
-    measures: []
+    measures: *id017
     query: płatki kukurydziane
     resolved_at: '2026-10-02'
   crushed graham crackers:
@@ -1227,9 +1909,13 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 10
-      kcal: 48.8
-    measures: []
+      weight_g: 1
+      kcal: 4.88
+    measures:
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 4.88
     query: herbatniki graham
     resolved_at: '2026-10-02'
   cukier:
@@ -1243,7 +1929,27 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 19.95
-    measures: []
+    measures: &id018
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 5
+      kcal: 19.95
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 12
+      kcal: 47.88
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 200
+      kcal: 798
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.99
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 1000
+      kcal: 3990
     query: cukier
     resolved_at: '2026-10-02'
   cukier biały:
@@ -1257,7 +1963,7 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 19.95
-    measures: []
+    measures: *id018
     query: cukier
     resolved_at: '2026-10-02'
   cukier brązowy:
@@ -1271,7 +1977,7 @@ products:
       measure_name: package
       weight_g: 500
       kcal: 2025
-    measures: []
+    measures: *id019
     query: cukier brązowy
     resolved_at: '2026-10-02'
   cukinia:
@@ -1285,22 +1991,38 @@ products:
       measure_name: piece
       weight_g: 240
       kcal: 40.8
-    measures: []
+    measures: *id020
     query: cukinia
     resolved_at: '2026-10-02'
   cumin:
-    fitatu_product_id: '146462556'
-    display_name: Prymat Kminek cały 20 g
-    brand: Prymat
+    fitatu_product_id: '74562866'
+    display_name: Royal Brand Kmin rzymski 30 g
+    brand: royal brand
     source: public
     verified: false
     default_measure:
-      measure_id: '2'
-      measure_name: package
+      measure_id: '19'
+      measure_name: teaspoon
+      weight_g: 10
+      kcal: 42.8
+    measures: &id036
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 30
+      kcal: 128.4
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 10
+      kcal: 42.8
+    - measure_id: '20'
+      measure_name: łyżka
       weight_g: 20
-      kcal: 75
-    measures: []
-    query: kminek rzymski
+      kcal: 85.6
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 4.28
+    query: kmin rzymski
     resolved_at: '2026-10-02'
   cytryna:
     fitatu_product_id: '116885261'
@@ -1313,7 +2035,27 @@ products:
       measure_name: piece
       weight_g: 80
       kcal: 32
-    measures: []
+    measures: &id044
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 80
+      kcal: 32
+    - measure_id: '8'
+      measure_name: plaster
+      weight_g: 15
+      kcal: 6
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.4
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 10
+      kcal: 4
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 5
+      kcal: 2
     query: cytryna
     resolved_at: '2026-10-02'
   czarny sezam:
@@ -1327,7 +2069,23 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 33.65
-    measures: []
+    measures: &id079
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 5
+      kcal: 33.65
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 10
+      kcal: 67.3
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 150
+      kcal: 1009.5
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 6.73
     query: nasiona sezamu
     resolved_at: '2026-10-02'
   czekolada:
@@ -1341,7 +2099,19 @@ products:
       measure_name: cube
       weight_g: 6
       kcal: 33.54
-    measures: []
+    measures: &id023
+    - measure_id: '182'
+      measure_name: kostka
+      weight_g: 6
+      kcal: 33.54
+    - measure_id: '54'
+      measure_name: tabliczka
+      weight_g: 100
+      kcal: 559
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 5.59
     query: czekolada gorzka
     resolved_at: '2026-10-02'
   czerwona cebula:
@@ -1355,7 +2125,7 @@ products:
       measure_name: piece
       weight_g: 100
       kcal: 33
-    measures: []
+    measures: *id021
     query: cebula czerwona
     resolved_at: '2026-10-02'
   czerwona papryka:
@@ -1369,7 +2139,19 @@ products:
       measure_name: piece
       weight_g: 240
       kcal: 76.8
-    measures: []
+    measures: &id068
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 240
+      kcal: 76.8
+    - measure_id: '8'
+      measure_name: plaster
+      weight_g: 20
+      kcal: 6.4
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.32
     query: papryka czerwona
     resolved_at: '2026-10-02'
   czosnek:
@@ -1383,50 +2165,86 @@ products:
       measure_name: clove
       weight_g: 5
       kcal: 7.6
-    measures: []
+    measures: &id031
+    - measure_id: '25'
+      measure_name: ząbek
+      weight_g: 5
+      kcal: 7.6
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.52
     query: czosnek
     resolved_at: '2026-10-02'
   czosnek granulowany:
-    fitatu_product_id: '75531888'
-    display_name: Czosnek w proszku
-    brand: null
+    fitatu_product_id: '103420935'
+    display_name: Kotányi Czosnek granulowany 28 g
+    brand: Kotanyi
     source: public
-    verified: true
+    verified: false
     default_measure:
-      measure_id: '14'
-      measure_name: pinch
+      measure_id: '19'
+      measure_name: teaspoon
+      weight_g: 10
+      kcal: 36.3
+    measures: &id022
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 10
+      kcal: 36.3
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 20
+      kcal: 72.6
+    - measure_id: '220'
+      measure_name: łyżka do sosu
+      weight_g: 25
+      kcal: 90.75
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 28
+      kcal: 101.64
+    - measure_id: '14'
+      measure_name: szczypta
       weight_g: 1
-      kcal: 3.31
-    measures: []
-    query: czosnek w proszku
+      kcal: 3.63
+    - measure_id: '17'
+      measure_name: ml
+      weight_g: 1
+      kcal: 3.63
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.63
+    query: czosnek granulowany
     resolved_at: '2026-10-02'
   czosnek suszony:
-    fitatu_product_id: '75531888'
-    display_name: Czosnek w proszku
-    brand: null
+    fitatu_product_id: '103420935'
+    display_name: Kotányi Czosnek granulowany 28 g
+    brand: Kotanyi
     source: public
-    verified: true
+    verified: false
     default_measure:
-      measure_id: '14'
-      measure_name: pinch
-      weight_g: 1
-      kcal: 3.31
-    measures: []
-    query: czosnek w proszku
+      measure_id: '19'
+      measure_name: teaspoon
+      weight_g: 10
+      kcal: 36.3
+    measures: *id022
+    query: czosnek granulowany
     resolved_at: '2026-10-02'
   czosnek suszony / granulowany:
-    fitatu_product_id: '75531888'
-    display_name: Czosnek w proszku
-    brand: null
+    fitatu_product_id: '103420935'
+    display_name: Kotányi Czosnek granulowany 28 g
+    brand: Kotanyi
     source: public
-    verified: true
+    verified: false
     default_measure:
-      measure_id: '14'
-      measure_name: pinch
-      weight_g: 1
-      kcal: 3.31
-    measures: []
-    query: czosnek w proszku
+      measure_id: '19'
+      measure_name: teaspoon
+      weight_g: 10
+      kcal: 36.3
+    measures: *id022
+    query: czosnek granulowany
     resolved_at: '2026-10-02'
   dark chocolate:
     fitatu_product_id: '14355567'
@@ -1439,7 +2257,7 @@ products:
       measure_name: cube
       weight_g: 6
       kcal: 33.54
-    measures: []
+    measures: *id023
     query: czekolada gorzka
     resolved_at: '2026-10-02'
   dark soy sauce:
@@ -1451,9 +2269,17 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 100
-      kcal: 63
-    measures: []
+      weight_g: 1
+      kcal: 0.63
+    measures:
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.63
+    - measure_id: '17'
+      measure_name: ml
+      weight_g: 1
+      kcal: 0.63
     query: ciemny sos sojowy
     resolved_at: '2026-10-02'
   dates:
@@ -1467,7 +2293,23 @@ products:
       measure_name: piece
       weight_g: 5
       kcal: 14.5
-    measures: []
+    measures: &id055
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 5
+      kcal: 14.5
+    - measure_id: '41'
+      measure_name: garść
+      weight_g: 45
+      kcal: 130.5
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.9
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 100
+      kcal: 290
     query: daktyle
     resolved_at: '2026-10-02'
   diced chicken breast:
@@ -1479,9 +2321,9 @@ products:
     default_measure:
       measure_id: '46'
       measure_name: piece
-      weight_g: 100
-      kcal: 99
-    measures: []
+      weight_g: 200
+      kcal: 198
+    measures: *id010
     query: pierś z kurczaka
     resolved_at: '2026-10-02'
   diced onion:
@@ -1495,7 +2337,7 @@ products:
       measure_name: piece
       weight_g: 100
       kcal: 33
-    measures: []
+    measures: *id009
     query: cebula
     resolved_at: '2026-10-02'
   dijon mustard:
@@ -1509,22 +2351,50 @@ products:
       measure_name: teaspoon
       weight_g: 10
       kcal: 16
-    measures: []
+    measures: &id060
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 10
+      kcal: 16
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 20
+      kcal: 32
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.6
     query: musztarda dijon
     resolved_at: '2026-10-02'
   dried chillies:
-    fitatu_product_id: '116418723'
-    display_name: Płatki chili suszone
-    brand: Brat.pl
+    fitatu_product_id: '120099888'
+    display_name: Ekogram Organiczne Platki Chilli
+    brand: Ekogram
     source: public
     verified: false
     default_measure:
-      measure_id: '2'
-      measure_name: package
-      weight_g: 100
-      kcal: 324
-    measures: []
-    query: płatki chili suszone
+      measure_id: '19'
+      measure_name: teaspoon
+      weight_g: 5
+      kcal: 22.4
+    measures: &id082
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 50
+      kcal: 224
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 4.48
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 5
+      kcal: 22.4
+    - measure_id: '14'
+      measure_name: szczypta
+      weight_g: 1
+      kcal: 4.48
+    query: płatki chili
     resolved_at: '2026-10-02'
   dried thyme:
     fitatu_product_id: '116515351'
@@ -1537,7 +2407,27 @@ products:
       measure_name: package
       weight_g: 10
       kcal: 27.6
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 10
+      kcal: 27.6
+    - measure_id: '14'
+      measure_name: szczypta
+      weight_g: 1
+      kcal: 2.76
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 10
+      kcal: 27.6
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 20
+      kcal: 55.2
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.76
     query: tymianek suszony
     resolved_at: '2026-10-02'
   dumpling wrappers:
@@ -1549,9 +2439,17 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 10
-      kcal: 24.6
-    measures: []
+      weight_g: 1
+      kcal: 2.46
+    measures:
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.46
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 400
+      kcal: 984
     query: ciasto na pierogi
     resolved_at: '2026-10-02'
   egg:
@@ -1565,7 +2463,15 @@ products:
       measure_name: piece
       weight_g: 60
       kcal: 84
-    measures: []
+    measures: &id025
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 60
+      kcal: 84
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.4
     query: jajko kurze
     resolved_at: '2026-10-02'
   egg whites:
@@ -1579,7 +2485,7 @@ products:
       measure_name: portion
       weight_g: 35
       kcal: 16.8
-    measures: []
+    measures: *id024
     query: białko jaja
     resolved_at: '2026-10-02'
   eggs:
@@ -1593,7 +2499,7 @@ products:
       measure_name: piece
       weight_g: 60
       kcal: 84
-    measures: []
+    measures: *id025
     query: jajko kurze
     resolved_at: '2026-10-02'
   erytrytol:
@@ -1607,7 +2513,19 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 0
-    measures: []
+    measures: &id100
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 5
+      kcal: 0
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 10
+      kcal: 0
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0
     query: erytrytol
     resolved_at: '2026-10-02'
   extra lean ground beef:
@@ -1619,9 +2537,9 @@ products:
     default_measure:
       measure_id: '2'
       measure_name: package
-      weight_g: 125
-      kcal: 163.75
-    measures: []
+      weight_g: 500
+      kcal: 655
+    measures: *id001
     query: wołowina mielona chuda
     resolved_at: '2026-10-02'
   extra virgin olive oil:
@@ -1635,7 +2553,27 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 44.85
-    measures: []
+    measures: &id066
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 5
+      kcal: 44.85
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 10
+      kcal: 89.7
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 210
+      kcal: 1883.7
+    - measure_id: '17'
+      measure_name: ml
+      weight_g: 1
+      kcal: 8.97
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 8.97
     query: oliwa z oliwek
     resolved_at: '2026-10-02'
   fairlife milk:
@@ -1649,7 +2587,27 @@ products:
       measure_name: glass
       weight_g: 230
       kcal: 115
-    measures: []
+    measures: &id056
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 230
+      kcal: 115
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 10
+      kcal: 5
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 1000
+      kcal: 500
+    - measure_id: '17'
+      measure_name: ml
+      weight_g: 1
+      kcal: 0.5
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.5
     query: mleko 2%
     resolved_at: '2026-10-02'
   fajita seasoning:
@@ -1663,7 +2621,15 @@ products:
       measure_name: package
       weight_g: 100
       kcal: 236
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 100
+      kcal: 236
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.36
     query: przyprawa fajita
     resolved_at: '2026-10-02'
   farina:
@@ -1677,7 +2643,7 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 17.15
-    measures: []
+    measures: *id026
     query: mąka pszenna
     resolved_at: '2026-10-02'
   fat-free cottage cheese:
@@ -1691,7 +2657,19 @@ products:
       measure_name: slice
       weight_g: 20
       kcal: 14.4
-    measures: []
+    measures: &id051
+    - measure_id: '8'
+      measure_name: plaster
+      weight_g: 20
+      kcal: 14.4
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 50
+      kcal: 36
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.72
     query: serek wiejski chudy
     resolved_at: '2026-10-02'
   feta:
@@ -1705,7 +2683,7 @@ products:
       measure_name: slice
       weight_g: 20
       kcal: 55
-    measures: []
+    measures: *id027
     query: feta
     resolved_at: '2026-10-02'
   filet z piersi kurczaka:
@@ -1717,9 +2695,9 @@ products:
     default_measure:
       measure_id: '46'
       measure_name: piece
-      weight_g: 100
-      kcal: 99
-    measures: []
+      weight_g: 200
+      kcal: 198
+    measures: *id010
     query: pierś z kurczaka
     resolved_at: '2026-10-02'
   firm tofu:
@@ -1733,7 +2711,19 @@ products:
       measure_name: package
       weight_g: 200
       kcal: 256
-    measures: []
+    measures: &id105
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 200
+      kcal: 256
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 10
+      kcal: 12.8
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.28
     query: tofu
     resolved_at: '2026-10-02'
   fish sauce:
@@ -1747,7 +2737,19 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 3.35
-    measures: []
+    measures: &id095
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 5
+      kcal: 3.35
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 10
+      kcal: 6.7
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.67
     query: sos rybny
     resolved_at: '2026-10-02'
   flour:
@@ -1761,7 +2763,7 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 17.15
-    measures: []
+    measures: *id026
     query: mąka pszenna
     resolved_at: '2026-10-02'
   fresh basil:
@@ -1775,7 +2777,15 @@ products:
       measure_name: package
       weight_g: 50
       kcal: 116.5
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 50
+      kcal: 116.5
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.33
     query: liście bazylii
     resolved_at: '2026-10-02'
   fresh chillies:
@@ -1789,7 +2799,7 @@ products:
       measure_name: piece
       weight_g: 20
       kcal: 8
-    measures: []
+    measures: *id028
     query: papryczka chili
     resolved_at: '2026-10-02'
   fresh ginger:
@@ -1799,11 +2809,27 @@ products:
     source: public
     verified: true
     default_measure:
-      measure_id: '182'
-      measure_name: cube
+      measure_id: '20'
+      measure_name: tablespoon
+      weight_g: 12
+      kcal: 9.6
+    measures: &id029
+    - measure_id: '182'
+      measure_name: kostka
       weight_g: 10
       kcal: 8
-    measures: []
+    - measure_id: '8'
+      measure_name: plaster
+      weight_g: 5
+      kcal: 4
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 12
+      kcal: 9.6
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.8
     query: imbir świeży
     resolved_at: '2026-10-02'
   fresh strawberries:
@@ -1813,11 +2839,31 @@ products:
     source: public
     verified: true
     default_measure:
-      measure_id: '39'
-      measure_name: portion
+      measure_id: '32'
+      measure_name: glass
+      weight_g: 150
+      kcal: 49.5
+    measures: &id098
+    - measure_id: '39'
+      measure_name: porcja
       weight_g: 100
       kcal: 33
-    measures: []
+    - measure_id: '41'
+      measure_name: garść
+      weight_g: 70
+      kcal: 23.1
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 150
+      kcal: 49.5
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 7
+      kcal: 2.31
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.33
     query: truskawki
     resolved_at: '2026-10-02'
   fried egg:
@@ -1831,7 +2877,7 @@ products:
       measure_name: piece
       weight_g: 60
       kcal: 84
-    measures: []
+    measures: *id025
     query: jajko kurze
     resolved_at: '2026-10-02'
   frozen cauliflower:
@@ -1845,7 +2891,19 @@ products:
       measure_name: floret
       weight_g: 50
       kcal: 13.5
-    measures: []
+    measures: &id042
+    - measure_id: '5'
+      measure_name: różyczka
+      weight_g: 50
+      kcal: 13.5
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 800
+      kcal: 216
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.27
     query: kalafior
     resolved_at: '2026-10-02'
   frozen ginger:
@@ -1855,11 +2913,11 @@ products:
     source: public
     verified: true
     default_measure:
-      measure_id: '182'
-      measure_name: cube
-      weight_g: 10
-      kcal: 8
-    measures: []
+      measure_id: '20'
+      measure_name: tablespoon
+      weight_g: 12
+      kcal: 9.6
+    measures: *id029
     query: imbir świeży
     resolved_at: '2026-10-02'
   frozen peas:
@@ -1873,7 +2931,15 @@ products:
       measure_name: package
       weight_g: 100
       kcal: 68
-    measures: []
+    measures: &id058
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 100
+      kcal: 68
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.68
     query: mrożony groszek
     resolved_at: '2026-10-02'
   full fat yogurt:
@@ -1887,7 +2953,23 @@ products:
       measure_name: package
       weight_g: 150
       kcal: 150
-    measures: []
+    measures: &id034
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 150
+      kcal: 150
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 20
+      kcal: 20
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 10
+      kcal: 10
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1
     query: jogurt grecki
     resolved_at: '2026-10-02'
   full-fat coconut milk:
@@ -1901,7 +2983,7 @@ products:
       measure_name: package
       weight_g: 165
       kcal: 303.6
-    measures: []
+    measures: *id030
     query: mleko kokosowe
     resolved_at: '2026-10-02'
   full-fat cottage cheese:
@@ -1915,7 +2997,15 @@ products:
       measure_name: package
       weight_g: 200
       kcal: 194
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 200
+      kcal: 194
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.97
     query: serek wiejski
     resolved_at: '2026-10-02'
   galangal:
@@ -1928,8 +3018,20 @@ products:
       measure_id: '46'
       measure_name: piece
       weight_g: 85
-      kcal: 60
-    measures: []
+      kcal: 60.00150000000001
+    measures:
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 85
+      kcal: 60.00150000000001
+    - measure_id: '8'
+      measure_name: plaster
+      weight_g: 5
+      kcal: 3.5295000000000005
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.7059000000000001
     query: galangal
     resolved_at: '2026-10-02'
   garam masala:
@@ -1943,7 +3045,15 @@ products:
       measure_name: package
       weight_g: 100
       kcal: 462
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 100
+      kcal: 462
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 4.62
     query: garam masala
     resolved_at: '2026-10-02'
   garlic:
@@ -1957,7 +3067,7 @@ products:
       measure_name: clove
       weight_g: 5
       kcal: 7.6
-    measures: []
+    measures: *id031
     query: czosnek
     resolved_at: '2026-10-02'
   garlic & onion powder:
@@ -1971,7 +3081,19 @@ products:
       measure_name: pinch
       weight_g: 1
       kcal: 3.31
-    measures: []
+    measures:
+    - measure_id: '14'
+      measure_name: szczypta
+      weight_g: 1
+      kcal: 3.31
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 4
+      kcal: 13.24
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.31
     query: czosnek w proszku
     resolved_at: '2026-10-02'
   garlic bulb:
@@ -1985,7 +3107,7 @@ products:
       measure_name: clove
       weight_g: 5
       kcal: 7.6
-    measures: []
+    measures: *id031
     query: czosnek
     resolved_at: '2026-10-02'
   garlic cilantro butter:
@@ -1999,7 +3121,7 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 37.4
-    measures: []
+    measures: *id032
     query: masło
     resolved_at: '2026-10-02'
   garlic paste:
@@ -2013,22 +3135,30 @@ products:
       measure_name: package
       weight_g: 210
       kcal: 262.5
-    measures: []
+    measures: &id033
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 210
+      kcal: 262.5
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.25
     query: pasta czosnkowa
     resolved_at: '2026-10-02'
   garlic powder:
-    fitatu_product_id: '75531888'
-    display_name: Czosnek w proszku
-    brand: null
+    fitatu_product_id: '103420935'
+    display_name: Kotányi Czosnek granulowany 28 g
+    brand: Kotanyi
     source: public
-    verified: true
+    verified: false
     default_measure:
-      measure_id: '14'
-      measure_name: pinch
-      weight_g: 1
-      kcal: 3.31
-    measures: []
-    query: czosnek w proszku
+      measure_id: '20'
+      measure_name: tablespoon
+      weight_g: 20
+      kcal: 72.6
+    measures: *id022
+    query: czosnek granulowany
     resolved_at: '2026-10-02'
   ginger:
     fitatu_product_id: '2149'
@@ -2037,11 +3167,11 @@ products:
     source: public
     verified: true
     default_measure:
-      measure_id: '182'
-      measure_name: cube
-      weight_g: 10
-      kcal: 8
-    measures: []
+      measure_id: '20'
+      measure_name: tablespoon
+      weight_g: 12
+      kcal: 9.6
+    measures: *id029
     query: imbir świeży
     resolved_at: '2026-10-02'
   ginger and garlic paste:
@@ -2055,7 +3185,7 @@ products:
       measure_name: package
       weight_g: 210
       kcal: 262.5
-    measures: []
+    measures: *id033
     query: pasta czosnkowa
     resolved_at: '2026-10-02'
   gochujang:
@@ -2069,7 +3199,15 @@ products:
       measure_name: package
       weight_g: 250
       kcal: 490
-    measures: []
+    measures: &id074
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 250
+      kcal: 490
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.96
     query: gochujang
     resolved_at: '2026-10-02'
   grated tomato:
@@ -2083,7 +3221,19 @@ products:
       measure_name: piece
       weight_g: 130
       kcal: 24.7
-    measures: []
+    measures: &id078
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 130
+      kcal: 24.7
+    - measure_id: '8'
+      measure_name: plaster
+      weight_g: 20
+      kcal: 3.8
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.19
     query: pomidor
     resolved_at: '2026-10-02'
   greek yogurt:
@@ -2097,7 +3247,7 @@ products:
       measure_name: package
       weight_g: 150
       kcal: 150
-    measures: []
+    measures: *id034
     query: jogurt grecki
     resolved_at: '2026-10-02'
   green apple:
@@ -2111,7 +3261,19 @@ products:
       measure_name: piece
       weight_g: 170
       kcal: 85
-    measures: []
+    measures:
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 170
+      kcal: 85
+    - measure_id: '8'
+      measure_name: plaster
+      weight_g: 30
+      kcal: 15
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.5
     query: jabłko
     resolved_at: '2026-10-02'
   green leaf lettuce:
@@ -2125,7 +3287,23 @@ products:
       measure_name: piece
       weight_g: 30
       kcal: 4.5
-    measures: []
+    measures: &id085
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 100
+      kcal: 15
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 35
+      kcal: 5.25
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 30
+      kcal: 4.5
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.15
     query: sałata lodowa
     resolved_at: '2026-10-02'
   green onion:
@@ -2139,7 +3317,7 @@ products:
       measure_name: slice
       weight_g: 15
       kcal: 4.5
-    measures: []
+    measures: *id035
     query: cebula dymka
     resolved_at: '2026-10-02'
   green onions:
@@ -2153,7 +3331,7 @@ products:
       measure_name: slice
       weight_g: 15
       kcal: 4.5
-    measures: []
+    measures: *id035
     query: cebula dymka
     resolved_at: '2026-10-02'
   ground beef:
@@ -2167,22 +3345,30 @@ products:
       measure_name: package
       weight_g: 1000
       kcal: 2560
-    measures: []
+    measures: &id037
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 1000
+      kcal: 2560
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.56
     query: mięso mielone wołowe
     resolved_at: '2026-10-02'
   ground cumin:
-    fitatu_product_id: '146462556'
-    display_name: Prymat Kminek cały 20 g
-    brand: Prymat
+    fitatu_product_id: '74562866'
+    display_name: Royal Brand Kmin rzymski 30 g
+    brand: royal brand
     source: public
     verified: false
     default_measure:
-      measure_id: '2'
-      measure_name: package
-      weight_g: 20
-      kcal: 75
-    measures: []
-    query: kminek rzymski
+      measure_id: '19'
+      measure_name: teaspoon
+      weight_g: 10
+      kcal: 42.8
+    measures: *id036
+    query: kmin rzymski
     resolved_at: '2026-10-02'
   ground lamb or beef:
     fitatu_product_id: '115368039'
@@ -2195,7 +3381,7 @@ products:
       measure_name: package
       weight_g: 1000
       kcal: 2560
-    measures: []
+    measures: *id037
     query: mięso mielone wołowe 20%
     resolved_at: '2026-10-02'
   ground meat:
@@ -2207,9 +3393,9 @@ products:
     default_measure:
       measure_id: '2'
       measure_name: package
-      weight_g: 125
-      kcal: 163.75
-    measures: []
+      weight_g: 500
+      kcal: 655
+    measures: *id001
     query: wołowina mielona chuda
     resolved_at: '2026-10-02'
   ground turmeric:
@@ -2223,7 +3409,19 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 17.7
-    measures: []
+    measures: &id106
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 5
+      kcal: 17.7
+    - measure_id: '14'
+      measure_name: szczypta
+      weight_g: 1
+      kcal: 3.54
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.54
     query: kurkuma
     resolved_at: '2026-10-02'
   gwiazdka anyżu:
@@ -2237,7 +3435,15 @@ products:
       measure_name: piece
       weight_g: 5
       kcal: 16.85
-    measures: []
+    measures: &id097
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 5
+      kcal: 16.85
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.37
     query: anyż gwiazdkowy
     resolved_at: '2026-10-02'
   gęsty jogurt naturalny:
@@ -2251,22 +3457,50 @@ products:
       measure_name: package
       weight_g: 150
       kcal: 90
-    measures: []
+    measures: &id040
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 150
+      kcal: 90
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 20
+      kcal: 12
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 10
+      kcal: 6
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.6
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 250
+      kcal: 150
     query: jogurt naturalny
     resolved_at: '2026-10-02'
   harissa:
-    fitatu_product_id: '80556660'
-    display_name: Harissa
+    fitatu_product_id: '94525834'
+    display_name: Harissa, pasta
     brand: null
     source: public
-    verified: false
+    verified: true
     default_measure:
-      measure_id: '2'
-      measure_name: package
-      weight_g: 210
-      kcal: 86.1
-    measures: []
-    query: harissa
+      measure_id: '19'
+      measure_name: teaspoon
+      weight_g: 4
+      kcal: 3.32
+    measures:
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 4
+      kcal: 3.32
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.83
+    query: harissa pasta
     resolved_at: '2026-10-02'
   high-protein vanilla or greek yoghurt:
     fitatu_product_id: '147761856'
@@ -2279,7 +3513,23 @@ products:
       measure_name: portion
       weight_g: 80
       kcal: 52.8
-    measures: []
+    measures: &id041
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 80
+      kcal: 52.8
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 80
+      kcal: 52.8
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 150
+      kcal: 99
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.66
     query: skyr naturalny
     resolved_at: '2026-10-02'
   honey:
@@ -2293,7 +3543,19 @@ products:
       measure_name: teaspoon
       weight_g: 12
       kcal: 38.28
-    measures: []
+    measures: &id038
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 12
+      kcal: 38.28
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 25
+      kcal: 79.75
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.19
     query: miód pszczeli
     resolved_at: '2026-10-02'
   honey or maple syrup:
@@ -2307,7 +3569,7 @@ products:
       measure_name: teaspoon
       weight_g: 12
       kcal: 38.28
-    measures: []
+    measures: *id038
     query: miód pszczeli
     resolved_at: '2026-10-02'
   imbir:
@@ -2317,11 +3579,11 @@ products:
     source: public
     verified: true
     default_measure:
-      measure_id: '182'
-      measure_name: cube
-      weight_g: 10
-      kcal: 8
-    measures: []
+      measure_id: '20'
+      measure_name: tablespoon
+      weight_g: 12
+      kcal: 9.6
+    measures: *id029
     query: imbir świeży
     resolved_at: '2026-10-02'
   italian seasoning:
@@ -2335,7 +3597,19 @@ products:
       measure_name: package
       weight_g: 27
       kcal: 85.86
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 27
+      kcal: 85.86
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 1
+      kcal: 3.18
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.18
     query: przyprawa włoska
     resolved_at: '2026-10-02'
   jajko:
@@ -2349,7 +3623,7 @@ products:
       measure_name: piece
       weight_g: 60
       kcal: 84
-    measures: []
+    measures: *id025
     query: jajko kurze
     resolved_at: '2026-10-02'
   jalapeño:
@@ -2363,7 +3637,19 @@ products:
       measure_name: slice
       weight_g: 30
       kcal: 8.7
-    measures: []
+    measures: &id039
+    - measure_id: '8'
+      measure_name: plaster
+      weight_g: 30
+      kcal: 8.7
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 230
+      kcal: 66.7
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.29
     query: papryczka jalapeño
     resolved_at: '2026-10-02'
   jalapeños:
@@ -2377,7 +3663,7 @@ products:
       measure_name: slice
       weight_g: 30
       kcal: 8.7
-    measures: []
+    measures: *id039
     query: papryczka jalapeño
     resolved_at: '2026-10-02'
   jarred tomato sauce:
@@ -2391,7 +3677,19 @@ products:
       measure_name: portion
       weight_g: 100
       kcal: 30
-    measures: []
+    measures: &id073
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 100
+      kcal: 30
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 700
+      kcal: 210
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.3
     query: passata pomidorowa
     resolved_at: '2026-10-02'
   jogurt grecki:
@@ -2405,7 +3703,7 @@ products:
       measure_name: package
       weight_g: 150
       kcal: 150
-    measures: []
+    measures: *id034
     query: jogurt grecki
     resolved_at: '2026-10-02'
   jogurt naturalny:
@@ -2419,7 +3717,7 @@ products:
       measure_name: package
       weight_g: 150
       kcal: 90
-    measures: []
+    measures: *id040
     query: jogurt naturalny
     resolved_at: '2026-10-02'
   jogurt skyr:
@@ -2433,7 +3731,7 @@ products:
       measure_name: portion
       weight_g: 80
       kcal: 52.8
-    measures: []
+    measures: *id041
     query: skyr naturalny
     resolved_at: '2026-10-02'
   kaffir lime leaves:
@@ -2447,7 +3745,19 @@ products:
       measure_name: package
       weight_g: 10
       kcal: 26.5
-    measures: []
+    measures: &id045
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 10
+      kcal: 26.5
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 0.05
+      kcal: 0.1325
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.65
     query: liście limonki kaffir
     resolved_at: '2026-10-02'
   kalafior:
@@ -2461,7 +3771,7 @@ products:
       measure_name: floret
       weight_g: 50
       kcal: 13.5
-    measures: []
+    measures: *id042
     query: kalafior
     resolved_at: '2026-10-02'
   kasuri methi:
@@ -2475,7 +3785,19 @@ products:
       measure_name: teaspoon
       weight_g: 3
       kcal: 9.69
-    measures: []
+    measures:
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 3
+      kcal: 9.69
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.23
+    - measure_id: '14'
+      measure_name: szczypta
+      weight_g: 0.5
+      kcal: 1.615
     query: kozieradka
     resolved_at: '2026-10-02'
   kerisik:
@@ -2489,7 +3811,19 @@ products:
       measure_name: tablespoon
       weight_g: 4
       kcal: 26.28
-    measures: []
+    measures:
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 4
+      kcal: 26.28
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 200
+      kcal: 1314
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 6.57
     query: wiórki kokosowe
     resolved_at: '2026-10-02'
   ketchup:
@@ -2502,8 +3836,16 @@ products:
       measure_id: '39'
       measure_name: portion
       weight_g: 17
-      kcal: 20
-    measures: []
+      kcal: 20.000500000000002
+    measures:
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 17
+      kcal: 20.000500000000002
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.1765
     query: ketchup pomidorowy
     resolved_at: '2026-10-02'
   kiełki fasoli mung:
@@ -2515,9 +3857,13 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 50
-      kcal: 15
-    measures: []
+      weight_g: 1
+      kcal: 0.3
+    measures:
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.3
     query: kiełki fasoli mung
     resolved_at: '2026-10-02'
   kimchi:
@@ -2531,22 +3877,30 @@ products:
       measure_name: package
       weight_g: 220
       kcal: 55
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 220
+      kcal: 55
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.25
     query: kimchi
     resolved_at: '2026-10-02'
   kmin rzymski:
-    fitatu_product_id: '146462556'
-    display_name: Prymat Kminek cały 20 g
-    brand: Prymat
+    fitatu_product_id: '74562866'
+    display_name: Royal Brand Kmin rzymski 30 g
+    brand: royal brand
     source: public
     verified: false
     default_measure:
-      measure_id: '2'
-      measure_name: package
-      weight_g: 20
-      kcal: 75
-    measures: []
-    query: kminek rzymski
+      measure_id: '19'
+      measure_name: teaspoon
+      weight_g: 10
+      kcal: 42.8
+    measures: *id036
+    query: kmin rzymski
     resolved_at: '2026-10-02'
   kolendra (natka):
     fitatu_product_id: '117075815'
@@ -2559,7 +3913,7 @@ products:
       measure_name: handful
       weight_g: 1
       kcal: 0.23
-    measures: []
+    measures: *id015
     query: kolendra świeża
     resolved_at: '2026-10-02'
   kombu:
@@ -2571,10 +3925,40 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 50
-      kcal: 23
-    measures: []
+      weight_g: 1
+      kcal: 0.46
+    measures:
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.46
     query: wodorosty kombu
+    resolved_at: '2026-10-02'
+  kosher salt:
+    fitatu_product_id: '5270094'
+    display_name: Sól biała
+    brand: null
+    source: public
+    verified: true
+    default_measure:
+      measure_id: '19'
+      measure_name: teaspoon
+      weight_g: 6
+      kcal: 0
+    measures: &id084
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 6
+      kcal: 0
+    - measure_id: '14'
+      measure_name: szczypta
+      weight_g: 1
+      kcal: 0
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0
+    query: sól biała
     resolved_at: '2026-10-02'
   kurczak:
     fitatu_product_id: '108062220'
@@ -2585,9 +3969,9 @@ products:
     default_measure:
       measure_id: '46'
       measure_name: piece
-      weight_g: 100
-      kcal: 99
-    measures: []
+      weight_g: 200
+      kcal: 198
+    measures: *id010
     query: pierś z kurczaka
     resolved_at: '2026-10-02'
   large eggs:
@@ -2601,7 +3985,7 @@ products:
       measure_name: piece
       weight_g: 60
       kcal: 84
-    measures: []
+    measures: *id025
     query: jajko kurze
     resolved_at: '2026-10-02'
   large low carb tortillas:
@@ -2614,8 +3998,22 @@ products:
       measure_id: '39'
       measure_name: portion
       weight_g: 36
-      kcal: 50
-    measures: []
+      kcal: 50.00039999999999
+      per_item: true
+      per_item_note: portion of 36 g is one tortilla
+    measures: &id048
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 36
+      kcal: 50.00039999999999
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 368
+      kcal: 511.11519999999996
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.3888999999999998
     query: tortilla low carb
     resolved_at: '2026-10-02'
   lean flank steak:
@@ -2627,9 +4025,17 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 100
-      kcal: 198
-    measures: []
+      weight_g: 1
+      kcal: 1.98
+    measures: &id043
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.98
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 200
+      kcal: 396
     query: wołowina mielona
     resolved_at: '2026-10-02'
   lean ground chicken:
@@ -2641,9 +4047,9 @@ products:
     default_measure:
       measure_id: '46'
       measure_name: piece
-      weight_g: 100
-      kcal: 99
-    measures: []
+      weight_g: 200
+      kcal: 198
+    measures: *id010
     query: pierś z kurczaka
     resolved_at: '2026-10-02'
   lean lamb leg:
@@ -2655,9 +4061,13 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 100
-      kcal: 201
-    measures: []
+      weight_g: 1
+      kcal: 2.01
+    measures:
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.01
     query: udziec jagnięcy
     resolved_at: '2026-10-02'
   lean steak:
@@ -2669,9 +4079,9 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 100
-      kcal: 198
-    measures: []
+      weight_g: 1
+      kcal: 1.98
+    measures: *id043
     query: wołowina mielona
     resolved_at: '2026-10-02'
   lemon:
@@ -2685,7 +4095,7 @@ products:
       measure_name: piece
       weight_g: 80
       kcal: 32
-    measures: []
+    measures: *id044
     query: cytryna
     resolved_at: '2026-10-02'
   lemon juice:
@@ -2699,7 +4109,19 @@ products:
       measure_name: glass
       weight_g: 220
       kcal: 66
-    measures: []
+    measures: &id099
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 220
+      kcal: 66
+    - measure_id: '17'
+      measure_name: ml
+      weight_g: 1
+      kcal: 0.3
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.3
     query: sok z cytryny
     resolved_at: '2026-10-02'
   lemongrass:
@@ -2713,7 +4135,15 @@ products:
       measure_name: package
       weight_g: 100
       kcal: 99
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 100
+      kcal: 99
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.99
     query: trawa cytrynowa
     resolved_at: '2026-10-02'
   light butter:
@@ -2727,7 +4157,19 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 24.95
-    measures: []
+    measures:
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 5
+      kcal: 24.95
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 12
+      kcal: 59.88
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 4.99
     query: masło light
     resolved_at: '2026-10-02'
   light cream cheese:
@@ -2741,7 +4183,15 @@ products:
       measure_name: package
       weight_g: 200
       kcal: 380
-    measures: []
+    measures: &id052
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 200
+      kcal: 380
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.9
     query: serek śmietankowy light
     resolved_at: '2026-10-02'
   light english muffins:
@@ -2754,8 +4204,18 @@ products:
       measure_id: '39'
       measure_name: portion
       weight_g: 57
-      kcal: 140
-    measures: []
+      kcal: 139.9977
+      per_item: true
+      per_item_note: portion of 57 g is one muffin
+    measures:
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 57
+      kcal: 139.9977
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.4561
     query: muffiny angielskie
     resolved_at: '2026-10-02'
   light mayo:
@@ -2769,22 +4229,58 @@ products:
       measure_name: package
       weight_g: 225
       kcal: 594
-    measures: []
+    measures: &id053
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 225
+      kcal: 594
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.64
     query: majonez light
     resolved_at: '2026-10-02'
   light soy sauce:
-    fitatu_product_id: '117075611'
-    display_name: Sos sojowy
-    brand: null
+    fitatu_product_id: '149649810'
+    display_name: Kikkoman Naturalnie Warzony Sos Sojowy
+    brand: Kikkoman
     source: public
-    verified: true
+    verified: false
     default_measure:
-      measure_id: '1'
-      measure_name: g
+      measure_id: '20'
+      measure_name: tablespoon
+      weight_g: 20
+      kcal: 15.4
+    measures: &id049
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 400
+      kcal: 308
+    - measure_id: '19'
+      measure_name: łyżeczka
       weight_g: 10
-      kcal: 6
-    measures: []
-    query: sos sojowy
+      kcal: 7.7
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 20
+      kcal: 15.4
+    - measure_id: '220'
+      measure_name: łyżka do sosu
+      weight_g: 25
+      kcal: 19.25
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 10
+      kcal: 7.7
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.77
+    - measure_id: '17'
+      measure_name: ml
+      weight_g: 1
+      kcal: 0.77
+    query: sos sojowy kikkoman
     resolved_at: '2026-10-02'
   lima beans:
     fitatu_product_id: '14362'
@@ -2797,7 +4293,19 @@ products:
       measure_name: tablespoon
       weight_g: 20
       kcal: 14.2
-    measures: []
+    measures:
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 20
+      kcal: 14.2
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 170
+      kcal: 120.7
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.71
     query: fasola lima
     resolved_at: '2026-10-02'
   lime:
@@ -2811,7 +4319,15 @@ products:
       measure_name: portion
       weight_g: 100
       kcal: 30
-    measures: []
+    measures: &id046
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 100
+      kcal: 30
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.3
     query: limonka
     resolved_at: '2026-10-02'
   lime juice:
@@ -2825,7 +4341,19 @@ products:
       measure_name: glass
       weight_g: 220
       kcal: 55
-    measures: []
+    measures: &id093
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 220
+      kcal: 55
+    - measure_id: '17'
+      measure_name: ml
+      weight_g: 1
+      kcal: 0.25
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.25
     query: sok z limonki
     resolved_at: '2026-10-02'
   lime leaves:
@@ -2839,7 +4367,7 @@ products:
       measure_name: package
       weight_g: 10
       kcal: 26.5
-    measures: []
+    measures: *id045
     query: liście limonki kaffir
     resolved_at: '2026-10-02'
   limes:
@@ -2853,7 +4381,7 @@ products:
       measure_name: portion
       weight_g: 100
       kcal: 30
-    measures: []
+    measures: *id046
     query: limonka
     resolved_at: '2026-10-02'
   limonka:
@@ -2867,7 +4395,7 @@ products:
       measure_name: portion
       weight_g: 100
       kcal: 30
-    measures: []
+    measures: *id046
     query: limonka
     resolved_at: '2026-10-02'
   long grain white or basmati rice:
@@ -2881,7 +4409,7 @@ products:
       measure_name: tablespoon
       weight_g: 15
       kcal: 54
-    measures: []
+    measures: *id047
     query: ryż biały
     resolved_at: '2026-10-02'
   low cal sweet chili sauce:
@@ -2895,7 +4423,15 @@ products:
       measure_name: package
       weight_g: 100
       kcal: 19
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 100
+      kcal: 19
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.19
     query: sos chili słodki bez cukru
     resolved_at: '2026-10-02'
   low carb tortillas:
@@ -2908,8 +4444,10 @@ products:
       measure_id: '39'
       measure_name: portion
       weight_g: 36
-      kcal: 50
-    measures: []
+      kcal: 50.00039999999999
+      per_item: true
+      per_item_note: portion of 36 g is one tortilla
+    measures: *id048
     query: tortilla low carb
     resolved_at: '2026-10-02'
   low fat american cheese:
@@ -2923,7 +4461,15 @@ products:
       measure_name: slice
       weight_g: 19
       kcal: 48.64
-    measures: []
+    measures:
+    - measure_id: '8'
+      measure_name: plaster
+      weight_g: 19
+      kcal: 48.64
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.56
     query: ser topiony plastry
     resolved_at: '2026-10-02'
   low fat mexican cheese:
@@ -2937,22 +4483,34 @@ products:
       measure_name: slice
       weight_g: 20
       kcal: 63.2
-    measures: []
+    measures: &id050
+    - measure_id: '8'
+      measure_name: plaster
+      weight_g: 20
+      kcal: 63.2
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 135
+      kcal: 426.6
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.16
     query: ser żółty
     resolved_at: '2026-10-02'
   low sodium soy sauce:
-    fitatu_product_id: '117075611'
-    display_name: Sos sojowy
-    brand: null
+    fitatu_product_id: '149649810'
+    display_name: Kikkoman Naturalnie Warzony Sos Sojowy
+    brand: Kikkoman
     source: public
-    verified: true
+    verified: false
     default_measure:
-      measure_id: '1'
-      measure_name: g
-      weight_g: 10
-      kcal: 6
-    measures: []
-    query: sos sojowy
+      measure_id: '20'
+      measure_name: tablespoon
+      weight_g: 20
+      kcal: 15.4
+    measures: *id049
+    query: sos sojowy kikkoman
     resolved_at: '2026-10-02'
   low-fat cheese:
     fitatu_product_id: '16349902'
@@ -2965,7 +4523,7 @@ products:
       measure_name: slice
       weight_g: 20
       kcal: 63.2
-    measures: []
+    measures: *id050
     query: ser żółty
     resolved_at: '2026-10-02'
   low-fat cottage cheese:
@@ -2979,7 +4537,7 @@ products:
       measure_name: slice
       weight_g: 20
       kcal: 14.4
-    measures: []
+    measures: *id051
     query: serek wiejski chudy
     resolved_at: '2026-10-02'
   low-fat cream cheese:
@@ -2993,7 +4551,7 @@ products:
       measure_name: package
       weight_g: 200
       kcal: 380
-    measures: []
+    measures: *id052
     query: serek śmietankowy light
     resolved_at: '2026-10-02'
   low-fat mozzarella cheese:
@@ -3007,7 +4565,19 @@ products:
       measure_name: slice
       weight_g: 20
       kcal: 50.8
-    measures: []
+    measures: &id086
+    - measure_id: '8'
+      measure_name: plaster
+      weight_g: 20
+      kcal: 50.8
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 125
+      kcal: 317.5
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.54
     query: ser mozzarella
     resolved_at: '2026-10-02'
   low/non fat cottage cheese:
@@ -3021,7 +4591,7 @@ products:
       measure_name: slice
       weight_g: 20
       kcal: 14.4
-    measures: []
+    measures: *id051
     query: serek wiejski chudy
     resolved_at: '2026-10-02'
   majonez:
@@ -3035,7 +4605,27 @@ products:
       measure_name: package
       weight_g: 500
       kcal: 3410
-    measures: []
+    measures: &id054
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 500
+      kcal: 3410
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 10
+      kcal: 68.2
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 25
+      kcal: 170.5
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 6.82
+    - measure_id: '17'
+      measure_name: ml
+      weight_g: 1
+      kcal: 6.82
     query: majonez
     resolved_at: '2026-10-02'
   majonez lekki:
@@ -3049,7 +4639,7 @@ products:
       measure_name: package
       weight_g: 225
       kcal: 594
-    measures: []
+    measures: *id053
     query: majonez light
     resolved_at: '2026-10-02'
   majonez light:
@@ -3063,7 +4653,7 @@ products:
       measure_name: package
       weight_g: 225
       kcal: 594
-    measures: []
+    measures: *id053
     query: majonez light
     resolved_at: '2026-10-02'
   makaron muszelki:
@@ -3075,9 +4665,17 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
+      weight_g: 1
+      kcal: 3.55
+    measures:
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.55
+    - measure_id: '2'
+      measure_name: opakowanie
       weight_g: 100
       kcal: 355
-    measures: []
     query: makaron muszelki
     resolved_at: '2026-10-02'
   makaron ryżowy 5 mm:
@@ -3091,7 +4689,15 @@ products:
       measure_name: package
       weight_g: 200
       kcal: 716
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 200
+      kcal: 716
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.58
     query: makaron ryżowy
     resolved_at: '2026-10-02'
   makaron spaghetti:
@@ -3105,7 +4711,15 @@ products:
       measure_name: portion
       weight_g: 50
       kcal: 184
-    measures: []
+    measures:
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 50
+      kcal: 184
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.68
     query: makaron spaghetti
     resolved_at: '2026-10-02'
   mango:
@@ -3119,7 +4733,15 @@ products:
       measure_name: piece
       weight_g: 280
       kcal: 193.2
-    measures: []
+    measures:
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 280
+      kcal: 193.2
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.69
     query: mango
     resolved_at: '2026-10-02'
   maple syrup:
@@ -3133,7 +4755,23 @@ products:
       measure_name: package
       weight_g: 1330
       kcal: 3497.9
-    measures: []
+    measures: &id102
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 1330
+      kcal: 3497.9
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 10
+      kcal: 26.3
+    - measure_id: '17'
+      measure_name: ml
+      weight_g: 1
+      kcal: 2.63
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.63
     query: syrop klonowy
     resolved_at: '2026-10-02'
   marchew:
@@ -3147,7 +4785,7 @@ products:
       measure_name: piece
       weight_g: 45
       kcal: 14.85
-    measures: []
+    measures: *id008
     query: marchew
     resolved_at: '2026-10-02'
   marchewka:
@@ -3161,7 +4799,7 @@ products:
       measure_name: piece
       weight_g: 45
       kcal: 14.85
-    measures: []
+    measures: *id008
     query: marchew
     resolved_at: '2026-10-02'
   massaman curry paste:
@@ -3175,7 +4813,19 @@ products:
       measure_name: package
       weight_g: 113
       kcal: 179.67
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 113
+      kcal: 179.67
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.59
+    - measure_id: '17'
+      measure_name: ml
+      weight_g: 1
+      kcal: 1.59
     query: pasta massaman
     resolved_at: '2026-10-02'
   masło:
@@ -3189,7 +4839,7 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 37.4
-    measures: []
+    measures: *id032
     query: masło
     resolved_at: '2026-10-02'
   mayo:
@@ -3203,7 +4853,7 @@ products:
       measure_name: package
       weight_g: 500
       kcal: 3410
-    measures: []
+    measures: *id054
     query: majonez
     resolved_at: '2026-10-02'
   medjool dates:
@@ -3217,7 +4867,7 @@ products:
       measure_name: piece
       weight_g: 5
       kcal: 14.5
-    measures: []
+    measures: *id055
     query: daktyle
     resolved_at: '2026-10-02'
   melted dark chocolate:
@@ -3231,7 +4881,7 @@ products:
       measure_name: cube
       weight_g: 6
       kcal: 33.54
-    measures: []
+    measures: *id023
     query: czekolada gorzka
     resolved_at: '2026-10-02'
   menta:
@@ -3243,9 +4893,21 @@ products:
     default_measure:
       measure_id: '20'
       measure_name: tablespoon
-      weight_g: 2.5
-      kcal: 1.08
-    measures: []
+      weight_g: 5
+      kcal: 2.15
+    measures: &id057
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 5
+      kcal: 2.15
+    - measure_id: '41'
+      measure_name: garść
+      weight_g: 2
+      kcal: 0.86
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.43
     query: mięta
     resolved_at: '2026-10-02'
   mielona wieprzowina:
@@ -3259,7 +4921,15 @@ products:
       measure_name: package
       weight_g: 400
       kcal: 540
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 400
+      kcal: 540
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.35
     query: mielona wieprzowina
     resolved_at: '2026-10-02'
   milk:
@@ -3269,11 +4939,11 @@ products:
     source: public
     verified: true
     default_measure:
-      measure_id: '32'
-      measure_name: glass
-      weight_g: 230
-      kcal: 115
-    measures: []
+      measure_id: '17'
+      measure_name: ml
+      weight_g: 1
+      kcal: 0.5
+    measures: *id056
     query: mleko 2%
     resolved_at: '2026-10-02'
   minced cabbage:
@@ -3285,9 +4955,21 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 100
-      kcal: 33
-    measures: []
+      weight_g: 1
+      kcal: 0.33
+    measures:
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.33
+    - measure_id: '29'
+      measure_name: liść
+      weight_g: 50
+      kcal: 16.5
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 4000
+      kcal: 1320
     query: kapusta biała
     resolved_at: '2026-10-02'
   minced garlic:
@@ -3301,7 +4983,7 @@ products:
       measure_name: clove
       weight_g: 5
       kcal: 7.6
-    measures: []
+    measures: *id031
     query: czosnek
     resolved_at: '2026-10-02'
   minced ginger:
@@ -3311,11 +4993,11 @@ products:
     source: public
     verified: true
     default_measure:
-      measure_id: '182'
-      measure_name: cube
-      weight_g: 10
-      kcal: 8
-    measures: []
+      measure_id: '20'
+      measure_name: tablespoon
+      weight_g: 12
+      kcal: 9.6
+    measures: *id029
     query: imbir świeży
     resolved_at: '2026-10-02'
   mini cucumbers:
@@ -3329,7 +5011,19 @@ products:
       measure_name: slice
       weight_g: 5
       kcal: 0.7
-    measures: []
+    measures: &id063
+    - measure_id: '8'
+      measure_name: plaster
+      weight_g: 5
+      kcal: 0.7
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 180
+      kcal: 25.2
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.14
     query: ogórek
     resolved_at: '2026-10-02'
   mini tortillas:
@@ -3343,7 +5037,19 @@ products:
       measure_name: package
       weight_g: 1080
       kcal: 3348
-    measures: []
+    measures: &id114
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 1080
+      kcal: 3348
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 63
+      kcal: 195.3
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.1
     query: tortilla pszenna
     resolved_at: '2026-10-02'
   mint:
@@ -3355,9 +5061,9 @@ products:
     default_measure:
       measure_id: '20'
       measure_name: tablespoon
-      weight_g: 2.5
-      kcal: 1.08
-    measures: []
+      weight_g: 5
+      kcal: 2.15
+    measures: *id057
     query: mięta
     resolved_at: '2026-10-02'
   miód:
@@ -3371,7 +5077,7 @@ products:
       measure_name: teaspoon
       weight_g: 12
       kcal: 38.28
-    measures: []
+    measures: *id038
     query: miód pszczeli
     resolved_at: '2026-10-02'
   miękkie masło:
@@ -3385,7 +5091,7 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 37.4
-    measures: []
+    measures: *id032
     query: masło
     resolved_at: '2026-10-02'
   mięso mielone z indyka:
@@ -3399,7 +5105,7 @@ products:
       measure_name: package
       weight_g: 400
       kcal: 520
-    measures: []
+    measures: *id014
     query: mięso mielone z indyka
     resolved_at: '2026-10-02'
   mięso mielone z kurczaka:
@@ -3413,7 +5119,15 @@ products:
       measure_name: package
       weight_g: 300
       kcal: 507
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 300
+      kcal: 507
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.69
     query: mięso mielone z kurczaka
     resolved_at: '2026-10-02'
   mięso wołowe mielone:
@@ -3425,9 +5139,9 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 100
-      kcal: 198
-    measures: []
+      weight_g: 1
+      kcal: 1.98
+    measures: *id043
     query: wołowina mielona
     resolved_at: '2026-10-02'
   mięso z uda kurczaka:
@@ -3439,9 +5153,9 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 100
-      kcal: 121
-    measures: []
+      weight_g: 1
+      kcal: 1.21
+    measures: *id013
     query: udo z kurczaka bez skóry
     resolved_at: '2026-10-02'
   mleko:
@@ -3451,11 +5165,11 @@ products:
     source: public
     verified: true
     default_measure:
-      measure_id: '32'
-      measure_name: glass
-      weight_g: 230
-      kcal: 115
-    measures: []
+      measure_id: '17'
+      measure_name: ml
+      weight_g: 1
+      kcal: 0.5
+    measures: *id056
     query: mleko 2%
     resolved_at: '2026-10-02'
   mleko 1,5%:
@@ -3469,7 +5183,23 @@ products:
       measure_name: package
       weight_g: 1000
       kcal: 440
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 1000
+      kcal: 440
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 400
+      kcal: 176
+    - measure_id: '17'
+      measure_name: ml
+      weight_g: 1
+      kcal: 0.44
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.44
     query: mleko 1,5%
     resolved_at: '2026-10-02'
   mrożony groszek:
@@ -3483,7 +5213,7 @@ products:
       measure_name: package
       weight_g: 100
       kcal: 68
-    measures: []
+    measures: *id058
     query: mrożony groszek
     resolved_at: '2026-10-02'
   mustard:
@@ -3497,7 +5227,19 @@ products:
       measure_name: teaspoon
       weight_g: 10
       kcal: 9.9
-    measures: []
+    measures: &id116
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 10
+      kcal: 9.9
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 20
+      kcal: 19.8
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.99
     query: musztarda stołowa
     resolved_at: '2026-10-02'
   mustard oil:
@@ -3511,7 +5253,7 @@ products:
       measure_name: portion
       weight_g: 10
       kcal: 90
-    measures: []
+    measures: *id059
     query: olej roślinny
     resolved_at: '2026-10-02'
   musztarda angielska:
@@ -3525,7 +5267,19 @@ products:
       measure_name: teaspoon
       weight_g: 10
       kcal: 24.3
-    measures: []
+    measures:
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 10
+      kcal: 24.3
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 20
+      kcal: 48.6
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.43
     query: musztarda angielska
     resolved_at: '2026-10-02'
   musztarda dijon:
@@ -3539,7 +5293,7 @@ products:
       measure_name: teaspoon
       weight_g: 10
       kcal: 16
-    measures: []
+    measures: *id060
     query: musztarda dijon
     resolved_at: '2026-10-02'
   musztarda francuska:
@@ -3553,7 +5307,7 @@ products:
       measure_name: teaspoon
       weight_g: 10
       kcal: 16
-    measures: []
+    measures: *id060
     query: musztarda dijon
     resolved_at: '2026-10-02'
   musztarda sarepska:
@@ -3567,7 +5321,15 @@ products:
       measure_name: package
       weight_g: 190
       kcal: 239.4
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 190
+      kcal: 239.4
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.26
     query: musztarda sarepska
     resolved_at: '2026-10-02'
   mąka:
@@ -3581,7 +5343,7 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 17.15
-    measures: []
+    measures: *id026
     query: mąka pszenna
     resolved_at: '2026-10-02'
   mąka pszenna:
@@ -3595,7 +5357,7 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 17.15
-    measures: []
+    measures: *id026
     query: mąka pszenna
     resolved_at: '2026-10-02'
   mąka ziemniaczana:
@@ -3609,7 +5371,23 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 16.9
-    measures: []
+    measures: &id092
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 5
+      kcal: 16.9
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 10
+      kcal: 33.8
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 130
+      kcal: 439.4
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.38
     query: skrobia ziemniaczana
     resolved_at: '2026-10-02'
   młode ziemniaki:
@@ -3623,7 +5401,7 @@ products:
       measure_name: portion
       weight_g: 100
       kcal: 71
-    measures: []
+    measures: *id061
     query: młode ziemniaki
     resolved_at: '2026-10-02'
   natka pietruszki:
@@ -3637,7 +5415,15 @@ products:
       measure_name: teaspoon
       weight_g: 6
       kcal: 2.94
-    measures: []
+    measures: &id072
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 6
+      kcal: 2.94
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.49
     query: natka pietruszki
     resolved_at: '2026-10-02'
   nonfat greek yogurt:
@@ -3651,7 +5437,7 @@ products:
       measure_name: package
       weight_g: 200
       kcal: 122
-    measures: []
+    measures: *id062
     query: jogurt grecki 0%
     resolved_at: '2026-10-02'
   nutmeg:
@@ -3665,7 +5451,15 @@ products:
       measure_name: pinch
       weight_g: 1
       kcal: 5.25
-    measures: []
+    measures:
+    - measure_id: '14'
+      measure_name: szczypta
+      weight_g: 1
+      kcal: 5.25
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 5.25
     query: gałka muszkatołowa
     resolved_at: '2026-10-02'
   oats:
@@ -3679,7 +5473,27 @@ products:
       measure_name: tablespoon
       weight_g: 10
       kcal: 37.9
-    measures: []
+    measures:
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 10
+      kcal: 37.9
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 110
+      kcal: 416.9
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 5
+      kcal: 18.95
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.79
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 400
+      kcal: 1516
     query: płatki owsiane
     resolved_at: '2026-10-02'
   ocet ryżowy:
@@ -3693,7 +5507,23 @@ products:
       measure_name: tablespoon
       weight_g: 10
       kcal: 0
-    measures: []
+    measures: &id083
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 10
+      kcal: 0
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 5
+      kcal: 0
+    - measure_id: '17'
+      measure_name: ml
+      weight_g: 1
+      kcal: 0
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0
     query: ocet ryżowy
     resolved_at: '2026-10-02'
   ogórek:
@@ -3707,7 +5537,7 @@ products:
       measure_name: slice
       weight_g: 5
       kcal: 0.7
-    measures: []
+    measures: *id063
     query: ogórek
     resolved_at: '2026-10-02'
   ogórek konserwowy:
@@ -3721,7 +5551,15 @@ products:
       measure_name: piece
       weight_g: 20
       kcal: 4.8
-    measures: []
+    measures: &id076
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 20
+      kcal: 4.8
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.24
     query: ogórek konserwowy
     resolved_at: '2026-10-02'
   ogórek zielony:
@@ -3735,7 +5573,7 @@ products:
       measure_name: slice
       weight_g: 5
       kcal: 0.7
-    measures: []
+    measures: *id063
     query: ogórek
     resolved_at: '2026-10-02'
   oil:
@@ -3749,7 +5587,7 @@ products:
       measure_name: portion
       weight_g: 10
       kcal: 90
-    measures: []
+    measures: *id059
     query: olej roślinny
     resolved_at: '2026-10-02'
   olej chilli:
@@ -3763,7 +5601,7 @@ products:
       measure_name: portion
       weight_g: 100
       kcal: 824
-    measures: []
+    measures: *id064
     query: olej chili
     resolved_at: '2026-10-02'
   olej do smażenia:
@@ -3777,7 +5615,7 @@ products:
       measure_name: portion
       weight_g: 10
       kcal: 90
-    measures: []
+    measures: *id059
     query: olej roślinny
     resolved_at: '2026-10-02'
   olej kokosowy:
@@ -3791,7 +5629,15 @@ products:
       measure_name: tablespoon
       weight_g: 25
       kcal: 223
-    measures: []
+    measures:
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 25
+      kcal: 223
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 8.92
     query: olej kokosowy
     resolved_at: '2026-10-02'
   olej sezamowy:
@@ -3805,7 +5651,23 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 45
-    measures: []
+    measures: &id089
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 5
+      kcal: 45
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 10
+      kcal: 90
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 210
+      kcal: 1890
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 9
     query: olej sezamowy
     resolved_at: '2026-10-02'
   olej w sprayu:
@@ -3819,7 +5681,7 @@ products:
       measure_name: package
       weight_g: 200
       kcal: 1620
-    measures: []
+    measures: *id065
     query: olej w sprayu
     resolved_at: '2026-10-02'
   olio:
@@ -3833,7 +5695,7 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 44.85
-    measures: []
+    measures: *id066
     query: oliwa z oliwek
     resolved_at: '2026-10-02'
   olive oil:
@@ -3847,7 +5709,7 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 44.85
-    measures: []
+    measures: *id066
     query: oliwa z oliwek
     resolved_at: '2026-10-02'
   oliwa:
@@ -3861,7 +5723,7 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 44.85
-    measures: []
+    measures: *id066
     query: oliwa z oliwek
     resolved_at: '2026-10-02'
   oliwa z oliwek:
@@ -3875,7 +5737,7 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 44.85
-    measures: []
+    measures: *id066
     query: oliwa z oliwek
     resolved_at: '2026-10-02'
   onion:
@@ -3889,7 +5751,7 @@ products:
       measure_name: piece
       weight_g: 100
       kcal: 33
-    measures: []
+    measures: *id009
     query: cebula
     resolved_at: '2026-10-02'
   onion powder:
@@ -3903,7 +5765,19 @@ products:
       measure_name: pinch
       weight_g: 1
       kcal: 3.41
-    measures: []
+    measures:
+    - measure_id: '14'
+      measure_name: szczypta
+      weight_g: 1
+      kcal: 3.41
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 4
+      kcal: 13.64
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.41
     query: cebula w proszku
     resolved_at: '2026-10-02'
   onions:
@@ -3917,7 +5791,7 @@ products:
       measure_name: piece
       weight_g: 100
       kcal: 33
-    measures: []
+    measures: *id009
     query: cebula
     resolved_at: '2026-10-02'
   orange:
@@ -3931,7 +5805,19 @@ products:
       measure_name: piece
       weight_g: 240
       kcal: 112.8
-    measures: []
+    measures: &id077
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 240
+      kcal: 112.8
+    - measure_id: '8'
+      measure_name: plaster
+      weight_g: 40
+      kcal: 18.8
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.47
     query: pomarańcza
     resolved_at: '2026-10-02'
   oregano:
@@ -3945,7 +5831,19 @@ products:
       measure_name: pinch
       weight_g: 1
       kcal: 2.65
-    measures: []
+    measures: &id067
+    - measure_id: '14'
+      measure_name: szczypta
+      weight_g: 1
+      kcal: 2.65
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 5
+      kcal: 13.25
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.65
     query: oregano
     resolved_at: '2026-10-02'
   oregano suszone:
@@ -3959,7 +5857,7 @@ products:
       measure_name: pinch
       weight_g: 1
       kcal: 2.65
-    measures: []
+    measures: *id067
     query: oregano
     resolved_at: '2026-10-02'
   orzechy arachidowe:
@@ -3973,7 +5871,15 @@ products:
       measure_name: package
       weight_g: 100
       kcal: 627
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 100
+      kcal: 627
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 6.27
     query: orzeszki ziemne
     resolved_at: '2026-10-02'
   owoce:
@@ -3987,7 +5893,7 @@ products:
       measure_name: handful
       weight_g: 50
       kcal: 28.5
-    measures: []
+    measures: *id004
     query: borówka amerykańska
     resolved_at: '2026-10-02'
   oyster sauce:
@@ -4001,7 +5907,19 @@ products:
       measure_name: teaspoon
       weight_g: 10
       kcal: 5.1
-    measures: []
+    measures: &id094
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 10
+      kcal: 5.1
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 20
+      kcal: 10.2
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.51
     query: sos ostrygowy
     resolved_at: '2026-10-02'
   palm sugar:
@@ -4013,9 +5931,17 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 100
-      kcal: 387
-    measures: []
+      weight_g: 1
+      kcal: 3.87
+    measures:
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.87
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 300
+      kcal: 1161
     query: cukier palmowy
     resolved_at: '2026-10-02'
   panierka kukurydziana:
@@ -4029,7 +5955,7 @@ products:
       measure_name: tablespoon
       weight_g: 3
       kcal: 11.19
-    measures: []
+    measures: *id017
     query: płatki kukurydziane
     resolved_at: '2026-10-02'
   panini bread or sourdough:
@@ -4043,7 +5969,7 @@ products:
       measure_name: slice of bread
       weight_g: 30
       kcal: 78.6
-    measures: []
+    measures: *id005
     query: chleb pszenny
     resolved_at: '2026-10-02'
   paprika:
@@ -4057,7 +5983,23 @@ products:
       measure_name: package
       weight_g: 16
       kcal: 44.64
-    measures: []
+    measures: &id070
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 16
+      kcal: 44.64
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 5
+      kcal: 13.95
+    - measure_id: '14'
+      measure_name: szczypta
+      weight_g: 1
+      kcal: 2.79
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.79
     query: papryka słodka mielona
     resolved_at: '2026-10-02'
   papryka:
@@ -4071,7 +6013,7 @@ products:
       measure_name: piece
       weight_g: 240
       kcal: 76.8
-    measures: []
+    measures: *id068
     query: papryka czerwona
     resolved_at: '2026-10-02'
   papryka mielona chili:
@@ -4085,7 +6027,7 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 15.55
-    measures: []
+    measures: *id069
     query: papryka mielona pikantna
     resolved_at: '2026-10-02'
   papryka ostra, zmielona:
@@ -4099,7 +6041,7 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 15.55
-    measures: []
+    measures: *id069
     query: papryka mielona pikantna
     resolved_at: '2026-10-02'
   papryka słodka, zmielona:
@@ -4113,7 +6055,7 @@ products:
       measure_name: package
       weight_g: 16
       kcal: 44.64
-    measures: []
+    measures: *id070
     query: papryka słodka mielona
     resolved_at: '2026-10-02'
   parmesan cheese:
@@ -4127,7 +6069,15 @@ products:
       measure_name: portion
       weight_g: 10
       kcal: 38.8
-    measures: []
+    measures: &id071
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 10
+      kcal: 38.8
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.88
     query: parmezan
     resolved_at: '2026-10-02'
   parmezan:
@@ -4141,7 +6091,7 @@ products:
       measure_name: portion
       weight_g: 10
       kcal: 38.8
-    measures: []
+    measures: *id071
     query: parmezan
     resolved_at: '2026-10-02'
   parmigiano:
@@ -4155,7 +6105,7 @@ products:
       measure_name: portion
       weight_g: 10
       kcal: 38.8
-    measures: []
+    measures: *id071
     query: parmezan
     resolved_at: '2026-10-02'
   parsley:
@@ -4169,7 +6119,7 @@ products:
       measure_name: teaspoon
       weight_g: 6
       kcal: 2.94
-    measures: []
+    measures: *id072
     query: natka pietruszki
     resolved_at: '2026-10-02'
   parsley stems:
@@ -4183,7 +6133,7 @@ products:
       measure_name: teaspoon
       weight_g: 6
       kcal: 2.94
-    measures: []
+    measures: *id072
     query: natka pietruszki
     resolved_at: '2026-10-02'
   passata pomidorowa:
@@ -4197,7 +6147,7 @@ products:
       measure_name: portion
       weight_g: 100
       kcal: 30
-    measures: []
+    measures: *id073
     query: passata pomidorowa
     resolved_at: '2026-10-02'
   pasta gochujang:
@@ -4211,7 +6161,7 @@ products:
       measure_name: package
       weight_g: 250
       kcal: 490
-    measures: []
+    measures: *id074
     query: gochujang
     resolved_at: '2026-10-02'
   pasta z tamaryndowca:
@@ -4225,7 +6175,15 @@ products:
       measure_name: package
       weight_g: 227
       kcal: 240.62
-    measures: []
+    measures: &id104
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 227
+      kcal: 240.62
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.06
     query: pasta tamaryndowa
     resolved_at: '2026-10-02'
   peanut butter:
@@ -4239,7 +6197,15 @@ products:
       measure_name: package
       weight_g: 140
       kcal: 877.8
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 140
+      kcal: 877.8
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 6.27
     query: masło orzechowe
     resolved_at: '2026-10-02'
   peanut butter powder:
@@ -4253,7 +6219,15 @@ products:
       measure_name: package
       weight_g: 454
       kcal: 1702.5
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 454
+      kcal: 1702.5
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.75
     query: masło orzechowe w proszku
     resolved_at: '2026-10-02'
   peanut oil:
@@ -4267,7 +6241,15 @@ products:
       measure_name: portion
       weight_g: 10
       kcal: 90
-    measures: []
+    measures:
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 10
+      kcal: 90
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 9
     query: olej arachidowy
     resolved_at: '2026-10-02'
   pepe:
@@ -4280,8 +6262,8 @@ products:
       measure_id: '14'
       measure_name: pinch
       weight_g: 0.3
-      kcal: 0.75
-    measures: []
+      kcal: 0.753
+    measures: *id075
     query: pieprz czarny
     resolved_at: '2026-10-02'
   pepper:
@@ -4291,11 +6273,11 @@ products:
     source: public
     verified: true
     default_measure:
-      measure_id: '14'
-      measure_name: pinch
-      weight_g: 0.3
-      kcal: 0.75
-    measures: []
+      measure_id: '19'
+      measure_name: teaspoon
+      weight_g: 1
+      kcal: 2.51
+    measures: *id075
     query: pieprz czarny
     resolved_at: '2026-10-02'
   pepper jack cheese:
@@ -4309,7 +6291,7 @@ products:
       measure_name: slice
       weight_g: 20
       kcal: 63.2
-    measures: []
+    measures: *id050
     query: ser żółty
     resolved_at: '2026-10-02'
   peppercorns:
@@ -4319,11 +6301,11 @@ products:
     source: public
     verified: true
     default_measure:
-      measure_id: '14'
-      measure_name: pinch
-      weight_g: 0.3
-      kcal: 0.75
-    measures: []
+      measure_id: '19'
+      measure_name: teaspoon
+      weight_g: 1
+      kcal: 2.51
+    measures: *id075
     query: pieprz czarny
     resolved_at: '2026-10-02'
   pepperoni:
@@ -4337,7 +6319,15 @@ products:
       measure_name: package
       weight_g: 130
       kcal: 557.7
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 130
+      kcal: 557.7
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 4.29
     query: pepperoni
     resolved_at: '2026-10-02'
   pickles:
@@ -4351,7 +6341,7 @@ products:
       measure_name: piece
       weight_g: 20
       kcal: 4.8
-    measures: []
+    measures: *id076
     query: ogórek konserwowy
     resolved_at: '2026-10-02'
   pieczarki:
@@ -4365,7 +6355,23 @@ products:
       measure_name: piece
       weight_g: 20
       kcal: 5.2
-    measures: []
+    measures:
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 20
+      kcal: 5.2
+    - measure_id: '41'
+      measure_name: garść
+      weight_g: 60
+      kcal: 15.6
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 250
+      kcal: 65
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.26
     query: pieczarki
     resolved_at: '2026-10-02'
   pieprz:
@@ -4375,11 +6381,11 @@ products:
     source: public
     verified: true
     default_measure:
-      measure_id: '14'
-      measure_name: pinch
-      weight_g: 0.3
-      kcal: 0.75
-    measures: []
+      measure_id: '19'
+      measure_name: teaspoon
+      weight_g: 1
+      kcal: 2.51
+    measures: *id075
     query: pieprz czarny
     resolved_at: '2026-10-02'
   pierś z kurczaka:
@@ -4391,9 +6397,9 @@ products:
     default_measure:
       measure_id: '46'
       measure_name: piece
-      weight_g: 100
-      kcal: 99
-    measures: []
+      weight_g: 200
+      kcal: 198
+    measures: *id010
     query: pierś z kurczaka
     resolved_at: '2026-10-02'
   pietruszka (korzeń):
@@ -4407,7 +6413,15 @@ products:
       measure_name: piece
       weight_g: 80
       kcal: 39.2
-    measures: []
+    measures:
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 80
+      kcal: 39.2
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.49
     query: pietruszka korzeń
     resolved_at: '2026-10-02'
   pine nuts or walnuts:
@@ -4421,7 +6435,23 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 36.35
-    measures: []
+    measures:
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 5
+      kcal: 36.35
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 10
+      kcal: 72.7
+    - measure_id: '41'
+      measure_name: garść
+      weight_g: 20
+      kcal: 145.4
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 7.27
     query: orzeszki pinii
     resolved_at: '2026-10-02'
   pineapple:
@@ -4435,7 +6465,19 @@ products:
       measure_name: slice
       weight_g: 30
       kcal: 16.5
-    measures: []
+    measures:
+    - measure_id: '8'
+      measure_name: plaster
+      weight_g: 30
+      kcal: 16.5
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 720
+      kcal: 396
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.55
     query: ananas
     resolved_at: '2026-10-02'
   plant milk:
@@ -4447,9 +6489,25 @@ products:
     default_measure:
       measure_id: '32'
       measure_name: glass
-      weight_g: 110
-      kcal: 48.4
-    measures: []
+      weight_g: 220
+      kcal: 96.8
+    measures:
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 220
+      kcal: 96.8
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 10
+      kcal: 4.4
+    - measure_id: '17'
+      measure_name: ml
+      weight_g: 1
+      kcal: 0.44
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.44
     query: mleko roślinne
     resolved_at: '2026-10-02'
   pomarańcza:
@@ -4463,7 +6521,7 @@ products:
       measure_name: piece
       weight_g: 240
       kcal: 112.8
-    measures: []
+    measures: *id077
     query: pomarańcza
     resolved_at: '2026-10-02'
   pomegranate molasses:
@@ -4477,7 +6535,19 @@ products:
       measure_name: teaspoon
       weight_g: 10
       kcal: 29.3
-    measures: []
+    measures:
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 10
+      kcal: 29.3
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 20
+      kcal: 58.6
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.93
     query: melasa z granatów
     resolved_at: '2026-10-02'
   pomidor:
@@ -4491,7 +6561,7 @@ products:
       measure_name: piece
       weight_g: 130
       kcal: 24.7
-    measures: []
+    measures: *id078
     query: pomidor
     resolved_at: '2026-10-02'
   pomidory suszone z oleju:
@@ -4503,9 +6573,21 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 100
-      kcal: 213
-    measures: []
+      weight_g: 1
+      kcal: 2.13
+    measures: &id101
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.13
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 145
+      kcal: 308.85
+    - measure_id: '8'
+      measure_name: plaster
+      weight_g: 20
+      kcal: 42.6
     query: pomidory suszone w oleju
     resolved_at: '2026-10-02'
   prażony sezam:
@@ -4519,7 +6601,7 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 33.65
-    measures: []
+    measures: *id079
     query: nasiona sezamu
     resolved_at: '2026-10-02'
   proszek do pieczenia:
@@ -4533,7 +6615,7 @@ products:
       measure_name: teaspoon
       weight_g: 4
       kcal: 2.12
-    measures: []
+    measures: *id080
     query: proszek do pieczenia
     resolved_at: '2026-10-02'
   protein pasta:
@@ -4547,7 +6629,15 @@ products:
       measure_name: package
       weight_g: 200
       kcal: 680
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 200
+      kcal: 680
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.4
     query: makaron proteinowy
     resolved_at: '2026-10-02'
   protein yogurt:
@@ -4561,7 +6651,7 @@ products:
       measure_name: portion
       weight_g: 80
       kcal: 52.8
-    measures: []
+    measures: *id041
     query: skyr naturalny
     resolved_at: '2026-10-02'
   przecier pomidorowy:
@@ -4575,7 +6665,7 @@ products:
       measure_name: portion
       weight_g: 100
       kcal: 30
-    measures: []
+    measures: *id073
     query: passata pomidorowa
     resolved_at: '2026-10-02'
   przyprawa do kurczaka:
@@ -4589,7 +6679,23 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 7.55
-    measures: []
+    measures: &id081
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 5
+      kcal: 7.55
+    - measure_id: '14'
+      measure_name: szczypta
+      weight_g: 1
+      kcal: 1.51
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 100
+      kcal: 151
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.51
     query: przyprawa do kurczaka
     resolved_at: '2026-10-02'
   przyprawa do mięs:
@@ -4603,7 +6709,19 @@ products:
       measure_name: teaspoon
       weight_g: 10
       kcal: 25
-    measures: []
+    measures:
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 10
+      kcal: 25
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 100
+      kcal: 250
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.5
     query: przyprawa do mięs
     resolved_at: '2026-10-02'
   przyprawy do kurczaka:
@@ -4617,7 +6735,7 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 7.55
-    measures: []
+    measures: *id081
     query: przyprawa do kurczaka
     resolved_at: '2026-10-02'
   puff pastry:
@@ -4631,7 +6749,19 @@ products:
       measure_name: portion
       weight_g: 100
       kcal: 551
-    measures: []
+    measures:
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 100
+      kcal: 551
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 275
+      kcal: 1515.25
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 5.51
     query: ciasto francuskie
     resolved_at: '2026-10-02'
   półbagietka:
@@ -4645,36 +6775,50 @@ products:
       measure_name: package
       weight_g: 100
       kcal: 254
-    measures: []
+      per_item: true
+      per_item_note: package of 100 g is one half-baguette
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 100
+      kcal: 254
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 100
+      kcal: 254
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.54
     query: bagietka
     resolved_at: '2026-10-02'
   płatki chili:
-    fitatu_product_id: '116418723'
-    display_name: Płatki chili suszone
-    brand: Brat.pl
+    fitatu_product_id: '120099888'
+    display_name: Ekogram Organiczne Platki Chilli
+    brand: Ekogram
     source: public
     verified: false
     default_measure:
-      measure_id: '2'
-      measure_name: package
-      weight_g: 100
-      kcal: 324
-    measures: []
-    query: płatki chili suszone
+      measure_id: '19'
+      measure_name: teaspoon
+      weight_g: 5
+      kcal: 22.4
+    measures: *id082
+    query: płatki chili
     resolved_at: '2026-10-02'
   płatki chilli:
-    fitatu_product_id: '116418723'
-    display_name: Płatki chili suszone
-    brand: Brat.pl
+    fitatu_product_id: '120099888'
+    display_name: Ekogram Organiczne Platki Chilli
+    brand: Ekogram
     source: public
     verified: false
     default_measure:
-      measure_id: '2'
-      measure_name: package
-      weight_g: 100
-      kcal: 324
-    measures: []
-    query: płatki chili suszone
+      measure_id: '19'
+      measure_name: teaspoon
+      weight_g: 5
+      kcal: 22.4
+    measures: *id082
+    query: płatki chili
     resolved_at: '2026-10-02'
   płatki kukurydziane:
     fitatu_product_id: '116238262'
@@ -4687,7 +6831,7 @@ products:
       measure_name: tablespoon
       weight_g: 3
       kcal: 11.19
-    measures: []
+    measures: *id017
     query: płatki kukurydziane
     resolved_at: '2026-10-02'
   ranch:
@@ -4701,7 +6845,19 @@ products:
       measure_name: teaspoon
       weight_g: 10
       kcal: 42.1
-    measures: []
+    measures:
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 10
+      kcal: 42.1
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 20
+      kcal: 84.2
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 4.21
     query: sos ranch
     resolved_at: '2026-10-02'
   red chilies:
@@ -4715,7 +6871,7 @@ products:
       measure_name: piece
       weight_g: 20
       kcal: 8
-    measures: []
+    measures: *id028
     query: papryczka chili
     resolved_at: '2026-10-02'
   red onion:
@@ -4729,7 +6885,7 @@ products:
       measure_name: piece
       weight_g: 100
       kcal: 33
-    measures: []
+    measures: *id021
     query: cebula czerwona
     resolved_at: '2026-10-02'
   red onions:
@@ -4743,7 +6899,7 @@ products:
       measure_name: piece
       weight_g: 100
       kcal: 33
-    measures: []
+    measures: *id021
     query: cebula czerwona
     resolved_at: '2026-10-02'
   red pepper:
@@ -4757,22 +6913,22 @@ products:
       measure_name: piece
       weight_g: 240
       kcal: 76.8
-    measures: []
+    measures: *id068
     query: papryka czerwona
     resolved_at: '2026-10-02'
   red pepper flakes:
-    fitatu_product_id: '116418723'
-    display_name: Płatki chili suszone
-    brand: Brat.pl
+    fitatu_product_id: '120099888'
+    display_name: Ekogram Organiczne Platki Chilli
+    brand: Ekogram
     source: public
     verified: false
     default_measure:
-      measure_id: '2'
-      measure_name: package
-      weight_g: 100
-      kcal: 324
-    measures: []
-    query: płatki chili suszone
+      measure_id: '19'
+      measure_name: teaspoon
+      weight_g: 5
+      kcal: 22.4
+    measures: *id082
+    query: płatki chili
     resolved_at: '2026-10-02'
   rice:
     fitatu_product_id: '15191'
@@ -4785,7 +6941,7 @@ products:
       measure_name: tablespoon
       weight_g: 15
       kcal: 54
-    measures: []
+    measures: *id047
     query: ryż biały
     resolved_at: '2026-10-02'
   rice paper:
@@ -4799,7 +6955,15 @@ products:
       measure_name: piece
       weight_g: 9
       kcal: 29.61
-    measures: []
+    measures:
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 9
+      kcal: 29.61
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.29
     query: papier ryżowy
     resolved_at: '2026-10-02'
   rice vinegar:
@@ -4813,7 +6977,7 @@ products:
       measure_name: tablespoon
       weight_g: 10
       kcal: 0
-    measures: []
+    measures: *id083
     query: ocet ryżowy
     resolved_at: '2026-10-02'
   ricotta:
@@ -4825,9 +6989,17 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 100
-      kcal: 158
-    measures: []
+      weight_g: 1
+      kcal: 1.58
+    measures:
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.58
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 25
+      kcal: 39.5
     query: ricotta
     resolved_at: '2026-10-02'
   ripe banana:
@@ -4841,7 +7013,15 @@ products:
       measure_name: piece
       weight_g: 120
       kcal: 116.4
-    measures: []
+    measures:
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 120
+      kcal: 116.4
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.97
     query: banan
     resolved_at: '2026-10-02'
   rukola:
@@ -4855,7 +7035,19 @@ products:
       measure_name: package
       weight_g: 100
       kcal: 25
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 100
+      kcal: 25
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.25
+    - measure_id: '41'
+      measure_name: garść
+      weight_g: 10
+      kcal: 2.5
     query: rukola
     resolved_at: '2026-10-02'
   ryż basmati:
@@ -4869,7 +7061,23 @@ products:
       measure_name: tablespoon
       weight_g: 15
       kcal: 53.7
-    measures: []
+    measures:
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 15
+      kcal: 53.7
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 100
+      kcal: 358
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 180
+      kcal: 644.4
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.58
     query: ryż basmati
     resolved_at: '2026-10-02'
   ryż jaśminowy:
@@ -4883,7 +7091,19 @@ products:
       measure_name: package
       weight_g: 100
       kcal: 347
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 100
+      kcal: 347
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 190
+      kcal: 659.3
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.47
     query: ryż jaśminowy
     resolved_at: '2026-10-02'
   ryż koshihikari:
@@ -4897,7 +7117,19 @@ products:
       measure_name: portion
       weight_g: 50
       kcal: 174
-    measures: []
+    measures:
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 50
+      kcal: 174
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 10
+      kcal: 34.8
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.48
     query: ryż do sushi
     resolved_at: '2026-10-02'
   rzodkiewka:
@@ -4911,7 +7143,19 @@ products:
       measure_name: piece
       weight_g: 15
       kcal: 2.7
-    measures: []
+    measures:
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 15
+      kcal: 2.7
+    - measure_id: '10'
+      measure_name: pęczek
+      weight_g: 115
+      kcal: 20.7
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.18
     query: rzodkiewka
     resolved_at: '2026-10-02'
   saffron:
@@ -4925,8 +7169,48 @@ products:
       measure_name: pinch
       weight_g: 0.3
       kcal: 0.93
-    measures: []
+    measures:
+    - measure_id: '14'
+      measure_name: szczypta
+      weight_g: 0.3
+      kcal: 0.93
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 3
+      kcal: 9.3
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.1
     query: szafran
+    resolved_at: '2026-10-02'
+  sale:
+    fitatu_product_id: '5270094'
+    display_name: Sól biała
+    brand: null
+    source: public
+    verified: true
+    default_measure:
+      measure_id: '19'
+      measure_name: teaspoon
+      weight_g: 6
+      kcal: 0
+    measures: *id084
+    query: sól biała
+    resolved_at: '2026-10-02'
+  salt:
+    fitatu_product_id: '5270094'
+    display_name: Sól biała
+    brand: null
+    source: public
+    verified: true
+    default_measure:
+      measure_id: '19'
+      measure_name: teaspoon
+      weight_g: 6
+      kcal: 0
+    measures: *id084
+    query: sól biała
     resolved_at: '2026-10-02'
   sałata lodowa lub rzymska:
     fitatu_product_id: '117799461'
@@ -4939,7 +7223,7 @@ products:
       measure_name: piece
       weight_g: 30
       kcal: 4.5
-    measures: []
+    measures: *id085
     query: sałata lodowa
     resolved_at: '2026-10-02'
   scallion:
@@ -4953,7 +7237,7 @@ products:
       measure_name: slice
       weight_g: 15
       kcal: 4.5
-    measures: []
+    measures: *id035
     query: cebula dymka
     resolved_at: '2026-10-02'
   scallions:
@@ -4967,7 +7251,7 @@ products:
       measure_name: slice
       weight_g: 15
       kcal: 4.5
-    measures: []
+    measures: *id035
     query: cebula dymka
     resolved_at: '2026-10-02'
   scotch bonnet:
@@ -4981,7 +7265,7 @@ products:
       measure_name: piece
       weight_g: 20
       kcal: 8
-    measures: []
+    measures: *id028
     query: papryczka chili
     resolved_at: '2026-10-02'
   self rising flour:
@@ -4995,7 +7279,7 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 17.15
-    measures: []
+    measures: *id026
     query: mąka pszenna
     resolved_at: '2026-10-02'
   self-rising flour:
@@ -5009,7 +7293,7 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 17.15
-    measures: []
+    measures: *id026
     query: mąka pszenna
     resolved_at: '2026-10-02'
   ser mozzarella:
@@ -5023,7 +7307,7 @@ products:
       measure_name: slice
       weight_g: 20
       kcal: 50.8
-    measures: []
+    measures: *id086
     query: ser mozzarella
     resolved_at: '2026-10-02'
   ser proteinowy:
@@ -5037,22 +7321,30 @@ products:
       measure_name: package
       weight_g: 200
       kcal: 474
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 200
+      kcal: 474
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.37
     query: ser proteinowy
     resolved_at: '2026-10-02'
   serek wiejski:
-    fitatu_product_id: '148549731'
-    display_name: Serek wiejski
-    brand: Piotr i Paweł
+    fitatu_product_id: '14369199'
+    display_name: Serek wiejski naturalny
+    brand: null
     source: public
-    verified: false
+    verified: true
     default_measure:
-      measure_id: '2'
-      measure_name: package
-      weight_g: 200
-      kcal: 194
-    measures: []
-    query: serek wiejski
+      measure_id: '20'
+      measure_name: tablespoon
+      weight_g: 20
+      kcal: 19.4
+    measures: *id087
+    query: serek wiejski naturalny
     resolved_at: '2026-10-02'
   serek wiejski proteinowy:
     fitatu_product_id: '148402083'
@@ -5065,7 +7357,23 @@ products:
       measure_name: package
       weight_g: 200
       kcal: 186
-    measures: []
+    measures: &id088
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 200
+      kcal: 186
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 200
+      kcal: 186
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 200
+      kcal: 186
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.93
     query: serek wiejski wysokobiałkowy
     resolved_at: '2026-10-02'
   serek wiejski wysokobiałkowy:
@@ -5079,7 +7387,7 @@ products:
       measure_name: package
       weight_g: 200
       kcal: 186
-    measures: []
+    measures: *id088
     query: serek wiejski wysokobiałkowy
     resolved_at: '2026-10-02'
   serek wysokobiałkowy:
@@ -5093,7 +7401,7 @@ products:
       measure_name: package
       weight_g: 200
       kcal: 186
-    measures: []
+    measures: *id088
     query: serek wiejski wysokobiałkowy
     resolved_at: '2026-10-02'
   serrano:
@@ -5107,7 +7415,7 @@ products:
       measure_name: piece
       weight_g: 20
       kcal: 8
-    measures: []
+    measures: *id028
     query: papryczka chili
     resolved_at: '2026-10-02'
   sesame oil:
@@ -5121,7 +7429,7 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 45
-    measures: []
+    measures: *id089
     query: olej sezamowy
     resolved_at: '2026-10-02'
   sesame seeds:
@@ -5135,7 +7443,7 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 33.65
-    measures: []
+    measures: *id079
     query: nasiona sezamu
     resolved_at: '2026-10-02'
   sezam:
@@ -5149,7 +7457,7 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 33.65
-    measures: []
+    measures: *id079
     query: nasiona sezamu
     resolved_at: '2026-10-02'
   shallot:
@@ -5163,7 +7471,15 @@ products:
       measure_name: piece
       weight_g: 20
       kcal: 14.2
-    measures: []
+    measures: &id090
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 20
+      kcal: 14.2
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.71
     query: szalotka
     resolved_at: '2026-10-02'
   shallots:
@@ -5177,7 +7493,7 @@ products:
       measure_name: piece
       weight_g: 20
       kcal: 14.2
-    measures: []
+    measures: *id090
     query: szalotka
     resolved_at: '2026-10-02'
   shaoxing wine:
@@ -5191,7 +7507,15 @@ products:
       measure_name: package
       weight_g: 750
       kcal: 405
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 750
+      kcal: 405
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.54
     query: wino ryżowe shaoxing
     resolved_at: '2026-10-02'
   shellfish:
@@ -5203,9 +7527,13 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 100
-      kcal: 40
-    measures: []
+      weight_g: 1
+      kcal: 0.4
+    measures:
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.4
     query: owoce morza mrożone
     resolved_at: '2026-10-02'
   shredded mozzarella cheese:
@@ -5219,7 +7547,7 @@ products:
       measure_name: slice
       weight_g: 20
       kcal: 50.8
-    measures: []
+    measures: *id086
     query: ser mozzarella
     resolved_at: '2026-10-02'
   shrimp:
@@ -5233,7 +7561,19 @@ products:
       measure_name: glass
       weight_g: 90
       kcal: 77.4
-    measures: []
+    measures:
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 90
+      kcal: 77.4
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 150
+      kcal: 129
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.86
     query: krewetki
     resolved_at: '2026-10-02'
   shrimp paste:
@@ -5245,9 +7585,13 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 100
-      kcal: 186
-    measures: []
+      weight_g: 1
+      kcal: 1.86
+    measures: &id091
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.86
     query: pasta krewetkowa
     resolved_at: '2026-10-02'
   shrimp paste (belacan):
@@ -5259,9 +7603,9 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 100
-      kcal: 186
-    measures: []
+      weight_g: 1
+      kcal: 1.86
+    measures: *id091
     query: pasta krewetkowa
     resolved_at: '2026-10-02'
   skrobia ziemniaczana:
@@ -5275,7 +7619,7 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 16.9
-    measures: []
+    measures: *id092
     query: skrobia ziemniaczana
     resolved_at: '2026-10-02'
   skyr naturalny:
@@ -5289,7 +7633,7 @@ products:
       measure_name: portion
       weight_g: 80
       kcal: 52.8
-    measures: []
+    measures: *id041
     query: skyr naturalny
     resolved_at: '2026-10-02'
   slider rolls:
@@ -5303,7 +7647,7 @@ products:
       measure_name: piece
       weight_g: 83
       kcal: 239.04
-    measures: []
+    measures: *id006
     query: bułka do burgera
     resolved_at: '2026-10-02'
   smoked paprika:
@@ -5317,7 +7661,15 @@ products:
       measure_name: package
       weight_g: 85
       kcal: 303.45
-    measures: []
+    measures: &id115
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 85
+      kcal: 303.45
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.57
     query: papryka wędzona
     resolved_at: '2026-10-02'
   soft tofu:
@@ -5331,7 +7683,19 @@ products:
       measure_name: package
       weight_g: 275
       kcal: 140.25
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 275
+      kcal: 140.25
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 10
+      kcal: 5.1
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.51
     query: tofu jedwabiste
     resolved_at: '2026-10-02'
   sok z limonki:
@@ -5345,7 +7709,7 @@ products:
       measure_name: glass
       weight_g: 220
       kcal: 55
-    measures: []
+    measures: *id093
     query: sok z limonki
     resolved_at: '2026-10-02'
   sos bbq bez cukru:
@@ -5359,7 +7723,19 @@ products:
       measure_name: package
       weight_g: 425
       kcal: 59.5
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 425
+      kcal: 59.5
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.14
+    - measure_id: '17'
+      measure_name: ml
+      weight_g: 1
+      kcal: 0.14
     query: sos bbq bez cukru
     resolved_at: '2026-10-02'
   sos do pizzy lub passata pomidorowa:
@@ -5373,7 +7749,7 @@ products:
       measure_name: portion
       weight_g: 100
       kcal: 30
-    measures: []
+    measures: *id073
     query: passata pomidorowa
     resolved_at: '2026-10-02'
   sos jogurtowy:
@@ -5387,7 +7763,7 @@ products:
       measure_name: package
       weight_g: 150
       kcal: 90
-    measures: []
+    measures: *id040
     query: jogurt naturalny
     resolved_at: '2026-10-02'
   sos orzechowy:
@@ -5401,7 +7777,19 @@ products:
       measure_name: package
       weight_g: 250
       kcal: 500
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 250
+      kcal: 500
+    - measure_id: '17'
+      measure_name: ml
+      weight_g: 1
+      kcal: 2
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2
     query: sos satay
     resolved_at: '2026-10-02'
   sos ostrygowy:
@@ -5415,7 +7803,7 @@ products:
       measure_name: teaspoon
       weight_g: 10
       kcal: 5.1
-    measures: []
+    measures: *id094
     query: sos ostrygowy
     resolved_at: '2026-10-02'
   sos pomidorowy:
@@ -5429,7 +7817,7 @@ products:
       measure_name: portion
       weight_g: 100
       kcal: 30
-    measures: []
+    measures: *id073
     query: passata pomidorowa
     resolved_at: '2026-10-02'
   sos rybny:
@@ -5443,22 +7831,22 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 3.35
-    measures: []
+    measures: *id095
     query: sos rybny
     resolved_at: '2026-10-02'
   sos sojowy:
-    fitatu_product_id: '117075611'
-    display_name: Sos sojowy
-    brand: null
+    fitatu_product_id: '149649810'
+    display_name: Kikkoman Naturalnie Warzony Sos Sojowy
+    brand: Kikkoman
     source: public
-    verified: true
+    verified: false
     default_measure:
-      measure_id: '1'
-      measure_name: g
-      weight_g: 10
-      kcal: 6
-    measures: []
-    query: sos sojowy
+      measure_id: '20'
+      measure_name: tablespoon
+      weight_g: 20
+      kcal: 15.4
+    measures: *id049
+    query: sos sojowy kikkoman
     resolved_at: '2026-10-02'
   sos sriracha:
     fitatu_product_id: '117147575'
@@ -5471,7 +7859,19 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 4.65
-    measures: []
+    measures: &id096
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 5
+      kcal: 4.65
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 10
+      kcal: 9.3
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.93
     query: sos sriracha
     resolved_at: '2026-10-02'
   sos sweet chilli:
@@ -5483,9 +7883,21 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
+      weight_g: 1
+      kcal: 2.22
+    measures:
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.22
+    - measure_id: '19'
+      measure_name: łyżeczka
       weight_g: 10
       kcal: 22.2
-    measures: []
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 20
+      kcal: 44.4
     query: sos sweet chili
     resolved_at: '2026-10-02'
   sos worcestershire:
@@ -5499,22 +7911,38 @@ products:
       measure_name: g
       weight_g: 1
       kcal: 0.78
-    measures: []
+    measures: &id113
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.78
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 5
+      kcal: 3.9
+    - measure_id: '17'
+      measure_name: ml
+      weight_g: 1
+      kcal: 0.78
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 10
+      kcal: 7.8
     query: sos worcestershire
     resolved_at: '2026-10-02'
   soy sauce:
-    fitatu_product_id: '117075611'
-    display_name: Sos sojowy
-    brand: null
+    fitatu_product_id: '149649810'
+    display_name: Kikkoman Naturalnie Warzony Sos Sojowy
+    brand: Kikkoman
     source: public
-    verified: true
+    verified: false
     default_measure:
-      measure_id: '1'
-      measure_name: g
-      weight_g: 10
-      kcal: 6
-    measures: []
-    query: sos sojowy
+      measure_id: '20'
+      measure_name: tablespoon
+      weight_g: 20
+      kcal: 15.4
+    measures: *id049
+    query: sos sojowy kikkoman
     resolved_at: '2026-10-02'
   spicy japanese curry:
     fitatu_product_id: '111133052'
@@ -5527,7 +7955,19 @@ products:
       measure_name: package
       weight_g: 200
       kcal: 924
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 200
+      kcal: 924
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 18
+      kcal: 83.16
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 4.62
     query: curry japońskie
     resolved_at: '2026-10-02'
   splenda:
@@ -5541,7 +7981,19 @@ products:
       measure_name: g
       weight_g: 1
       kcal: 0
-    measures: []
+    measures:
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 2
+      kcal: 0
+    - measure_id: '14'
+      measure_name: szczypta
+      weight_g: 1
+      kcal: 0
     query: sukraloza
     resolved_at: '2026-10-02'
   spray oil:
@@ -5555,7 +8007,7 @@ products:
       measure_name: package
       weight_g: 200
       kcal: 1620
-    measures: []
+    measures: *id065
     query: olej w sprayu
     resolved_at: '2026-10-02'
   sriracha:
@@ -5569,7 +8021,7 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 4.65
-    measures: []
+    measures: *id096
     query: sos sriracha
     resolved_at: '2026-10-02'
   star anise:
@@ -5583,7 +8035,7 @@ products:
       measure_name: piece
       weight_g: 5
       kcal: 16.85
-    measures: []
+    measures: *id097
     query: anyż gwiazdkowy
     resolved_at: '2026-10-02'
   starty imbir:
@@ -5593,11 +8045,11 @@ products:
     source: public
     verified: true
     default_measure:
-      measure_id: '182'
-      measure_name: cube
-      weight_g: 10
-      kcal: 8
-    measures: []
+      measure_id: '20'
+      measure_name: tablespoon
+      weight_g: 12
+      kcal: 9.6
+    measures: *id029
     query: imbir świeży
     resolved_at: '2026-10-02'
   steamed white rice:
@@ -5611,7 +8063,23 @@ products:
       measure_name: glass
       weight_g: 140
       kcal: 168
-    measures: []
+    measures:
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 140
+      kcal: 168
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 20
+      kcal: 24
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 100
+      kcal: 120
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.2
     query: ryż biały gotowany
     resolved_at: '2026-10-02'
   strawberries:
@@ -5621,11 +8089,11 @@ products:
     source: public
     verified: true
     default_measure:
-      measure_id: '39'
-      measure_name: portion
-      weight_g: 100
-      kcal: 33
-    measures: []
+      measure_id: '32'
+      measure_name: glass
+      weight_g: 150
+      kcal: 49.5
+    measures: *id098
     query: truskawki
     resolved_at: '2026-10-02'
   succo di limone:
@@ -5639,7 +8107,7 @@ products:
       measure_name: glass
       weight_g: 220
       kcal: 66
-    measures: []
+    measures: *id099
     query: sok z cytryny
     resolved_at: '2026-10-02'
   sugar:
@@ -5653,7 +8121,7 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 19.95
-    measures: []
+    measures: *id018
     query: cukier
     resolved_at: '2026-10-02'
   sugar-free chocolate chips:
@@ -5667,7 +8135,15 @@ products:
       measure_name: package
       weight_g: 100
       kcal: 457
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 100
+      kcal: 457
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 4.57
     query: czekolada bez cukru
     resolved_at: '2026-10-02'
   sugar-free maple syrup:
@@ -5681,7 +8157,15 @@ products:
       measure_name: package
       weight_g: 425
       kcal: 72.25
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 425
+      kcal: 72.25
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.17
     query: syrop klonowy bez cukru
     resolved_at: '2026-10-02'
   sugar-free sweetener:
@@ -5695,7 +8179,7 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 0
-    measures: []
+    measures: *id100
     query: erytrytol
     resolved_at: '2026-10-02'
   sumac:
@@ -5709,7 +8193,35 @@ products:
       measure_name: teaspoon
       weight_g: 10
       kcal: 39.6
-    measures: []
+    measures:
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 10
+      kcal: 39.6
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 20
+      kcal: 79.2
+    - measure_id: '220'
+      measure_name: łyżka do sosu
+      weight_g: 25
+      kcal: 99
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 10
+      kcal: 39.6
+    - measure_id: '14'
+      measure_name: szczypta
+      weight_g: 1
+      kcal: 3.96
+    - measure_id: '17'
+      measure_name: ml
+      weight_g: 1
+      kcal: 3.96
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.96
     query: sumak
     resolved_at: '2026-10-02'
   sun dried tomatoes in oil:
@@ -5721,9 +8233,9 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 100
-      kcal: 213
-    measures: []
+      weight_g: 1
+      kcal: 2.13
+    measures: *id101
     query: pomidory suszone w oleju
     resolved_at: '2026-10-02'
   suszona bazylia:
@@ -5737,7 +8249,23 @@ products:
       measure_name: package
       weight_g: 10
       kcal: 23.3
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 10
+      kcal: 23.3
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 5
+      kcal: 11.65
+    - measure_id: '14'
+      measure_name: szczypta
+      weight_g: 1
+      kcal: 2.33
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.33
     query: bazylia suszona
     resolved_at: '2026-10-02'
   sweetened condensed milk:
@@ -5751,7 +8279,15 @@ products:
       measure_name: portion
       weight_g: 20
       kcal: 64.4
-    measures: []
+    measures:
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 20
+      kcal: 64.4
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.22
     query: mleko skondensowane słodzone
     resolved_at: '2026-10-02'
   sweetener:
@@ -5765,7 +8301,7 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 0
-    measures: []
+    measures: *id100
     query: erytrytol
     resolved_at: '2026-10-02'
   swiss cheese:
@@ -5779,7 +8315,19 @@ products:
       measure_name: slice
       weight_g: 20
       kcal: 76
-    measures: []
+    measures:
+    - measure_id: '8'
+      measure_name: plaster
+      weight_g: 20
+      kcal: 76
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 50
+      kcal: 190
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.8
     query: ser szwajcarski
     resolved_at: '2026-10-02'
   syrup:
@@ -5793,7 +8341,7 @@ products:
       measure_name: package
       weight_g: 1330
       kcal: 3497.9
-    measures: []
+    measures: *id102
     query: syrop klonowy
     resolved_at: '2026-10-02'
   szalotka:
@@ -5807,7 +8355,7 @@ products:
       measure_name: piece
       weight_g: 20
       kcal: 14.2
-    measures: []
+    measures: *id090
     query: szalotka
     resolved_at: '2026-10-02'
   szalotka lub cebula:
@@ -5821,7 +8369,7 @@ products:
       measure_name: piece
       weight_g: 20
       kcal: 14.2
-    measures: []
+    measures: *id090
     query: szalotka
     resolved_at: '2026-10-02'
   szczypiorek:
@@ -5835,7 +8383,23 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 1.75
-    measures: []
+    measures:
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 5
+      kcal: 1.75
+    - measure_id: '10'
+      measure_name: pęczek
+      weight_g: 15
+      kcal: 5.25
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 50
+      kcal: 17.5
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.35
     query: szczypiorek
     resolved_at: '2026-10-02'
   szparagi:
@@ -5849,7 +8413,19 @@ products:
       measure_name: piece
       weight_g: 30
       kcal: 6.3
-    measures: []
+    measures:
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 30
+      kcal: 6.3
+    - measure_id: '41'
+      measure_name: garść
+      weight_g: 380
+      kcal: 79.8
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.21
     query: szparagi
     resolved_at: '2026-10-02'
   szpinak w liściach, świeży:
@@ -5863,7 +8439,7 @@ products:
       measure_name: package
       weight_g: 200
       kcal: 44
-    measures: []
+    measures: *id103
     query: szpinak świeży
     resolved_at: '2026-10-02'
   szynka z piersi kurczaka:
@@ -5875,10 +8451,32 @@ products:
     default_measure:
       measure_id: '8'
       measure_name: slice
-      weight_g: 7.5
-      kcal: 7.2
-    measures: []
+      weight_g: 15
+      kcal: 14.4
+    measures:
+    - measure_id: '8'
+      measure_name: plaster
+      weight_g: 15
+      kcal: 14.4
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.96
     query: szynka z piersi kurczaka
+    resolved_at: '2026-10-02'
+  sól:
+    fitatu_product_id: '5270094'
+    display_name: Sól biała
+    brand: null
+    source: public
+    verified: true
+    default_measure:
+      measure_id: '19'
+      measure_name: teaspoon
+      weight_g: 6
+      kcal: 0
+    measures: *id084
+    query: sól biała
     resolved_at: '2026-10-02'
   tahini:
     fitatu_product_id: '97722558'
@@ -5890,23 +8488,31 @@ products:
       measure_id: '39'
       measure_name: portion
       weight_g: 15
-      kcal: 100
-    measures: []
+      kcal: 100.00049999999999
+    measures:
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 15
+      kcal: 100.00049999999999
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 6.6667
     query: tahini
     resolved_at: '2026-10-02'
   tamari:
-    fitatu_product_id: '117075611'
-    display_name: Sos sojowy
-    brand: null
+    fitatu_product_id: '149649810'
+    display_name: Kikkoman Naturalnie Warzony Sos Sojowy
+    brand: Kikkoman
     source: public
-    verified: true
+    verified: false
     default_measure:
-      measure_id: '1'
-      measure_name: g
-      weight_g: 10
-      kcal: 6
-    measures: []
-    query: sos sojowy
+      measure_id: '20'
+      measure_name: tablespoon
+      weight_g: 20
+      kcal: 15.4
+    measures: *id049
+    query: sos sojowy kikkoman
     resolved_at: '2026-10-02'
   tamarind purée:
     fitatu_product_id: '71810711'
@@ -5919,7 +8525,7 @@ products:
       measure_name: package
       weight_g: 227
       kcal: 240.62
-    measures: []
+    measures: *id104
     query: pasta tamaryndowa
     resolved_at: '2026-10-02'
   tarta mozzarella:
@@ -5933,7 +8539,7 @@ products:
       measure_name: slice
       weight_g: 20
       kcal: 50.8
-    measures: []
+    measures: *id086
     query: ser mozzarella
     resolved_at: '2026-10-02'
   thick greek yoghurt or skyr:
@@ -5947,7 +8553,7 @@ products:
       measure_name: package
       weight_g: 150
       kcal: 150
-    measures: []
+    measures: *id034
     query: jogurt grecki
     resolved_at: '2026-10-02'
   toban djan paste:
@@ -5961,7 +8567,15 @@ products:
       measure_name: package
       weight_g: 368
       kcal: 323.84
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 368
+      kcal: 323.84
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.88
     query: toban djan
     resolved_at: '2026-10-02'
   tofu:
@@ -5975,7 +8589,7 @@ products:
       measure_name: package
       weight_g: 200
       kcal: 256
-    measures: []
+    measures: *id105
     query: tofu
     resolved_at: '2026-10-02'
   tomato:
@@ -5989,7 +8603,7 @@ products:
       measure_name: piece
       weight_g: 130
       kcal: 24.7
-    measures: []
+    measures: *id078
     query: pomidor
     resolved_at: '2026-10-02'
   tomato paste:
@@ -6003,7 +8617,23 @@ products:
       measure_name: teaspoon
       weight_g: 15
       kcal: 14.55
-    measures: []
+    measures:
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 15
+      kcal: 14.55
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 25
+      kcal: 24.25
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 100
+      kcal: 97
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.97
     query: koncentrat pomidorowy
     resolved_at: '2026-10-02'
   tomatoes:
@@ -6017,7 +8647,7 @@ products:
       measure_name: piece
       weight_g: 130
       kcal: 24.7
-    measures: []
+    measures: *id078
     query: pomidor
     resolved_at: '2026-10-02'
   tonkatsu sauce:
@@ -6031,7 +8661,31 @@ products:
       measure_name: teaspoon
       weight_g: 10
       kcal: 15.5
-    measures: []
+    measures:
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 10
+      kcal: 15.5
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 20
+      kcal: 31
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 150
+      kcal: 232.5
+    - measure_id: '220'
+      measure_name: łyżka do sosu
+      weight_g: 25
+      kcal: 38.75
+    - measure_id: '17'
+      measure_name: ml
+      weight_g: 1
+      kcal: 1.55
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.55
     query: sos tonkatsu
     resolved_at: '2026-10-02'
   truskawki:
@@ -6041,11 +8695,11 @@ products:
     source: public
     verified: true
     default_measure:
-      measure_id: '39'
-      measure_name: portion
-      weight_g: 100
-      kcal: 33
-    measures: []
+      measure_id: '32'
+      measure_name: glass
+      weight_g: 150
+      kcal: 49.5
+    measures: *id098
     query: truskawki
     resolved_at: '2026-10-02'
   turkey bacon:
@@ -6057,9 +8711,13 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 50
-      kcal: 112
-    measures: []
+      weight_g: 1
+      kcal: 2.24
+    measures:
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.24
     query: boczek z indyka
     resolved_at: '2026-10-02'
   turmeric:
@@ -6073,7 +8731,7 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 17.7
-    measures: []
+    measures: *id106
     query: kurkuma
     resolved_at: '2026-10-02'
   tłuszcz do smażenia:
@@ -6087,7 +8745,7 @@ products:
       measure_name: portion
       weight_g: 10
       kcal: 90
-    measures: []
+    measures: *id059
     query: olej roślinny
     resolved_at: '2026-10-02'
   udko z kurczaka bez kości i skóry:
@@ -6099,9 +8757,9 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 100
-      kcal: 121
-    measures: []
+      weight_g: 1
+      kcal: 1.21
+    measures: *id013
     query: udo z kurczaka bez skóry
     resolved_at: '2026-10-02'
   unsweetened cocoa powder:
@@ -6115,7 +8773,7 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 22.95
-    measures: []
+    measures: *id107
     query: kakao
     resolved_at: '2026-10-02'
   unsweetened plant milk:
@@ -6129,7 +8787,27 @@ products:
       measure_name: package
       weight_g: 1000
       kcal: 140
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 1000
+      kcal: 140
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 100
+      kcal: 14
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 250
+      kcal: 35
+    - measure_id: '17'
+      measure_name: ml
+      weight_g: 1
+      kcal: 0.14
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.14
     query: mleko migdałowe niesłodzone
     resolved_at: '2026-10-02'
   vanilla:
@@ -6141,9 +8819,17 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 100
-      kcal: 288
-    measures: []
+      weight_g: 1
+      kcal: 2.88
+    measures: &id108
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.88
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 4
+      kcal: 11.52
     query: ekstrakt waniliowy
     resolved_at: '2026-10-02'
   vanilla extract:
@@ -6155,9 +8841,9 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 100
-      kcal: 288
-    measures: []
+      weight_g: 1
+      kcal: 2.88
+    measures: *id108
     query: ekstrakt waniliowy
     resolved_at: '2026-10-02'
   vegan chocolate chips:
@@ -6171,7 +8857,7 @@ products:
       measure_name: cube
       weight_g: 6
       kcal: 33.54
-    measures: []
+    measures: *id023
     query: czekolada gorzka
     resolved_at: '2026-10-02'
   vegetables:
@@ -6185,7 +8871,19 @@ products:
       measure_name: portion
       weight_g: 150
       kcal: 45
-    measures: []
+    measures: &id110
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 150
+      kcal: 45
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 0.3
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 450
+      kcal: 135
     query: warzywa mrożone
     resolved_at: '2026-10-02'
   vinegar:
@@ -6199,7 +8897,7 @@ products:
       measure_name: tablespoon
       weight_g: 10
       kcal: 2.1
-    measures: []
+    measures: *id109
     query: ocet jabłkowy
     resolved_at: '2026-10-02'
   walnut halves:
@@ -6213,7 +8911,23 @@ products:
       measure_name: piece
       weight_g: 4
       kcal: 27.08
-    measures: []
+    measures:
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 4
+      kcal: 27.08
+    - measure_id: '41'
+      measure_name: garść
+      weight_g: 30
+      kcal: 203.1
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 100
+      kcal: 677
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 6.77
     query: orzechy włoskie
     resolved_at: '2026-10-02'
   wanilia:
@@ -6225,9 +8939,9 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 100
-      kcal: 288
-    measures: []
+      weight_g: 1
+      kcal: 2.88
+    measures: *id108
     query: ekstrakt waniliowy
     resolved_at: '2026-10-02'
   warmed pita or white rice:
@@ -6241,7 +8955,19 @@ products:
       measure_name: package
       weight_g: 660
       kcal: 1722.6
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 660
+      kcal: 1722.6
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 55
+      kcal: 143.55
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.61
     query: chlebek pita
     resolved_at: '2026-10-02'
   warzywa:
@@ -6255,7 +8981,7 @@ products:
       measure_name: portion
       weight_g: 150
       kcal: 45
-    measures: []
+    measures: *id110
     query: warzywa mrożone
     resolved_at: '2026-10-02'
   white onion:
@@ -6269,7 +8995,7 @@ products:
       measure_name: piece
       weight_g: 100
       kcal: 33
-    measures: []
+    measures: *id009
     query: cebula
     resolved_at: '2026-10-02'
   white pepper:
@@ -6283,7 +9009,7 @@ products:
       measure_name: pinch
       weight_g: 1
       kcal: 2.96
-    measures: []
+    measures: *id111
     query: pieprz biały
     resolved_at: '2026-10-02'
   white rice:
@@ -6297,7 +9023,7 @@ products:
       measure_name: tablespoon
       weight_g: 15
       kcal: 54
-    measures: []
+    measures: *id047
     query: ryż biały
     resolved_at: '2026-10-02'
   whole eggs:
@@ -6311,7 +9037,7 @@ products:
       measure_name: piece
       weight_g: 60
       kcal: 84
-    measures: []
+    measures: *id025
     query: jajko kurze
     resolved_at: '2026-10-02'
   whole tomatoes:
@@ -6325,7 +9051,7 @@ products:
       measure_name: glass
       weight_g: 240
       kcal: 76.8
-    measures: []
+    measures: *id112
     query: pomidory z puszki
     resolved_at: '2026-10-02'
   whole wheat tortilla:
@@ -6339,7 +9065,15 @@ products:
       measure_name: piece
       weight_g: 62
       kcal: 192.2
-    measures: []
+    measures:
+    - measure_id: '46'
+      measure_name: sztuka
+      weight_g: 62
+      kcal: 192.2
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 3.1
     query: tortilla pełnoziarnista
     resolved_at: '2026-10-02'
   worcestershire sauce:
@@ -6353,7 +9087,7 @@ products:
       measure_name: g
       weight_g: 1
       kcal: 0.78
-    measures: []
+    measures: *id113
     query: sos worcestershire
     resolved_at: '2026-10-02'
   wołowina siekana black angus:
@@ -6365,9 +9099,9 @@ products:
     default_measure:
       measure_id: '1'
       measure_name: g
-      weight_g: 100
-      kcal: 198
-    measures: []
+      weight_g: 1
+      kcal: 1.98
+    measures: *id043
     query: wołowina mielona
     resolved_at: '2026-10-02'
   wrap bread:
@@ -6381,7 +9115,7 @@ products:
       measure_name: package
       weight_g: 1080
       kcal: 3348
-    measures: []
+    measures: *id114
     query: tortilla pszenna
     resolved_at: '2026-10-02'
   wędzona papryka:
@@ -6395,7 +9129,7 @@ products:
       measure_name: package
       weight_g: 85
       kcal: 303.45
-    measures: []
+    measures: *id115
     query: papryka wędzona
     resolved_at: '2026-10-02'
   yellow mustard:
@@ -6409,7 +9143,7 @@ products:
       measure_name: teaspoon
       weight_g: 10
       kcal: 9.9
-    measures: []
+    measures: *id116
     query: musztarda stołowa
     resolved_at: '2026-10-02'
   yellow onion:
@@ -6423,7 +9157,7 @@ products:
       measure_name: piece
       weight_g: 100
       kcal: 33
-    measures: []
+    measures: *id009
     query: cebula
     resolved_at: '2026-10-02'
   yoghurt:
@@ -6437,7 +9171,7 @@ products:
       measure_name: package
       weight_g: 150
       kcal: 90
-    measures: []
+    measures: *id040
     query: jogurt naturalny
     resolved_at: '2026-10-02'
   yogurt:
@@ -6451,7 +9185,7 @@ products:
       measure_name: package
       weight_g: 150
       kcal: 90
-    measures: []
+    measures: *id040
     query: jogurt naturalny
     resolved_at: '2026-10-02'
   yogurt greco 0%:
@@ -6465,7 +9199,7 @@ products:
       measure_name: package
       weight_g: 200
       kcal: 122
-    measures: []
+    measures: *id062
     query: jogurt grecki 0%
     resolved_at: '2026-10-02'
   zielony pieprz:
@@ -6479,7 +9213,15 @@ products:
       measure_name: pinch
       weight_g: 1
       kcal: 1.06
-    measures: []
+    measures:
+    - measure_id: '14'
+      measure_name: szczypta
+      weight_g: 1
+      kcal: 1.06
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.06
     query: pieprz zielony
     resolved_at: '2026-10-02'
   zucchine:
@@ -6493,7 +9235,7 @@ products:
       measure_name: piece
       weight_g: 240
       kcal: 40.8
-    measures: []
+    measures: *id020
     query: cukinia
     resolved_at: '2026-10-02'
   ząbek czosnku:
@@ -6507,7 +9249,7 @@ products:
       measure_name: clove
       weight_g: 5
       kcal: 7.6
-    measures: []
+    measures: *id031
     query: czosnek
     resolved_at: '2026-10-02'
   śmietana 18%:
@@ -6521,7 +9263,23 @@ products:
       measure_name: teaspoon
       weight_g: 5
       kcal: 9.3
-    measures: []
+    measures:
+    - measure_id: '19'
+      measure_name: łyżeczka
+      weight_g: 5
+      kcal: 9.3
+    - measure_id: '20'
+      measure_name: łyżka
+      weight_g: 25
+      kcal: 46.5
+    - measure_id: '32'
+      measure_name: szklanka
+      weight_g: 240
+      kcal: 446.4
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.86
     query: śmietana 18%
     resolved_at: '2026-10-02'
   śmietanka 30%:
@@ -6535,7 +9293,19 @@ products:
       measure_name: package
       weight_g: 200
       kcal: 582
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 200
+      kcal: 582
+    - measure_id: '39'
+      measure_name: porcja
+      weight_g: 50
+      kcal: 145.5
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 2.91
     query: śmietanka 30%
     resolved_at: '2026-10-02'
   świeża pietruszka:
@@ -6549,7 +9319,7 @@ products:
       measure_name: teaspoon
       weight_g: 6
       kcal: 2.94
-    measures: []
+    measures: *id072
     query: natka pietruszki
     resolved_at: '2026-10-02'
   świeże drożdże:
@@ -6563,7 +9333,15 @@ products:
       measure_name: package
       weight_g: 100
       kcal: 105
-    measures: []
+    measures:
+    - measure_id: '2'
+      measure_name: opakowanie
+      weight_g: 100
+      kcal: 105
+    - measure_id: '1'
+      measure_name: g
+      weight_g: 1
+      kcal: 1.05
     query: drożdże świeże
     resolved_at: '2026-10-02'
   żółty ser:
@@ -6577,7 +9355,7 @@ products:
       measure_name: slice
       weight_g: 20
       kcal: 63.2
-    measures: []
+    measures: *id050
     query: ser żółty
     resolved_at: '2026-10-02'
 unresolved:
@@ -6608,9 +9386,6 @@ unresolved:
   ice:
     reason: not_a_food
     checked_at: '2026-10-02'
-  kosher salt:
-    reason: not_a_food
-    checked_at: '2026-10-02'
   letnia woda:
     reason: not_a_food
     checked_at: '2026-10-02'
@@ -6619,12 +9394,6 @@ unresolved:
     checked_at: '2026-10-02'
   rotisserie chicken carcass:
     reason: no_match
-    checked_at: '2026-10-02'
-  sale:
-    reason: not_a_food
-    checked_at: '2026-10-02'
-  salt:
-    reason: not_a_food
     checked_at: '2026-10-02'
   sauce:
     reason: no_match
@@ -6637,9 +9406,6 @@ unresolved:
     checked_at: '2026-10-02'
   spices:
     reason: no_match
-    checked_at: '2026-10-02'
-  sól:
-    reason: not_a_food
     checked_at: '2026-10-02'
   tajín:
     reason: no_match

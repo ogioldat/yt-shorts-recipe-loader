@@ -95,6 +95,7 @@ def import_one(
     shared: bool = False,
     allow_partial: bool = False,
     dry_run: bool = False,
+    tags: list[str] | None = None,
 ) -> dict:
     """Import a single recipe and record the outcome on it.
 
@@ -102,7 +103,7 @@ def import_one(
     """
     data = read_recipe(path)
     built = build_recipe_kwargs(
-        data, products, shared=shared, allow_partial=allow_partial
+        data, products, shared=shared, allow_partial=allow_partial, tags=tags
     )
 
     if not built.ok:
@@ -169,6 +170,7 @@ def run(
     dry_run: bool = False,
     force: bool = False,
     include_errors: bool = True,
+    tags: list[str] | None = None,
 ) -> dict[str, int]:
     """Import a window of the pending recipes. Returns a tally by outcome.
 
@@ -221,6 +223,7 @@ def run(
             shared=shared,
             allow_partial=allow_partial,
             dry_run=dry_run,
+            tags=tags,
         )
         tally[result["status"]] = tally.get(result["status"], 0) + 1
         for warning in result["warnings"]:

@@ -7,7 +7,7 @@ ingredients:
   quantity: 1400
   unit: g
   note: trimmed, sliced thin
-  fitatu_product_id: '15279'
+  fitatu_product_id: '66153363'
 - name: cornstarch
   quantity: 0.25
   unit: cup
@@ -21,7 +21,7 @@ ingredients:
   quantity: 1.333
   unit: cup
   note: 1 1/3 cups
-  fitatu_product_id: '117075611'
+  fitatu_product_id: '149649810'
 - name: brown stevia
   quantity: 1.333
   unit: cup
@@ -57,3 +57,7 @@ source:
   - description
   - subtitles
 extracted_at: '2026-10-02'
+import_status: ok
+fitatu_recipe_id: '176257089'
+imported_at: '2026-10-02'
+import_note: imported outside this session; id recovered from Fitatu by matching the title

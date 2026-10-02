@@ -34,3 +34,8 @@ source:
   - title
   - subtitles
 extracted_at: '2026-10-02'
+import_status: error
+import_error: 'limes: no quantity stated in the source video; water: no Fitatu product mapped; sweetened
+  condensed milk: no quantity stated in the source video; ice: no Fitatu product mapped; limes: no quantity
+  stated in the source video; <recipe>: no ingredients could be converted'
+imported_at: '2026-10-02'

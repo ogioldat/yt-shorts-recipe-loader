@@ -41,6 +41,7 @@ ingredients:
   quantity: 1
   unit: tbsp
   note: 1 płaska łyżka, ciasto
+  fitatu_product_id: '5270094'
 - name: miękkie masło
   quantity: 2
   unit: tbsp
@@ -85,6 +86,7 @@ ingredients:
   quantity: null
   unit: null
   note: farsz
+  fitatu_product_id: '5270094'
 - name: pieprz
   quantity: null
   unit: null
@@ -119,6 +121,7 @@ ingredients:
   quantity: null
   unit: null
   note: sos czosnkowy
+  fitatu_product_id: '5270094'
 - name: pieprz
   quantity: null
   unit: null
@@ -152,3 +155,7 @@ source:
   - description
   - subtitles
 extracted_at: '2026-10-02'
+import_status: ok
+fitatu_recipe_id: '176257035'
+imported_at: '2026-10-02'
+import_note: imported outside this session; id recovered from Fitatu by matching the title

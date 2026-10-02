@@ -53,6 +53,7 @@ ingredients:
 - name: salt
   quantity: null
   unit: null
+  fitatu_product_id: '5270094'
 - name: palm sugar
   quantity: null
   unit: null
@@ -91,3 +92,14 @@ source:
   - title
   - subtitles
 extracted_at: '2026-10-02'
+import_status: error
+import_error: 'garlic: no quantity stated in the source video; ginger: no quantity stated in the source
+  video; shallot: no quantity stated in the source video; turmeric: no quantity stated in the source video;
+  galangal: no quantity stated in the source video; red chilies: no quantity stated in the source video;
+  oil: no quantity stated in the source video; dry spices: no Fitatu product mapped; coconut cream: no
+  quantity stated in the source video; water: no Fitatu product mapped; salt: no quantity stated in the
+  source video; palm sugar: no quantity stated in the source video; beef chuck: no quantity stated in
+  the source video; lemongrass: no quantity stated in the source video; lime leaves: no quantity stated
+  in the source video; kerisik: no quantity stated in the source video; white rice: no quantity stated
+  in the source video; <recipe>: no ingredients could be converted'
+imported_at: '2026-10-02'

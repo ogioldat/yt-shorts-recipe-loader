@@ -4,8 +4,8 @@ language: en
 servings: null
 ingredients:
 - name: shrimp
-  quantity: null
-  unit: null
+  quantity: 907
+  unit: g
   note: 2 lbs, head-on, trimmed and deveined
   fitatu_product_id: '14357035'
 - name: cornstarch
@@ -86,3 +86,8 @@ source:
   - title
   - description
 extracted_at: '2026-10-02'
+prep_time_minutes: 35
+prep_time_source: estimated during import; not stated in the video
+import_status: ok
+fitatu_recipe_id: '176264451'
+imported_at: '2026-10-02'

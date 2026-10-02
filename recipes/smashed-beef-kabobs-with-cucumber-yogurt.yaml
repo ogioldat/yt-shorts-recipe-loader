@@ -40,6 +40,7 @@ ingredients:
   quantity: 2
   unit: tsp
   note: 1 tsp in the beef, 1 tsp in the yogurt
+  fitatu_product_id: '5270094'
 - name: black pepper
   quantity: null
   unit: null
@@ -74,3 +75,8 @@ source:
   - description
   - subtitles
 extracted_at: '2026-10-02'
+prep_time_minutes: 30
+prep_time_source: estimated during import; not stated in the video
+import_status: ok
+fitatu_recipe_id: '176264445'
+imported_at: '2026-10-02'

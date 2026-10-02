@@ -4,8 +4,8 @@ language: en
 servings: 8
 ingredients:
 - name: low-fat cream cheese
-  quantity: null
-  unit: null
+  quantity: 454
+  unit: g
   note: 16 oz, softened
   fitatu_product_id: '120257871'
 - name: fat-free cottage cheese
@@ -33,6 +33,7 @@ ingredients:
 - name: salt
   quantity: 1
   unit: pinch
+  fitatu_product_id: '5270094'
 - name: chocolate frosting
   quantity: 0.25
   unit: cup
@@ -48,3 +49,8 @@ source:
   - description
   - subtitles
 extracted_at: '2026-10-02'
+prep_time_minutes: 70
+prep_time_source: estimated during import; not stated in the video
+import_status: ok
+fitatu_recipe_id: '176264388'
+imported_at: '2026-10-02'

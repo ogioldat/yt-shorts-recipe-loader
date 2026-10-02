@@ -35,7 +35,7 @@ ingredients:
 - name: garlic powder
   quantity: null
   unit: null
-  fitatu_product_id: '75531888'
+  fitatu_product_id: '103420935'
 - name: oregano
   quantity: null
   unit: null
@@ -48,6 +48,7 @@ ingredients:
   quantity: null
   unit: null
   note: a little
+  fitatu_product_id: '5270094'
 - name: olive oil
   quantity: null
   unit: null
@@ -63,3 +64,12 @@ source:
   - description
   - subtitles
 extracted_at: '2026-10-02'
+import_status: error
+import_error: 'protein pasta: no quantity stated in the source video; chicken Italian sausage: no quantity
+  stated in the source video; jarred tomato sauce: no quantity stated in the source video; low-fat cottage
+  cheese: no quantity stated in the source video; parmigiano: no quantity stated in the source video;
+  milk: no quantity stated in the source video; garlic powder: no quantity stated in the source video;
+  oregano: no quantity stated in the source video; black pepper: no quantity stated in the source video;
+  salt: no quantity stated in the source video; olive oil: no quantity stated in the source video; <recipe>:
+  no ingredients could be converted'
+imported_at: '2026-10-02'

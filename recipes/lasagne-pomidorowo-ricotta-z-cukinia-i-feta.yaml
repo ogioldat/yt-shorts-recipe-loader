@@ -30,3 +30,8 @@ source:
   - description
   - subtitles
 extracted_at: '2026-10-02'
+import_status: error
+import_error: 'sos pomidorowy: no quantity stated in the source video; ricotta: no quantity stated in
+  the source video; cukinia: no quantity stated in the source video; feta: no quantity stated in the source
+  video; <recipe>: no ingredients could be converted'
+imported_at: '2026-10-02'

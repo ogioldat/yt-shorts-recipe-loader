@@ -26,8 +26,10 @@ videos:
     title: AFK Massaman Curry
     fetched_at: '2026-10-02'
     description_sha256: da939ef3d4c9fb57fb35429e35a6bc552f5db54344def12d42067bf34d0d60f8
-    subtitles: []
-    status: ok
+    subtitles:
+    - subs.en.txt
+    - subs.en.vtt
+    status: complete
     extracted_at: '2026-10-02'
     recipes:
     - afk-massaman-curry
@@ -112,8 +114,10 @@ videos:
     title: 'Stir Fried Shrimp recipe 🦐 #recipe #cooking #foodlovers'
     fetched_at: '2026-10-02'
     description_sha256: 73834aaf57701bc755dc78bf1abbd5389c8b1b8071fb3f6ddccb2a5c18803bf4
-    subtitles: []
-    status: ok
+    subtitles:
+    - subs.en.txt
+    - subs.en.vtt
+    status: complete
     extracted_at: '2026-10-02'
     recipes:
     - stir-fried-shrimp
@@ -141,8 +145,10 @@ videos:
     title: Sheet Pan Kebab Wraps
     fetched_at: '2026-10-02'
     description_sha256: c2f03fa05708e043da4074a3697210c57d43a7c77b4e04fca5265b9ce2fdbadf
-    subtitles: []
-    status: ok
+    subtitles:
+    - subs.en.txt
+    - subs.en.vtt
+    status: complete
     extracted_at: '2026-10-02'
     recipes:
     - sheet-pan-seekh-kebab-wraps
@@ -172,7 +178,7 @@ videos:
     subtitles:
     - subs.pl.txt
     - subs.pl.vtt
-    status: ok
+    status: complete
     extracted_at: '2026-10-02'
     recipes:
     - kanapka-banh-mi-z-kurczakiem
@@ -198,6 +204,16 @@ videos:
     extracted_at: '2026-10-02'
     recipes:
     - jednogarnkowe-pulpety-w-sosie-pomidorowym-z-muszelkami
+  GOSNRJPll4U:
+    title: '5-składnikowy SERNIK z truskawkami  #policzonaszama #lunchbox'
+    fetched_at: '2026-10-02'
+    description_sha256: 7ea4616da422650d960d6d0707518c36ed97e4eeee0fd3933948ddef3872c940
+    subtitles:
+    - subs.pl.txt
+    - subs.pl.vtt
+    status: complete
+    extracted_at: null
+    recipes: []
   GPSgECsKC7E:
     title: 'PROTEINOWY PONIEDZIAŁEK: Tosty z kurczakiem BBQ 🐔 #coocharz #fitprzepisy #tosty #jedzenie
       #shorts'
@@ -214,8 +230,10 @@ videos:
     title: Pakistani Chicken Tikka
     fetched_at: '2026-10-02'
     description_sha256: fd3117796284b609fd9df932462058ee4b3b4a35e3542506ce11a205b035c6e0
-    subtitles: []
-    status: ok
+    subtitles:
+    - subs.en.txt
+    - subs.en.vtt
+    status: complete
     extracted_at: '2026-10-02'
     recipes:
     - pakistani-chicken-tikka
@@ -223,8 +241,10 @@ videos:
     title: Sambal
     fetched_at: '2026-10-02'
     description_sha256: 2be098a1962b145eaf547d090ed12c798bf428766063ea515ee75d2a01952567
-    subtitles: []
-    status: ok
+    subtitles:
+    - subs.en.txt
+    - subs.en.vtt
+    status: complete
     extracted_at: '2026-10-02'
     recipes:
     - sambal
@@ -269,6 +289,16 @@ videos:
     subtitles: []
     status: no_recipe_found
     extracted_at: '2026-10-02'
+    recipes: []
+  L-TnDIAwCLw:
+    title: 'Tteok-bokki! #shorts'
+    fetched_at: '2026-10-02'
+    description_sha256: 27cd22ba20588448f5b9a1b590ddbe9a2e27d36798707ae407a6f2d9cc410e83
+    subtitles:
+    - subs.en.txt
+    - subs.en.vtt
+    status: complete
+    extracted_at: null
     recipes: []
   L6j4_em2Lew:
     title: Eat good, make it healthy!! No chicken and rice over here.
@@ -342,11 +372,23 @@ videos:
     title: 'Recipes Every Home Cook Should Know Ep 18 | Japanese Curry Beef Bowls #cooking #recipe'
     fetched_at: '2026-10-02'
     description_sha256: e4757454670621944756e9dc0d9c1c5531b6d9b6326807ad6dae39a588addddd
-    subtitles: []
-    status: ok
+    subtitles:
+    - subs.en.txt
+    - subs.en.vtt
+    status: complete
     extracted_at: '2026-10-02'
     recipes:
     - japanese-curry-beef-bowls
+  QUBoCClF0Nc:
+    title: 'Jjajangmyeon #30minutemeals #shorts #jjajangmyeon #jajangmyeong #noodles'
+    fetched_at: '2026-10-02'
+    description_sha256: 7613050ab05594f6f5847e279e50bc5b9306234fa487b94096034c1d7b356141
+    subtitles:
+    - subs.en.txt
+    - subs.en.vtt
+    status: complete
+    extracted_at: null
+    recipes: []
   RmVYMF0IfF8:
     title: 'Chocolate Mousse 🍫: https://glow-diaries.com/chocolate-mousse/'
     fetched_at: '2026-10-02'
@@ -372,9 +414,11 @@ videos:
     fetched_at: '2026-10-02'
     description_sha256: e2fe03d76fb7af5e1b608a51b2277cf089289f60b6190ad570ca2a1dc14c2874
     subtitles:
+    - subs.en.txt
+    - subs.en.vtt
     - subs.pl.txt
     - subs.pl.vtt
-    status: ok
+    status: complete
     extracted_at: '2026-10-02'
     recipes:
     - magnum-style-chia-pudding
@@ -483,8 +527,10 @@ videos:
     title: 'High-Protein Strawberry Cheesecake Ice Cream | Creamy & Easy #easyrecipe'
     fetched_at: '2026-10-02'
     description_sha256: bab0cf181d3dfdc6225b6be7705fa47465bc2b4f1ad73422ff446bf396a1f4c6
-    subtitles: []
-    status: ok
+    subtitles:
+    - subs.en.txt
+    - subs.en.vtt
+    status: complete
     extracted_at: '2026-10-02'
     recipes:
     - high-protein-strawberry-cheesecake-ice-cream
@@ -492,8 +538,10 @@ videos:
     title: 'Protein Strawberry Ice Cream Bites | High-Protein Treat #easyrecipe'
     fetched_at: '2026-10-02'
     description_sha256: c6db880024ef46f346dce824866d1c82dcc024d5fa8f1fbeffccd8161f28928c
-    subtitles: []
-    status: ok
+    subtitles:
+    - subs.en.txt
+    - subs.en.vtt
+    status: complete
     extracted_at: '2026-10-02'
     recipes:
     - protein-strawberry-ice-cream-bites
@@ -532,8 +580,10 @@ videos:
     title: 'High Protein Mapo Egg Tofu Bowl Recipe #lowcalorie #highprotein #healthyrecipes'
     fetched_at: '2026-10-02'
     description_sha256: cfe4120cb394c026f4c6de5ff3fdd268d3635131f2c6c6cc0deb34e019ddda7d
-    subtitles: []
-    status: ok
+    subtitles:
+    - subs.en.txt
+    - subs.en.vtt
+    status: complete
     extracted_at: '2026-10-02'
     recipes:
     - high-protein-mapo-egg-tofu-bowl
@@ -541,8 +591,10 @@ videos:
     title: Healthy High Protein English Muffin Meal Prep
     fetched_at: '2026-10-02'
     description_sha256: e9af130f38046cd1987c80a37cc6b15f950ac17f0f19ac584fb1f85574cd413f
-    subtitles: []
-    status: ok
+    subtitles:
+    - subs.en.txt
+    - subs.en.vtt
+    status: complete
     extracted_at: '2026-10-02'
     recipes:
     - healthy-high-protein-english-muffins
@@ -686,7 +738,7 @@ videos:
     fetched_at: '2026-10-02'
     description_sha256: 02179f00ce5a5e69932c4d3395f07ea5cc8b5154c4bae252f54f543947fa21cc
     subtitles: []
-    status: no_recipe_found
+    status: complete
     extracted_at: '2026-10-02'
     recipes: []
   uPenFX4QagY:

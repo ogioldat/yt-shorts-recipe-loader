@@ -57,3 +57,8 @@ source:
   - title
   - description
 extracted_at: '2026-10-02'
+prep_time_minutes: 180
+prep_time_source: estimated during import; not stated in the video
+import_status: ok
+fitatu_recipe_id: '176264370'
+imported_at: '2026-10-02'

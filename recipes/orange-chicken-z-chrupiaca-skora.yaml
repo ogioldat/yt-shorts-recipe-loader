@@ -17,7 +17,7 @@ ingredients:
   quantity: 1
   unit: tbsp
   note: marynata
-  fitatu_product_id: '117075611'
+  fitatu_product_id: '149649810'
 - name: sos ostrygowy
   quantity: 1
   unit: tbsp
@@ -35,6 +35,7 @@ ingredients:
 - name: sól
   quantity: null
   unit: null
+  fitatu_product_id: '5270094'
 - name: biały pieprz
   quantity: null
   unit: null
@@ -68,7 +69,7 @@ ingredients:
   quantity: 1
   unit: tbsp
   note: sos
-  fitatu_product_id: '117075611'
+  fitatu_product_id: '149649810'
 - name: sos ostrygowy
   quantity: 1
   unit: tbsp
@@ -83,7 +84,7 @@ ingredients:
   quantity: 0.5
   unit: tsp
   note: sos
-  fitatu_product_id: '116418723'
+  fitatu_product_id: '120099888'
 - name: gwiazdka anyżu
   quantity: 1
   unit: piece
@@ -133,3 +134,8 @@ source:
   - description
   - subtitles
 extracted_at: '2026-10-02'
+prep_time_minutes: 50
+prep_time_source: estimated during import; not stated in the video
+import_status: ok
+fitatu_recipe_id: '176264421'
+imported_at: '2026-10-02'

@@ -4,8 +4,8 @@ language: en
 servings: null
 ingredients:
 - name: ground lamb or beef
-  quantity: null
-  unit: null
+  quantity: 907
+  unit: g
   note: 2 lbs (80/20)
   fitatu_product_id: '115368039'
 - name: red onions
@@ -42,7 +42,7 @@ ingredients:
   quantity: 1
   unit: tsp
   note: kebab
-  fitatu_product_id: '146462556'
+  fitatu_product_id: '74562866'
 - name: coriander
   quantity: 1
   unit: tsp
@@ -62,6 +62,7 @@ ingredients:
   quantity: 1.5
   unit: tsp
   note: kebab
+  fitatu_product_id: '5270094'
 - name: black pepper
   quantity: 1
   unit: tsp
@@ -81,6 +82,7 @@ ingredients:
   quantity: null
   unit: null
   note: for the roasted garlic
+  fitatu_product_id: '5270094'
 - name: cilantro
   quantity: 0.5
   unit: cup
@@ -105,7 +107,7 @@ ingredients:
   quantity: 0.5
   unit: tsp
   note: chutney mayo
-  fitatu_product_id: '146462556'
+  fitatu_product_id: '74562866'
 - name: coriander
   quantity: 0.5
   unit: tsp
@@ -120,6 +122,7 @@ ingredients:
   quantity: null
   unit: null
   note: to taste, chutney mayo
+  fitatu_product_id: '5270094'
 - name: pepper
   quantity: null
   unit: null
@@ -164,3 +167,8 @@ source:
   - title
   - description
 extracted_at: '2026-10-02'
+prep_time_minutes: 50
+prep_time_source: estimated during import; not stated in the video
+import_status: ok
+fitatu_recipe_id: '176264442'
+imported_at: '2026-10-02'

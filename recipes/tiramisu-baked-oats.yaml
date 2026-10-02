@@ -26,3 +26,7 @@ source:
   - title
   - subtitles
 extracted_at: '2026-10-02'
+import_status: error
+import_error: 'oats: no quantity stated in the source video; coffee: no quantity stated in the source
+  video; protein yogurt: no quantity stated in the source video; <recipe>: no ingredients could be converted'
+imported_at: '2026-10-02'

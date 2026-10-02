@@ -30,7 +30,7 @@ ingredients:
 - name: soy sauce
   quantity: 1.5
   unit: tbsp
-  fitatu_product_id: '117075611'
+  fitatu_product_id: '149649810'
 - name: oyster sauce
   quantity: 1
   unit: tbsp
@@ -51,13 +51,14 @@ ingredients:
 - name: salt
   quantity: 0.5
   unit: tsp
+  fitatu_product_id: '5270094'
 - name: black pepper
   quantity: 0.5
   unit: tsp
   fitatu_product_id: '116931077'
 - name: 95% lean ground beef
-  quantity: null
-  unit: null
+  quantity: 227
+  unit: g
   note: 8 oz, raw
   fitatu_product_id: '61286861'
 - name: spray oil
@@ -74,3 +75,8 @@ source:
   - title
   - description
 extracted_at: '2026-10-02'
+prep_time_minutes: 30
+prep_time_source: estimated during import; not stated in the video
+import_status: ok
+fitatu_recipe_id: '176264406'
+imported_at: '2026-10-02'
