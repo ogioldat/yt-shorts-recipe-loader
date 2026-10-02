@@ -72,23 +72,35 @@ re-hitting YouTube — which matters because YouTube throttles repeat scraping.
 
 ### Stage 1 — fetch
 
-`scripts/fetch_playlist.py`, a `uv run --script` file with PEP 723 inline
-dependencies (`yt-dlp`). No virtualenv to manage and no global install.
+`recipe_library/fetch.py`, using the `yt_dlp` **Python API** rather than its
+console script, so options are passed as data and failures arrive as typed
+exceptions. Dependencies are uv-managed via `pyproject.toml`.
 
 1. List playlist entries: `yt-dlp --flat-playlist --print "%(id)s"`.
-2. Diff against `state/processed.yaml`; skip videos already fetched whose
-   description hash is unchanged.
-3. For each new or changed video, with `--skip-download`:
-   - `--write-info-json` → `raw/<id>/info.json` (title, description, channel, url, duration)
-   - `--write-auto-subs --sub-langs pl,en --convert-subs vtt` → `raw/<id>/subs.<lang>.vtt`
+2. Diff against `state/processed.yaml`; skip videos already present in the
+   ledger unless `--refresh` is passed. **Id presence is the only possible gate
+   here** — flat playlist extraction returns ids and nothing else, so the
+   description hash cannot be known at this point. The hash gates re-extraction
+   in Stage 2, not fetching.
+3. For each new video, with media download skipped:
+   - capture the info dict in memory, prune it, write `raw/<id>/meta.json`
+   - request **both** manual (`writesubtitles`) and automatic
+     (`writeautomaticsub`) captions for `pl,en`, converted to vtt →
+     `raw/<id>/subs.<lang>.vtt`. Manual captions are a separate and better
+     track, common on recipe content where creators want ingredients legible.
 4. Record `fetched_at` and `description_sha256` in the ledger.
 
 Subtitles are best-effort: a video with none is still fetched and still
 extractable from its description alone.
 
-`raw/` **is committed.** It is small text, it is the provenance record for every
-recipe, and YouTube descriptions get edited after upload — the original is worth
-more than the saved bytes.
+`raw/` **is committed, but only the pruned metadata.** Measured against a real
+video: yt-dlp's full info dict is **619 KB** across 64 top-level keys, almost all
+format lists, thumbnails and signed URLs that rotate on every fetch. Pruned to
+the fields extraction reads it is **3.0 KB** — a 200× reduction. The full dump is
+never persisted, and `raw/**/*.info.json` is gitignored as a backstop.
+
+The pruned `meta.json` is committed because it is the provenance record for every
+recipe, and YouTube descriptions get edited after upload.
 
 ### Stage 2 — extract
 
@@ -220,16 +232,25 @@ reviewed commit is the mitigation. The server exposes ~20 tools including
 ├── CLAUDE.md
 ├── .mcp.json                      # fitatu registration, no secrets
 ├── .gitignore                     # vendor/, .env, __pycache__
-├── config.yaml                    # playlist URL, sub languages
+├── config.yaml                    # playlist URL, sub langs, cookie source
+├── pyproject.toml                 # uv-managed deps; yt-dlp as a library
 ├── docs/superpowers/specs/
-├── scripts/fetch_playlist.py      # uv inline-deps script
+├── recipe_library/
+│   ├── fetch.py                   # stage 1, yt_dlp Python API
+│   ├── ledger.py                  # the two processing gates
+│   ├── schema.py                  # recipe validation rules
+│   ├── slugs.py                   # Polish-aware recipe ids
+│   ├── paths.py                   # layout + config loading
+│   └── validate.py                # CLI over recipes/*.yaml
 ├── .claude/skills/extract-recipes/SKILL.md
 ├── .claude/commands/extract-recipes.md
+├── scripts/setup_fitatu.sh        # clone, pin, build the MCP server
 ├── tests/
-├── raw/<video_id>/                # committed provenance
+├── raw/<video_id>/meta.json       # committed provenance (~3KB)
 ├── recipes/<recipe-id>.yaml
 ├── state/processed.yaml
-└── vendor/fitatu-mcp/             # gitignored clone
+├── vendor/PINNED_COMMIT           # tracked; the clone itself is not
+└── vendor/fitatu-mcp/             # gitignored
 ```
 
 ## Error handling
@@ -248,7 +269,8 @@ A failure on one video must never abort the batch or corrupt the ledger.
 
 ## Testing
 
-pytest, run via `uv`.
+pytest, always invoked as `uv run pytest`. A bare `python3` on this machine
+resolves to an unrelated project's virtualenv.
 
 - **Schema conformance** over all `recipes/*.yaml`: valid YAML, required fields
   present, `quantity` numeric-or-null, `unit` within the enum, `source.url`
@@ -261,17 +283,33 @@ pytest, run via `uv`.
 - **Slug generation**: Polish diacritics (ł, ż, ś, ę) produce clean ASCII slugs,
   and collisions get suffixed.
 
-## Risk to retire first
+## Risk retired during implementation
 
-**Auto-subtitle availability on Polish Shorts is unverified.** YouTube's
-auto-caption coverage for Shorts is uneven, and yt-dlp is periodically
-rate-limited. Step one of implementation is running the fetcher against 2–3 real
-videos from the actual playlist and inspecting what comes back.
+The subtitle risk was real and is now measured rather than predicted.
 
-If subtitles are largely absent, descriptions carry the entire load. That
-materially weakens the pipeline and would justify revisiting frame reading —
-which was explicitly scoped out, and should be reconsidered deliberately rather
-than discovered after the pipeline is built.
+**Metadata extraction works.** It requires a JavaScript runtime — YouTube
+extraction without one is deprecated as of yt-dlp 2026.08. Node satisfies this.
+The signature and n-challenge warnings yt-dlp still emits affect only media
+format URLs, which never matter here because no video is downloaded.
+
+**Subtitle fetching is aggressively throttled.** A real video returned
+persistent `HTTP 429: Too Many Requests` across all four backoff attempts
+(5s/10s/20s) while its metadata was served without complaint. The subtitle
+endpoint is rate-limited far harder for anonymous clients than metadata is.
+
+Mitigations, in order of preference:
+
+1. `cookies_from_browser` in `config.yaml` makes yt-dlp reuse a real browser
+   YouTube session, which lifts the throttling. Opt-in, because reading a
+   browser's cookie store is privacy-sensitive and public playlists do not
+   otherwise need it.
+2. Missing subtitles are **non-fatal**. Fetch proceeds on title and description
+   alone, which for recipe shorts is frequently sufficient.
+
+If subtitles stay unavailable *and* descriptions prove too thin once real
+videos are processed, frame reading should be reconsidered deliberately — it was
+scoped out on the assumption that text would suffice, and that assumption is
+now the thing to watch.
 
 ## Implementation order
 

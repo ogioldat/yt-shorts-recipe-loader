@@ -1,0 +1,20 @@
+# Fitatu MCP server clone — third-party code, built locally.
+# The pinned commit IS tracked, so the reviewed version is reproducible.
+vendor/*
+!vendor/PINNED_COMMIT
+
+# Credentials — never commit
+.env
+*.env
+
+# yt-dlp full metadata dumps (~600KB each). Only pruned meta.json is kept.
+raw/**/*.info.json
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.DS_Store
+
+# Editor-local
+.vscode/

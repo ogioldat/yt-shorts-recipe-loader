@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "fitatu": {
+      "command": "node",
+      "args": [
+        "--env-file=/Users/tomekogiolda/Projects/recipe-library/vendor/fitatu-mcp/.env",
+        "/Users/tomekogiolda/Projects/recipe-library/vendor/fitatu-mcp/dist/index.js"
+      ],
+      "env": {
+        "MCP_TRANSPORT": "stdio"
+      }
+    }
+  }
+}

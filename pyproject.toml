@@ -1,0 +1,17 @@
+[project]
+name = "recipe-library"
+version = "0.1.0"
+description = "YouTube Shorts recipe collection as structured YAML"
+requires-python = ">=3.11"
+dependencies = [
+    "yt-dlp>=2025.1.1",
+    "PyYAML>=6.0",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+markers = ["network: hits YouTube; skipped unless --run-network is passed"]

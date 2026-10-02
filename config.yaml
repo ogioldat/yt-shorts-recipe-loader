@@ -1,0 +1,13 @@
+# The public YouTube playlist holding saved recipe shorts.
+# Must be set before `uv run python -m recipe_library.fetch` will run.
+playlist_url: https://www.youtube.com/playlist?list=PLB5N_RPIXGvw
+
+# Subtitle languages to request, in preference order.
+sub_langs: [pl, en]
+
+# Optional. YouTube throttles its subtitle endpoint hard for anonymous clients
+# (observed: persistent HTTP 429 even with backoff), while plain metadata is
+# served fine. Naming a browser here makes yt-dlp reuse that browser's YouTube
+# session for subtitle requests, which lifts the throttling.
+# Set to chrome, firefox, safari, edge or brave. Null means stay anonymous.
+cookies_from_browser: null
