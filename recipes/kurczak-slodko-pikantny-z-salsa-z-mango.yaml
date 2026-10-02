@@ -7,34 +7,42 @@ ingredients:
 - name: mięso z uda kurczaka
   quantity: 200
   unit: g
+  fitatu_product_id: '89311698'
 - name: oliwa
   quantity: 2
   unit: g
   note: marynata
+  fitatu_product_id: '102852669'
 - name: ząbek czosnku
   quantity: 1
   unit: piece
   note: marynata
+  fitatu_product_id: '116515157'
 - name: miód
   quantity: 10
   unit: g
   note: marynata
+  fitatu_product_id: '1896'
 - name: sos sojowy
   quantity: 5
   unit: g
   note: marynata
+  fitatu_product_id: '117075611'
 - name: ketchup
   quantity: 10
   unit: g
   note: marynata
+  fitatu_product_id: '96869175'
 - name: musztarda sarepska
   quantity: 5
   unit: g
   note: marynata
+  fitatu_product_id: '31663023'
 - name: papryka mielona chili
   quantity: 0.25
   unit: tsp
   note: marynata
+  fitatu_product_id: '73694668'
 - name: sól
   quantity: null
   unit: null
@@ -42,30 +50,37 @@ ingredients:
   quantity: null
   unit: null
   note: świeżo mielony
+  fitatu_product_id: '116931077'
 - name: mango
   quantity: 100
   unit: g
   note: salsa, w kostce
+  fitatu_product_id: '105386223'
 - name: pomidor
   quantity: null
   unit: null
   note: salsa, bez miąższu, w kostce
+  fitatu_product_id: '116885192'
 - name: cebula czerwona
   quantity: null
   unit: null
   note: salsa
+  fitatu_product_id: '64109163'
 - name: sok z limonki
   quantity: null
   unit: null
   note: salsa
+  fitatu_product_id: '63132574'
 - name: oliwa
   quantity: 2
   unit: g
   note: salsa
+  fitatu_product_id: '102852669'
 - name: kolendra (natka)
   quantity: null
   unit: null
   note: salsa, świeża
+  fitatu_product_id: '117075815'
 source:
   video_id: OY2yryw-5sc
   url: https://www.youtube.com/shorts/OY2yryw-5sc

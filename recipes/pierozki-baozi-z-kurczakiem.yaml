@@ -8,54 +8,67 @@ ingredients:
   quantity: 230
   unit: g
   note: ciasto
+  fitatu_product_id: '24882425'
 - name: jogurt grecki
   quantity: 200
   unit: g
   note: ciasto
+  fitatu_product_id: '65059107'
 - name: mięso mielone z kurczaka
   quantity: 200
   unit: g
   note: farsz
+  fitatu_product_id: '92289020'
 - name: czerwona cebula
   quantity: 50
   unit: g
   note: farsz
+  fitatu_product_id: '64109163'
 - name: marchewka
   quantity: 0.5
   unit: piece
   note: farsz, starta
+  fitatu_product_id: '116722614'
 - name: ząbek czosnku
   quantity: 1
   unit: piece
   note: farsz
+  fitatu_product_id: '116515157'
 - name: szczypiorek
   quantity: 15
   unit: g
   note: farsz
+  fitatu_product_id: '116880739'
 - name: sos sojowy
   quantity: 50
   unit: g
   note: farsz
+  fitatu_product_id: '117075611'
 - name: sos sriracha
   quantity: 20
   unit: g
   note: farsz
+  fitatu_product_id: '117147575'
 - name: pieprz
   quantity: null
   unit: null
   note: do smaku
+  fitatu_product_id: '116931077'
 - name: oliwa z oliwek
   quantity: 8
   unit: ml
   note: do podsmażenia
+  fitatu_product_id: '102852669'
 - name: czarny sezam
   quantity: 5
   unit: g
   note: do posypania
+  fitatu_product_id: '116808097'
 - name: mąka pszenna
   quantity: null
   unit: null
   note: odrobina do podsypania
+  fitatu_product_id: '24882425'
 source:
   video_id: Ox6jDu3bJ9o
   url: https://www.youtube.com/shorts/Ox6jDu3bJ9o

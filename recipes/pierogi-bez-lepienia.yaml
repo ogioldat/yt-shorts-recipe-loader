@@ -7,39 +7,49 @@ ingredients:
 - name: mielona wieprzowina
   quantity: 600
   unit: g
+  fitatu_product_id: '117846051'
 - name: sól
   quantity: 1
   unit: tsp
 - name: pieprz
   quantity: 1
   unit: tsp
+  fitatu_product_id: '116931077'
 - name: cukier
   quantity: 1
   unit: tsp
+  fitatu_product_id: '24882535'
 - name: wędzona papryka
   quantity: 1
   unit: tsp
+  fitatu_product_id: '147786378'
 - name: starty imbir
   quantity: 1
   unit: tsp
+  fitatu_product_id: '2149'
 - name: ząbek czosnku
   quantity: 2
   unit: piece
   note: starte
+  fitatu_product_id: '116515157'
 - name: sos sojowy
   quantity: 1
   unit: tbsp
+  fitatu_product_id: '117075611'
 - name: olej sezamowy
   quantity: 0.5
   unit: tsp
+  fitatu_product_id: '1653'
 - name: szczypiorek
   quantity: null
   unit: null
   note: 1 pęczek, posiekany
+  fitatu_product_id: '116880739'
 - name: mąka pszenna
   quantity: 1
   unit: cup
   note: 1 szklanka, do obtaczania
+  fitatu_product_id: '24882425'
 - name: sól
   quantity: 1
   unit: tsp

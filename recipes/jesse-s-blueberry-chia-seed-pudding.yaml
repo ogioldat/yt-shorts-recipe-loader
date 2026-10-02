@@ -7,10 +7,12 @@ ingredients:
   quantity: 125
   unit: g
   note: 4.4 oz
+  fitatu_product_id: '120009289'
 - name: chia seeds
   quantity: 30
   unit: g
   note: 1.1 oz
+  fitatu_product_id: '117075958'
 - name: milk
   quantity: 90
   unit: ml
@@ -27,6 +29,7 @@ ingredients:
   quantity: 0.5
   unit: piece
   note: optional, juice & zest
+  fitatu_product_id: '116885261'
 source:
   video_id: knzwo4uEFEk
   url: https://www.youtube.com/shorts/knzwo4uEFEk

@@ -7,10 +7,12 @@ ingredients:
   quantity: null
   unit: null
   note: stock
+  fitatu_product_id: '102852669'
 - name: shrimp
   quantity: null
   unit: null
   note: shells and heads go into the stock, the shrimp into the paella
+  fitatu_product_id: '14357035'
 - name: fish parts
   quantity: null
   unit: null
@@ -19,30 +21,37 @@ ingredients:
   quantity: null
   unit: null
   note: stock, skins included
+  fitatu_product_id: '116696504'
 - name: carrots
   quantity: null
   unit: null
   note: a few, stock
+  fitatu_product_id: '116722614'
 - name: garlic
   quantity: null
   unit: null
   note: stock
+  fitatu_product_id: '116515157'
 - name: tomatoes
   quantity: null
   unit: null
   note: cut side down, stock
+  fitatu_product_id: '116885192'
 - name: bay leaf
   quantity: null
   unit: null
   note: a lot, stock
+  fitatu_product_id: '116884624'
 - name: parsley stems
   quantity: null
   unit: null
   note: a few, stock
+  fitatu_product_id: '116722712'
 - name: peppercorns
   quantity: null
   unit: null
   note: a couple, stock
+  fitatu_product_id: '116931077'
 - name: water
   quantity: null
   unit: null
@@ -51,21 +60,26 @@ ingredients:
   quantity: null
   unit: null
   note: crushed and bloomed in a few tablespoons of hot stock
+  fitatu_product_id: '116965074'
 - name: beans
   quantity: null
   unit: null
   note: cooked until blistered
+  fitatu_product_id: '117148518'
 - name: red pepper
   quantity: null
   unit: null
   note: cooked until blistered
+  fitatu_product_id: '116931015'
 - name: grated tomato
   quantity: null
   unit: null
   note: stirred 10 minutes until thick and jammy
+  fitatu_product_id: '116885192'
 - name: bomba rice
   quantity: null
   unit: null
+  fitatu_product_id: '15191'
 - name: salt
   quantity: null
   unit: null
@@ -73,6 +87,7 @@ ingredients:
 - name: lima beans
   quantity: null
   unit: null
+  fitatu_product_id: '14362'
 - name: shellfish
   quantity: null
   unit: null
@@ -81,10 +96,12 @@ ingredients:
   quantity: null
   unit: null
   note: chopped, to finish
+  fitatu_product_id: '116722712'
 - name: lemon
   quantity: null
   unit: null
   note: a squeeze to finish
+  fitatu_product_id: '116885261'
 source:
   video_id: BC8k0kHD8XA
   url: https://www.youtube.com/shorts/BC8k0kHD8XA

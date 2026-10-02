@@ -7,21 +7,26 @@ ingredients:
   quantity: null
   unit: null
   note: a whole box
+  fitatu_product_id: '66441817'
 - name: chicken Italian sausage
   quantity: null
   unit: null
+  fitatu_product_id: '20770022'
 - name: jarred tomato sauce
   quantity: null
   unit: null
   note: canned tomatoes work and are lower calorie
+  fitatu_product_id: '109959820'
 - name: low-fat cottage cheese
   quantity: null
   unit: null
   note: sauce base; plus 20 g for garnish
+  fitatu_product_id: '13623'
 - name: parmigiano
   quantity: null
   unit: null
   note: sauce base; plus 5 g for garnish
+  fitatu_product_id: '119062248'
 - name: milk
   quantity: null
   unit: null
@@ -29,12 +34,15 @@ ingredients:
 - name: garlic powder
   quantity: null
   unit: null
+  fitatu_product_id: '75531888'
 - name: oregano
   quantity: null
   unit: null
+  fitatu_product_id: '117149634'
 - name: black pepper
   quantity: null
   unit: null
+  fitatu_product_id: '116931077'
 - name: salt
   quantity: null
   unit: null
@@ -43,6 +51,7 @@ ingredients:
   quantity: null
   unit: null
   note: drizzle, not included in the macros
+  fitatu_product_id: '102852669'
 source:
   video_id: lWZSwMBvY6c
   url: https://www.youtube.com/shorts/lWZSwMBvY6c

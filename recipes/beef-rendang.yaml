@@ -7,30 +7,37 @@ ingredients:
   quantity: null
   unit: null
   note: spice paste
+  fitatu_product_id: '116515157'
 - name: ginger
   quantity: null
   unit: null
   note: spice paste
+  fitatu_product_id: '2149'
 - name: shallot
   quantity: null
   unit: null
   note: spice paste
+  fitatu_product_id: '116965051'
 - name: turmeric
   quantity: null
   unit: null
   note: spice paste
+  fitatu_product_id: '118476396'
 - name: galangal
   quantity: null
   unit: null
   note: spice paste
+  fitatu_product_id: '117115357'
 - name: red chilies
   quantity: null
   unit: null
   note: spice paste
+  fitatu_product_id: '2132'
 - name: oil
   quantity: null
   unit: null
   note: to fry the paste
+  fitatu_product_id: '68553191'
 - name: dry spices
   quantity: null
   unit: null
@@ -38,6 +45,7 @@ ingredients:
 - name: coconut cream
   quantity: null
   unit: null
+  fitatu_product_id: '31574187'
 - name: water
   quantity: null
   unit: null
@@ -48,18 +56,22 @@ ingredients:
 - name: palm sugar
   quantity: null
   unit: null
+  fitatu_product_id: '32068695'
 - name: beef chuck
   quantity: null
   unit: null
   note: boneless short ribs also work
+  fitatu_product_id: '15932399'
 - name: lemongrass
   quantity: null
   unit: null
   note: bruised
+  fitatu_product_id: '53845784'
 - name: lime leaves
   quantity: null
   unit: null
   note: torn
+  fitatu_product_id: '89216403'
 - name: kerisik
   quantity: null
   unit: null
@@ -68,6 +80,7 @@ ingredients:
   quantity: null
   unit: null
   note: to serve
+  fitatu_product_id: '15191'
 source:
   video_id: xjGEWVNL0r0
   url: https://www.youtube.com/shorts/xjGEWVNL0r0

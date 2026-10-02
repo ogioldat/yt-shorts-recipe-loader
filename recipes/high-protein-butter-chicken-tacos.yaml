@@ -6,10 +6,12 @@ ingredients:
 - name: diced chicken breast
   quantity: null
   unit: null
+  fitatu_product_id: '108062220'
 - name: Greek yogurt
   quantity: null
   unit: null
   note: marinade
+  fitatu_product_id: '65059107'
 - name: seasonings
   quantity: null
   unit: null
@@ -18,6 +20,7 @@ ingredients:
   quantity: null
   unit: null
   note: marinade
+  fitatu_product_id: '109305786'
 - name: coriander
   quantity: null
   unit: null
@@ -26,42 +29,53 @@ ingredients:
   quantity: null
   unit: null
   note: marinade
+  fitatu_product_id: '1945'
 - name: cooking spray
   quantity: null
   unit: null
+  fitatu_product_id: '116722413'
 - name: light butter
   quantity: null
   unit: null
+  fitatu_product_id: '14004'
 - name: diced onion
   quantity: null
   unit: null
   note: sauce
+  fitatu_product_id: '116696504'
 - name: garlic
   quantity: null
   unit: null
   note: sauce
+  fitatu_product_id: '116515157'
 - name: tomato paste
   quantity: null
   unit: null
   note: sauce, toasted 2 minutes
+  fitatu_product_id: '116723030'
 - name: chopped tomatoes
   quantity: null
   unit: null
   note: sauce
+  fitatu_product_id: '116964748'
 - name: light cream cheese
   quantity: null
   unit: null
   note: sauce
+  fitatu_product_id: '120257871'
 - name: chicken bone broth
   quantity: null
   unit: null
   note: sauce
+  fitatu_product_id: '119969703'
 - name: mini tortillas
   quantity: null
   unit: null
+  fitatu_product_id: '106313688'
 - name: low-fat cheese
   quantity: null
   unit: null
+  fitatu_product_id: '16349902'
 - name: seasonings
   quantity: null
   unit: null

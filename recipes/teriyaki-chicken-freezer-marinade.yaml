@@ -9,22 +9,28 @@ ingredients:
 - name: tamari
   quantity: 1
   unit: tbsp
+  fitatu_product_id: '117075611'
 - name: sesame oil
   quantity: 1
   unit: tbsp
+  fitatu_product_id: '1653'
 - name: rice vinegar
   quantity: 1
   unit: tbsp
+  fitatu_product_id: '65703923'
 - name: green onion
   quantity: 1
   unit: piece
+  fitatu_product_id: '8293'
 - name: ginger
   quantity: 2
   unit: tsp
+  fitatu_product_id: '2149'
 - name: garlic
   quantity: 2
   unit: piece
   note: cloves
+  fitatu_product_id: '116515157'
 source:
   video_id: 0Scbx56dBb0
   url: https://www.youtube.com/shorts/0Scbx56dBb0

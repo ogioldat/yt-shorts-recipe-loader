@@ -11,68 +11,84 @@ ingredients:
 - name: makaron ryżowy 5 mm
   quantity: 200
   unit: g
+  fitatu_product_id: '149919354'
 - name: jajko
   quantity: 4
   unit: piece
+  fitatu_product_id: '24881865'
 - name: ząbek czosnku
   quantity: 4
   unit: piece
+  fitatu_product_id: '116515157'
 - name: szalotka lub cebula
   quantity: 60
   unit: g
 - name: olej do smażenia
   quantity: 20
   unit: g
+  fitatu_product_id: '68553191'
 - name: sos sojowy
   quantity: 20
   unit: g
   note: do mięsa
+  fitatu_product_id: '117075611'
 - name: sól
   quantity: null
   unit: null
 - name: pieprz
   quantity: null
   unit: null
+  fitatu_product_id: '116931077'
 - name: pasta z tamaryndowca
   quantity: 72
   unit: g
   note: sos
+  fitatu_product_id: '71810711'
 - name: sos sojowy
   quantity: 40
   unit: g
   note: sos
+  fitatu_product_id: '117075611'
 - name: sos rybny
   quantity: 40
   unit: g
   note: sos
+  fitatu_product_id: '64502815'
 - name: cukier brązowy
   quantity: 40
   unit: g
   note: sos; w nagraniu także miód
+  fitatu_product_id: '67000798'
 - name: sok z limonki
   quantity: 40
   unit: g
   note: sos
+  fitatu_product_id: '63132574'
 - name: płatki chili
   quantity: 1
   unit: tsp
   note: sos
+  fitatu_product_id: '116418723'
 - name: kiełki fasoli mung
   quantity: 120
   unit: g
   note: dodatki
+  fitatu_product_id: '14364'
 - name: orzechy arachidowe
   quantity: 40
   unit: g
   note: dodatki, rozdrobnione
+  fitatu_product_id: '69945303'
 - name: limonka
   quantity: 1
   unit: piece
   note: dodatki
+  fitatu_product_id: '14235'
 - name: szczypiorek
   quantity: null
   unit: null
   note: dodatki
+  fitatu_product_id: '116880739'
 source:
   video_id: ZofXafjf8QM
   url: https://www.youtube.com/shorts/ZofXafjf8QM

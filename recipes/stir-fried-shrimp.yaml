@@ -7,60 +7,76 @@ ingredients:
   quantity: null
   unit: null
   note: 2 lbs, head-on, trimmed and deveined
+  fitatu_product_id: '14357035'
 - name: cornstarch
   quantity: 0.333
   unit: cup
   note: 1/3 cup, to coat the shrimp
+  fitatu_product_id: '1677'
 - name: cooking oil
   quantity: 0.333
   unit: cup
   note: 1/3 cup
+  fitatu_product_id: '68553191'
 - name: onion
   quantity: 1
   unit: piece
   note: medium
+  fitatu_product_id: '116696504'
 - name: jalapeños
   quantity: 1
   unit: piece
   note: 1–2, sliced
+  fitatu_product_id: '14529'
 - name: green onions
   quantity: 3
   unit: piece
   note: stalks
+  fitatu_product_id: '8293'
 - name: ginger
   quantity: null
   unit: null
   note: 1 inch piece
+  fitatu_product_id: '2149'
 - name: garlic
   quantity: 4
   unit: piece
   note: 4–5 cloves
+  fitatu_product_id: '116515157'
 - name: butter
   quantity: 2
   unit: tbsp
+  fitatu_product_id: '1322'
 - name: oyster sauce
   quantity: 3
   unit: tbsp
+  fitatu_product_id: '14135'
 - name: crab paste in soy bean oil
   quantity: 1.5
   unit: tbsp
   note: intro text calls it shrimp paste
+  fitatu_product_id: '31820385'
 - name: fish sauce
   quantity: 0.5
   unit: tbsp
+  fitatu_product_id: '64502815'
 - name: sugar
   quantity: 2
   unit: tsp
+  fitatu_product_id: '24882535'
 - name: chicken bouillon
   quantity: 2
   unit: tbsp
+  fitatu_product_id: '116665185'
 - name: black pepper
   quantity: 0.25
   unit: tsp
+  fitatu_product_id: '116931077'
 - name: steamed white rice
   quantity: null
   unit: null
   note: to serve
+  fitatu_product_id: '17285608'
 source:
   video_id: 9-MeT8rRBMM
   url: https://www.youtube.com/shorts/9-MeT8rRBMM

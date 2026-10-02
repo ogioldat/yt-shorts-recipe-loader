@@ -8,22 +8,26 @@ ingredients:
   quantity: 250
   unit: g
   note: pokrojona
+  fitatu_product_id: '108062220'
 - name: woda
   quantity: 50
   unit: ml
 - name: skrobia ziemniaczana
   quantity: 50
   unit: g
+  fitatu_product_id: '1821'
 - name: sól
   quantity: 0.5
   unit: tsp
 - name: pieprz
   quantity: 0.5
   unit: tsp
+  fitatu_product_id: '116931077'
 - name: cebula dymka
   quantity: null
   unit: null
   note: garść
+  fitatu_product_id: '8293'
 - name: glutaminian sodu (MSG)
   quantity: null
   unit: null
@@ -32,26 +36,32 @@ ingredients:
   quantity: 30
   unit: g
   note: sos (2 porcje)
+  fitatu_product_id: '95070356'
 - name: sos sojowy
   quantity: 20
   unit: g
   note: sos
+  fitatu_product_id: '117075611'
 - name: ocet ryżowy
   quantity: 4
   unit: g
   note: sos
+  fitatu_product_id: '65703923'
 - name: erytrytol
   quantity: 5
   unit: g
   note: sos
+  fitatu_product_id: '96419490'
 - name: olej sezamowy
   quantity: 2
   unit: g
   note: sos
+  fitatu_product_id: '1653'
 - name: ząbek czosnku
   quantity: 1
   unit: piece
   note: starty, do sosu
+  fitatu_product_id: '116515157'
 - name: woda
   quantity: 30
   unit: ml
@@ -60,6 +70,7 @@ ingredients:
   quantity: null
   unit: null
   note: dodatek do posypania
+  fitatu_product_id: '116808097'
 source:
   video_id: 1mBgoHMtQS8
   url: https://www.youtube.com/shorts/1mBgoHMtQS8

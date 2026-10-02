@@ -6,36 +6,46 @@ ingredients:
 - name: extra lean ground beef
   quantity: 1800
   unit: g
+  fitatu_product_id: '61286861'
 - name: whole tomatoes
   quantity: 1800
   unit: ml
   note: 2 × 900 ml cans
+  fitatu_product_id: '116964748'
 - name: extra virgin olive oil
   quantity: 3
   unit: tbsp
+  fitatu_product_id: '102852669'
 - name: onions
   quantity: 2
   unit: piece
   note: medium (~490 g), diced
+  fitatu_product_id: '116696504'
 - name: garlic
   quantity: 10
   unit: piece
   note: cloves, minced
+  fitatu_product_id: '116515157'
 - name: tomato paste
   quantity: 0.5
   unit: cup
+  fitatu_product_id: '116723030'
 - name: beef broth
   quantity: 2.5
   unit: cup
+  fitatu_product_id: '30310338'
 - name: Fairlife milk
   quantity: 2
   unit: cup
+  fitatu_product_id: '117383847'
 - name: Italian seasoning
   quantity: 2
   unit: tsp
+  fitatu_product_id: '119426535'
 - name: bay leaves
   quantity: 2
   unit: piece
+  fitatu_product_id: '116884624'
 - name: salt
   quantity: null
   unit: null
@@ -44,6 +54,7 @@ ingredients:
   quantity: null
   unit: null
   note: to taste
+  fitatu_product_id: '116931077'
 source:
   video_id: fV1CcSwnqZ4
   url: https://www.youtube.com/shorts/fV1CcSwnqZ4

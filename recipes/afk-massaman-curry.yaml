@@ -7,13 +7,16 @@ ingredients:
   quantity: 1000
   unit: g
   note: 1 kg, divided into 4 pieces; lean chuck or skinless thigh also work
+  fitatu_product_id: '14842'
 - name: Massaman curry paste
   quantity: 60
   unit: g
   note: Maesri or similar
+  fitatu_product_id: '91113291'
 - name: full-fat coconut milk
   quantity: 200
   unit: ml
+  fitatu_product_id: '31574187'
 - name: water
   quantity: 300
   unit: ml
@@ -21,20 +24,25 @@ ingredients:
   quantity: 1
   unit: piece
   note: sliced 2 cm thick
+  fitatu_product_id: '116696504'
 - name: cocktail potatoes
   quantity: 600
   unit: g
   note: halved if using chicken thigh
+  fitatu_product_id: '117075520'
 - name: star anise
   quantity: 2
   unit: piece
+  fitatu_product_id: '104328935'
 - name: cinnamon stick
   quantity: 1
   unit: piece
+  fitatu_product_id: '64969922'
 - name: chilli
   quantity: null
   unit: null
   note: over the top before serving
+  fitatu_product_id: '2132'
 - name: coriander
   quantity: null
   unit: null

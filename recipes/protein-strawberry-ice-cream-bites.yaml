@@ -6,9 +6,11 @@ ingredients:
 - name: cottage cheese
   quantity: 1
   unit: cup
+  fitatu_product_id: '148549731'
 - name: strawberries
   quantity: 1
   unit: cup
+  fitatu_product_id: '116885231'
 - name: sugar-free sweetener
   quantity: 2
   unit: tbsp
@@ -17,6 +19,7 @@ ingredients:
   quantity: 0.5
   unit: cup
   note: melted
+  fitatu_product_id: '112233533'
 source:
   video_id: c03NaWMb7ZY
   url: https://www.youtube.com/shorts/c03NaWMb7ZY

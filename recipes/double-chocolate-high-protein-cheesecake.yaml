@@ -7,23 +7,29 @@ ingredients:
   quantity: null
   unit: null
   note: 16 oz, softened
+  fitatu_product_id: '120257871'
 - name: fat-free cottage cheese
   quantity: 2
   unit: cup
+  fitatu_product_id: '13623'
 - name: eggs
   quantity: 4
   unit: piece
+  fitatu_product_id: '24881865'
 - name: Splenda
   quantity: 1
   unit: cup
   note: or sweetener of choice
+  fitatu_product_id: '64968588'
 - name: chocolate protein powder
   quantity: null
   unit: null
   note: 2 scoops
+  fitatu_product_id: '75274591'
 - name: unsweetened cocoa powder
   quantity: 0.25
   unit: cup
+  fitatu_product_id: '116211420'
 - name: salt
   quantity: 1
   unit: pinch
@@ -31,6 +37,7 @@ ingredients:
   quantity: 0.25
   unit: cup
   note: melted and swirled; zero-sugar in the video
+  fitatu_product_id: '5422743'
 source:
   video_id: hREGP15njIg
   url: https://www.youtube.com/shorts/hREGP15njIg

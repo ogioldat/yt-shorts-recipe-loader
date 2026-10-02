@@ -8,17 +8,21 @@ ingredients:
   quantity: null
   unit: null
   note: chrupiące
+  fitatu_product_id: '61804192'
 - name: ryż basmati
   quantity: null
   unit: null
+  fitatu_product_id: '116157087'
 - name: papryka
   quantity: null
   unit: null
   note: w słupkach
+  fitatu_product_id: '116931015'
 - name: marchewka
   quantity: null
   unit: null
   note: w słupkach
+  fitatu_product_id: '116722614'
 - name: sos orzechowy
   quantity: null
   unit: null

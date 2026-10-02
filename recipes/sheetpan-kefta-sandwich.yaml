@@ -11,14 +11,17 @@ ingredients:
   quantity: null
   unit: null
   note: kefta mix
+  fitatu_product_id: '116696504'
 - name: parsley
   quantity: null
   unit: null
   note: kefta mix
+  fitatu_product_id: '116722712'
 - name: garlic
   quantity: null
   unit: null
   note: kefta mix
+  fitatu_product_id: '116515157'
 - name: spices
   quantity: null
   unit: null
@@ -27,30 +30,37 @@ ingredients:
   quantity: null
   unit: null
   note: quartered, roasted alongside
+  fitatu_product_id: '116885192'
 - name: olive oil
   quantity: null
   unit: null
   note: a good glug
+  fitatu_product_id: '102852669'
 - name: onion
   quantity: null
   unit: null
   note: for the quick sumac onions
+  fitatu_product_id: '116696504'
 - name: sumac
   quantity: null
   unit: null
   note: quick sumac onions
+  fitatu_product_id: '75155189'
 - name: harissa
   quantity: null
   unit: null
   note: harissa tahini
+  fitatu_product_id: '80556660'
 - name: tahini
   quantity: null
   unit: null
   note: harissa tahini
+  fitatu_product_id: '97722558'
 - name: bread
   quantity: null
   unit: null
   note: bread of choice
+  fitatu_product_id: '16190414'
 source:
   video_id: WAWsgmxduT4
   url: https://www.youtube.com/shorts/WAWsgmxduT4

@@ -9,29 +9,35 @@ ingredients:
 - name: extra virgin olive oil
   quantity: 1
   unit: tbsp
+  fitatu_product_id: '102852669'
 - name: cilantro
   quantity: 0.25
   unit: cup
+  fitatu_product_id: '117075815'
 - name: lime
   quantity: 1
   unit: piece
   note: juice + zest
+  fitatu_product_id: '14235'
 - name: garlic
   quantity: 1
   unit: piece
   note: clove
+  fitatu_product_id: '116515157'
 - name: cumin
   quantity: 0.5
   unit: tsp
 - name: chili
   quantity: 0.25
   unit: tsp
+  fitatu_product_id: '73694668'
 - name: salt
   quantity: 0.5
   unit: tsp
 - name: pepper
   quantity: 0.25
   unit: tsp
+  fitatu_product_id: '116931077'
 source:
   video_id: 0Scbx56dBb0
   url: https://www.youtube.com/shorts/0Scbx56dBb0

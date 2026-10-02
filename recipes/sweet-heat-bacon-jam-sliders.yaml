@@ -7,6 +7,7 @@ ingredients:
   quantity: null
   unit: null
   note: 6 lb
+  fitatu_product_id: '61286861'
 - name: kosher salt
   quantity: 3
   unit: tbsp
@@ -15,26 +16,32 @@ ingredients:
   quantity: 1
   unit: tbsp
   note: beef
+  fitatu_product_id: '116931077'
 - name: garlic powder
   quantity: 3
   unit: tbsp
   note: beef
+  fitatu_product_id: '75531888'
 - name: paprika
   quantity: 1
   unit: tbsp
   note: beef
+  fitatu_product_id: '114168129'
 - name: turkey bacon
   quantity: 15
   unit: piece
   note: slices, bacon onion jam
+  fitatu_product_id: '14160'
 - name: white onion
   quantity: 1
   unit: piece
   note: large, diced, jam
+  fitatu_product_id: '116696504'
 - name: honey
   quantity: 2
   unit: tbsp
   note: jam
+  fitatu_product_id: '1896'
 - name: brown stevia
   quantity: 0.333
   unit: cup
@@ -43,12 +50,15 @@ ingredients:
   quantity: 18
   unit: piece
   note: slices
+  fitatu_product_id: '29440'
 - name: light mayo
   quantity: 0.25
   unit: cup
+  fitatu_product_id: '102829281'
 - name: slider rolls
   quantity: 24
   unit: piece
+  fitatu_product_id: '31832535'
 source:
   video_id: 0zZNmhRjJ3k
   url: https://www.youtube.com/shorts/0zZNmhRjJ3k

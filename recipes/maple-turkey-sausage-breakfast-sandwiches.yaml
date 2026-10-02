@@ -7,14 +7,17 @@ ingredients:
   quantity: 1000
   unit: g
   note: patty
+  fitatu_product_id: '117365283'
 - name: 93/7 ground beef
   quantity: 1000
   unit: g
   note: patty
+  fitatu_product_id: '61286861'
 - name: sugar-free maple syrup
   quantity: 0.25
   unit: cup
   note: or regular
+  fitatu_product_id: '67422080'
 - name: kosher salt
   quantity: 4
   unit: tbsp
@@ -23,17 +26,21 @@ ingredients:
   quantity: 1
   unit: tbsp
   note: patty
+  fitatu_product_id: '116931077'
 - name: garlic & onion powder
   quantity: 2
   unit: tbsp
   note: patty
+  fitatu_product_id: '75531888'
 - name: paprika
   quantity: 2
   unit: tbsp
   note: patty
+  fitatu_product_id: '114168129'
 - name: whole eggs
   quantity: 14
   unit: piece
+  fitatu_product_id: '24881865'
 - name: salt
   quantity: null
   unit: null
@@ -42,33 +49,41 @@ ingredients:
   quantity: null
   unit: null
   note: to taste, eggs
+  fitatu_product_id: '116931077'
 - name: garlic & onion powder
   quantity: null
   unit: null
   note: to taste, eggs
+  fitatu_product_id: '75531888'
 - name: pepper jack cheese
   quantity: 14
   unit: piece
   note: thinly sliced slices
+  fitatu_product_id: '16349902'
 - name: yellow mustard
   quantity: 0.5
   unit: cup
   note: sauce
+  fitatu_product_id: '60538994'
 - name: honey
   quantity: 3
   unit: tbsp
   note: sauce
+  fitatu_product_id: '1896'
 - name: light English muffins
   quantity: 14
   unit: piece
+  fitatu_product_id: '102369899'
 - name: green apple
   quantity: 0.5
   unit: piece
   note: optional, sliced thin
+  fitatu_product_id: '116885300'
 - name: avocado
   quantity: 2
   unit: piece
   note: optional, sliced
+  fitatu_product_id: '116807743'
 source:
   video_id: 9xXny_QbFLQ
   url: https://www.youtube.com/shorts/9xXny_QbFLQ

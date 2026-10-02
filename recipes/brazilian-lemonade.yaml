@@ -7,6 +7,7 @@ ingredients:
   quantity: null
   unit: null
   note: washed, ends trimmed, quartered and blended peel and all
+  fitatu_product_id: '14235'
 - name: water
   quantity: null
   unit: null
@@ -15,6 +16,7 @@ ingredients:
   quantity: null
   unit: null
   note: the secret ingredient; blend until dissolved
+  fitatu_product_id: '113919683'
 - name: ice
   quantity: null
   unit: null
@@ -22,6 +24,7 @@ ingredients:
   quantity: null
   unit: null
   note: to garnish
+  fitatu_product_id: '14235'
 source:
   video_id: oRCYPKS8H3w
   url: https://www.youtube.com/shorts/oRCYPKS8H3w

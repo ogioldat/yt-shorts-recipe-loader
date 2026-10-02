@@ -7,10 +7,12 @@ ingredients:
   quantity: 2400
   unit: g
   note: 150 g per sandwich, about 2400 g total
+  fitatu_product_id: '89311698'
 - name: AP flour
   quantity: 300
   unit: g
   note: bowl 1; not all will stick
+  fitatu_product_id: '24882425'
 - name: salt
   quantity: null
   unit: null
@@ -19,42 +21,52 @@ ingredients:
   quantity: null
   unit: null
   note: bowl 1
+  fitatu_product_id: '116931077'
 - name: garlic powder
   quantity: null
   unit: null
   note: bowl 1
+  fitatu_product_id: '75531888'
 - name: paprika
   quantity: null
   unit: null
   note: bowl 1
+  fitatu_product_id: '114168129'
 - name: large eggs
   quantity: 5
   unit: piece
   note: bowl 2
+  fitatu_product_id: '24881865'
 - name: egg whites
   quantity: 100
   unit: g
   note: bowl 2
+  fitatu_product_id: '15956231'
 - name: crushed cornflakes
   quantity: 600
   unit: g
   note: bowl 3
+  fitatu_product_id: '116238262'
 - name: sesame oil
   quantity: 1
   unit: tbsp
   note: slaw
+  fitatu_product_id: '1653'
 - name: light mayo
   quantity: 4
   unit: tbsp
   note: slaw
+  fitatu_product_id: '102829281'
 - name: kimchi
   quantity: null
   unit: null
   note: slaw
+  fitatu_product_id: '67915881'
 - name: minced cabbage
   quantity: null
   unit: null
   note: slaw
+  fitatu_product_id: '116722490'
 - name: low cal sweet chili sauce
   quantity: 0.667
   unit: cup
@@ -63,14 +75,17 @@ ingredients:
   quantity: 6
   unit: tbsp
   note: glaze
+  fitatu_product_id: '117147575'
 - name: soy sauce
   quantity: 6
   unit: tbsp
   note: glaze
+  fitatu_product_id: '117075611'
 - name: honey
   quantity: 0.25
   unit: cup
   note: glaze
+  fitatu_product_id: '1896'
 - name: bread of choice
   quantity: null
   unit: null
@@ -78,6 +93,7 @@ ingredients:
 - name: pickles
   quantity: null
   unit: null
+  fitatu_product_id: '5392239'
 source:
   video_id: X24IcIrJ1X4
   url: https://www.youtube.com/shorts/X24IcIrJ1X4

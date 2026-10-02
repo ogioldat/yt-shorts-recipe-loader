@@ -7,20 +7,25 @@ ingredients:
 - name: półbagietka
   quantity: 5
   unit: piece
+  fitatu_product_id: '118697139'
 - name: marchew
   quantity: 2
   unit: piece
   note: w 2 mm plasterkach
+  fitatu_product_id: '116722614'
 - name: ogórek zielony
   quantity: 1
   unit: piece
   note: duży, cienko pokrojony
+  fitatu_product_id: '116722626'
 - name: rzodkiewka
   quantity: 10
   unit: piece
+  fitatu_product_id: '116722731'
 - name: cebula czerwona
   quantity: 0.5
   unit: piece
+  fitatu_product_id: '64109163'
 - name: woda
   quantity: null
   unit: null
@@ -29,10 +34,12 @@ ingredients:
   quantity: null
   unit: null
   note: zalewa; możesz użyć octu jabłkowego
+  fitatu_product_id: '65703923'
 - name: cukier biały
   quantity: null
   unit: null
   note: zalewa
+  fitatu_product_id: '24882535'
 - name: sól
   quantity: null
   unit: null
@@ -40,22 +47,27 @@ ingredients:
 - name: filet z piersi kurczaka
   quantity: 750
   unit: g
+  fitatu_product_id: '108062220'
 - name: oliwa
   quantity: 25
   unit: g
   note: kurczak
+  fitatu_product_id: '102852669'
 - name: papryka słodka, zmielona
   quantity: 1
   unit: tbsp
   note: kurczak
+  fitatu_product_id: '114168129'
 - name: papryka ostra, zmielona
   quantity: 1
   unit: tbsp
   note: kurczak
+  fitatu_product_id: '73694668'
 - name: czosnek suszony / granulowany
   quantity: 1
   unit: tsp
   note: kurczak
+  fitatu_product_id: '75531888'
 - name: sól
   quantity: null
   unit: null
@@ -64,18 +76,22 @@ ingredients:
   quantity: 75
   unit: g
   note: sos
+  fitatu_product_id: '24881725'
 - name: majonez lekki
   quantity: 50
   unit: g
   note: sos
+  fitatu_product_id: '102829281'
 - name: sos Sriracha
   quantity: 50
   unit: g
   note: sos
+  fitatu_product_id: '117147575'
 - name: kolendra (natka)
   quantity: null
   unit: null
   note: topping, do dekoracji
+  fitatu_product_id: '117075815'
 source:
   video_id: EHaym9GuvKA
   url: https://www.youtube.com/shorts/EHaym9GuvKA

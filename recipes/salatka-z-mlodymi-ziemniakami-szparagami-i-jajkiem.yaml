@@ -8,16 +8,20 @@ ingredients:
   quantity: null
   unit: null
   note: w mundurkach
+  fitatu_product_id: '117075520'
 - name: szparagi
   quantity: null
   unit: null
+  fitatu_product_id: '116722795'
 - name: jajko
   quantity: null
   unit: null
   note: sadzone
+  fitatu_product_id: '24881865'
 - name: rukola
   quantity: null
   unit: null
+  fitatu_product_id: '117075550'
 - name: sos jogurtowy
   quantity: null
   unit: null

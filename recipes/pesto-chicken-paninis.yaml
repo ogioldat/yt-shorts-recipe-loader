@@ -11,10 +11,12 @@ ingredients:
   quantity: 28
   unit: piece
   note: 2 slices per sandwich
+  fitatu_product_id: '13649'
 - name: chicken thighs
   quantity: 2000
   unit: g
   note: 2 kg, fat trimmed
+  fitatu_product_id: '89311698'
 - name: kosher salt
   quantity: 1.5
   unit: tbsp
@@ -23,14 +25,17 @@ ingredients:
   quantity: 2
   unit: tsp
   note: chicken
+  fitatu_product_id: '116931077'
 - name: garlic powder
   quantity: 1
   unit: tbsp
   note: chicken
+  fitatu_product_id: '75531888'
 - name: oregano
   quantity: 1
   unit: tbsp
   note: chicken
+  fitatu_product_id: '117149634'
 - name: fresh basil
   quantity: 2
   unit: cup
@@ -39,14 +44,17 @@ ingredients:
   quantity: 3
   unit: piece
   note: cloves, pesto
+  fitatu_product_id: '116515157'
 - name: olive oil
   quantity: 3
   unit: tbsp
   note: pesto
+  fitatu_product_id: '102852669'
 - name: lemon juice
   quantity: 1
   unit: tbsp
   note: pesto
+  fitatu_product_id: '1945'
 - name: pine nuts or walnuts
   quantity: 10
   unit: g
@@ -55,6 +63,7 @@ ingredients:
   quantity: 30
   unit: g
   note: pesto
+  fitatu_product_id: '119062248'
 - name: salt
   quantity: null
   unit: null
@@ -63,6 +72,7 @@ ingredients:
   quantity: null
   unit: null
   note: to taste, pesto
+  fitatu_product_id: '116931077'
 - name: water
   quantity: 2
   unit: tbsp

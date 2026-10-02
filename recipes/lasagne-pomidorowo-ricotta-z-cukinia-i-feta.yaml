@@ -8,15 +8,19 @@ ingredients:
   quantity: null
   unit: null
   note: 'z nazwy przepisu: lasagne pomidorowa'
+  fitatu_product_id: '109959820'
 - name: ricotta
   quantity: null
   unit: null
+  fitatu_product_id: '76015252'
 - name: cukinia
   quantity: null
   unit: null
+  fitatu_product_id: '116930395'
 - name: feta
   quantity: null
   unit: null
+  fitatu_product_id: '61847311'
 source:
   video_id: olqgx_i-Wz0
   url: https://www.youtube.com/shorts/olqgx_i-Wz0

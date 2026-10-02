@@ -8,10 +8,12 @@ ingredients:
   quantity: 3
   unit: piece
   note: tagliate a rondelle
+  fitatu_product_id: '116930395'
 - name: farina
   quantity: 300
   unit: g
   note: pastella
+  fitatu_product_id: '24882425'
 - name: acqua
   quantity: null
   unit: null
@@ -20,10 +22,12 @@ ingredients:
   quantity: 100
   unit: g
   note: sbriciolati, panatura
+  fitatu_product_id: '116238262'
 - name: olio
   quantity: null
   unit: null
   note: qb
+  fitatu_product_id: '102852669'
 - name: sale
   quantity: null
   unit: null
@@ -32,6 +36,7 @@ ingredients:
   quantity: null
   unit: null
   note: qb
+  fitatu_product_id: '116931077'
 - name: spezie
   quantity: null
   unit: null
@@ -44,14 +49,17 @@ ingredients:
   quantity: 100
   unit: g
   note: salsina
+  fitatu_product_id: '147981666'
 - name: menta
   quantity: null
   unit: null
   note: salsina
+  fitatu_product_id: '69214261'
 - name: succo di limone
   quantity: null
   unit: null
   note: salsina
+  fitatu_product_id: '1945'
 source:
   video_id: TSJI6-nV-t0
   url: https://www.youtube.com/shorts/TSJI6-nV-t0

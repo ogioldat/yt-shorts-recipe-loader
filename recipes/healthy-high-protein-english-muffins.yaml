@@ -6,12 +6,15 @@ ingredients:
 - name: self rising flour
   quantity: 600
   unit: g
+  fitatu_product_id: '24882425'
 - name: low/non fat cottage cheese
   quantity: 650
   unit: g
+  fitatu_product_id: '13623'
 - name: garlic paste
   quantity: 3
   unit: tbsp
+  fitatu_product_id: '109305786'
 - name: salt
   quantity: 1
   unit: tbsp

@@ -7,6 +7,7 @@ ingredients:
   quantity: null
   unit: null
   note: gelatin broth, a must
+  fitatu_product_id: '98616572'
 - name: rotisserie chicken carcass
   quantity: null
   unit: null
@@ -15,10 +16,12 @@ ingredients:
   quantity: null
   unit: null
   note: broth
+  fitatu_product_id: '2149'
 - name: scallion
   quantity: null
   unit: null
   note: broth
+  fitatu_product_id: '8293'
 - name: water
   quantity: null
   unit: null
@@ -31,30 +34,37 @@ ingredients:
   quantity: null
   unit: null
   note: filling
+  fitatu_product_id: '8293'
 - name: garlic
   quantity: null
   unit: null
   note: filling
+  fitatu_product_id: '116515157'
 - name: ginger
   quantity: null
   unit: null
   note: filling
+  fitatu_product_id: '2149'
 - name: soy sauce
   quantity: null
   unit: null
   note: filling
+  fitatu_product_id: '117075611'
 - name: apple cider vinegar
   quantity: null
   unit: null
   note: filling
+  fitatu_product_id: '49137480'
 - name: sesame oil
   quantity: null
   unit: null
   note: filling
+  fitatu_product_id: '1653'
 - name: white pepper
   quantity: null
   unit: null
   note: filling
+  fitatu_product_id: '13770'
 - name: salt
   quantity: null
   unit: null
@@ -63,18 +73,22 @@ ingredients:
   quantity: null
   unit: null
   note: filling
+  fitatu_product_id: '24882535'
 - name: dumpling wrappers
   quantity: null
   unit: null
   note: store-bought or homemade dough
+  fitatu_product_id: '14852445'
 - name: chili oil
   quantity: null
   unit: null
   note: garnish
+  fitatu_product_id: '118000947'
 - name: green onions
   quantity: null
   unit: null
   note: garnish
+  fitatu_product_id: '8293'
 source:
   video_id: 3vdoB5LW7jE
   url: https://www.youtube.com/shorts/3vdoB5LW7jE

@@ -7,9 +7,11 @@ ingredients:
   quantity: null
   unit: null
   note: 1 lb
+  fitatu_product_id: '115368039'
 - name: oil
   quantity: 1
   unit: tbsp
+  fitatu_product_id: '68553191'
 - name: salt
   quantity: 1
   unit: tsp
@@ -17,25 +19,31 @@ ingredients:
 - name: black pepper
   quantity: 1
   unit: tsp
+  fitatu_product_id: '116931077'
 - name: yellow onion
   quantity: 1
   unit: piece
+  fitatu_product_id: '116696504'
 - name: carrot
   quantity: 1
   unit: piece
   note: large
+  fitatu_product_id: '116722614'
 - name: garlic
   quantity: 6
   unit: piece
   note: cloves
+  fitatu_product_id: '116515157'
 - name: frozen ginger
   quantity: null
   unit: null
   note: 1 inch
+  fitatu_product_id: '2149'
 - name: spicy Japanese curry
   quantity: 2
   unit: piece
   note: 2-3 blocks
+  fitatu_product_id: '111133052'
 - name: milk
   quantity: 1
   unit: cup
@@ -43,10 +51,12 @@ ingredients:
 - name: frozen peas
   quantity: 0.5
   unit: cup
+  fitatu_product_id: '65241991'
 - name: tonkatsu sauce
   quantity: 1
   unit: tbsp
   note: 1–2 tbsp tonkatsu sauce, ketchup, or ½ apple
+  fitatu_product_id: '120242634'
 source:
   video_id: Pdz-CbeqYQ4
   url: https://www.youtube.com/shorts/Pdz-CbeqYQ4

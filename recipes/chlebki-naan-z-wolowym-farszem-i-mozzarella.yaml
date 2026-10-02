@@ -8,10 +8,12 @@ ingredients:
   quantity: 1
   unit: tbsp
   note: rozczyn
+  fitatu_product_id: '24882425'
 - name: świeże drożdże
   quantity: 15
   unit: g
   note: rozczyn
+  fitatu_product_id: '117031623'
 - name: letnia woda
   quantity: 50
   unit: ml
@@ -20,10 +22,12 @@ ingredients:
   quantity: 1
   unit: tsp
   note: rozczyn
+  fitatu_product_id: '24882535'
 - name: mąka pszenna
   quantity: 470
   unit: g
   note: ciasto
+  fitatu_product_id: '24882425'
 - name: letnia woda
   quantity: 125
   unit: ml
@@ -32,6 +36,7 @@ ingredients:
   quantity: 125
   unit: g
   note: ciasto
+  fitatu_product_id: '24881725'
 - name: sól
   quantity: 1
   unit: tbsp
@@ -40,34 +45,42 @@ ingredients:
   quantity: 2
   unit: tbsp
   note: ciasto
+  fitatu_product_id: '1322'
 - name: mięso wołowe mielone
   quantity: 400
   unit: g
   note: farsz
+  fitatu_product_id: '66153363'
 - name: oliwa
   quantity: 1
   unit: tbsp
   note: farsz
+  fitatu_product_id: '102852669'
 - name: biała cebula
   quantity: 2
   unit: piece
   note: farsz
+  fitatu_product_id: '116696504'
 - name: ząbek czosnku
   quantity: 3
   unit: piece
   note: farsz
+  fitatu_product_id: '116515157'
 - name: czerwona papryka
   quantity: 1
   unit: piece
   note: farsz
+  fitatu_product_id: '116931015'
 - name: świeża pietruszka
   quantity: null
   unit: null
   note: garść, posiekana
+  fitatu_product_id: '116722712'
 - name: garam masala
   quantity: 1
   unit: tbsp
   note: farsz
+  fitatu_product_id: '67131642'
 - name: sól
   quantity: null
   unit: null
@@ -76,26 +89,32 @@ ingredients:
   quantity: null
   unit: null
   note: farsz
+  fitatu_product_id: '116931077'
 - name: ketchup
   quantity: 50
   unit: ml
   note: farsz; w nagraniu też przecier pomidorowy
+  fitatu_product_id: '96869175'
 - name: sos sriracha
   quantity: 30
   unit: ml
   note: farsz
+  fitatu_product_id: '117147575'
 - name: gęsty jogurt naturalny
   quantity: 100
   unit: g
   note: sos czosnkowy
+  fitatu_product_id: '24881725'
 - name: majonez
   quantity: 2
   unit: tbsp
   note: sos czosnkowy
+  fitatu_product_id: '81389136'
 - name: ząbek czosnku
   quantity: 1
   unit: piece
   note: sos czosnkowy
+  fitatu_product_id: '116515157'
 - name: sól
   quantity: null
   unit: null
@@ -104,21 +123,26 @@ ingredients:
   quantity: null
   unit: null
   note: sos czosnkowy
+  fitatu_product_id: '116931077'
 - name: szczypiorek
   quantity: null
   unit: null
   note: garść, sos czosnkowy
+  fitatu_product_id: '116880739'
 - name: tarta mozzarella
   quantity: 300
   unit: g
+  fitatu_product_id: '27562647'
 - name: panierka kukurydziana
   quantity: null
   unit: null
   note: bułka tarta kukurydziana do obtoczenia
+  fitatu_product_id: '116238262'
 - name: oliwa
   quantity: null
   unit: null
   note: do smażenia
+  fitatu_product_id: '102852669'
 source:
   video_id: UiTuJ7VjK1E
   url: https://www.youtube.com/shorts/UiTuJ7VjK1E

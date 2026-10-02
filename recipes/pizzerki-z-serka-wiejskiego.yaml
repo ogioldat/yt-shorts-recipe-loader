@@ -7,22 +7,28 @@ ingredients:
 - name: serek wiejski proteinowy
   quantity: 200
   unit: g
+  fitatu_product_id: '148402083'
 - name: jajko
   quantity: 1
   unit: piece
+  fitatu_product_id: '24881865'
 - name: mąka pszenna
   quantity: 60
   unit: g
+  fitatu_product_id: '24882425'
 - name: oregano
   quantity: 1
   unit: tsp
   note: do ciasta
+  fitatu_product_id: '117149634'
 - name: czosnek granulowany
   quantity: 0.5
   unit: tsp
+  fitatu_product_id: '75531888'
 - name: proszek do pieczenia
   quantity: 0.5
   unit: tsp
+  fitatu_product_id: '65059244'
 - name: sos do pizzy lub passata pomidorowa
   quantity: 60
   unit: g
@@ -30,16 +36,20 @@ ingredients:
   quantity: null
   unit: null
   note: do posypania
+  fitatu_product_id: '117149634'
 - name: parmezan
   quantity: 10
   unit: g
+  fitatu_product_id: '119062248'
 - name: ser mozzarella
   quantity: 60
   unit: g
+  fitatu_product_id: '27562647'
 - name: pepperoni
   quantity: null
   unit: null
   note: kilka plasterków
+  fitatu_product_id: '97618383'
 source:
   video_id: IqykEcDRWyc
   url: https://www.youtube.com/shorts/IqykEcDRWyc

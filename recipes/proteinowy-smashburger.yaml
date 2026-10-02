@@ -7,16 +7,20 @@ ingredients:
 - name: chuda mielona wołowina
   quantity: 200
   unit: g
+  fitatu_product_id: '61286861'
 - name: musztarda angielska
   quantity: 20
   unit: g
+  fitatu_product_id: '61098698'
 - name: ser proteinowy
   quantity: 2
   unit: piece
   note: plastry
+  fitatu_product_id: '100038194'
 - name: bułka do burgerów
   quantity: 1
   unit: piece
+  fitatu_product_id: '31832535'
 - name: warzywa
   quantity: null
   unit: null
@@ -25,6 +29,7 @@ ingredients:
   quantity: null
   unit: null
   note: w razie potrzeby
+  fitatu_product_id: '116722413'
 - name: sól
   quantity: null
   unit: null
@@ -33,42 +38,52 @@ ingredients:
   quantity: null
   unit: null
   note: do doprawienia kotletów
+  fitatu_product_id: '116931077'
 - name: majonez light
   quantity: 120
   unit: g
   note: sos – porcja na kilka sztuk
+  fitatu_product_id: '102829281'
 - name: skyr naturalny
   quantity: 100
   unit: g
   note: sos
+  fitatu_product_id: '147761856'
 - name: ketchup
   quantity: 60
   unit: g
   note: sos
+  fitatu_product_id: '96869175'
 - name: musztarda angielska
   quantity: 20
   unit: g
   note: sos
+  fitatu_product_id: '61098698'
 - name: sos worcestershire
   quantity: 10
   unit: ml
   note: sos
+  fitatu_product_id: '15834633'
 - name: wędzona papryka
   quantity: 1
   unit: tsp
   note: sos
+  fitatu_product_id: '147786378'
 - name: czosnek
   quantity: 0.5
   unit: tsp
   note: sos
+  fitatu_product_id: '116515157'
 - name: cebula
   quantity: 0.25
   unit: piece
   note: 1/4 posiekanej cebulki, do sosu
+  fitatu_product_id: '116696504'
 - name: ogórek konserwowy
   quantity: 1
   unit: piece
   note: posiekany, do sosu
+  fitatu_product_id: '5392239'
 source:
   video_id: o9ugpWIiyn0
   url: https://www.youtube.com/shorts/o9ugpWIiyn0

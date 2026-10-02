@@ -6,6 +6,7 @@ ingredients:
 - name: oats
   quantity: null
   unit: null
+  fitatu_product_id: '105386083'
 - name: coffee
   quantity: null
   unit: null
@@ -14,6 +15,7 @@ ingredients:
   quantity: null
   unit: null
   note: frosting
+  fitatu_product_id: '147761856'
 source:
   video_id: 68rgfmwsPkA
   url: https://www.youtube.com/shorts/68rgfmwsPkA

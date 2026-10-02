@@ -7,31 +7,39 @@ ingredients:
   quantity: 0.25
   unit: piece
   note: 1/4–1/2 depending on spice level
+  fitatu_product_id: '14529'
 - name: firm tofu
   quantity: 1
   unit: piece
   note: medium, 13.5 oz
+  fitatu_product_id: '61804192'
 - name: toban djan paste
   quantity: 1
   unit: tbsp
   note: Lee Kum Kee chili bean sauce
+  fitatu_product_id: '63525759'
 - name: eggs
   quantity: 3
   unit: piece
+  fitatu_product_id: '24881865'
 - name: green onion
   quantity: 0.5
   unit: piece
   note: diced
+  fitatu_product_id: '8293'
 - name: soy sauce
   quantity: 1.5
   unit: tbsp
+  fitatu_product_id: '117075611'
 - name: oyster sauce
   quantity: 1
   unit: tbsp
+  fitatu_product_id: '14135'
 - name: corn starch
   quantity: 0.5
   unit: tsp
   note: slurry
+  fitatu_product_id: '1677'
 - name: water
   quantity: 2
   unit: tsp
@@ -39,20 +47,24 @@ ingredients:
 - name: minced garlic
   quantity: 1
   unit: tbsp
+  fitatu_product_id: '116515157'
 - name: salt
   quantity: 0.5
   unit: tsp
 - name: black pepper
   quantity: 0.5
   unit: tsp
+  fitatu_product_id: '116931077'
 - name: 95% lean ground beef
   quantity: null
   unit: null
   note: 8 oz, raw
+  fitatu_product_id: '61286861'
 - name: spray oil
   quantity: null
   unit: null
   note: 1/3 second spray
+  fitatu_product_id: '116722413'
 source:
   video_id: jDp-XVPEh5o
   url: https://www.youtube.com/shorts/jDp-XVPEh5o

@@ -6,20 +6,25 @@ ingredients:
 - name: cooking spray
   quantity: null
   unit: null
+  fitatu_product_id: '116722413'
 - name: chopped baby spinach
   quantity: 0.667
   unit: cup
   note: ⅔ cup, lightly packed
+  fitatu_product_id: '64972635'
 - name: sun dried tomatoes in oil
   quantity: 2
   unit: tbsp
   note: patted dry and diced small
+  fitatu_product_id: '116965585'
 - name: egg whites
   quantity: 0.5
   unit: cup
+  fitatu_product_id: '15956231'
 - name: Italian seasoning
   quantity: 0.25
   unit: tsp
+  fitatu_product_id: '119426535'
 - name: salt
   quantity: null
   unit: null
@@ -28,12 +33,15 @@ ingredients:
   quantity: 1
   unit: piece
   note: large
+  fitatu_product_id: '116965465'
 - name: shredded mozzarella cheese
   quantity: 0.25
   unit: cup
+  fitatu_product_id: '27562647'
 - name: crumbled feta cheese
   quantity: 2
   unit: tbsp
+  fitatu_product_id: '61847311'
 source:
   video_id: oFHPVZ_ROlg
   url: https://www.youtube.com/shorts/oFHPVZ_ROlg

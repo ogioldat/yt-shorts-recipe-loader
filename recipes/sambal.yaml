@@ -7,38 +7,48 @@ ingredients:
   quantity: 40
   unit: piece
   note: seeds shaken out, soaked
+  fitatu_product_id: '116418723'
 - name: fresh chillies
   quantity: 4
   unit: piece
   note: sliced
+  fitatu_product_id: '2132'
 - name: lemongrass
   quantity: 1
   unit: piece
   note: 1 stick, diced small
+  fitatu_product_id: '53845784'
 - name: brown sugar
   quantity: 2
   unit: tbsp
+  fitatu_product_id: '67000798'
 - name: tamarind purée
   quantity: 3
   unit: tbsp
+  fitatu_product_id: '71810711'
 - name: shallots
   quantity: 3
   unit: piece
   note: large, sliced
+  fitatu_product_id: '116965051'
 - name: garlic
   quantity: 8
   unit: piece
   note: cloves, peeled and crushed
+  fitatu_product_id: '116515157'
 - name: shrimp paste (Belacan)
   quantity: 50
   unit: g
+  fitatu_product_id: '119791083'
 - name: kaffir lime leaves
   quantity: 8
   unit: piece
   note: centre stems removed
+  fitatu_product_id: '89216403'
 - name: peanut oil
   quantity: 3
   unit: tbsp
+  fitatu_product_id: '79799185'
 - name: salt
   quantity: null
   unit: null

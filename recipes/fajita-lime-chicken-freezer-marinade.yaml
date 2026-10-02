@@ -9,15 +9,19 @@ ingredients:
 - name: fajita seasoning
   quantity: 1
   unit: tbsp
+  fitatu_product_id: '68637207'
 - name: lime juice
   quantity: 2
   unit: tbsp
+  fitatu_product_id: '63132574'
 - name: extra virgin olive oil
   quantity: 1
   unit: tbsp
+  fitatu_product_id: '102852669'
 - name: cilantro
   quantity: 1
   unit: tbsp
+  fitatu_product_id: '117075815'
 source:
   video_id: 0Scbx56dBb0
   url: https://www.youtube.com/shorts/0Scbx56dBb0

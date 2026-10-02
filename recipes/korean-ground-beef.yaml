@@ -7,43 +7,55 @@ ingredients:
   quantity: null
   unit: null
   note: for the pan
+  fitatu_product_id: '68553191'
 - name: minced garlic
   quantity: null
   unit: null
+  fitatu_product_id: '116515157'
 - name: ground beef
   quantity: null
   unit: null
+  fitatu_product_id: '115368039'
 - name: gochujang
   quantity: null
   unit: null
+  fitatu_product_id: '95070356'
 - name: dark soy sauce
   quantity: null
   unit: null
+  fitatu_product_id: '114226559'
 - name: light soy sauce
   quantity: null
   unit: null
+  fitatu_product_id: '117075611'
 - name: sesame oil
   quantity: null
   unit: null
+  fitatu_product_id: '1653'
 - name: sugar
   quantity: null
   unit: null
+  fitatu_product_id: '24882535'
 - name: rice
   quantity: null
   unit: null
   note: to serve
+  fitatu_product_id: '15191'
 - name: sesame seeds
   quantity: null
   unit: null
   note: optional garnish
+  fitatu_product_id: '116808097'
 - name: scallions
   quantity: null
   unit: null
   note: optional garnish
+  fitatu_product_id: '8293'
 - name: fried egg
   quantity: null
   unit: null
   note: optional garnish
+  fitatu_product_id: '24881865'
 source:
   video_id: MulKG_WAXWk
   url: https://www.youtube.com/shorts/MulKG_WAXWk

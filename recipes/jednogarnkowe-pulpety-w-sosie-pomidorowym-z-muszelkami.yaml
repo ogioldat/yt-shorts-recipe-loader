@@ -8,26 +8,32 @@ ingredients:
   quantity: 600
   unit: g
   note: pulpety; lub inne na pulpety
+  fitatu_product_id: '117365283'
 - name: jajko
   quantity: 1
   unit: piece
   note: pulpety
+  fitatu_product_id: '24881865'
 - name: bułka tarta
   quantity: 30
   unit: g
   note: pulpety
+  fitatu_product_id: '116515148'
 - name: musztarda Dijon
   quantity: 30
   unit: g
   note: pulpety
+  fitatu_product_id: '63283987'
 - name: mleko 1,5%
   quantity: 30
   unit: g
   note: pulpety
+  fitatu_product_id: '149592042'
 - name: przyprawa do mięs
   quantity: 2
   unit: tbsp
   note: lub Szama Tuning
+  fitatu_product_id: '20764082'
 - name: sól
   quantity: null
   unit: null
@@ -36,36 +42,45 @@ ingredients:
   quantity: null
   unit: null
   note: pulpety
+  fitatu_product_id: '116931077'
 - name: oliwa
   quantity: 20
   unit: g
   note: sos
+  fitatu_product_id: '102852669'
 - name: cebula czerwona
   quantity: 0.5
   unit: piece
   note: sos
+  fitatu_product_id: '64109163'
 - name: ząbek czosnku
   quantity: 2
   unit: piece
   note: sos
+  fitatu_product_id: '116515157'
 - name: szpinak w liściach, świeży
   quantity: 100
   unit: g
   note: pół paczki
+  fitatu_product_id: '64972635'
 - name: przecier pomidorowy
   quantity: null
   unit: null
   note: 1 kartonik
+  fitatu_product_id: '109959820'
 - name: śmietana 18%
   quantity: 200
   unit: g
   note: 1 kubek
+  fitatu_product_id: '67465604'
 - name: pomidory suszone z oleju
   quantity: 60
   unit: g
+  fitatu_product_id: '116965585'
 - name: bulion drobiowy, koncentrat
   quantity: 30
   unit: g
+  fitatu_product_id: '116665185'
 - name: sól
   quantity: null
   unit: null
@@ -74,13 +89,16 @@ ingredients:
   quantity: null
   unit: null
   note: sos
+  fitatu_product_id: '116931077'
 - name: oregano suszone
   quantity: 2
   unit: tsp
   note: sos
+  fitatu_product_id: '117149634'
 - name: makaron muszelki
   quantity: 240
   unit: g
+  fitatu_product_id: '31760817'
 - name: woda
   quantity: 320
   unit: ml
@@ -88,6 +106,7 @@ ingredients:
   quantity: null
   unit: null
   note: topping
+  fitatu_product_id: '116722712'
 source:
   video_id: F-JITkz3QQg
   url: https://www.youtube.com/shorts/F-JITkz3QQg

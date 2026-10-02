@@ -11,26 +11,32 @@ ingredients:
   quantity: 3
   unit: piece
   note: grated and squeezed dry
+  fitatu_product_id: '64109163'
 - name: cilantro
   quantity: 0.5
   unit: cup
   note: finely chopped, kebab
+  fitatu_product_id: '117075815'
 - name: mint
   quantity: 0.25
   unit: cup
   note: finely chopped, kebab
+  fitatu_product_id: '69214261'
 - name: garlic
   quantity: 4
   unit: piece
   note: cloves, grated
+  fitatu_product_id: '116515157'
 - name: fresh ginger
   quantity: 1.5
   unit: tbsp
   note: grated
+  fitatu_product_id: '2149'
 - name: serrano
   quantity: 1
   unit: piece
   note: finely minced, kebab
+  fitatu_product_id: '2132'
 - name: cumin
   quantity: 1
   unit: tsp
@@ -43,10 +49,12 @@ ingredients:
   quantity: 1
   unit: tsp
   note: kebab
+  fitatu_product_id: '67131642'
 - name: smoked paprika
   quantity: 1
   unit: tsp
   note: kebab
+  fitatu_product_id: '147786378'
 - name: salt
   quantity: 1.5
   unit: tsp
@@ -55,14 +63,17 @@ ingredients:
   quantity: 1
   unit: tsp
   note: kebab
+  fitatu_product_id: '116931077'
 - name: garlic bulb
   quantity: 1
   unit: piece
   note: roasted
+  fitatu_product_id: '116515157'
 - name: olive oil
   quantity: null
   unit: null
   note: for the roasted garlic
+  fitatu_product_id: '102852669'
 - name: salt
   quantity: null
   unit: null
@@ -71,18 +82,22 @@ ingredients:
   quantity: 0.5
   unit: cup
   note: chutney mayo
+  fitatu_product_id: '117075815'
 - name: mint
   quantity: 0.5
   unit: cup
   note: chutney mayo
+  fitatu_product_id: '69214261'
 - name: lemon
   quantity: 1
   unit: piece
   note: juice of 1 lemon, chutney mayo
+  fitatu_product_id: '116885261'
 - name: serrano
   quantity: 1
   unit: piece
   note: chutney mayo
+  fitatu_product_id: '2132'
 - name: cumin
   quantity: 0.5
   unit: tsp
@@ -95,6 +110,7 @@ ingredients:
   quantity: 1
   unit: cup
   note: chutney mayo
+  fitatu_product_id: '81389136'
 - name: salt
   quantity: null
   unit: null
@@ -103,6 +119,7 @@ ingredients:
   quantity: null
   unit: null
   note: to taste, chutney mayo
+  fitatu_product_id: '116931077'
 - name: wrap bread
   quantity: null
   unit: null
@@ -111,22 +128,27 @@ ingredients:
   quantity: null
   unit: null
   note: wrap topping
+  fitatu_product_id: '5392239'
 - name: tomato
   quantity: null
   unit: null
   note: wrap topping
+  fitatu_product_id: '116885192'
 - name: red onion
   quantity: null
   unit: null
   note: wrap topping
+  fitatu_product_id: '64109163'
 - name: cilantro
   quantity: null
   unit: null
   note: wrap topping
+  fitatu_product_id: '117075815'
 - name: mint
   quantity: null
   unit: null
   note: wrap topping
+  fitatu_product_id: '69214261'
 source:
   video_id: ANHQ428tkSM
   url: https://www.youtube.com/shorts/ANHQ428tkSM

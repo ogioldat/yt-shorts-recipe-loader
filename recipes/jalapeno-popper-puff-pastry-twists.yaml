@@ -7,29 +7,36 @@ ingredients:
   quantity: null
   unit: null
   note: thawed
+  fitatu_product_id: '95505295'
 - name: cream cheese
   quantity: null
   unit: null
   note: very softened
+  fitatu_product_id: '145876311'
 - name: jalapeños
   quantity: null
   unit: null
   note: plus extra on top
+  fitatu_product_id: '14529'
 - name: cheddar
   quantity: null
   unit: null
   note: plus extra on top
+  fitatu_product_id: '116348376'
 - name: bacon
   quantity: null
   unit: null
+  fitatu_product_id: '62525482'
 - name: egg
   quantity: null
   unit: null
   note: for the egg wash
+  fitatu_product_id: '24881865'
 - name: ranch
   quantity: null
   unit: null
   note: for dipping
+  fitatu_product_id: '14016'
 source:
   video_id: VAhvHYsJu5w
   url: https://www.youtube.com/shorts/VAhvHYsJu5w

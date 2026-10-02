@@ -6,59 +6,74 @@ ingredients:
 - name: boneless skinless chicken thighs
   quantity: 1000
   unit: g
+  fitatu_product_id: '89311698'
 - name: green onions
   quantity: 3
   unit: piece
+  fitatu_product_id: '8293'
 - name: shallot
   quantity: 1
   unit: piece
+  fitatu_product_id: '116965051'
 - name: scotch bonnet
   quantity: 1
   unit: piece
   note: 1–2
+  fitatu_product_id: '2132'
 - name: ginger
   quantity: null
   unit: null
   note: 1 inch
+  fitatu_product_id: '2149'
 - name: garlic
   quantity: 3
   unit: piece
   note: cloves
+  fitatu_product_id: '116515157'
 - name: dried thyme
   quantity: 2
   unit: tbsp
+  fitatu_product_id: '116515351'
 - name: allspice
   quantity: 1
   unit: tbsp
 - name: nutmeg
   quantity: 0.5
   unit: tsp
+  fitatu_product_id: '116215186'
 - name: soy sauce
   quantity: 1
   unit: tbsp
+  fitatu_product_id: '117075611'
 - name: brown sugar
   quantity: 1
   unit: tbsp
+  fitatu_product_id: '67000798'
 - name: salt
   quantity: 0.5
   unit: tbsp
 - name: black pepper
   quantity: 0.5
   unit: tbsp
+  fitatu_product_id: '116931077'
 - name: extra virgin olive oil
   quantity: 1
   unit: tbsp
+  fitatu_product_id: '102852669'
 - name: vinegar
   quantity: 0.5
   unit: tbsp
+  fitatu_product_id: '49137480'
 - name: lime
   quantity: 0.5
   unit: piece
   note: juice of ½ lime
+  fitatu_product_id: '14235'
 - name: orange
   quantity: 0.25
   unit: piece
   note: juice of ¼ orange
+  fitatu_product_id: '116807866'
 - name: water
   quantity: 1
   unit: tbsp

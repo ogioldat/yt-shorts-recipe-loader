@@ -8,9 +8,11 @@ ingredients:
   quantity: null
   unit: null
   note: kromki
+  fitatu_product_id: '16190414'
 - name: passata pomidorowa
   quantity: null
   unit: null
+  fitatu_product_id: '109959820'
 - name: suszona bazylia
   quantity: null
   unit: null
@@ -18,16 +20,20 @@ ingredients:
 - name: szynka z piersi kurczaka
   quantity: null
   unit: null
+  fitatu_product_id: '1608'
 - name: pieczarki
   quantity: null
   unit: null
+  fitatu_product_id: '119061054'
 - name: serek wiejski wysokobiałkowy
   quantity: null
   unit: null
+  fitatu_product_id: '148402083'
 - name: żółty ser
   quantity: null
   unit: null
   note: starty, do posypania
+  fitatu_product_id: '16349902'
 source:
   video_id: IY2koK83Rg0
   url: https://www.youtube.com/shorts/IY2koK83Rg0

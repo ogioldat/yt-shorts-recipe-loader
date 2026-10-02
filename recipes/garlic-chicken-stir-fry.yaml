@@ -7,10 +7,12 @@ ingredients:
   quantity: null
   unit: null
   note: cubed, marinated 15 minutes
+  fitatu_product_id: '89311698'
 - name: Shaoxing wine
   quantity: null
   unit: null
   note: marinade
+  fitatu_product_id: '79849410'
 - name: salt
   quantity: null
   unit: null
@@ -19,38 +21,47 @@ ingredients:
   quantity: null
   unit: null
   note: marinade
+  fitatu_product_id: '1677'
 - name: garlic
   quantity: null
   unit: null
   note: finely minced
+  fitatu_product_id: '116515157'
 - name: onions
   quantity: null
   unit: null
   note: cut into thick wedges
+  fitatu_product_id: '116696504'
 - name: scallions
   quantity: null
   unit: null
   note: 1/2-inch pieces, whites and greens separated
+  fitatu_product_id: '8293'
 - name: dark soy sauce
   quantity: null
   unit: null
   note: sauce
+  fitatu_product_id: '114226559'
 - name: light soy sauce
   quantity: null
   unit: null
   note: sauce
+  fitatu_product_id: '117075611'
 - name: oyster sauce
   quantity: null
   unit: null
   note: sauce
+  fitatu_product_id: '14135'
 - name: chicken bouillon
   quantity: null
   unit: null
   note: sauce
+  fitatu_product_id: '116665185'
 - name: sugar
   quantity: null
   unit: null
   note: sauce
+  fitatu_product_id: '24882535'
 - name: water
   quantity: null
   unit: null
@@ -59,10 +70,12 @@ ingredients:
   quantity: null
   unit: null
   note: for the pan
+  fitatu_product_id: '68553191'
 - name: rice
   quantity: null
   unit: null
   note: to serve, optional
+  fitatu_product_id: '15191'
 source:
   video_id: nSLH57ksftk
   url: https://www.youtube.com/shorts/nSLH57ksftk

@@ -18,3 +18,5 @@ __pycache__/
 
 # Editor-local
 .vscode/
+
+docs/superpowers/**

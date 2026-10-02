@@ -8,24 +8,30 @@ ingredients:
   quantity: 500
   unit: g
   note: 2 duże piersi (~500 g)
+  fitatu_product_id: '108062220'
 - name: przyprawa do kurczaka
   quantity: 1
   unit: tbsp
+  fitatu_product_id: '53820032'
 - name: czerwona cebula
   quantity: 1
   unit: piece
   note: posiekana
+  fitatu_product_id: '64109163'
 - name: sos BBQ bez cukru
   quantity: 120
   unit: g
+  fitatu_product_id: '65610731'
 - name: ser proteinowy
   quantity: 120
   unit: g
   note: starty
+  fitatu_product_id: '100038194'
 - name: chleb pszenny
   quantity: 4
   unit: piece
   note: kromki
+  fitatu_product_id: '16190414'
 source:
   video_id: GPSgECsKC7E
   url: https://www.youtube.com/shorts/GPSgECsKC7E

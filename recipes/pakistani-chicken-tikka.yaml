@@ -7,38 +7,47 @@ ingredients:
   quantity: null
   unit: null
   note: 4 lbs
+  fitatu_product_id: '89311698'
 - name: full fat yogurt
   quantity: 1
   unit: cup
   note: marinade
+  fitatu_product_id: '65059107'
 - name: garlic
   quantity: 8
   unit: piece
   note: cloves, mashed
+  fitatu_product_id: '116515157'
 - name: ginger
   quantity: null
   unit: null
   note: 1 inch, mashed
+  fitatu_product_id: '2149'
 - name: kasuri methi
   quantity: null
   unit: null
   note: description reads 'Q tbsp' – quantity unclear; creator says more went in by accident
+  fitatu_product_id: '117075833'
 - name: cilantro
   quantity: 0.25
   unit: cup
   note: marinade
+  fitatu_product_id: '117075815'
 - name: mustard oil
   quantity: 2
   unit: tsp
   note: regular oil is fine
+  fitatu_product_id: '68553191'
 - name: chicken tikka spices
   quantity: null
   unit: null
   note: 1 packet
+  fitatu_product_id: '67385413'
 - name: lemon
   quantity: 0.5
   unit: piece
   note: juiced
+  fitatu_product_id: '116885261'
 - name: salt
   quantity: null
   unit: null
@@ -47,22 +56,27 @@ ingredients:
   quantity: 2
   unit: cup
   note: yogurt chutney
+  fitatu_product_id: '24881725'
 - name: cilantro
   quantity: null
   unit: null
   note: 1 bundle, chutney
+  fitatu_product_id: '117075815'
 - name: garlic
   quantity: 2
   unit: piece
   note: cloves, chutney
+  fitatu_product_id: '116515157'
 - name: jalapeño
   quantity: 1
   unit: piece
   note: or 2 tsp crushed jalapeño dust, chutney
+  fitatu_product_id: '14529'
 - name: lemon
   quantity: 1
   unit: piece
   note: juiced, chutney
+  fitatu_product_id: '116885261'
 - name: salt
   quantity: null
   unit: null

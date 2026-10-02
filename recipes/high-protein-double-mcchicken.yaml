@@ -7,6 +7,7 @@ ingredients:
   quantity: null
   unit: null
   note: shaped into six patties
+  fitatu_product_id: '108062220'
 - name: seasonings
   quantity: null
   unit: null
@@ -19,14 +20,17 @@ ingredients:
   quantity: null
   unit: null
   note: McChicken sauce
+  fitatu_product_id: '102829281'
 - name: mustard
   quantity: null
   unit: null
   note: sauce
+  fitatu_product_id: '60538994'
 - name: garlic powder
   quantity: null
   unit: null
   note: sauce
+  fitatu_product_id: '75531888'
 - name: salt
   quantity: 1
   unit: pinch
@@ -39,21 +43,26 @@ ingredients:
   quantity: null
   unit: null
   note: breading
+  fitatu_product_id: '24882425'
 - name: egg
   quantity: null
   unit: null
   note: beaten, breading
+  fitatu_product_id: '24881865'
 - name: crushed corn flakes
   quantity: null
   unit: null
   note: breading
+  fitatu_product_id: '116238262'
 - name: spray oil
   quantity: null
   unit: null
+  fitatu_product_id: '116722413'
 - name: brioche bun
   quantity: null
   unit: null
   note: toasted
+  fitatu_product_id: '31832535'
 source:
   video_id: -eG-4lLMOj8
   url: https://www.youtube.com/shorts/-eG-4lLMOj8

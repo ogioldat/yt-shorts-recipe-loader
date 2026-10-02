@@ -6,29 +6,36 @@ ingredients:
 - name: Greek yogurt
   quantity: 2
   unit: cup
+  fitatu_product_id: '65059107'
 - name: mini cucumbers
   quantity: 2
   unit: piece
   note: grated
+  fitatu_product_id: '116722626'
 - name: mint
   quantity: 3
   unit: tbsp
   note: chopped
+  fitatu_product_id: '69214261'
 - name: garlic
   quantity: 1
   unit: piece
   note: large clove, grated
+  fitatu_product_id: '116515157'
 - name: ground beef
   quantity: null
   unit: null
   note: 1 pound (80/20)
+  fitatu_product_id: '115368039'
 - name: yellow onion
   quantity: 1
   unit: piece
   note: small, grated
+  fitatu_product_id: '116696504'
 - name: ground turmeric
   quantity: 0.5
   unit: tsp
+  fitatu_product_id: '118476396'
 - name: salt
   quantity: 2
   unit: tsp
@@ -37,17 +44,21 @@ ingredients:
   quantity: null
   unit: null
   note: plenty
+  fitatu_product_id: '116931077'
 - name: walnut halves
   quantity: 0.25
   unit: cup
+  fitatu_product_id: '116880768'
 - name: cranberries
   quantity: 2
   unit: tbsp
   note: ingredient list says cranberries, method says raisins
+  fitatu_product_id: '116965598'
 - name: pomegranate molasses
   quantity: null
   unit: null
   note: optional, for serving
+  fitatu_product_id: '54881668'
 - name: warmed pita or white rice
   quantity: null
   unit: null

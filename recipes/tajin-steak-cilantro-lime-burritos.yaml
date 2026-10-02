@@ -7,6 +7,7 @@ ingredients:
   quantity: 1800
   unit: g
   note: 1.8 kg, fully fat trimmed
+  fitatu_product_id: '15279'
 - name: salt
   quantity: null
   unit: null
@@ -15,12 +16,15 @@ ingredients:
   quantity: null
   unit: null
   note: to taste
+  fitatu_product_id: '116931077'
 - name: paprika
   quantity: null
   unit: null
+  fitatu_product_id: '114168129'
 - name: garlic powder
   quantity: null
   unit: null
+  fitatu_product_id: '75531888'
 - name: cumin
   quantity: null
   unit: null
@@ -32,24 +36,30 @@ ingredients:
   quantity: 3
   unit: cup
   note: dry measurement
+  fitatu_product_id: '15191'
 - name: cilantro
   quantity: null
   unit: null
   note: full bunch, chopped
+  fitatu_product_id: '117075815'
 - name: lime
   quantity: 1
   unit: piece
   note: juice of one lime
+  fitatu_product_id: '14235'
 - name: low fat Mexican cheese
   quantity: 400
   unit: g
+  fitatu_product_id: '16349902'
 - name: low carb tortillas
   quantity: 14
   unit: piece
+  fitatu_product_id: '63390294'
 - name: canned corn
   quantity: null
   unit: null
   note: 2 large cans, drained
+  fitatu_product_id: '116723043'
 - name: sauce
   quantity: null
   unit: null

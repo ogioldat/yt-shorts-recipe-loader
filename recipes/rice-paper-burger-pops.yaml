@@ -7,52 +7,65 @@ ingredients:
   quantity: null
   unit: null
   note: 7 oz, raw
+  fitatu_product_id: '61286861'
 - name: salt
   quantity: 0.5
   unit: tsp
 - name: black pepper
   quantity: 2
   unit: tsp
+  fitatu_product_id: '116931077'
 - name: minced garlic
   quantity: 0.5
   unit: tbsp
+  fitatu_product_id: '116515157'
 - name: onion powder
   quantity: 2
   unit: tsp
+  fitatu_product_id: '117075654'
 - name: rice paper
   quantity: 3
   unit: piece
   note: sheets
+  fitatu_product_id: '116908447'
 - name: eggs
   quantity: 2
   unit: piece
   note: whisked
+  fitatu_product_id: '24881865'
 - name: red onion
   quantity: 0.25
   unit: piece
   note: finely diced
+  fitatu_product_id: '64109163'
 - name: green leaf lettuce
   quantity: 6
   unit: piece
   note: leaves
+  fitatu_product_id: '117799461'
 - name: low-fat mozzarella cheese
   quantity: 3
   unit: tsp
+  fitatu_product_id: '27562647'
 - name: spray oil
   quantity: null
   unit: null
+  fitatu_product_id: '116722413'
 - name: 0% fat greek yogurt
   quantity: 0.5
   unit: cup
   note: dipping sauce
+  fitatu_product_id: '147981666'
 - name: ketchup
   quantity: 3
   unit: tbsp
   note: dipping sauce
+  fitatu_product_id: '96869175'
 - name: worcestershire sauce
   quantity: 2
   unit: tsp
   note: dipping sauce
+  fitatu_product_id: '15834633'
 - name: pickle juice
   quantity: 2
   unit: tsp
@@ -61,14 +74,17 @@ ingredients:
   quantity: 1
   unit: tbsp
   note: dipping sauce
+  fitatu_product_id: '63283987'
 - name: garlic powder
   quantity: 1
   unit: tsp
   note: dipping sauce
+  fitatu_product_id: '75531888'
 - name: onion powder
   quantity: 1
   unit: tsp
   note: dipping sauce
+  fitatu_product_id: '117075654'
 source:
   video_id: 2EakCIaFAOg
   url: https://www.youtube.com/shorts/2EakCIaFAOg

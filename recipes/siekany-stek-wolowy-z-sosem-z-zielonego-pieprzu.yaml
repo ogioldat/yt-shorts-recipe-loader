@@ -7,6 +7,7 @@ ingredients:
 - name: wołowina siekana black angus
   quantity: 250
   unit: g
+  fitatu_product_id: '66153363'
 - name: tłuszcz do smażenia
   quantity: 1
   unit: tbsp
@@ -14,14 +15,17 @@ ingredients:
   quantity: null
   unit: null
   note: do bastowania, odlewane po smażeniu
+  fitatu_product_id: '1322'
 - name: czosnek
   quantity: null
   unit: null
   note: do bastowania masłem
+  fitatu_product_id: '116515157'
 - name: zielony pieprz
   quantity: null
   unit: null
   note: sos
+  fitatu_product_id: '76334695'
 - name: alkohol
   quantity: null
   unit: null
@@ -30,10 +34,12 @@ ingredients:
   quantity: 60
   unit: ml
   note: sos
+  fitatu_product_id: '146947734'
 - name: sos worcestershire
   quantity: 1
   unit: tsp
   note: sos
+  fitatu_product_id: '15834633'
 - name: sól
   quantity: null
   unit: null
@@ -41,22 +47,27 @@ ingredients:
   quantity: 1
   unit: piece
   note: puree (5 porcji), duża sztuka
+  fitatu_product_id: '116722475'
 - name: serek wysokobiałkowy
   quantity: 200
   unit: g
   note: do całej partii puree
+  fitatu_product_id: '148402083'
 - name: musztarda francuska
   quantity: 1
   unit: tsp
   note: puree
+  fitatu_product_id: '63283987'
 - name: mleko
   quantity: 2
   unit: tbsp
   note: 2–3 łyżki, puree
+  fitatu_product_id: '117383847'
 - name: pieprz
   quantity: null
   unit: null
   note: puree
+  fitatu_product_id: '116931077'
 - name: sól
   quantity: null
   unit: null
@@ -65,6 +76,7 @@ ingredients:
   quantity: null
   unit: null
   note: puree
+  fitatu_product_id: '75531888'
 source:
   video_id: mHprniQUjzk
   url: https://www.youtube.com/shorts/mHprniQUjzk

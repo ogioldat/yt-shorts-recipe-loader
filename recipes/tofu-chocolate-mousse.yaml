@@ -6,12 +6,15 @@ ingredients:
 - name: tofu
   quantity: null
   unit: null
+  fitatu_product_id: '61804192'
 - name: peanut butter
   quantity: null
   unit: null
+  fitatu_product_id: '32087283'
 - name: dark chocolate
   quantity: null
   unit: null
+  fitatu_product_id: '14355567'
 source:
   video_id: RmVYMF0IfF8
   url: https://www.youtube.com/shorts/RmVYMF0IfF8

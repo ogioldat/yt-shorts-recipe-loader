@@ -8,28 +8,35 @@ ingredients:
   quantity: 200
   unit: g
   note: waga przed ugotowaniem
+  fitatu_product_id: '147931038'
 - name: sos sojowy
   quantity: 3
   unit: tbsp
   note: do ryżu
+  fitatu_product_id: '117075611'
 - name: olej chilli
   quantity: 1
   unit: tbsp
   note: do ryżu
+  fitatu_product_id: '118000947'
 - name: olej sezamowy
   quantity: 1
   unit: tbsp
   note: do ryżu
+  fitatu_product_id: '1653'
 - name: ogórek
   quantity: 2
   unit: piece
   note: duże, w cienkich plasterkach
+  fitatu_product_id: '116722626'
 - name: awokado
   quantity: 1
   unit: piece
+  fitatu_product_id: '116807743'
 - name: pierś z kurczaka
   quantity: 2
   unit: piece
+  fitatu_product_id: '108062220'
 - name: przyprawy do kurczaka
   quantity: null
   unit: null
@@ -38,25 +45,31 @@ ingredients:
   quantity: 150
   unit: g
   note: lub edamame
+  fitatu_product_id: '65241991'
 - name: cebula dymka
   quantity: null
   unit: null
   note: 1 pęczek
+  fitatu_product_id: '8293'
 - name: prażony sezam
   quantity: 2
   unit: tbsp
+  fitatu_product_id: '116808097'
 - name: majonez light
   quantity: 60
   unit: g
   note: sos
+  fitatu_product_id: '102829281'
 - name: jogurt grecki
   quantity: 50
   unit: g
   note: sos
+  fitatu_product_id: '65059107'
 - name: sos sweet chilli
   quantity: 60
   unit: g
   note: sos
+  fitatu_product_id: '15835493'
 source:
   video_id: uPenFX4QagY
   url: https://www.youtube.com/shorts/uPenFX4QagY

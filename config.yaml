@@ -1,42 +1,10 @@
-# The public YouTube playlist holding saved recipe shorts.
-# Must be set before `uv run python -m recipe_library.fetch` will run.
 playlist_url: https://www.youtube.com/playlist?list=PLSZKFIVTNUh1rFss_QT9IhTMDuFHcvOlm
-
-# Which ORIGINAL languages to keep subtitles for.
-#
-# Only the original caption track is ever fetched. YouTube offers auto-captions
-# in ~157 languages per video, but exactly one is the real speech recognition
-# output (marked `-orig`); the rest are machine-translated from it. Asking for
-# "pl" on an English video returns a Polish translation of English speech, which
-# is a worse source for ingredient names than the English original.
-#
-# So this is an allowlist of the languages you can read, not a request list. A
-# Polish video yields Polish subtitles and an English video yields English ones.
-# Leave it empty or null to accept whatever language a video was spoken in.
 original_langs: [pl, en]
-
-# How to store subtitles.
-#   text - plain prose, no timestamps (default). YouTube auto-captions are a
-#          rolling window of repeated lines with a timestamp on every word;
-#          stripped down they are maybe a third the size and actually readable.
-#   vtt  - keep the timed original untouched.
-#   both - keep both.
-# Timings are used nowhere in this project, so text is the default.
 subtitle_output: both
-
-# Keep making passes until every video has everything available for it, instead
-# of stopping after one pass. Each pass fetches only what is still missing, so
-# nothing already on disk is re-downloaded and nothing is ever deleted.
 fetch_until_complete: false
-
-# Rails for fetch_until_complete. Without them a playlist whose subtitles stay
-# throttled would loop forever. A pass that writes nothing counts as stalled;
-# after max_stalled_passes consecutive stalls the loop gives up, because waiting
-# longer is clearly not clearing the block.
 max_passes: 20
 pass_delay_seconds: 60
 max_stalled_passes: 3
-
 # Optional. YouTube throttles its subtitle endpoint hard for anonymous clients
 # (observed: persistent HTTP 429 even with backoff), while plain metadata is
 # served fine. Naming a browser here makes yt-dlp reuse that browser's YouTube

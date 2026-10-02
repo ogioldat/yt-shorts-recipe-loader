@@ -8,21 +8,26 @@ ingredients:
   quantity: 3
   unit: piece
   note: skórę zachowaj i upiecz osobno
+  fitatu_product_id: '89311698'
 - name: białko jajka
   quantity: 1
   unit: piece
+  fitatu_product_id: '15956231'
 - name: sos sojowy
   quantity: 1
   unit: tbsp
   note: marynata
+  fitatu_product_id: '117075611'
 - name: sos ostrygowy
   quantity: 1
   unit: tbsp
   note: marynata
+  fitatu_product_id: '14135'
 - name: ocet ryżowy
   quantity: 0.5
   unit: tbsp
   note: marynata
+  fitatu_product_id: '65703923'
 - name: glutaminian sodu (MSG)
   quantity: 1
   unit: pinch
@@ -33,54 +38,67 @@ ingredients:
 - name: biały pieprz
   quantity: null
   unit: null
+  fitatu_product_id: '13770'
 - name: mąka ziemniaczana
   quantity: 3
   unit: tbsp
   note: 3–4 łyżki, do obtoczenia
+  fitatu_product_id: '1821'
 - name: olej kokosowy
   quantity: 1
   unit: tbsp
   note: sos pomarańczowy
+  fitatu_product_id: '63144719'
 - name: ząbek czosnku
   quantity: 2
   unit: piece
   note: starte, do sosu
+  fitatu_product_id: '116515157'
 - name: imbir
   quantity: null
   unit: null
   note: kawałek ok. 2 cm, starty
+  fitatu_product_id: '2149'
 - name: pomarańcza
   quantity: 2
   unit: piece
   note: sok z 2 pomarańczy
+  fitatu_product_id: '116807866'
 - name: sos sojowy
   quantity: 1
   unit: tbsp
   note: sos
+  fitatu_product_id: '117075611'
 - name: sos ostrygowy
   quantity: 1
   unit: tbsp
   note: sos
+  fitatu_product_id: '14135'
 - name: ocet ryżowy
   quantity: 1
   unit: tbsp
   note: sos
+  fitatu_product_id: '65703923'
 - name: płatki chilli
   quantity: 0.5
   unit: tsp
   note: sos
+  fitatu_product_id: '116418723'
 - name: gwiazdka anyżu
   quantity: 1
   unit: piece
   note: sos
+  fitatu_product_id: '104328935'
 - name: miód
   quantity: 1
   unit: tsp
   note: sos
+  fitatu_product_id: '1896'
 - name: mąka ziemniaczana
   quantity: 1
   unit: tbsp
   note: slurry
+  fitatu_product_id: '1821'
 - name: woda
   quantity: 3
   unit: tbsp
@@ -89,6 +107,7 @@ ingredients:
   quantity: null
   unit: null
   note: do podania, gotowany z paskiem kombu
+  fitatu_product_id: '114602922'
 - name: kombu
   quantity: null
   unit: null
@@ -97,10 +116,12 @@ ingredients:
   quantity: null
   unit: null
   note: do podania
+  fitatu_product_id: '116808097'
 - name: szczypiorek
   quantity: null
   unit: null
   note: do podania
+  fitatu_product_id: '116880739'
 source:
   video_id: 2DJRQHv4oeI
   url: https://www.youtube.com/shorts/2DJRQHv4oeI

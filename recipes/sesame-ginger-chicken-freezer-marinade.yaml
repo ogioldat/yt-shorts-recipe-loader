@@ -9,19 +9,24 @@ ingredients:
 - name: sesame oil
   quantity: 1
   unit: tbsp
+  fitatu_product_id: '1653'
 - name: soy sauce
   quantity: 0.25
   unit: cup
+  fitatu_product_id: '117075611'
 - name: ginger
   quantity: 1
   unit: tbsp
+  fitatu_product_id: '2149'
 - name: garlic
   quantity: 1
   unit: piece
   note: clove
+  fitatu_product_id: '116515157'
 - name: green onion
   quantity: 3
   unit: piece
+  fitatu_product_id: '8293'
 source:
   video_id: 0Scbx56dBb0
   url: https://www.youtube.com/shorts/0Scbx56dBb0
