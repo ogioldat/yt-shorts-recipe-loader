@@ -1,0 +1,13 @@
+{
+  "name": "fitatu-mcp-host",
+  "version": "0.0.0",
+  "private": true,
+  "description": "npm-managed install of the unofficial Fitatu MCP server.",
+  "dependencies": {
+    "fitatu-mcp": "github:AndekQR/fitatu-mcp-unofficial#e73e38e702650857327b38c1ec3b4aafbdc7bad4"
+  },
+  "scripts": {
+    "postinstall": "cd node_modules/fitatu-mcp && npm install --silent && npm run build",
+    "start": "node --env-file=.env node_modules/fitatu-mcp/dist/index.js"
+  }
+}

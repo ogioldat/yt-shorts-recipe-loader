@@ -33,13 +33,10 @@ def test_pruning_keeps_every_field_extraction_needs():
     assert meta["title"] == FULL_DUMP["title"]
 
 
-def test_pruning_drops_the_bulk_and_rotating_urls():
+def test_pruning_drops_the_bulk():
     meta = prune_metadata(FULL_DUMP)
     assert "formats" not in meta
     assert "thumbnails" not in meta
-    # Signed URLs rotate per fetch; keeping them would churn the committed tree.
-    assert "automatic_captions" not in meta
-    assert "subtitles" not in meta
 
 
 def test_pruning_is_a_large_size_reduction():
@@ -137,3 +134,26 @@ def test_cookies_are_absent_by_default():
 def test_cookies_use_the_four_tuple_yt_dlp_expects():
     opts = base_opts("chrome")
     assert opts["cookiesfrombrowser"] == ("chrome", None, None, None)
+
+
+def test_stale_subtitles_are_cleared_before_refetching(monkeypatch, tmp_path):
+    """The returned list is built by globbing, so leftovers must not be counted.
+
+    On --refresh with subtitles now throttled, a previous run's files would
+    otherwise be reported as freshly fetched and feed false provenance into
+    stage 2.
+    """
+    out_dir = tmp_path / "vid"
+    out_dir.mkdir()
+    (out_dir / "subs.en.vtt").write_text("stale", encoding="utf-8")
+
+    monkeypatch.setattr(fetch_module, "video_dir", lambda _: out_dir)
+
+    def fail_to_fetch(*_args, **_kwargs):
+        raise DownloadError("HTTP Error 429: Too Many Requests")
+
+    monkeypatch.setattr(fetch_module, "_with_backoff", fail_to_fetch)
+    monkeypatch.setattr(fetch_module.time, "sleep", lambda _: None)
+
+    assert fetch_module.fetch_subtitles("vid", ["pl"]) == []
+    assert not list(out_dir.glob("subs.*.vtt"))

@@ -145,6 +145,15 @@ def fetch_subtitles(
     """
     out_dir = video_dir(video_id)
     out_dir.mkdir(parents=True, exist_ok=True)
+
+    # Clear stale subtitles first. The return value is built by globbing this
+    # directory, so leftovers from an earlier run would be reported as though
+    # this call had fetched them -- and stage 2 builds its `extracted_from`
+    # provenance from that list. Matters on --refresh, after sub_langs changes,
+    # and after a throttled attempt leaves a partial file behind.
+    for stale in out_dir.glob("subs.*.vtt"):
+        stale.unlink()
+
     url = f"https://www.youtube.com/watch?v={video_id}"
 
     opts = base_opts(cookies_from_browser) | {

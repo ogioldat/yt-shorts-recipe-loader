@@ -1,13 +1,13 @@
-# Fitatu MCP server clone — third-party code, built locally.
-# The pinned commit IS tracked, so the reviewed version is reproducible.
-vendor/*
-!vendor/PINNED_COMMIT
+# Installed MCP server code. package.json pins the exact upstream commit and
+# package-lock.json pins its whole tree, so the install is reproducible without
+# committing 132 third-party packages.
+mcp/**/node_modules/
 
 # Credentials — never commit
 .env
 *.env
 
-# yt-dlp full metadata dumps (~600KB each). Only pruned meta.json is kept.
+# yt-dlp full metadata dumps (~620KB each). Only pruned meta.json is kept.
 raw/**/*.info.json
 
 __pycache__/

@@ -13,12 +13,12 @@ usable from Fitatu for nutrition tracking via an MCP server.
 
 ```bash
 uv sync                                     # install dependencies
-uv run pytest                               # whole suite (53 tests, no network)
+uv run pytest                               # whole suite; needs no network
 uv run pytest tests/test_schema.py -q       # one file
 uv run pytest -k "quantity" -q              # one topic
 uv run python -m recipe_library.fetch       # stage 1: fetch the playlist
 uv run python -m recipe_library.validate    # check every recipes/*.yaml
-./scripts/setup_fitatu.sh                   # clone, pin and build the Fitatu MCP
+./scripts/setup_fitatu.sh                   # npm-install and build the Fitatu MCP
 ```
 
 Useful `fetch` flags: `--limit N` (fetch only N new videos), `--video ID`
@@ -88,11 +88,19 @@ because no media is ever downloaded.
 
 ## Fitatu MCP
 
-`vendor/fitatu-mcp` is an **unofficial** third-party server that holds real
-account credentials in plaintext and logs into a live account. The clone is
-pinned via the tracked `vendor/PINNED_COMMIT`; review the diff before moving it.
-Credentials live only in the gitignored `vendor/fitatu-mcp/.env` (mode 600) and
-must never enter the committed `.mcp.json`.
+Installed under `mcp/fitatu/` by npm. **The server is not published to npm** —
+only as a GitHub repo — so `mcp/fitatu/package.json` depends on it by git URL
+pinned to an exact commit, and `package-lock.json` pins the rest of the tree.
+Both are committed; `node_modules/` is not.
+
+Upstream ships no prepared `dist/` and has no `prepare` script, so npm cannot
+build it on install. A `postinstall` hook does that step. This is why the entry
+point is `mcp/fitatu/node_modules/fitatu-mcp/dist/index.js`.
+
+It is **unofficial** third-party code that holds real account credentials in
+plaintext and logs into a live account. Review upstream's diff before moving the
+pin in `package.json`. Credentials live only in the gitignored
+`mcp/fitatu/.env` (mode 600) and must never enter the committed `.mcp.json`.
 
 It validates its environment at startup, so it will not boot until `.env` holds
 a real email and password. It exposes ~20 tools including `search_food` and

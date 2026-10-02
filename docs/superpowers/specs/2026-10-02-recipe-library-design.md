@@ -192,10 +192,22 @@ idempotent and safely re-runnable as the playlist grows.
 
 Setup and registration only.
 
-1. Clone `https://github.com/AndekQR/fitatu-mcp-unofficial` to `vendor/fitatu-mcp`
-   (gitignored), **pinned to a reviewed commit** rather than tracking `main`.
-2. `npm install && npm run build`.
-3. Create `vendor/fitatu-mcp/.env`, mode `600`, containing `FITATU_EMAIL` and
+Installed by **npm**, under `mcp/fitatu/`.
+
+The server is **not published to npm**. Verified against the registry: all 35
+`fitatu` packages there are Fitatu's own Cordova plugins and SDK, and
+`fitatu-mcp` returns 404. It exists only as a GitHub repo, so npm installs it by
+git URL.
+
+1. `mcp/fitatu/package.json` depends on
+   `github:AndekQR/fitatu-mcp-unofficial#<commit>`, **pinned to a reviewed
+   commit** rather than a branch. `package-lock.json` pins the rest of the tree.
+   Both are committed; `node_modules/` is not.
+2. Upstream ships no prepared `dist/` and defines no `prepare` script, so npm
+   will not build it on install — verified in its `package.json`. A
+   `postinstall` hook runs the build, which is why the entry point lives at
+   `mcp/fitatu/node_modules/fitatu-mcp/dist/index.js`.
+3. Create `mcp/fitatu/.env`, mode `600`, containing `FITATU_EMAIL` and
    `FITATU_PASSWORD`.
 4. Register over **stdio** — the server's own documented configuration, and it
    avoids a long-running HTTP service:
@@ -222,7 +234,7 @@ the gitignored `.env`, referenced by absolute path.
 
 **Risk, stated once:** this is unofficial third-party code that holds the user's
 real Fitatu password in plaintext and logs into their live account. Pinning to a
-reviewed commit is the mitigation. The server exposes ~20 tools including
+reviewed commit, and committing the lockfile, is the mitigation. The server exposes ~20 tools including
 `create_recipe` and `search_food`, which is what makes the phase-2 push viable.
 
 ## Repository layout
@@ -244,13 +256,14 @@ reviewed commit is the mitigation. The server exposes ~20 tools including
 │   └── validate.py                # CLI over recipes/*.yaml
 ├── .claude/skills/extract-recipes/SKILL.md
 ├── .claude/commands/extract-recipes.md
-├── scripts/setup_fitatu.sh        # clone, pin, build the MCP server
+├── scripts/setup_fitatu.sh        # npm-install and build the MCP server
+├── mcp/fitatu/package.json        # pins the MCP server by git commit
+├── mcp/fitatu/package-lock.json   # pins its dependency tree
 ├── tests/
 ├── raw/<video_id>/meta.json       # committed provenance (~3KB)
 ├── recipes/<recipe-id>.yaml
 ├── state/processed.yaml
-├── vendor/PINNED_COMMIT           # tracked; the clone itself is not
-└── vendor/fitatu-mcp/             # gitignored
+└── mcp/fitatu/node_modules/       # gitignored; rebuilt by npm install
 ```
 
 ## Error handling

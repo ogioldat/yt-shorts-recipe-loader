@@ -3,8 +3,8 @@
     "fitatu": {
       "command": "node",
       "args": [
-        "--env-file=/Users/tomekogiolda/Projects/recipe-library/vendor/fitatu-mcp/.env",
-        "/Users/tomekogiolda/Projects/recipe-library/vendor/fitatu-mcp/dist/index.js"
+        "--env-file=/Users/tomekogiolda/Projects/recipe-library/mcp/fitatu/.env",
+        "/Users/tomekogiolda/Projects/recipe-library/mcp/fitatu/node_modules/fitatu-mcp/dist/index.js"
       ],
       "env": {
         "MCP_TRANSPORT": "stdio"

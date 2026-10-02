@@ -1,52 +1,37 @@
 #!/usr/bin/env bash
-# Set up the unofficial Fitatu MCP server locally.
+# Install the unofficial Fitatu MCP server into mcp/fitatu via npm.
 #
-# This is third-party code that will hold your real Fitatu credentials and log
-# into your live account, so the clone is pinned to a specific commit rather
-# than tracking main. Review the diff before moving the pin.
+# The server is NOT published to npm — only as a GitHub repo — so package.json
+# depends on it by git URL, pinned to an exact reviewed commit. Upstream ships
+# no prepared dist/ and has no `prepare` script, so npm cannot build it on
+# install; the postinstall hook does that step.
+#
+# This is third-party code that will hold real Fitatu credentials and log into
+# a live account. Review upstream's diff before moving the pin in package.json.
 set -euo pipefail
 
-REPO="https://github.com/AndekQR/fitatu-mcp-unofficial"
-DEST="$(cd "$(dirname "$0")/.." && pwd)/vendor/fitatu-mcp"
-PIN_FILE="$(cd "$(dirname "$0")/.." && pwd)/vendor/PINNED_COMMIT"
+DIR="$(cd "$(dirname "$0")/.." && pwd)/mcp/fitatu"
 
 if ! node --version | grep -qE 'v(2[2-9]|[3-9][0-9])'; then
   echo "ERROR: this server needs Node >= 22.18.0; found $(node --version)" >&2
   exit 1
 fi
 
-if [ ! -d "$DEST/.git" ]; then
-  echo "Cloning $REPO -> $DEST"
-  mkdir -p "$(dirname "$DEST")"
-  git clone --quiet "$REPO" "$DEST"
-fi
+cd "$DIR"
+echo "Installing (and building) the pinned Fitatu MCP server"
+npm install
 
-cd "$DEST"
-if [ -f "$PIN_FILE" ]; then
-  PIN="$(cat "$PIN_FILE")"
-  echo "Checking out pinned commit $PIN"
-  git fetch --quiet origin
-  git checkout --quiet "$PIN"
-else
-  git rev-parse HEAD > "$PIN_FILE"
-  echo "Pinned to $(cat "$PIN_FILE")"
-fi
-
-echo "Installing dependencies and building"
-npm install --silent
-npm run build
-
-if [ ! -f "$DEST/.env" ]; then
-  umask 177  # creates the file as 0600
-  cat > "$DEST/.env" <<'ENVEOF'
-# Fitatu account credentials. This file is gitignored. Keep it mode 600.
+if [ ! -f .env ]; then
+  umask 177  # create as 0600
+  cat > .env <<'ENVEOF'
+# Fitatu account credentials. Gitignored; keep this file mode 600.
 FITATU_EMAIL=
 FITATU_PASSWORD=
 ENVEOF
   echo
-  echo "Created $DEST/.env (mode 600). Fill in FITATU_EMAIL and FITATU_PASSWORD."
+  echo "Created $DIR/.env (mode 600). Fill in FITATU_EMAIL and FITATU_PASSWORD."
 fi
+chmod 600 .env
 
-chmod 600 "$DEST/.env"
 echo
-echo "Built. Entry point: $DEST/dist/index.js"
+echo "Entry point: $DIR/node_modules/fitatu-mcp/dist/index.js"
