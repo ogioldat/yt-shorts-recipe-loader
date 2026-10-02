@@ -162,6 +162,7 @@ def summarise(recipes_dir: Path | None = None) -> dict[str, int]:
 def run(
     *,
     recipes_dir: Path | None = None,
+    offset: int | None = None,
     limit: int | None = None,
     shared: bool = False,
     allow_partial: bool = False,
@@ -169,16 +170,40 @@ def run(
     force: bool = False,
     include_errors: bool = True,
 ) -> dict[str, int]:
-    """Import every pending recipe. Returns a tally by outcome."""
+    """Import a window of the pending recipes. Returns a tally by outcome.
+
+    `offset` and `limit` slice the **pending** list, not the whole collection.
+    That list shrinks as recipes succeed, so an offset is only stable within one
+    run, or across repeated `--dry-run` calls which change nothing. Walking a real
+    import in batches therefore means keeping `--offset 0` and raising `--limit`,
+    not advancing the offset -- otherwise the second batch skips recipes the first
+    one already removed from the list.
+    """
+    if offset is not None and offset < 0:
+        raise SystemExit(f"--offset must be zero or greater, got {offset}")
+    if limit is not None and limit < 1:
+        raise SystemExit(f"--limit must be at least 1, got {limit}")
+
     products = (load_cache().get("products") or {})
     pending = select_pending(recipes_dir, include_errors=include_errors, force=force)
+    total = len(pending)
+
+    start = offset or 0
+    pending = pending[start:]
     if limit:
         pending = pending[:limit]
 
     tally = {STATUS_OK: 0, STATUS_ERROR: 0, "would_import": 0}
     if not pending:
-        print("Nothing to import.")
+        if total and start >= total:
+            print(f"Offset {start} is past the end of {total} pending recipe(s).")
+        else:
+            print("Nothing to import.")
         return tally
+
+    if start or limit:
+        end = start + len(pending)
+        print(f"Pending: {total} recipe(s); taking {start}-{end - 1}")
 
     client = None
     if not dry_run:

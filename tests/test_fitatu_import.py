@@ -383,3 +383,90 @@ def test_reimport_after_failure_clears_the_old_error(tmp_path):
 )
 def test_recipe_id_extraction(response, expected):
     assert extract_recipe_id(response) == expected
+
+
+# --- offset and limit windowing ---------------------------------------------
+
+
+@pytest.fixture
+def collection(tmp_path, monkeypatch):
+    """Five pending recipes, with the network and the product cache stubbed out."""
+    from recipe_library.fitatu_import import runner
+
+    for name in ("a", "b", "c", "d", "e"):
+        write(tmp_path / f"{name}.yaml", recipe([{"name": "mąka", "quantity": 100, "unit": "g"}]))
+
+    monkeypatch.setattr(runner, "load_cache", lambda: {"products": products(mąka=("111", GRAM))})
+    monkeypatch.setattr(runner, "RECIPES", tmp_path)
+    return tmp_path
+
+
+def imported(tmp_path):
+    """Which recipes a run actually touched, in order."""
+    return sorted(
+        p.stem
+        for p in tmp_path.glob("*.yaml")
+        if yaml.safe_load(p.read_text(encoding="utf-8")).get("import_status") == "ok"
+    )
+
+
+def test_offset_skips_the_first_pending_recipes(collection):
+    from recipe_library.fitatu_import.runner import run
+
+    run(recipes_dir=collection, offset=2, dry_run=True)
+    # A dry run writes nothing, so assert on the tally instead.
+    tally = run(recipes_dir=collection, offset=2, dry_run=True)
+    assert tally["would_import"] == 3  # c, d, e
+
+
+def test_offset_and_limit_select_a_window(collection):
+    from recipe_library.fitatu_import.runner import run
+
+    tally = run(recipes_dir=collection, offset=1, limit=2, dry_run=True)
+    assert tally["would_import"] == 2
+
+
+def test_offset_zero_is_the_whole_list(collection):
+    from recipe_library.fitatu_import.runner import run
+
+    assert run(recipes_dir=collection, offset=0, dry_run=True)["would_import"] == 5
+
+
+def test_offset_past_the_end_imports_nothing(collection, capsys):
+    from recipe_library.fitatu_import.runner import run
+
+    tally = run(recipes_dir=collection, offset=99, dry_run=True)
+    assert tally["would_import"] == 0
+    assert "past the end" in capsys.readouterr().out
+
+
+def test_negative_offset_is_rejected(collection):
+    from recipe_library.fitatu_import.runner import run
+
+    with pytest.raises(SystemExit):
+        run(recipes_dir=collection, offset=-1, dry_run=True)
+
+
+def test_zero_limit_is_rejected(collection):
+    # Silently importing nothing would look like success.
+    from recipe_library.fitatu_import.runner import run
+
+    with pytest.raises(SystemExit):
+        run(recipes_dir=collection, limit=0, dry_run=True)
+
+
+def test_offset_applies_to_pending_not_to_the_whole_collection(tmp_path, monkeypatch):
+    """The subtlety worth pinning: already-imported recipes are not in the window.
+
+    So --offset 1 skips the first *pending* recipe, not the first file on disk.
+    """
+    from recipe_library.fitatu_import import runner
+
+    write(tmp_path / "a.yaml", recipe([], import_status="ok", fitatu_recipe_id="1"))
+    for name in ("b", "c"):
+        write(tmp_path / f"{name}.yaml", recipe([{"name": "mąka", "quantity": 100, "unit": "g"}]))
+
+    monkeypatch.setattr(runner, "load_cache", lambda: {"products": products(mąka=("111", GRAM))})
+
+    tally = runner.run(recipes_dir=tmp_path, offset=1, dry_run=True)
+    assert tally["would_import"] == 1  # only c: a is done, b was skipped by the offset

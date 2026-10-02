@@ -5,8 +5,8 @@ language: pl
 servings: null
 ingredients:
 - name: truskawki
-  quantity: null
-  unit: null
+  quantity: 100
+  unit: g
   fitatu_product_id: '116885231'
 source:
   video_id: olqgx_i-Wz0

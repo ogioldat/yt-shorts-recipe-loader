@@ -13,6 +13,13 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="build payloads and report problems without contacting Fitatu",
     )
+    parser.add_argument(
+        "--offset",
+        type=int,
+        help="skip this many pending recipes first. Note the pending list shrinks "
+        "as recipes succeed, so an offset is only stable within one run or across "
+        "dry runs",
+    )
     parser.add_argument("--limit", type=int, help="import at most this many recipes")
     parser.add_argument(
         "--shared", action="store_true", help="make recipes public (default private)"
@@ -48,6 +55,7 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     tally = run(
+        offset=args.offset,
         limit=args.limit,
         shared=args.shared,
         allow_partial=args.allow_partial,
