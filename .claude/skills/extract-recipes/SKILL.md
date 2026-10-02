@@ -12,9 +12,18 @@ engine: read the text, decide what the recipes are, write YAML.
 
 For each video id:
 
-- `raw/<video_id>/meta.json` — title, description, channel, url, and which
-  subtitle languages were available
-- `raw/<video_id>/subs.<lang>.vtt` — subtitles, when YouTube served any
+- `raw/<video_id>/meta.json` — title, description, channel, url, and
+  `original_lang` / `caption_track` describing the captions
+- `raw/<video_id>/subs.<lang>.txt` — the transcript as plain prose, no
+  timestamps, when YouTube served any
+
+There is **one subtitle language per video: the language it was actually spoken
+in.** Only the original caption track is fetched, never YouTube's machine
+translations, so a Polish video has `subs.pl.txt` and an English one has
+`subs.en.txt`. A missing subtitle file means YouTube served none, not that
+another language is hiding somewhere. A `subs.<lang>.vtt` alongside the `.txt`
+is the timed original, kept only when `subtitle_output` is `vtt` or `both`;
+prefer the `.txt`.
 
 All three text sources are legitimate: **the title alone sometimes names the
 dish**, the description often carries the ingredient list verbatim, and the

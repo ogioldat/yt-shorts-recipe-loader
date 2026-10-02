@@ -1,0 +1,32 @@
+videos:
+  9xXny_QbFLQ:
+    title: Breakfast sandwich meal prep
+    fetched_at: '2026-10-02'
+    description_sha256: a8ea561de88894644ab7ab2611c57c1ced5311e4db9e1b50c7996f994288237c
+    subtitles:
+    - subs.en.txt
+    - subs.pl.txt
+    - subs.pl.vtt
+    status: complete
+    extracted_at: null
+    recipes: []
+  ZofXafjf8QM:
+    title: Jak zrobić PAD THAI
+    fetched_at: '2026-10-02'
+    description_sha256: d63cc67a5acd8bbfe6a264f251712307dc10947e71c26c5798dc37a6df2f204f
+    subtitles:
+    - subs.pl.txt
+    - subs.pl.vtt
+    status: complete
+    extracted_at: null
+    recipes: []
+  qZdw0b_L5cA:
+    title: 'PROTEINOWY PONIEDZIAŁEK: McChicken 🐔 #coocharz #makaron #mchicken #przepisy #fitprzepisy #shorts'
+    fetched_at: '2026-10-02'
+    description_sha256: 1ed4bc47fb56920139703aad1e99b01357a00650b096da4b6e15edf07726c4eb
+    subtitles:
+    - subs.pl.txt
+    - subs.pl.vtt
+    status: complete
+    extracted_at: null
+    recipes: []

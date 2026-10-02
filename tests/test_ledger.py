@@ -18,17 +18,12 @@ def test_save_preserves_non_ascii_readably(tmp_path):
     assert "Łosoś w śmietanie" in path.read_text(encoding="utf-8")
 
 
-def test_fetch_gate_is_id_presence_only():
-    # The playlist listing yields ids and nothing else, so this gate cannot
-    # depend on content. Guards against reintroducing that design bug.
-    videos = {"seen": {"description_sha256": "old"}}
-    assert ledger.needs_fetch("fresh", videos) is True
-    assert ledger.needs_fetch("seen", videos) is False
-
-
-def test_refresh_forces_fetch_of_known_videos():
-    videos = {"seen": {"description_sha256": "old"}}
-    assert ledger.needs_fetch("seen", videos, refresh=True) is True
+def test_ledger_exposes_no_fetch_gate():
+    # Fetch selection is driven by what is on disk (see select_pending and
+    # completeness.py), never by ledger content. Guards against reintroducing a
+    # description-hash gate on fetching, which cannot work: the playlist listing
+    # yields ids alone.
+    assert not hasattr(ledger, "needs_fetch")
 
 
 def test_extraction_gate_uses_description_hash():

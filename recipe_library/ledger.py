@@ -2,9 +2,9 @@
 
 Two independent gates, which is the point of keeping them separate:
 
-  * fetching is gated on whether the video id is in the ledger at all. The
-    playlist listing gives us ids and nothing else, so a content hash cannot
-    possibly gate this step.
+  * fetching is gated on what is actually on disk for a video, via
+    `completeness.py`. The playlist listing gives us ids and nothing else, so a
+    content hash cannot possibly gate this step.
   * re-extraction is gated on `description_sha256`. We only know the
     description after fetching, which is exactly when this gate applies.
 
@@ -44,13 +44,6 @@ def save(videos: dict[str, dict[str, Any]], path: Path | None = None) -> None:
         width=100,
     )
     path.write_text(body, encoding="utf-8")
-
-
-def needs_fetch(video_id: str, videos: dict[str, dict], *, refresh: bool = False) -> bool:
-    """Gate for stage 1. Id presence only — see the module docstring."""
-    if refresh:
-        return True
-    return video_id not in videos
 
 
 def needs_extraction(video_id: str, videos: dict[str, dict], current_hash: str) -> bool:

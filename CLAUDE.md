@@ -16,13 +16,15 @@ uv sync                                     # install dependencies
 uv run pytest                               # whole suite; needs no network
 uv run pytest tests/test_schema.py -q       # one file
 uv run pytest -k "quantity" -q              # one topic
-uv run python -m recipe_library.fetch       # stage 1: fetch the playlist
+uv run python -m recipe_library.fetch       # stage 1: one pass over the playlist
+uv run python -m recipe_library.fetch --until-complete   # keep going until done
 uv run python -m recipe_library.validate    # check every recipes/*.yaml
-./scripts/setup_fitatu.sh                   # npm-install and build the Fitatu MCP
 ```
 
-Useful `fetch` flags: `--limit N` (fetch only N new videos), `--video ID`
-(a specific video, bypasses config), `--refresh` (re-fetch known videos),
+Useful `fetch` flags: `--until-complete` (keep making passes until nothing is
+missing), `--limit N` (videos per pass), `--video ID` (a specific video; bypasses
+config entirely, so config defaults do not apply), `--refresh` (re-fetch metadata
+already on disk), `--subtitle-output text|vtt|both`,
 `--cookies-from-browser chrome` (see throttling below).
 
 Always invoke Python through `uv run`. A bare `python3` on this machine resolves
@@ -48,8 +50,10 @@ Separating them means a full playlist fetch costs no context, and extraction can
 be re-run or corrected without touching the network — which matters, because
 YouTube throttles repeat scraping.
 
-**`state/processed.yaml` is the ledger** and the single source of truth for what
-is done. It makes both stages idempotent and resumable.
+**`state/processed.yaml` is the ledger**, and `recipe_library/completeness.py`
+decides what still needs fetching. Stage 1 is **additive**: it never deletes what
+an earlier run fetched, re-reads an existing `meta.json` rather than refetching
+it, and requests only what is actually absent. Re-running it is always safe.
 
 ## Invariants worth knowing before you change things
 
@@ -63,6 +67,26 @@ presence; re-extraction is gated on `description_sha256`. The playlist listing
 returns ids and nothing else, so a content hash *cannot* gate fetching — the
 description is unknown at that point. An early draft conflated these; the tests
 in `tests/test_ledger.py` exist to stop it coming back.
+
+**Only ever fetch the original caption track.** YouTube lists auto-captions in
+~157 languages per video, but exactly one is real speech recognition output —
+the key suffixed `-orig`, as in `pl-orig`. Every other entry is machine-translated
+from it. Requesting `pl` on an English video returns a Polish translation of
+English speech; this actually happened, and the resulting file is a far worse
+source for ingredient names than the English original. `pick_caption_track`
+prefers human-written captions, then `-orig`, then a plainly-named track.
+
+`original_langs` in `config.yaml` is therefore an **allowlist of languages you
+can read**, not a request list. A Polish video yields Polish, an English video
+yields English. Many saved shorts carry only one language, and completeness
+accounts for that — requiring both would leave them permanently incomplete and
+`--until-complete` would never terminate.
+
+**Subtitles are stored as plain text by default.** Auto-caption VTT is a rolling
+window of repeated lines with a timestamp on every word; `subtitles.py` strips
+the timing, collapses the repeats and decodes YouTube's double-encoded entities
+(a single decode pass turns `&amp;oacute;` into `&oacute;` and loses the Polish
+diacritic). Timings are used nowhere, hence `subtitle_output: text`.
 
 **Never persist yt-dlp's full info dict.** It is ~620 KB per video of format
 lists and signed URLs that rotate on every fetch. `prune_metadata` keeps the

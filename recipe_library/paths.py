@@ -30,6 +30,13 @@ def load_config() -> dict:
             f"playlist_url is not set in {CONFIG}.\n"
             "Add the public YouTube playlist URL holding your recipe shorts."
         )
-    config.setdefault("sub_langs", ["pl", "en"])
+    # `sub_langs` was a request list; `original_langs` is an allowlist of
+    # original languages, because only the original caption track is fetched.
+    config.setdefault("original_langs", config.pop("sub_langs", None) or ["pl", "en"])
     config.setdefault("cookies_from_browser", None)
+    config.setdefault("subtitle_output", "text")
+    config.setdefault("fetch_until_complete", False)
+    config.setdefault("max_passes", 20)
+    config.setdefault("pass_delay_seconds", 60)
+    config.setdefault("max_stalled_passes", 3)
     return config
