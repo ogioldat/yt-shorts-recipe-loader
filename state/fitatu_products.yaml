@@ -2619,18 +2619,18 @@ products:
     query: tortilla low carb
     resolved_at: '2026-10-02'
   lean flank steak:
-    fitatu_product_id: '15279'
-    display_name: Wołowina nowozelandzka, łata bez tłuszczu surowa
+    fitatu_product_id: '66153363'
+    display_name: Wołowina, mięso mielone
     brand: null
     source: public
-    verified: false
+    verified: true
     default_measure:
       measure_id: '1'
       measure_name: g
       weight_g: 100
-      kcal: 142
+      kcal: 198
     measures: []
-    query: łata wołowa bez tłuszczu
+    query: wołowina mielona
     resolved_at: '2026-10-02'
   lean ground chicken:
     fitatu_product_id: '108062220'
@@ -2661,18 +2661,18 @@ products:
     query: udziec jagnięcy
     resolved_at: '2026-10-02'
   lean steak:
-    fitatu_product_id: '15279'
-    display_name: Wołowina nowozelandzka, łata bez tłuszczu surowa
+    fitatu_product_id: '66153363'
+    display_name: Wołowina, mięso mielone
     brand: null
     source: public
-    verified: false
+    verified: true
     default_measure:
       measure_id: '1'
       measure_name: g
       weight_g: 100
-      kcal: 142
+      kcal: 198
     measures: []
-    query: łata wołowa bez tłuszczu
+    query: wołowina mielona
     resolved_at: '2026-10-02'
   lemon:
     fitatu_product_id: '116885261'
