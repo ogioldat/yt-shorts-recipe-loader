@@ -41,6 +41,7 @@ ingredients:
   quantity: null
   unit: null
   note: sauce
+  fitatu_product_id: '14369419'
 - name: flour
   quantity: null
   unit: null

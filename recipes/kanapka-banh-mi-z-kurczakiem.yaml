@@ -30,6 +30,7 @@ ingredients:
   quantity: null
   unit: null
   note: zalewa
+  fitatu_product_id: '14369419'
 - name: ocet ryżowy
   quantity: null
   unit: null

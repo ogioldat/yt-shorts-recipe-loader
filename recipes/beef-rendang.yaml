@@ -37,7 +37,7 @@ ingredients:
   quantity: null
   unit: null
   note: to fry the paste
-  fitatu_product_id: '68553191'
+  fitatu_product_id: '118230735'
 - name: dry spices
   quantity: null
   unit: null
@@ -50,6 +50,7 @@ ingredients:
   quantity: null
   unit: null
   note: used to rinse out the coconut cream can
+  fitatu_product_id: '14369419'
 - name: salt
   quantity: null
   unit: null
@@ -97,9 +98,9 @@ import_error: 'garlic: no quantity stated in the source video; ginger: no quanti
   video; shallot: no quantity stated in the source video; turmeric: no quantity stated in the source video;
   galangal: no quantity stated in the source video; red chilies: no quantity stated in the source video;
   oil: no quantity stated in the source video; dry spices: no Fitatu product mapped; coconut cream: no
-  quantity stated in the source video; water: no Fitatu product mapped; salt: no quantity stated in the
-  source video; palm sugar: no quantity stated in the source video; beef chuck: no quantity stated in
-  the source video; lemongrass: no quantity stated in the source video; lime leaves: no quantity stated
-  in the source video; kerisik: no quantity stated in the source video; white rice: no quantity stated
-  in the source video; <recipe>: no ingredients could be converted'
+  quantity stated in the source video; water: no quantity stated in the source video; salt: no quantity
+  stated in the source video; palm sugar: no quantity stated in the source video; beef chuck: no quantity
+  stated in the source video; lemongrass: no quantity stated in the source video; lime leaves: no quantity
+  stated in the source video; kerisik: no quantity stated in the source video; white rice: no quantity
+  stated in the source video; <recipe>: no ingredients could be converted'
 imported_at: '2026-10-02'

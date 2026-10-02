@@ -22,6 +22,14 @@ def main(argv: list[str] | None = None) -> int:
     )
     parser.add_argument("--limit", type=int, help="import at most this many recipes")
     parser.add_argument(
+        "--recipe",
+        action="append",
+        dest="names",
+        metavar="ID",
+        help="import just this recipe, by id (the file name without .yaml); "
+        "repeatable. Already-imported recipes are still skipped unless --force",
+    )
+    parser.add_argument(
         "--shared", action="store_true", help="make recipes public (default private)"
     )
     parser.add_argument(
@@ -70,6 +78,7 @@ def main(argv: list[str] | None = None) -> int:
         force=args.force,
         include_errors=not args.skip_errors,
         tags=args.tags,
+        names=args.names,
     )
     print(
         "\nDone. "

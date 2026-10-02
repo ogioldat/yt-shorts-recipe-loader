@@ -55,14 +55,25 @@ PER_ITEM_MEASURE_IDS = {
 # multiplying one into the other would inject up to 50% error, and resolving a
 # product that carries the measure the recipe actually uses is the fix instead.
 #
-# The one exception is a 240 ml cup against a Polish 250 ml `szklanka`, kept
-# because the measures really are the same kind of thing and the gap is 4%.
+# There are two exceptions, both weight-free:
+#
+#   * a 240 ml cup against a Polish 250 ml `szklanka`, a 4% gap between measures
+#     that really are the same kind of thing;
+#   * anything with a volume against a **millilitre** measure. A tablespoon is
+#     15 ml by definition, and a millilitre measure needs no spoon convention at
+#     all, so this adds no assumption. It is also the route for a recipe written
+#     in ml against a product that only offers a glass.
 UNIT_MEASURE_IDS = {
     "tsp": {"19", "11"},  # teaspoon / łyżeczka, level teaspoon
     "tbsp": {"20"},  # tablespoon / łyżka
     "cup": {"32"},  # glass / szklanka
+    "ml": {MEASURE_ML},
 }
 CUP_TO_GLASS = 240.0 / 250.0
+
+# Millilitres in one unit, for the volume family only.
+UNIT_ML = {"ml": 1.0, "tsp": 5.0, "tbsp": 15.0, "cup": 240.0}
+MEASURE_UNIT_ML = {MEASURE_ML: 1.0, "19": 5.0, "11": 5.0, "20": 15.0, "32": 250.0}
 
 QUANTITY_DECIMALS = 3
 
@@ -146,6 +157,14 @@ def select_measure(entry: dict, unit: str | None) -> dict:
     for candidate in entry.get("measures") or []:
         if str(candidate.get("measure_id") or "") in wanted and candidate.get("weight_g"):
             return candidate
+    if unit in UNIT_ML:
+        # No exact measure: a millilitre one converts by definition, and for a
+        # recipe written in ml any volume measure does.
+        preferred = [MEASURE_ML] if unit != "ml" else list(MEASURE_UNIT_ML)
+        for want in preferred:
+            for candidate in entry.get("measures") or []:
+                if str(candidate.get("measure_id") or "") == want and candidate.get("weight_g"):
+                    return candidate
     return default
 
 
@@ -167,11 +186,6 @@ def measure_quantity(
     if not measure.get("measure_id"):
         return None, "mapped Fitatu product has no measure id"
 
-    if unit == "ml":
-        if _is_ml_measure(measure):
-            return round(float(quantity), QUANTITY_DECIMALS), None
-        return None, "volume in ml, but the Fitatu measure is not millilitre-based"
-
     if unit == "g":
         weight_g = measure.get("weight_g")
         if not weight_g or weight_g <= 0:
@@ -190,16 +204,28 @@ def measure_quantity(
         )
 
     if unit in UNIT_MEASURE_IDS:
-        if _measure_id(measure) in UNIT_MEASURE_IDS[unit]:
+        measure_id = _measure_id(measure)
+        factor = None
+        if measure_id in UNIT_MEASURE_IDS[unit] or (unit == "ml" and _is_ml_measure(measure)):
             factor = CUP_TO_GLASS if unit == "cup" else 1.0
-            value = round(float(quantity) * factor, QUANTITY_DECIMALS)
-            if value <= 0:
-                return None, f"{quantity} {unit} rounds to zero units of that measure"
-            return value, None
-        return None, (
-            f"the recipe measures this in {unit}, but the mapped product's measure "
-            f"is {_measure_name(measure)!r}; resolve a product that has a {unit}"
-        )
+        elif _is_ml_measure(measure) or unit == "ml":
+            # Volume into volume, by the definition of the units: no spoon
+            # convention and no density enter into it.
+            target_ml = MEASURE_UNIT_ML.get(measure_id)
+            if target_ml is None and _is_ml_measure(measure):
+                target_ml = 1.0
+            if target_ml:
+                factor = UNIT_ML[unit] / target_ml
+        if factor is None:
+            return None, (
+                f"the recipe measures this in {unit}, but the mapped product's measure "
+                f"is {_measure_name(measure)!r}; resolve a product that has a {unit} "
+                f"or a millilitre measure"
+            )
+        value = round(float(quantity) * factor, QUANTITY_DECIMALS)
+        if value <= 0:
+            return None, f"{quantity} {unit} rounds to zero units of that measure"
+        return value, None
 
     if unit == "pinch":
         if _measure_id(measure) == MEASURE_PINCH:

@@ -56,6 +56,7 @@ ingredients:
   quantity: null
   unit: null
   note: to cover the stock, simmered 45 minutes
+  fitatu_product_id: '14369419'
 - name: saffron
   quantity: null
   unit: null
@@ -119,8 +120,8 @@ import_error: 'olive oil: no quantity stated in the source video; shrimp: no qua
   no quantity stated in the source video; garlic: no quantity stated in the source video; tomatoes: no
   quantity stated in the source video; bay leaf: no quantity stated in the source video; parsley stems:
   no quantity stated in the source video; peppercorns: no quantity stated in the source video; water:
-  no Fitatu product mapped; saffron: no quantity stated in the source video; beans: no quantity stated
-  in the source video; red pepper: no quantity stated in the source video; grated tomato: no quantity
+  no quantity stated in the source video; saffron: no quantity stated in the source video; beans: no quantity
+  stated in the source video; red pepper: no quantity stated in the source video; grated tomato: no quantity
   stated in the source video; bomba rice: no quantity stated in the source video; salt: no quantity stated
   in the source video; lima beans: no quantity stated in the source video; shellfish: no quantity stated
   in the source video; parsley: no quantity stated in the source video; lemon: no quantity stated in the

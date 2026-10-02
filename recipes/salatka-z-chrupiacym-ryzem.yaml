@@ -81,7 +81,8 @@ source:
   - description
   - subtitles
 extracted_at: '2026-10-02'
-import_status: ok
-fitatu_recipe_id: '176257113'
+import_status: error
+import_error: 'olej chilli: the recipe measures this in tbsp, but the mapped product''s measure is ''portion'';
+  resolve a product that has a tbsp; przyprawy do kurczaka: no quantity stated in the source video; cebula
+  dymka: no quantity stated in the source video'
 imported_at: '2026-10-02'
-import_note: imported outside this session; id recovered from Fitatu by matching the title

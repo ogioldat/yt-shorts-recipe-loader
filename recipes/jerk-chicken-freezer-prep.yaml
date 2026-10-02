@@ -78,6 +78,7 @@ ingredients:
 - name: water
   quantity: 1
   unit: tbsp
+  fitatu_product_id: '14369419'
 source:
   video_id: rwLTEqFnw8A
   url: https://www.youtube.com/shorts/rwLTEqFnw8A

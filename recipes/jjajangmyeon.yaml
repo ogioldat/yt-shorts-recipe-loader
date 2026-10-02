@@ -6,6 +6,7 @@ ingredients:
 - name: neutral oil
   quantity: 3
   unit: tbsp
+  fitatu_product_id: '118230735'
 - name: Korean black bean paste
   quantity: 0.75
   unit: cup
@@ -14,34 +15,43 @@ ingredients:
   quantity: 454
   unit: g
   note: 1 lbs, sliced
+  fitatu_product_id: '62908760'
 - name: onion
   quantity: 1
   unit: cup
   note: diced
+  fitatu_product_id: '116696504'
 - name: garlic
   quantity: 2
   unit: tbsp
   note: minced
+  fitatu_product_id: '116515157'
 - name: ginger
   quantity: 1
   unit: tbsp
   note: minced
+  fitatu_product_id: '2149'
 - name: zucchini
   quantity: 1
   unit: cup
   note: diced
+  fitatu_product_id: '116930395'
 - name: oyster sauce
   quantity: 1
   unit: tbsp
+  fitatu_product_id: '14135'
 - name: gochugaru
   quantity: 1
   unit: tsp
+  fitatu_product_id: '89315967'
 - name: sugar
   quantity: 2
   unit: tbsp
+  fitatu_product_id: '24882535'
 - name: black pepper
   quantity: 1
   unit: tsp
+  fitatu_product_id: '116931077'
 - name: glutaminian sodu (MSG)
   quantity: null
   unit: null
@@ -49,30 +59,37 @@ ingredients:
 - name: dashi stock or beef stock
   quantity: 2
   unit: cup
+  fitatu_product_id: '30310338'
 - name: cornstarch
   quantity: 3
   unit: tbsp
   note: slurry; ingredient list says 3 tbsp, step 7 says 2.5 tbsp
+  fitatu_product_id: '1677'
 - name: water
   quantity: 3
   unit: tbsp
   note: slurry; ingredient list says 3 tbsp, step 7 says 2.5 tbsp
+  fitatu_product_id: '14369419'
 - name: sesame oil
   quantity: 2
   unit: tsp
   note: to finish
+  fitatu_product_id: '1653'
 - name: jajang noodles
   quantity: null
   unit: null
   note: cook 1 minute less than the packet says
+  fitatu_product_id: '104136930'
 - name: cucumber
   quantity: null
   unit: null
   note: julienned, garnish
+  fitatu_product_id: '116722626'
 - name: Korean pickled radish
   quantity: null
   unit: null
   note: to serve
+  fitatu_product_id: '147734943'
 source:
   video_id: QUBoCClF0Nc
   url: https://www.youtube.com/shorts/QUBoCClF0Nc
@@ -85,3 +102,6 @@ source:
 extracted_at: '2026-10-02'
 prep_time_minutes: 30
 prep_time_source: stated in the video series title (30 minute meals)
+import_status: ok
+fitatu_recipe_id: '176293758'
+imported_at: '2026-10-02'

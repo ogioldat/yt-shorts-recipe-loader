@@ -42,6 +42,7 @@ ingredients:
   quantity: 0.25
   unit: cup
   note: 1/4–1/2 cup
+  fitatu_product_id: '14369419'
 - name: white rice
   quantity: null
   unit: null

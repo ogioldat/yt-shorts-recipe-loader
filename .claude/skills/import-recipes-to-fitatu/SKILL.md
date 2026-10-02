@@ -81,6 +81,7 @@ exactly the corruption this project is built to avoid.
 |---|---|
 | `--dry-run` | build and report; contact nothing, write nothing |
 | `--limit N` | import at most N recipes |
+| `--recipe ID` | import just that recipe, by id; repeatable |
 | `--status` | print the tally and exit |
 | `--shared` | make recipes public; default is private |
 | `--allow-partial` | import with ingredients missing (under-reports) |
@@ -89,6 +90,17 @@ exactly the corruption this project is built to avoid.
 
 Failed recipes are retried automatically on the next run, since an `error` is
 usually a missing mapping or a transient API problem.
+
+`--recipe` takes the recipe id, which is the file name without `.yaml`, and is
+the way to retry one recipe after fixing its products:
+
+```bash
+uv run python -m recipe_library.fitatu_import --recipe tteok-bokki --dry-run
+uv run python -m recipe_library.fitatu_import --recipe tteok-bokki
+```
+
+It narrows the list, it does not widen it: a named recipe already marked `ok` is
+still skipped, and an id with no file is refused before anything is sent.
 
 ## Credentials
 

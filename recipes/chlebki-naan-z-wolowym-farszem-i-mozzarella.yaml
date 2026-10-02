@@ -18,6 +18,7 @@ ingredients:
   quantity: 50
   unit: ml
   note: rozczyn
+  fitatu_product_id: '14369419'
 - name: cukier
   quantity: 1
   unit: tsp
@@ -32,6 +33,7 @@ ingredients:
   quantity: 125
   unit: ml
   note: ciasto
+  fitatu_product_id: '14369419'
 - name: gęsty jogurt naturalny
   quantity: 125
   unit: g

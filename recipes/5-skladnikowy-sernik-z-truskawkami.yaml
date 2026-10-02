@@ -8,30 +8,37 @@ ingredients:
   quantity: 25
   unit: g
   note: spód; 5 sztuk
+  fitatu_product_id: '120351021'
 - name: skyr naturalny
   quantity: 150
   unit: g
   note: masa; 1 opakowanie
+  fitatu_product_id: '147761856'
 - name: twaróg półtłusty
   quantity: 125
   unit: g
   note: masa; ½ opakowania, w kostce
+  fitatu_product_id: '32068479'
 - name: aromat waniliowy
   quantity: 1
   unit: g
   note: masa; 1 porcja
+  fitatu_product_id: '65714325'
 - name: galaretka 50% mniej cukru
   quantity: 39
   unit: g
   note: '1 opakowanie; wersja wege: z agarem'
+  fitatu_product_id: '100624786'
 - name: woda
   quantity: 350
   unit: ml
   note: do galaretki
+  fitatu_product_id: '14369419'
 - name: truskawki
   quantity: 100
   unit: g
   note: topping; 1½ garści
+  fitatu_product_id: '116885231'
 source:
   video_id: GOSNRJPll4U
   url: https://www.youtube.com/shorts/GOSNRJPll4U
@@ -44,3 +51,6 @@ source:
 extracted_at: '2026-10-02'
 prep_time_minutes: 15
 prep_time_source: estimated during extraction; not stated in the video
+import_status: ok
+fitatu_recipe_id: '176290545'
+imported_at: '2026-10-02'

@@ -631,3 +631,100 @@ def test_a_recipe_using_two_units_of_one_ingredient_still_converts():
     assert built.ok
     assert [i["measureId"] for i in built.kwargs["items"]] == ["20", "19"]
     assert [i["measureQuantity"] for i in built.kwargs["items"]] == [1.0, 2.0]
+
+
+# --- importing one named recipe ---------------------------------------------
+
+
+def test_naming_a_recipe_narrows_the_pending_list(tmp_path):
+    from recipe_library.fitatu_import.runner import resolve_names
+
+    write(tmp_path / "a.yaml", recipe([]))
+    write(tmp_path / "b.yaml", recipe([]))
+    write(tmp_path / "c.yaml", recipe([]))
+
+    assert [p.stem for p in select_pending(tmp_path)] == ["a", "b", "c"]
+    assert [p.stem for p in select_pending(tmp_path, names=["b"])] == ["b"]
+    # the caller's order is kept, and the .yaml suffix is tolerated
+    paths, unknown = resolve_names(["c.yaml", "a"], tmp_path)
+    assert [p.stem for p in paths] == ["c", "a"]
+    assert unknown == []
+
+
+def test_naming_a_recipe_does_not_lift_the_duplicate_gate(tmp_path):
+    # The point of `ok` is that re-sending creates a second Fitatu recipe. Asking
+    # for one by name must not become a way around that.
+    write(tmp_path / "done.yaml", recipe([], import_status=STATUS_OK))
+    assert select_pending(tmp_path, names=["done"]) == []
+    assert [p.stem for p in select_pending(tmp_path, names=["done"], force=True)] == ["done"]
+
+
+def test_an_unknown_recipe_name_is_refused_before_anything_is_sent(tmp_path):
+    from recipe_library.fitatu_import.runner import run
+
+    write(tmp_path / "a.yaml", recipe([{"name": "mąka", "quantity": 1, "unit": "g"}]))
+    with pytest.raises(SystemExit) as excinfo:
+        run(recipes_dir=tmp_path, names=["typo"], dry_run=True)
+    assert "typo" in str(excinfo.value)
+
+
+def test_naming_an_already_imported_recipe_says_so(tmp_path, capsys):
+    from recipe_library.fitatu_import.runner import run
+
+    write(tmp_path / "done.yaml", recipe([], import_status=STATUS_OK))
+    tally = run(recipes_dir=tmp_path, names=["done"], dry_run=True)
+    assert tally == {STATUS_OK: 0, STATUS_ERROR: 0, "would_import": 0}
+    out = capsys.readouterr().out
+    assert "already has import_status 'ok'" in out
+    assert "--force" in out
+
+
+def test_one_named_recipe_builds_only_that_one(tmp_path, capsys):
+    from recipe_library.fitatu_import.runner import run
+
+    ing = [{"name": "mąka", "quantity": 100, "unit": "g"}]
+    write(tmp_path / "wanted.yaml", recipe(ing))
+    write(tmp_path / "other.yaml", recipe(ing))
+    run(recipes_dir=tmp_path, names=["wanted"], dry_run=True)
+    out = capsys.readouterr().out
+    assert "wanted" in out
+    assert "other" not in out
+
+
+# --- volume through millilitres ---------------------------------------------
+
+ML = {"measure_id": "17", "measure_name": "ml", "weight_g": 1}
+
+
+def test_spoons_and_cups_convert_into_a_millilitre_measure():
+    # A tablespoon is 15 ml by definition, and a millilitre measure carries no
+    # spoon convention, so this adds no assumption of its own.
+    assert measure_quantity(1, "tbsp", ML) == (15.0, None)
+    assert measure_quantity(2, "tsp", ML) == (10.0, None)
+    assert measure_quantity(0.25, "cup", ML) == (60.0, None)
+
+
+def test_a_recipe_in_millilitres_converts_into_a_glass():
+    # 1 L against a 250 ml glass is 4 glasses; the product's own per-glass weight
+    # then does the rest.
+    assert measure_quantity(1000, "ml", GLASS) == (4.0, None)
+
+
+def test_volume_still_refuses_a_mass_measure():
+    value, reason = measure_quantity(1, "tbsp", GRAM)
+    assert value is None
+    assert "millilitre measure" in reason
+
+
+def test_a_millilitre_measure_is_preferred_when_no_exact_one_exists():
+    from recipe_library.fitatu_import.payload import select_measure
+
+    entry = {
+        "default_measure": {"measure_id": "39", "measure_name": "porcja", "weight_g": 100},
+        "measures": [
+            {"measure_id": "39", "weight_g": 100, "kcal": 824},
+            {"measure_id": "1", "weight_g": 1, "kcal": 8.24},
+            {"measure_id": "17", "weight_g": 1, "kcal": 8.24},
+        ],
+    }
+    assert select_measure(entry, "tbsp")["measure_id"] == "17"

@@ -67,16 +67,46 @@ def _set_status(data: dict, status: str, **extra) -> None:
     data.update({k: v for k, v in extra.items() if v is not None})
 
 
+def resolve_names(
+    names: list[str], recipes_dir: Path | None = None
+) -> tuple[list[Path], list[str]]:
+    """Map recipe ids to their files, keeping the order the caller asked for.
+
+    Returns `(paths, unknown)`. A name may be given with or without the `.yaml`
+    suffix, since that is how it appears in the import log.
+    """
+    by_stem = {path.stem: path for path in recipe_files(recipes_dir)}
+    paths, unknown = [], []
+    for name in names:
+        stem = name[:-5] if name.endswith(".yaml") else name
+        path = by_stem.get(stem)
+        if path is None:
+            unknown.append(name)
+        elif path not in paths:
+            paths.append(path)
+    return paths, unknown
+
+
 def select_pending(
-    recipes_dir: Path | None = None, *, include_errors: bool = True, force: bool = False
+    recipes_dir: Path | None = None,
+    *,
+    include_errors: bool = True,
+    force: bool = False,
+    names: list[str] | None = None,
 ) -> list[Path]:
     """Recipes worth attempting.
 
     Already-imported recipes are excluded unless `force`, because creating them
-    again would duplicate them in Fitatu.
+    again would duplicate them in Fitatu. Naming recipes narrows the list to
+    those, but does not lift that gate: a named recipe already imported is still
+    skipped, because the duplicate it would create is the same duplicate.
     """
+    candidates = recipe_files(recipes_dir)
+    if names is not None:
+        candidates, _ = resolve_names(names, recipes_dir)
+
     pending = []
-    for path in recipe_files(recipes_dir):
+    for path in candidates:
         status = recipe_status(read_recipe(path))
         if force:
             pending.append(path)
@@ -171,6 +201,7 @@ def run(
     force: bool = False,
     include_errors: bool = True,
     tags: list[str] | None = None,
+    names: list[str] | None = None,
 ) -> dict[str, int]:
     """Import a window of the pending recipes. Returns a tally by outcome.
 
@@ -180,15 +211,39 @@ def run(
     import in batches therefore means keeping `--offset 0` and raising `--limit`,
     not advancing the offset -- otherwise the second batch skips recipes the first
     one already removed from the list.
+
+    `names` imports just those recipes, by id. An unknown name is refused before
+    anything is sent, because a typo that silently imported nothing would look
+    exactly like a recipe that had already been imported.
     """
     if offset is not None and offset < 0:
         raise SystemExit(f"--offset must be zero or greater, got {offset}")
     if limit is not None and limit < 1:
         raise SystemExit(f"--limit must be at least 1, got {limit}")
 
+    if names:
+        _, unknown = resolve_names(names, recipes_dir)
+        if unknown:
+            raise SystemExit(
+                "No recipe file for: " + ", ".join(unknown) + "\n"
+                "Pass the recipe id, which is the file name without .yaml."
+            )
+
     products = (load_cache().get("products") or {})
-    pending = select_pending(recipes_dir, include_errors=include_errors, force=force)
+    pending = select_pending(
+        recipes_dir, include_errors=include_errors, force=force, names=names
+    )
     total = len(pending)
+
+    if names and not pending:
+        # Named but not pending means already imported: say so, rather than
+        # letting it read as "nothing to do".
+        print(
+            f"Nothing to import: {', '.join(names)} "
+            f"already has import_status 'ok'. Re-sending would duplicate it in "
+            f"Fitatu; --force does that deliberately."
+        )
+        return {STATUS_OK: 0, STATUS_ERROR: 0, "would_import": 0}
 
     start = offset or 0
     pending = pending[start:]
@@ -203,7 +258,9 @@ def run(
             print("Nothing to import.")
         return tally
 
-    if start or limit:
+    if names:
+        print(f"Importing by name: {', '.join(p.stem for p in pending)}")
+    elif start or limit:
         end = start + len(pending)
         print(f"Pending: {total} recipe(s); taking {start}-{end - 1}")
 

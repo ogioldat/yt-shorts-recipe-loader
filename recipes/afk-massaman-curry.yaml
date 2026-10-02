@@ -20,6 +20,7 @@ ingredients:
 - name: water
   quantity: 300
   unit: ml
+  fitatu_product_id: '14369419'
 - name: onion
   quantity: 1
   unit: piece

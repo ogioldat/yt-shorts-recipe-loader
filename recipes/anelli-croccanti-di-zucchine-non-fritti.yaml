@@ -18,6 +18,7 @@ ingredients:
   quantity: null
   unit: null
   note: 300 – unità non indicata nella ricetta, pastella
+  fitatu_product_id: '14369419'
 - name: cornflakes
   quantity: 100
   unit: g

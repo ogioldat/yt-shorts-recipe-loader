@@ -67,11 +67,12 @@ ingredients:
   quantity: null
   unit: null
   note: sauce
+  fitatu_product_id: '14369419'
 - name: oil
   quantity: null
   unit: null
   note: for the pan
-  fitatu_product_id: '68553191'
+  fitatu_product_id: '118230735'
 - name: rice
   quantity: null
   unit: null
@@ -93,6 +94,6 @@ import_error: 'chicken thighs: no quantity stated in the source video; Shaoxing 
   source video; scallions: no quantity stated in the source video; dark soy sauce: no quantity stated
   in the source video; light soy sauce: no quantity stated in the source video; oyster sauce: no quantity
   stated in the source video; chicken bouillon: no quantity stated in the source video; sugar: no quantity
-  stated in the source video; water: no Fitatu product mapped; oil: no quantity stated in the source video;
-  rice: no quantity stated in the source video; <recipe>: no ingredients could be converted'
+  stated in the source video; water: no quantity stated in the source video; oil: no quantity stated in
+  the source video; rice: no quantity stated in the source video; <recipe>: no ingredients could be converted'
 imported_at: '2026-10-02'

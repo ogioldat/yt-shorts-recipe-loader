@@ -44,6 +44,7 @@ ingredients:
   quantity: 2
   unit: tsp
   note: slurry
+  fitatu_product_id: '14369419'
 - name: minced garlic
   quantity: 1
   unit: tbsp

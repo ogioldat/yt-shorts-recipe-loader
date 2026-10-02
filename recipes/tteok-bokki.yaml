@@ -4,41 +4,51 @@ language: en
 servings: null
 ingredients:
 - name: rice cake for topokki
-  quantity: null
-  unit: null
+  quantity: 300
+  unit: g
   note: 1 packet, soaked in cold water for 30 mins
+  fitatu_product_id: '112937654'
 - name: spring onion
   quantity: 3
   unit: piece
   note: cut into 3 cm pieces
+  fitatu_product_id: '8293'
 - name: fish cakes
   quantity: 300
   unit: g
   note: cut into triangles
+  fitatu_product_id: '33172112'
 - name: hard boiled eggs
   quantity: 4
   unit: piece
+  fitatu_product_id: '24881865'
 - name: gochujang
   quantity: 2
   unit: tbsp
   note: red paste
+  fitatu_product_id: '116157154'
 - name: corn syrup
   quantity: 2
   unit: tbsp
   note: or glucose
+  fitatu_product_id: '15089'
 - name: sugar
   quantity: 1
   unit: tbsp
+  fitatu_product_id: '24882535'
 - name: fine gochugaru
   quantity: 2
   unit: tbsp
+  fitatu_product_id: '89315967'
 - name: black pepper
   quantity: 1
   unit: tsp
+  fitatu_product_id: '116931077'
 - name: beef stock
   quantity: 1000
   unit: ml
   note: 1 L
+  fitatu_product_id: '30310338'
 source:
   video_id: L-TnDIAwCLw
   url: https://www.youtube.com/shorts/L-TnDIAwCLw
@@ -51,3 +61,8 @@ source:
 extracted_at: '2026-10-02'
 prep_time_minutes: 20
 prep_time_source: estimated during extraction; not stated in the video
+import_status: error
+import_error: 'rice cake for topokki: no quantity stated in the source video; fine gochugaru: the recipe
+  measures this in tbsp, but the mapped product''s measure is ''g''; resolve a product that has a tbsp;
+  beef stock: volume in ml, but the Fitatu measure is not millilitre-based'
+imported_at: '2026-10-02'

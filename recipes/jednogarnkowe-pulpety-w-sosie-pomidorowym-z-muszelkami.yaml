@@ -104,6 +104,7 @@ ingredients:
 - name: woda
   quantity: 320
   unit: ml
+  fitatu_product_id: '14369419'
 - name: natka pietruszki
   quantity: null
   unit: null

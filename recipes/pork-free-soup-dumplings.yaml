@@ -26,6 +26,7 @@ ingredients:
   quantity: null
   unit: null
   note: broth, simmered 3–4 hours
+  fitatu_product_id: '14369419'
 - name: ground meat
   quantity: null
   unit: null
@@ -103,12 +104,12 @@ extracted_at: '2026-10-02'
 import_status: error
 import_error: 'chicken feet: no quantity stated in the source video; rotisserie chicken carcass: no Fitatu
   product mapped; ginger: no quantity stated in the source video; scallion: no quantity stated in the
-  source video; water: no Fitatu product mapped; ground meat: no quantity stated in the source video;
-  green onion: no quantity stated in the source video; garlic: no quantity stated in the source video;
-  ginger: no quantity stated in the source video; soy sauce: no quantity stated in the source video; apple
-  cider vinegar: no quantity stated in the source video; sesame oil: no quantity stated in the source
-  video; white pepper: no quantity stated in the source video; salt: no quantity stated in the source
-  video; sugar: no quantity stated in the source video; dumpling wrappers: no quantity stated in the source
-  video; chili oil: no quantity stated in the source video; green onions: no quantity stated in the source
-  video; <recipe>: no ingredients could be converted'
+  source video; water: no quantity stated in the source video; ground meat: no quantity stated in the
+  source video; green onion: no quantity stated in the source video; garlic: no quantity stated in the
+  source video; ginger: no quantity stated in the source video; soy sauce: no quantity stated in the source
+  video; apple cider vinegar: no quantity stated in the source video; sesame oil: no quantity stated in
+  the source video; white pepper: no quantity stated in the source video; salt: no quantity stated in
+  the source video; sugar: no quantity stated in the source video; dumpling wrappers: no quantity stated
+  in the source video; chili oil: no quantity stated in the source video; green onions: no quantity stated
+  in the source video; <recipe>: no ingredients could be converted'
 imported_at: '2026-10-02'

@@ -12,6 +12,7 @@ ingredients:
 - name: woda
   quantity: 50
   unit: ml
+  fitatu_product_id: '14369419'
 - name: skrobia ziemniaczana
   quantity: 50
   unit: g
@@ -37,7 +38,7 @@ ingredients:
   quantity: 30
   unit: g
   note: sos (2 porcje)
-  fitatu_product_id: '95070356'
+  fitatu_product_id: '116157154'
 - name: sos sojowy
   quantity: 20
   unit: g
@@ -67,6 +68,7 @@ ingredients:
   quantity: 30
   unit: ml
   note: sos
+  fitatu_product_id: '14369419'
 - name: sezam
   quantity: null
   unit: null

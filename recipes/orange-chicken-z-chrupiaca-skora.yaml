@@ -104,6 +104,7 @@ ingredients:
   quantity: 3
   unit: tbsp
   note: do slurry
+  fitatu_product_id: '14369419'
 - name: ryż koshihikari
   quantity: null
   unit: null
