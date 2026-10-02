@@ -10,6 +10,8 @@ from typing import Any
 VALID_UNITS = {"g", "ml", "piece", "tbsp", "tsp", "cup", "pinch"}
 VALID_STATUSES = {"ok", "no_recipe_found", "needs_review", "unavailable"}
 VALID_SOURCES = {"title", "description", "subtitles"}
+# Absent means never attempted; see fitatu_import.runner.
+VALID_IMPORT_STATUSES = {"ok", "error", "not_imported"}
 
 REQUIRED_TOP = ("id", "title", "language", "ingredients", "source", "extracted_at")
 REQUIRED_SOURCE = ("video_id", "url", "recipe_index")
@@ -35,6 +37,22 @@ def validate_recipe(data: Any, *, expected_id: str | None = None) -> list[str]:
     servings = data.get("servings")
     if servings is not None and (not isinstance(servings, int) or servings <= 0):
         errors.append(f"servings must be a positive integer or null, got {servings!r}")
+
+    status = data.get("import_status")
+    if status is not None and status not in VALID_IMPORT_STATUSES:
+        errors.append(
+            f"import_status must be one of {sorted(VALID_IMPORT_STATUSES)}, got {status!r}"
+        )
+    if status == "ok" and not data.get("fitatu_recipe_id"):
+        # Without the id we could not tell a successful import from a duplicate
+        # waiting to happen, since Fitatu's create is not idempotent.
+        errors.append("import_status 'ok' requires fitatu_recipe_id")
+
+    recipe_id = data.get("fitatu_recipe_id")
+    if recipe_id is not None and (not isinstance(recipe_id, str) or not recipe_id.strip()):
+        errors.append(
+            f"fitatu_recipe_id must be a non-empty string or null, got {recipe_id!r}"
+        )
 
     errors.extend(_validate_ingredients(data.get("ingredients")))
     errors.extend(_validate_source(data.get("source")))

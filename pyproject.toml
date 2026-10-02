@@ -6,6 +6,9 @@ requires-python = ">=3.11"
 dependencies = [
     "yt-dlp>=2025.1.1",
     "PyYAML>=6.0",
+    # Unofficial Fitatu HTTP client. Not on PyPI, and it handles real account
+    # credentials, so it is pinned to a reviewed commit rather than a branch.
+    "fitatu-api @ git+https://github.com/Jezue/fitatu_library.git@6f208f7aa22cabd8699af077dd3ea92e57593ff8",
 ]
 
 [dependency-groups]

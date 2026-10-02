@@ -139,6 +139,37 @@ actually matched in `query`.
 **A blank is better than a wrong id.** An unresolved name is a normal outcome; a
 wrong product silently corrupts the nutrition data the library exists to produce.
 
+## Importing into Fitatu
+
+`recipe_library/fitatu_import/` creates Fitatu recipes from `recipes/*.yaml`. It
+uses the **`fitatu-api` HTTP client directly — not the MCP server**, whose only
+job here is resolving product ids. The package is unofficial, absent from PyPI and
+handles real credentials, so it is pinned to a reviewed commit in `pyproject.toml`.
+
+```bash
+uv run python -m recipe_library.fitatu_import --status    # tally
+uv run python -m recipe_library.fitatu_import --dry-run   # build and report only
+uv run python -m recipe_library.fitatu_import --limit 3   # import for real
+```
+
+Every recipe carries `import_status`: `not_imported` (the default, including when
+absent), `ok` with a `fitatu_recipe_id`, or `error` with an `import_error`.
+
+**`POST /recipes` is not idempotent** — the same body twice creates two Fitatu
+recipes. `import_status: ok` is the only thing preventing duplicates, which is why
+the schema requires `fitatu_recipe_id` alongside it and why `--force` is dangerous.
+
+**Fitatu takes measures, not grams.** Each item is `{itemId, measureId,
+measureQuantity}` counting units of that measure, so 500 g against a 150 g portion
+becomes 3.333 portions, using grams-per-measure from the product cache. Counts and
+spoonfuls (`piece`, `tbsp`, `tsp`, `cup`, `pinch`) have no mass and are **refused
+rather than guessed**; `ml` converts only against a millilitre-based measure,
+because ml→g needs a density nobody stated.
+
+**A recipe imports whole or not at all.** A recipe in Fitatu missing three of its
+eight ingredients would silently under-report calories — the one failure nobody
+notices. `--allow-partial` overrides this and warns.
+
 ## Fitatu MCP
 
 Installed under `mcp/fitatu/` by npm. **The server is not published to npm** —
