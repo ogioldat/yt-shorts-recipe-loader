@@ -29,7 +29,7 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
+    status: ok
     extracted_at: '2026-10-02'
     recipes:
     - afk-massaman-curry
@@ -117,7 +117,7 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
+    status: ok
     extracted_at: '2026-10-02'
     recipes:
     - stir-fried-shrimp
@@ -148,7 +148,7 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
+    status: ok
     extracted_at: '2026-10-02'
     recipes:
     - sheet-pan-seekh-kebab-wraps
@@ -178,7 +178,7 @@ videos:
     subtitles:
     - subs.pl.txt
     - subs.pl.vtt
-    status: complete
+    status: ok
     extracted_at: '2026-10-02'
     recipes:
     - kanapka-banh-mi-z-kurczakiem
@@ -211,9 +211,10 @@ videos:
     subtitles:
     - subs.pl.txt
     - subs.pl.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - 5-skladnikowy-sernik-z-truskawkami
   GPSgECsKC7E:
     title: 'PROTEINOWY PONIEDZIAŁEK: Tosty z kurczakiem BBQ 🐔 #coocharz #fitprzepisy #tosty #jedzenie
       #shorts'
@@ -233,7 +234,7 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
+    status: ok
     extracted_at: '2026-10-02'
     recipes:
     - pakistani-chicken-tikka
@@ -244,7 +245,7 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
+    status: ok
     extracted_at: '2026-10-02'
     recipes:
     - sambal
@@ -297,9 +298,10 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - tteok-bokki
   L6j4_em2Lew:
     title: Eat good, make it healthy!! No chicken and rice over here.
     fetched_at: '2026-10-02'
@@ -375,7 +377,7 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
+    status: ok
     extracted_at: '2026-10-02'
     recipes:
     - japanese-curry-beef-bowls
@@ -386,9 +388,10 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - jjajangmyeon
   RmVYMF0IfF8:
     title: 'Chocolate Mousse 🍫: https://glow-diaries.com/chocolate-mousse/'
     fetched_at: '2026-10-02'
@@ -418,7 +421,7 @@ videos:
     - subs.en.vtt
     - subs.pl.txt
     - subs.pl.vtt
-    status: complete
+    status: ok
     extracted_at: '2026-10-02'
     recipes:
     - magnum-style-chia-pudding
@@ -530,7 +533,7 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
+    status: ok
     extracted_at: '2026-10-02'
     recipes:
     - high-protein-strawberry-cheesecake-ice-cream
@@ -541,7 +544,7 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
+    status: ok
     extracted_at: '2026-10-02'
     recipes:
     - protein-strawberry-ice-cream-bites
@@ -583,7 +586,7 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
+    status: ok
     extracted_at: '2026-10-02'
     recipes:
     - high-protein-mapo-egg-tofu-bowl
@@ -594,7 +597,7 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
+    status: ok
     extracted_at: '2026-10-02'
     recipes:
     - healthy-high-protein-english-muffins
@@ -738,7 +741,7 @@ videos:
     fetched_at: '2026-10-02'
     description_sha256: 02179f00ce5a5e69932c4d3395f07ea5cc8b5154c4bae252f54f543947fa21cc
     subtitles: []
-    status: complete
+    status: no_recipe_found
     extracted_at: '2026-10-02'
     recipes: []
   uPenFX4QagY:

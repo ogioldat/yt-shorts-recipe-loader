@@ -1,0 +1,46 @@
+id: 5-skladnikowy-sernik-z-truskawkami
+title: 5-składnikowy sernik z truskawkami
+title_en: 5-ingredient strawberry cheesecake
+language: pl
+servings: 1
+ingredients:
+- name: biszkopty
+  quantity: 25
+  unit: g
+  note: spód; 5 sztuk
+- name: skyr naturalny
+  quantity: 150
+  unit: g
+  note: masa; 1 opakowanie
+- name: twaróg półtłusty
+  quantity: 125
+  unit: g
+  note: masa; ½ opakowania, w kostce
+- name: aromat waniliowy
+  quantity: 1
+  unit: g
+  note: masa; 1 porcja
+- name: galaretka 50% mniej cukru
+  quantity: 39
+  unit: g
+  note: '1 opakowanie; wersja wege: z agarem'
+- name: woda
+  quantity: 350
+  unit: ml
+  note: do galaretki
+- name: truskawki
+  quantity: 100
+  unit: g
+  note: topping; 1½ garści
+source:
+  video_id: GOSNRJPll4U
+  url: https://www.youtube.com/shorts/GOSNRJPll4U
+  channel: Policzona Szama
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+  - subtitles
+extracted_at: '2026-10-02'
+prep_time_minutes: 15
+prep_time_source: estimated during extraction; not stated in the video

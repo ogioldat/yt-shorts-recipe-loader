@@ -1,0 +1,53 @@
+id: tteok-bokki
+title: Tteok-bokki
+language: en
+servings: null
+ingredients:
+- name: rice cake for topokki
+  quantity: null
+  unit: null
+  note: 1 packet, soaked in cold water for 30 mins
+- name: spring onion
+  quantity: 3
+  unit: piece
+  note: cut into 3 cm pieces
+- name: fish cakes
+  quantity: 300
+  unit: g
+  note: cut into triangles
+- name: hard boiled eggs
+  quantity: 4
+  unit: piece
+- name: gochujang
+  quantity: 2
+  unit: tbsp
+  note: red paste
+- name: corn syrup
+  quantity: 2
+  unit: tbsp
+  note: or glucose
+- name: sugar
+  quantity: 1
+  unit: tbsp
+- name: fine gochugaru
+  quantity: 2
+  unit: tbsp
+- name: black pepper
+  quantity: 1
+  unit: tsp
+- name: beef stock
+  quantity: 1000
+  unit: ml
+  note: 1 L
+source:
+  video_id: L-TnDIAwCLw
+  url: https://www.youtube.com/shorts/L-TnDIAwCLw
+  channel: Andy Cooks
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+  - subtitles
+extracted_at: '2026-10-02'
+prep_time_minutes: 20
+prep_time_source: estimated during extraction; not stated in the video
