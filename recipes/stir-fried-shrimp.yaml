@@ -1,0 +1,72 @@
+id: stir-fried-shrimp
+title: Stir Fried Shrimp
+language: en
+servings: null
+ingredients:
+- name: shrimp
+  quantity: null
+  unit: null
+  note: 2 lbs, head-on, trimmed and deveined
+- name: cornstarch
+  quantity: 0.333
+  unit: cup
+  note: 1/3 cup, to coat the shrimp
+- name: cooking oil
+  quantity: 0.333
+  unit: cup
+  note: 1/3 cup
+- name: onion
+  quantity: 1
+  unit: piece
+  note: medium
+- name: jalapeños
+  quantity: 1
+  unit: piece
+  note: 1–2, sliced
+- name: green onions
+  quantity: 3
+  unit: piece
+  note: stalks
+- name: ginger
+  quantity: null
+  unit: null
+  note: 1 inch piece
+- name: garlic
+  quantity: 4
+  unit: piece
+  note: 4–5 cloves
+- name: butter
+  quantity: 2
+  unit: tbsp
+- name: oyster sauce
+  quantity: 3
+  unit: tbsp
+- name: crab paste in soy bean oil
+  quantity: 1.5
+  unit: tbsp
+  note: intro text calls it shrimp paste
+- name: fish sauce
+  quantity: 0.5
+  unit: tbsp
+- name: sugar
+  quantity: 2
+  unit: tsp
+- name: chicken bouillon
+  quantity: 2
+  unit: tbsp
+- name: black pepper
+  quantity: 0.25
+  unit: tsp
+- name: steamed white rice
+  quantity: null
+  unit: null
+  note: to serve
+source:
+  video_id: 9-MeT8rRBMM
+  url: https://www.youtube.com/shorts/9-MeT8rRBMM
+  channel: Stephvnie Tea
+  recipe_index: 1
+  extracted_from:
+  - title
+  - description
+extracted_at: '2026-10-02'

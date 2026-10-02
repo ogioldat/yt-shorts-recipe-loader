@@ -1,0 +1,79 @@
+id: beef-rendang
+title: Beef Rendang
+language: en
+servings: null
+ingredients:
+- name: garlic
+  quantity: null
+  unit: null
+  note: spice paste
+- name: ginger
+  quantity: null
+  unit: null
+  note: spice paste
+- name: shallot
+  quantity: null
+  unit: null
+  note: spice paste
+- name: turmeric
+  quantity: null
+  unit: null
+  note: spice paste
+- name: galangal
+  quantity: null
+  unit: null
+  note: spice paste
+- name: red chilies
+  quantity: null
+  unit: null
+  note: spice paste
+- name: oil
+  quantity: null
+  unit: null
+  note: to fry the paste
+- name: dry spices
+  quantity: null
+  unit: null
+  note: toasted and ground, then added to the paste – not named individually
+- name: coconut cream
+  quantity: null
+  unit: null
+- name: water
+  quantity: null
+  unit: null
+  note: used to rinse out the coconut cream can
+- name: salt
+  quantity: null
+  unit: null
+- name: palm sugar
+  quantity: null
+  unit: null
+- name: beef chuck
+  quantity: null
+  unit: null
+  note: boneless short ribs also work
+- name: lemongrass
+  quantity: null
+  unit: null
+  note: bruised
+- name: lime leaves
+  quantity: null
+  unit: null
+  note: torn
+- name: kerisik
+  quantity: null
+  unit: null
+  note: 'transcript says "charisic": shredded coconut toasted brown and pounded fine, added after 90 minutes'
+- name: white rice
+  quantity: null
+  unit: null
+  note: to serve
+source:
+  video_id: xjGEWVNL0r0
+  url: https://www.youtube.com/shorts/xjGEWVNL0r0
+  channel: Winny Hayes
+  recipe_index: 1
+  extracted_from:
+  - title
+  - subtitles
+extracted_at: '2026-10-02'

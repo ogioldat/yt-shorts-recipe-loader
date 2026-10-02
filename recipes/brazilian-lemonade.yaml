@@ -1,0 +1,33 @@
+id: brazilian-lemonade
+title: Brazilian Lemonade
+language: en
+servings: null
+ingredients:
+- name: limes
+  quantity: null
+  unit: null
+  note: washed, ends trimmed, quartered and blended peel and all
+- name: water
+  quantity: null
+  unit: null
+  note: not named outright – the transcript breaks off at "little bit of that 2-billion-year-old…"
+- name: sweetened condensed milk
+  quantity: null
+  unit: null
+  note: the secret ingredient; blend until dissolved
+- name: ice
+  quantity: null
+  unit: null
+- name: limes
+  quantity: null
+  unit: null
+  note: to garnish
+source:
+  video_id: oRCYPKS8H3w
+  url: https://www.youtube.com/shorts/oRCYPKS8H3w
+  channel: Jose.elcook
+  recipe_index: 1
+  extracted_from:
+  - title
+  - subtitles
+extracted_at: '2026-10-02'

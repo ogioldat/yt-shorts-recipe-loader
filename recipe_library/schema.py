@@ -68,6 +68,15 @@ def _validate_ingredients(ingredients: Any) -> list[str]:
         if qty is not None and unit is None:
             errors.append(f"{where} has a quantity but no unit")
 
+        # Resolved once via the Fitatu MCP and cached; see products.py. Absent or
+        # null simply means not yet mapped, which is not an error.
+        product_id = ing.get("fitatu_product_id")
+        if product_id is not None and (not isinstance(product_id, str) or not product_id.strip()):
+            errors.append(
+                f"{where} fitatu_product_id must be a non-empty string or null, "
+                f"got {product_id!r}"
+            )
+
     return errors
 
 

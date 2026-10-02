@@ -100,3 +100,26 @@ def test_unknown_provenance_value_is_rejected():
 
 def test_non_mapping_input_is_reported_not_crashed():
     assert validate_recipe("not a recipe") == ["top level is not a mapping"]
+
+
+def test_fitatu_product_id_is_optional():
+    # Not yet mapped is a normal state, not an error.
+    assert validate_recipe(VALID) == []
+
+
+def test_valid_fitatu_product_id_is_accepted():
+    data = recipe(
+        ingredients=[{"name": "cebula", "quantity": 1, "unit": "piece", "fitatu_product_id": "123"}]
+    )
+    assert validate_recipe(data) == []
+
+
+def test_non_string_fitatu_product_id_is_rejected():
+    # Fitatu ids are opaque strings; a number here means something coerced them.
+    data = recipe(ingredients=[{"name": "cebula", "quantity": 1, "unit": "piece", "fitatu_product_id": 123}])
+    assert any("fitatu_product_id" in e for e in validate_recipe(data))
+
+
+def test_blank_fitatu_product_id_is_rejected():
+    data = recipe(ingredients=[{"name": "cebula", "quantity": 1, "unit": "piece", "fitatu_product_id": "  "}])
+    assert any("fitatu_product_id" in e for e in validate_recipe(data))

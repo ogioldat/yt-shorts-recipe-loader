@@ -110,6 +110,35 @@ YouTube extraction also now requires a JavaScript runtime; `fetch.py` offers nod
 alongside the default deno. Signature and n-challenge warnings are harmless here
 because no media is ever downloaded.
 
+## Fitatu product ids
+
+The MCP server is used for exactly one thing: learning which Fitatu product
+corresponds to an ingredient name. That mapping lives in
+`state/fitatu_products.yaml`, keyed by the normalised ingredient name, so an
+ingredient used in thirty recipes costs one lookup.
+
+The split is deliberate. **Matching needs judgment** — `search_food` returns
+separate user and public candidate lists in Fitatu's order, without merging or
+deduplicating, and it does not infer brand aliases — so it happens in a session
+via `/resolve-products`. **Everything after is deterministic**: `products apply`
+writes `fitatu_product_id` onto each ingredient with no model involved, and
+recipe creation reads the ids straight off the recipes.
+
+```bash
+uv run python -m recipe_library.products pending   # names still needing an id
+uv run python -m recipe_library.products status    # coverage
+uv run python -m recipe_library.products apply     # write ids into recipes/*.yaml
+```
+
+**The catalogue is Polish and most recipes are not.** 48 of 70 recipes are
+English, giving 319 English ingredient names against 177 Polish ones with only 4
+shared, while `search_food` defaults to `locale: pl_PL`. So resolution sends the
+original *and* a Polish equivalent in one call, and the cache records which phrase
+actually matched in `query`.
+
+**A blank is better than a wrong id.** An unresolved name is a normal outcome; a
+wrong product silently corrupts the nutrition data the library exists to produce.
+
 ## Fitatu MCP
 
 Installed under `mcp/fitatu/` by npm. **The server is not published to npm** —

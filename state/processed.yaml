@@ -113,9 +113,10 @@ videos:
     fetched_at: '2026-10-02'
     description_sha256: 73834aaf57701bc755dc78bf1abbd5389c8b1b8071fb3f6ddccb2a5c18803bf4
     subtitles: []
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - stir-fried-shrimp
   9ZbOiHUz4o4:
     title: Eat Your Greens Orzo Salad
     fetched_at: '2026-10-02'
@@ -158,10 +159,12 @@ videos:
     title: How to Make the Perfect Paella @NickDiGiovanni
     fetched_at: '2026-10-02'
     description_sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-    subtitles: []
-    status: complete
-    extracted_at: null
-    recipes: []
+    subtitles:
+    - subs.en.txt
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - paella
   EHaym9GuvKA:
     title: 'WYPAS KANAPKI Bahn mi NA 5 DNI  #policzonaszama  #mealprep #kanapki'
     fetched_at: '2026-10-02'
@@ -618,9 +621,10 @@ videos:
     subtitles:
     - subs.en.txt
     - subs.en.vtt
-    status: complete
-    extracted_at: null
-    recipes: []
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - brazilian-lemonade
   oXve4GmwJIk:
     title: 'PROTEINOWY PONIEDZIAŁEK: Spaghetti z białym ragu 🍝 #coocharz #jedzenie #gotowanie #shorts'
     fetched_at: '2026-10-02'
@@ -722,10 +726,12 @@ videos:
     title: Indonesia’s Beef Rendang - voted the most delicious dish in the world 🇮🇩
     fetched_at: '2026-10-02'
     description_sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-    subtitles: []
-    status: complete
-    extracted_at: null
-    recipes: []
+    subtitles:
+    - subs.en.txt
+    status: ok
+    extracted_at: '2026-10-02'
+    recipes:
+    - beef-rendang
   yB04JgWBSk8:
     title: Healthy Choc Chip Cookie
     fetched_at: '2026-10-02'

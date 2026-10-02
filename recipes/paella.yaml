@@ -1,0 +1,96 @@
+id: paella
+title: Paella
+language: en
+servings: null
+ingredients:
+- name: olive oil
+  quantity: null
+  unit: null
+  note: stock
+- name: shrimp
+  quantity: null
+  unit: null
+  note: shells and heads go into the stock, the shrimp into the paella
+- name: fish parts
+  quantity: null
+  unit: null
+  note: stock
+- name: onions
+  quantity: null
+  unit: null
+  note: stock, skins included
+- name: carrots
+  quantity: null
+  unit: null
+  note: a few, stock
+- name: garlic
+  quantity: null
+  unit: null
+  note: stock
+- name: tomatoes
+  quantity: null
+  unit: null
+  note: cut side down, stock
+- name: bay leaf
+  quantity: null
+  unit: null
+  note: a lot, stock
+- name: parsley stems
+  quantity: null
+  unit: null
+  note: a few, stock
+- name: peppercorns
+  quantity: null
+  unit: null
+  note: a couple, stock
+- name: water
+  quantity: null
+  unit: null
+  note: to cover the stock, simmered 45 minutes
+- name: saffron
+  quantity: null
+  unit: null
+  note: crushed and bloomed in a few tablespoons of hot stock
+- name: beans
+  quantity: null
+  unit: null
+  note: cooked until blistered
+- name: red pepper
+  quantity: null
+  unit: null
+  note: cooked until blistered
+- name: grated tomato
+  quantity: null
+  unit: null
+  note: stirred 10 minutes until thick and jammy
+- name: bomba rice
+  quantity: null
+  unit: null
+- name: salt
+  quantity: null
+  unit: null
+  note: sprinkle
+- name: lima beans
+  quantity: null
+  unit: null
+- name: shellfish
+  quantity: null
+  unit: null
+  note: nestled into the rice
+- name: parsley
+  quantity: null
+  unit: null
+  note: chopped, to finish
+- name: lemon
+  quantity: null
+  unit: null
+  note: a squeeze to finish
+source:
+  video_id: BC8k0kHD8XA
+  url: https://www.youtube.com/shorts/BC8k0kHD8XA
+  channel: Chef Master Shorts
+  recipe_index: 1
+  extracted_from:
+  - title
+  - subtitles
+extracted_at: '2026-10-02'
