@@ -1,10 +1,9 @@
-"""Turning a recipe YAML into `create_recipe` arguments. Pure, no I/O.
+"""Turning a recipe into `create_recipe` arguments. Pure, no I/O.
 
 Fitatu does not take grams. Each recipe item is `{itemId, measureId,
 measureQuantity}`, where the quantity counts *units of the chosen measure*. So a
 500 g ingredient whose mapped measure is a 150 g portion becomes 3.333 portions.
-Grams-per-measure comes from the product cache, recorded when the product was
-resolved.
+Grams-per-measure comes from the stored product, recorded when it was resolved.
 
 Two rules shape everything here, and both exist to protect the nutrition data:
 
@@ -263,8 +262,8 @@ def build_recipe_kwargs(
 ) -> BuildResult:
     """Build `create_recipe` keyword arguments from a recipe and the product cache.
 
-    `products` is the `products` mapping of `state/fitatu_products.yaml`, keyed by
-    normalised ingredient name.
+    `products` is what `store.products.cache()` returns: verified products with
+    all their measures, keyed by normalised ingredient name.
     """
     from ..names import normalize_name
 

@@ -1,13 +1,16 @@
 ---
-description: Map recipe ingredient names to Fitatu product ids via the fitatu MCP
+description: Fix ingredient names that would not match a verified Fitatu product
 ---
 
-Resolve ingredient names to Fitatu product ids using the `resolve-fitatu-products`
-skill.
+Use the `resolve-fitatu-products` skill.
 
-Work through `uv run python -m recipe_library.products pending`, most-used names
-first, batching queries to `search_food`. Record each decision with
-`products record` or `products unresolved`, then run `products apply`.
+Matching itself is automatic now — it runs as the first phase of every import.
+This is for the leftovers: read `products failures`, and fix what is fixable
+with a search-phrase alias or a hand-recorded mapping.
+
+Read each refusal's reason first. "None of the candidates is verified" is the
+rule working correctly and is not yours to fix. A blank is better than a wrong
+id, so leave a name unresolved rather than reaching for the nearest match.
 
 $ARGUMENTS may limit how many names to work through in this session (e.g. `30`),
-or name specific ingredients. With no arguments, work the whole pending list.
+or name specific ingredients. With no arguments, work the whole failure list.
