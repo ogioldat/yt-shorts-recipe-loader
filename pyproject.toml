@@ -1,20 +1,23 @@
 [project]
 name = "recipe-library"
 version = "0.1.0"
-description = "YouTube Shorts recipe collection as structured YAML"
+description = "YouTube Shorts recipe collection in SQLite, served over HTTP"
 requires-python = ">=3.11"
 dependencies = [
     "yt-dlp>=2025.1.1",
     "PyYAML>=6.0",
     # Used to serve our own recipes-library MCP server.
     "mcp>=2.2.0",
+    # The HTTP server over the SQLite library.
+    "fastapi>=0.115",
+    "uvicorn>=0.30",
     # Unofficial Fitatu HTTP client. Not on PyPI, and it handles real account
     # credentials, so it is pinned to a reviewed commit rather than a branch.
     "fitatu-api @ git+https://github.com/Jezue/fitatu_library.git@6f208f7aa22cabd8699af077dd3ea92e57593ff8",
 ]
 
 [dependency-groups]
-dev = ["pytest>=8.0"]
+dev = ["pytest>=8.0", "httpx>=0.27"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

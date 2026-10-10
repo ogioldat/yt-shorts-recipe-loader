@@ -11,7 +11,6 @@ and a recipe imports whole or not at all.
 """
 
 import pytest
-import yaml
 
 from recipe_library.fitatu_import.payload import (
     build_recipe_kwargs,
@@ -19,15 +18,17 @@ from recipe_library.fitatu_import.payload import (
 )
 from recipe_library.fitatu_import.runner import (
     STATUS_ERROR,
-    read_recipe,
     STATUS_NOT_IMPORTED,
     STATUS_OK,
     extract_recipe_id,
     import_one,
     recipe_status,
+    resolve_names,
     select_pending,
     summarise,
 )
+from recipe_library.store import products as products_store
+from recipe_library.store import recipes as recipes_store
 
 GRAM = {"measure_id": "g", "measure_name": "gram", "weight_g": 1}
 PORTION = {"measure_id": "p-1", "measure_name": "porcja", "weight_g": 150}
@@ -62,8 +63,38 @@ def recipe(ingredients, **overrides):
     return data
 
 
-def write(path, data):
-    path.write_text(yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8")
+# Recipes now live in the database, so a test "writes" one by saving it. The
+# video row has to exist first: a recipe references it.
+_INDEX = iter(range(1, 10_000))
+
+
+def write(conn, recipe_id, data):
+    conn.execute(
+        "INSERT INTO videos (video_id, title) VALUES ('v', 'V') "
+        "ON CONFLICT (video_id) DO NOTHING"
+    )
+    data = dict(data, id=recipe_id)
+    data["source"] = dict(data["source"], recipe_index=next(_INDEX))
+    recipes_store.save(conn, data)
+    return recipe_id
+
+
+def seed_products(conn, **entries):
+    """Store verified products and map ingredient names to them.
+
+    Every product stored here is verified, because the table will not hold
+    anything else -- which is the point of the constraint.
+    """
+    for name, (product_id, measure) in entries.items():
+        products_store.save(
+            conn,
+            product_id=product_id,
+            display_name=name,
+            verified=True,
+            measures=[measure],
+            default_measure_id=str(measure["measure_id"]),
+        )
+        products_store.map_name(conn, name, product_id, method="manual")
 
 
 # --- quantity conversion ----------------------------------------------------
@@ -233,33 +264,54 @@ def test_unknown_status_reads_as_not_imported():
     assert recipe_status({"import_status": "nonsense"}) == STATUS_NOT_IMPORTED
 
 
-def test_already_imported_recipes_are_never_resent(tmp_path):
+def test_already_imported_recipes_are_never_resent(conn):
     # The core duplicate guard: Fitatu's create is not idempotent.
-    write(tmp_path / "a.yaml", recipe([], import_status="ok", fitatu_recipe_id="9"))
-    write(tmp_path / "b.yaml", recipe([]))
-    assert [p.stem for p in select_pending(tmp_path)] == ["b"]
+    write(conn, "a", recipe([], import_status="ok", fitatu_recipe_id="9"))
+    write(conn, "b", recipe([]))
+    assert select_pending(conn) == ["b"]
 
 
-def test_force_resends_imported_recipes(tmp_path):
-    write(tmp_path / "a.yaml", recipe([], import_status="ok", fitatu_recipe_id="9"))
-    assert [p.stem for p in select_pending(tmp_path, force=True)] == ["a"]
+def test_a_recorded_id_outranks_the_status(conn):
+    # Editing import_status back to not_imported is an easy way to ask for a
+    # duplicate. The id is the evidence that the recipe is already there.
+    write(conn, "a", recipe([], import_status="ok", fitatu_recipe_id="9"))
+    conn.execute("UPDATE recipes SET import_status = 'not_imported' WHERE id = 'a'")
+    conn.commit()
+    assert select_pending(conn) == []
 
 
-def test_failed_recipes_are_retried_by_default(tmp_path):
-    write(tmp_path / "a.yaml", recipe([], import_status="error", import_error="boom"))
-    assert [p.stem for p in select_pending(tmp_path)] == ["a"]
+def test_force_resends_imported_recipes(conn):
+    write(conn, "a", recipe([], import_status="ok", fitatu_recipe_id="9"))
+    assert select_pending(conn, force=True) == ["a"]
 
 
-def test_skipping_errors_excludes_them(tmp_path):
-    write(tmp_path / "a.yaml", recipe([], import_status="error", import_error="boom"))
-    assert select_pending(tmp_path, include_errors=False) == []
+def test_failed_recipes_are_retried_by_default(conn):
+    write(conn, "a", recipe([], import_status="error", import_error="boom"))
+    assert select_pending(conn) == ["a"]
 
 
-def test_summary_counts_every_status(tmp_path):
-    write(tmp_path / "a.yaml", recipe([], import_status="ok", fitatu_recipe_id="1"))
-    write(tmp_path / "b.yaml", recipe([], import_status="error"))
-    write(tmp_path / "c.yaml", recipe([]))
-    assert summarise(tmp_path) == {"ok": 1, "error": 1, "not_imported": 1}
+def test_skipping_errors_excludes_them(conn):
+    write(conn, "a", recipe([], import_status="error", import_error="boom"))
+    assert select_pending(conn, include_errors=False) == []
+
+
+def test_summary_counts_every_status(conn):
+    write(conn, "a", recipe([], import_status="ok", fitatu_recipe_id="1"))
+    write(conn, "b", recipe([], import_status="error"))
+    write(conn, "c", recipe([]))
+    assert summarise(conn) == {"ok": 1, "error": 1, "not_imported": 1}
+
+
+def test_names_are_accepted_with_or_without_the_old_yaml_suffix(conn):
+    write(conn, "a", recipe([]))
+    assert resolve_names(conn, ["a", "a.yaml"]) == (["a"], [])
+    assert resolve_names(conn, ["nope"]) == ([], ["nope"])
+
+
+def test_naming_a_recipe_does_not_lift_the_duplicate_gate(conn):
+    # The duplicate a named import would create is the same duplicate.
+    write(conn, "a", recipe([], import_status="ok", fitatu_recipe_id="9"))
+    assert select_pending(conn, names=["a"]) == []
 
 
 # --- importing one recipe ---------------------------------------------------
@@ -278,167 +330,189 @@ class FakeClient:
         return self.response
 
 
-def test_successful_import_records_ok_and_the_id(tmp_path):
-    path = tmp_path / "a.yaml"
-    write(path, recipe([{"name": "mąka", "quantity": 500, "unit": "g"}]))
+def test_successful_import_records_ok_and_the_id(conn):
+    write(conn, "a", recipe([{"name": "mąka", "quantity": 500, "unit": "g"}]))
+    seed_products(conn, mąka=("111", GRAM))
     client = FakeClient()
 
-    result = import_one(path, client, products(mąka=("111", GRAM)))
+    result = import_one(conn, "a", client, resolve=False)
 
     assert result["status"] == STATUS_OK
-    data = yaml.safe_load(path.read_text(encoding="utf-8"))
+    data = recipes_store.get(conn, "a")
     assert data["import_status"] == "ok"
     assert data["fitatu_recipe_id"] == "4242"
     assert data["imported_at"]
     assert len(client.calls) == 1
 
 
-def test_api_failure_records_error_with_the_reason(tmp_path):
-    path = tmp_path / "a.yaml"
-    write(path, recipe([{"name": "mąka", "quantity": 500, "unit": "g"}]))
+def test_api_failure_records_error_with_the_reason(conn):
+    write(conn, "a", recipe([{"name": "mąka", "quantity": 500, "unit": "g"}]))
+    seed_products(conn, mąka=("111", GRAM))
 
-    result = import_one(path, FakeClient(error=RuntimeError("503 upstream")), products(mąka=("111", GRAM)))
+    result = import_one(
+        conn, "a", FakeClient(error=RuntimeError("503 upstream")), resolve=False
+    )
 
     assert result["status"] == STATUS_ERROR
-    data = yaml.safe_load(path.read_text(encoding="utf-8"))
+    data = recipes_store.get(conn, "a")
     assert data["import_status"] == "error"
     assert "503 upstream" in data["import_error"]
     assert "fitatu_recipe_id" not in data
 
 
-def test_unconvertible_recipe_records_error_without_calling_fitatu(tmp_path):
-    path = tmp_path / "a.yaml"
-    write(path, recipe([{"name": "cebula", "quantity": 1, "unit": "piece"}]))
+def test_unconvertible_recipe_records_error_without_calling_fitatu(conn):
+    write(conn, "a", recipe([{"name": "mąka", "quantity": None, "unit": None}]))
+    seed_products(conn, mąka=("111", GRAM))
     client = FakeClient()
 
-    result = import_one(path, client, products(cebula=("1", GRAM)))
+    result = import_one(conn, "a", client, resolve=False)
 
     assert result["status"] == STATUS_ERROR
-    assert client.calls == []  # never hit the network for a recipe we cannot build
+    assert client.calls == []
+    assert recipes_store.get(conn, "a")["import_status"] == "error"
 
 
-def test_missing_id_in_response_is_an_error_not_a_silent_success(tmp_path):
-    """The recipe may well have been created, so it must not be retried blindly.
+def test_missing_id_in_response_is_an_error_not_a_silent_success(conn):
+    # The recipe may well have been created, so a blind retry would duplicate
+    # it. Flag it for a human instead.
+    write(conn, "a", recipe([{"name": "mąka", "quantity": 500, "unit": "g"}]))
+    seed_products(conn, mąka=("111", GRAM))
 
-    A blind retry would duplicate it; flagging it for a human will not.
-    """
-    path = tmp_path / "a.yaml"
-    write(path, recipe([{"name": "mąka", "quantity": 500, "unit": "g"}]))
-
-    result = import_one(path, FakeClient(response={"status": "created"}), products(mąka=("111", GRAM)))
+    result = import_one(conn, "a", FakeClient(response={"ok": True}), resolve=False)
 
     assert result["status"] == STATUS_ERROR
-    data = yaml.safe_load(path.read_text(encoding="utf-8"))
-    assert "no recipe id" in data["import_error"]
+    assert "no recipe id" in recipes_store.get(conn, "a")["import_error"]
 
 
-def test_dry_run_contacts_nothing_and_writes_nothing(tmp_path):
-    path = tmp_path / "a.yaml"
-    write(path, recipe([{"name": "mąka", "quantity": 500, "unit": "g"}]))
-    before = path.read_text(encoding="utf-8")
+def test_dry_run_contacts_nothing_and_writes_nothing(conn):
+    write(conn, "a", recipe([{"name": "mąka", "quantity": 500, "unit": "g"}]))
+    seed_products(conn, mąka=("111", GRAM))
+    client = FakeClient()
 
-    result = import_one(path, None, products(mąka=("111", GRAM)), dry_run=True)
+    result = import_one(conn, "a", client, dry_run=True, resolve=False)
 
     assert result["status"] == "would_import"
-    assert path.read_text(encoding="utf-8") == before
+    assert client.calls == []
+    assert recipes_store.get(conn, "a")["import_status"] == "not_imported"
 
 
-def test_dry_run_does_not_record_errors_either(tmp_path):
-    path = tmp_path / "a.yaml"
-    write(path, recipe([{"name": "cebula", "quantity": 1, "unit": "piece"}]))
-    before = path.read_text(encoding="utf-8")
+def test_dry_run_does_not_record_errors_either(conn):
+    write(conn, "a", recipe([{"name": "mąka", "quantity": None, "unit": None}]))
+    seed_products(conn, mąka=("111", GRAM))
 
-    import_one(path, None, {}, dry_run=True)
-    assert path.read_text(encoding="utf-8") == before
+    result = import_one(conn, "a", None, dry_run=True, resolve=False)
+
+    assert result["status"] == STATUS_ERROR
+    assert recipes_store.get(conn, "a")["import_status"] == "not_imported"
 
 
-def test_reimport_after_failure_clears_the_old_error(tmp_path):
-    path = tmp_path / "a.yaml"
+def test_reimport_after_failure_clears_the_old_error(conn):
     write(
-        path,
+        conn,
+        "a",
         recipe(
             [{"name": "mąka", "quantity": 500, "unit": "g"}],
             import_status="error",
             import_error="old failure",
         ),
     )
+    seed_products(conn, mąka=("111", GRAM))
 
-    import_one(path, FakeClient(), products(mąka=("111", GRAM)))
+    import_one(conn, "a", FakeClient(), resolve=False)
 
-    data = yaml.safe_load(path.read_text(encoding="utf-8"))
+    data = recipes_store.get(conn, "a")
     assert data["import_status"] == "ok"
     assert "import_error" not in data
 
 
-# --- response id extraction -------------------------------------------------
+def test_importing_a_missing_recipe_is_an_error_not_a_crash(conn):
+    result = import_one(conn, "nope", FakeClient(), resolve=False)
+    assert result["status"] == STATUS_ERROR
+    assert "no such recipe" in result["detail"]
 
 
-@pytest.mark.parametrize(
-    "response,expected",
-    [
-        ({"id": 7}, "7"),
-        ({"recipeId": "abc"}, "abc"),
-        ({"recipe_id": 9}, "9"),
-        ({"other": 1}, None),
-        ({}, None),
-        ("not a dict", None),
-    ],
-)
-def test_recipe_id_extraction(response, expected):
-    assert extract_recipe_id(response) == expected
+# --- resolution is the first phase of an import -----------------------------
+
+
+def test_an_unresolved_name_fails_the_recipe_before_anything_is_sent(conn):
+    from conftest import FakeFitatu
+
+    write(conn, "a", recipe([{"name": "mąka", "quantity": 500, "unit": "g"}]))
+    client = FakeFitatu({})  # Fitatu finds nothing
+
+    result = import_one(conn, "a", client, resolve=True)
+
+    assert result["status"] == STATUS_ERROR
+    assert "unresolved ingredient" in result["detail"]
+    assert "mąka" in result["detail"]
+    assert client.created == []
+
+
+def test_an_unverified_candidate_does_not_get_a_recipe_imported(conn):
+    from conftest import FakeFitatu, search_row
+
+    write(conn, "a", recipe([{"name": "mąka", "quantity": 500, "unit": "g"}]))
+    client = FakeFitatu({"mąka": [search_row("1", "Mąka", verified=False)]})
+
+    result = import_one(conn, "a", client, resolve=True)
+
+    assert result["status"] == STATUS_ERROR
+    assert client.created == []
+    assert products_store.get(conn, "1") is None
+
+
+def test_resolution_feeds_straight_into_the_payload(conn):
+    from conftest import FakeFitatu, search_row
+
+    write(conn, "a", recipe([{"name": "mąka", "quantity": 500, "unit": "g"}]))
+    client = FakeFitatu({"mąka": [search_row("24", "Mąka")]})
+
+    result = import_one(conn, "a", client, resolve=True)
+
+    assert result["status"] == STATUS_OK
+    # 500 g against the 1 g measure the fake product carries.
+    item = client.created[0]["items"][0]
+    assert item["itemId"] == "24"
+    assert item["measureQuantity"] == 500
 
 
 # --- offset and limit windowing ---------------------------------------------
 
 
 @pytest.fixture
-def collection(tmp_path, monkeypatch):
-    """Five pending recipes, with the network and the product cache stubbed out."""
-    from recipe_library.fitatu_import import runner
-
+def collection(conn):
+    """Five pending recipes, with a product already mapped for each."""
     for name in ("a", "b", "c", "d", "e"):
-        write(tmp_path / f"{name}.yaml", recipe([{"name": "mąka", "quantity": 100, "unit": "g"}]))
-
-    monkeypatch.setattr(runner, "load_cache", lambda: {"products": products(mąka=("111", GRAM))})
-    monkeypatch.setattr(runner, "RECIPES", tmp_path)
-    return tmp_path
-
-
-def imported(tmp_path):
-    """Which recipes a run actually touched, in order."""
-    return sorted(
-        p.stem
-        for p in tmp_path.glob("*.yaml")
-        if yaml.safe_load(p.read_text(encoding="utf-8")).get("import_status") == "ok"
-    )
+        write(conn, name, recipe([{"name": "mąka", "quantity": 100, "unit": "g"}]))
+    seed_products(conn, mąka=("111", GRAM))
+    return conn
 
 
 def test_offset_skips_the_first_pending_recipes(collection):
     from recipe_library.fitatu_import.runner import run
 
-    run(recipes_dir=collection, offset=2, dry_run=True)
-    # A dry run writes nothing, so assert on the tally instead.
-    tally = run(recipes_dir=collection, offset=2, dry_run=True)
-    assert tally["would_import"] == 3  # c, d, e
+    tally = run(collection, offset=2, dry_run=True, resolve=False)
+    assert tally["would_import"] == 3
 
 
 def test_offset_and_limit_select_a_window(collection):
     from recipe_library.fitatu_import.runner import run
 
-    tally = run(recipes_dir=collection, offset=1, limit=2, dry_run=True)
+    tally = run(collection, offset=1, limit=2, dry_run=True, resolve=False)
     assert tally["would_import"] == 2
 
 
 def test_offset_zero_is_the_whole_list(collection):
     from recipe_library.fitatu_import.runner import run
 
-    assert run(recipes_dir=collection, offset=0, dry_run=True)["would_import"] == 5
+    tally = run(collection, offset=0, dry_run=True, resolve=False)
+    assert tally["would_import"] == 5
 
 
 def test_offset_past_the_end_imports_nothing(collection, capsys):
     from recipe_library.fitatu_import.runner import run
 
-    tally = run(recipes_dir=collection, offset=99, dry_run=True)
+    tally = run(collection, offset=99, dry_run=True, resolve=False)
     assert tally["would_import"] == 0
     assert "past the end" in capsys.readouterr().out
 
@@ -447,31 +521,38 @@ def test_negative_offset_is_rejected(collection):
     from recipe_library.fitatu_import.runner import run
 
     with pytest.raises(SystemExit):
-        run(recipes_dir=collection, offset=-1, dry_run=True)
+        run(collection, offset=-1, dry_run=True)
 
 
 def test_zero_limit_is_rejected(collection):
-    # Silently importing nothing would look like success.
     from recipe_library.fitatu_import.runner import run
 
     with pytest.raises(SystemExit):
-        run(recipes_dir=collection, limit=0, dry_run=True)
+        run(collection, limit=0, dry_run=True)
 
 
-def test_offset_applies_to_pending_not_to_the_whole_collection(tmp_path, monkeypatch):
+def test_an_unknown_recipe_name_is_refused_before_anything_is_sent(collection):
+    # A typo that silently imported nothing would look exactly like a recipe
+    # that had already been imported.
+    from recipe_library.fitatu_import.runner import run
+
+    with pytest.raises(SystemExit):
+        run(collection, names=["nope"], dry_run=True)
+
+
+def test_offset_applies_to_pending_not_to_the_whole_collection(conn):
     """The subtlety worth pinning: already-imported recipes are not in the window.
 
-    So --offset 1 skips the first *pending* recipe, not the first file on disk.
+    So --offset 1 skips the first *pending* recipe, not the first recipe by id.
     """
-    from recipe_library.fitatu_import import runner
+    from recipe_library.fitatu_import.runner import run
 
-    write(tmp_path / "a.yaml", recipe([], import_status="ok", fitatu_recipe_id="1"))
+    write(conn, "a", recipe([], import_status="ok", fitatu_recipe_id="1"))
     for name in ("b", "c"):
-        write(tmp_path / f"{name}.yaml", recipe([{"name": "mąka", "quantity": 100, "unit": "g"}]))
+        write(conn, name, recipe([{"name": "mąka", "quantity": 100, "unit": "g"}]))
+    seed_products(conn, mąka=("111", GRAM))
 
-    monkeypatch.setattr(runner, "load_cache", lambda: {"products": products(mąka=("111", GRAM))})
-
-    tally = runner.run(recipes_dir=tmp_path, offset=1, dry_run=True)
+    tally = run(conn, offset=1, dry_run=True, resolve=False)
     assert tally["would_import"] == 1  # only c: a is done, b was skipped by the offset
 
 
@@ -637,56 +718,47 @@ def test_a_recipe_using_two_units_of_one_ingredient_still_converts():
 # --- importing one named recipe ---------------------------------------------
 
 
-def test_naming_a_recipe_narrows_the_pending_list(tmp_path):
-    from recipe_library.fitatu_import.runner import resolve_names
+def test_naming_a_recipe_narrows_the_pending_list(conn):
+    write(conn, "a", recipe([]))
+    write(conn, "b", recipe([]))
+    write(conn, "c", recipe([]))
 
-    write(tmp_path / "a.yaml", recipe([]))
-    write(tmp_path / "b.yaml", recipe([]))
-    write(tmp_path / "c.yaml", recipe([]))
-
-    assert [p.stem for p in select_pending(tmp_path)] == ["a", "b", "c"]
-    assert [p.stem for p in select_pending(tmp_path, names=["b"])] == ["b"]
-    # the caller's order is kept, and the .yaml suffix is tolerated
-    paths, unknown = resolve_names(["c.yaml", "a"], tmp_path)
-    assert [p.stem for p in paths] == ["c", "a"]
+    assert select_pending(conn) == ["a", "b", "c"]
+    assert select_pending(conn, names=["b"]) == ["b"]
+    # The caller's order is kept, and the old .yaml suffix is tolerated.
+    known, unknown = resolve_names(conn, ["c.yaml", "a"])
+    assert known == ["c", "a"]
     assert unknown == []
 
 
-def test_naming_a_recipe_does_not_lift_the_duplicate_gate(tmp_path):
-    # The point of `ok` is that re-sending creates a second Fitatu recipe. Asking
-    # for one by name must not become a way around that.
-    write(tmp_path / "done.yaml", recipe([], import_status=STATUS_OK))
-    assert select_pending(tmp_path, names=["done"]) == []
-    assert [p.stem for p in select_pending(tmp_path, names=["done"], force=True)] == ["done"]
+def test_naming_an_already_imported_recipe_does_not_lift_the_gate(conn):
+    # The point of `ok` is that re-sending creates a second Fitatu recipe.
+    # Asking for one by name must not become a way around that.
+    write(conn, "done", recipe([], import_status=STATUS_OK, fitatu_recipe_id="1"))
+    assert select_pending(conn, names=["done"]) == []
+    assert select_pending(conn, names=["done"], force=True) == ["done"]
 
 
-def test_an_unknown_recipe_name_is_refused_before_anything_is_sent(tmp_path):
+def test_naming_an_already_imported_recipe_says_so(conn, capsys):
     from recipe_library.fitatu_import.runner import run
 
-    write(tmp_path / "a.yaml", recipe([{"name": "mąka", "quantity": 1, "unit": "g"}]))
-    with pytest.raises(SystemExit) as excinfo:
-        run(recipes_dir=tmp_path, names=["typo"], dry_run=True)
-    assert "typo" in str(excinfo.value)
-
-
-def test_naming_an_already_imported_recipe_says_so(tmp_path, capsys):
-    from recipe_library.fitatu_import.runner import run
-
-    write(tmp_path / "done.yaml", recipe([], import_status=STATUS_OK))
-    tally = run(recipes_dir=tmp_path, names=["done"], dry_run=True)
+    write(conn, "done", recipe([], import_status=STATUS_OK, fitatu_recipe_id="1"))
+    tally = run(conn, names=["done"], dry_run=True)
     assert tally == {STATUS_OK: 0, STATUS_ERROR: 0, "would_import": 0}
     out = capsys.readouterr().out
     assert "already has import_status 'ok'" in out
     assert "--force" in out
 
 
-def test_one_named_recipe_builds_only_that_one(tmp_path, capsys):
+def test_one_named_recipe_builds_only_that_one(conn, capsys):
     from recipe_library.fitatu_import.runner import run
 
     ing = [{"name": "mąka", "quantity": 100, "unit": "g"}]
-    write(tmp_path / "wanted.yaml", recipe(ing))
-    write(tmp_path / "other.yaml", recipe(ing))
-    run(recipes_dir=tmp_path, names=["wanted"], dry_run=True)
+    write(conn, "wanted", recipe(ing))
+    write(conn, "other", recipe(ing))
+    seed_products(conn, mąka=("111", GRAM))
+
+    run(conn, names=["wanted"], dry_run=True, resolve=False)
     out = capsys.readouterr().out
     assert "wanted" in out
     assert "other" not in out
@@ -731,45 +803,62 @@ def test_a_millilitre_measure_is_preferred_when_no_exact_one_exists():
     assert select_measure(entry, "tbsp")["measure_id"] == "17"
 
 
-def test_a_recorded_fitatu_id_outranks_a_hand_edited_status(tmp_path):
+def test_a_recorded_fitatu_id_outranks_a_hand_edited_status(conn):
     # Setting import_status back to not_imported by hand is an easy way to ask
     # for a duplicate of every recipe already in Fitatu. The id is the evidence
     # that it is there, so it wins.
     write(
-        tmp_path / "already.yaml",
+        conn,
+        "already",
         recipe([], import_status=STATUS_NOT_IMPORTED, fitatu_recipe_id="176264367"),
     )
-    assert select_pending(tmp_path) == []
-    assert select_pending(tmp_path, names=["already"]) == []
-    # --force is still the deliberate way through
-    assert [p.stem for p in select_pending(tmp_path, force=True)] == ["already"]
+    assert select_pending(conn) == []
+    assert select_pending(conn, names=["already"]) == []
+    # --force is still the deliberate way through.
+    assert select_pending(conn, force=True) == ["already"]
 
 
-def test_an_error_with_an_id_is_not_retried_either(tmp_path):
+def test_an_error_with_an_id_is_not_retried_either(conn):
     # `error` after a successful create -- Fitatu answered without an id, say --
     # must not be retried blindly, because the recipe may well be there.
-    write(
-        tmp_path / "half.yaml",
-        recipe([], import_status=STATUS_ERROR, fitatu_recipe_id="999"),
-    )
-    assert select_pending(tmp_path) == []
+    write(conn, "half", recipe([], import_status=STATUS_ERROR, fitatu_recipe_id="999"))
+    assert select_pending(conn) == []
 
 
-def test_a_successful_import_records_which_account_it_landed_on(tmp_path):
+def test_a_successful_import_records_which_account_it_landed_on(conn):
     # The same library imported under two accounts leaves two disjoint sets, and
     # an id alone cannot tell them apart.
     class Client:
         def create_recipe(self, **kwargs):
             return {"id": "4242"}
 
-    path = tmp_path / "r.yaml"
-    write(path, recipe([{"name": "mąka", "quantity": 100, "unit": "g"}]))
-    import_one(
-        path,
-        Client(),
-        products(mąka=("1", GRAM)),
-        account="56743546",
-    )
-    data = read_recipe(path)
+    write(conn, "r", recipe([{"name": "mąka", "quantity": 100, "unit": "g"}]))
+    seed_products(conn, mąka=("1", GRAM))
+
+    import_one(conn, "r", Client(), account="56743546", resolve=False)
+
+    data = recipes_store.get(conn, "r")
     assert data["fitatu_recipe_id"] == "4242"
     assert data["fitatu_account_id"] == "56743546"
+
+
+def test_a_second_import_under_another_account_files_the_first(conn):
+    class Client:
+        def __init__(self, new_id):
+            self.new_id = new_id
+
+        def create_recipe(self, **kwargs):
+            return {"id": self.new_id}
+
+    write(conn, "r", recipe([{"name": "mąka", "quantity": 100, "unit": "g"}]))
+    seed_products(conn, mąka=("1", GRAM))
+
+    # import_one itself has no duplicate gate -- that lives in select_pending
+    # and in the API -- so this is what --force ends up doing.
+    import_one(conn, "r", Client("100"), account="acct-1", resolve=False)
+    import_one(conn, "r", Client("200"), account="acct-2", resolve=False)
+
+    data = recipes_store.get(conn, "r")
+    assert data["fitatu_recipe_id"] == "200"
+    assert data["previous_imports"][0]["fitatu_recipe_id"] == "100"
+    assert data["previous_imports"][0]["fitatu_account_id"] == "acct-1"

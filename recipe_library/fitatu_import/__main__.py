@@ -3,11 +3,14 @@
 import argparse
 import sys
 
+from ..db import open_db
+from ..paths import load_config
 from .runner import run, summarise
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Import recipes into Fitatu.")
+    parser.add_argument("--db", help="use this database instead of the default")
     parser.add_argument(
         "--dry-run",
         action="store_true",
@@ -26,8 +29,8 @@ def main(argv: list[str] | None = None) -> int:
         action="append",
         dest="names",
         metavar="ID",
-        help="import just this recipe, by id (the file name without .yaml); "
-        "repeatable. Already-imported recipes are still skipped unless --force",
+        help="import just this recipe, by id; repeatable. Already-imported "
+        "recipes are still skipped unless --force",
     )
     parser.add_argument(
         "--shared", action="store_true", help="make recipes public (default private)"
@@ -56,6 +59,18 @@ def main(argv: list[str] | None = None) -> int:
         help="tag to set on each imported recipe; repeatable. Fitatu's tag list is "
         "a fixed vocabulary, so a custom tag is also appended to the description",
     )
+    parser.add_argument(
+        "--no-resolve",
+        action="store_true",
+        help="skip the product-resolution phase and import only what is already "
+        "mapped. Does not relax the whole-or-nothing rule",
+    )
+    parser.add_argument(
+        "--retry-failed",
+        action="store_true",
+        help="re-search ingredient names previously recorded as having no "
+        "acceptable verified match",
+    )
     parser.add_argument("--status", action="store_true", help="show the tally and exit")
     args = parser.parse_args(argv)
 
@@ -64,22 +79,34 @@ def main(argv: list[str] | None = None) -> int:
     except (AttributeError, ValueError):
         pass
 
-    if args.status:
-        for status, count in summarise().items():
-            print(f"{status:14} {count}")
-        return 0
+    try:
+        config = load_config()
+    except SystemExit:
+        # The playlist url is irrelevant to importing; only the resolution
+        # settings are read from config here.
+        config = {}
 
-    tally = run(
-        offset=args.offset,
-        limit=args.limit,
-        shared=args.shared,
-        allow_partial=args.allow_partial,
-        dry_run=args.dry_run,
-        force=args.force,
-        include_errors=not args.skip_errors,
-        tags=args.tags,
-        names=args.names,
-    )
+    with open_db(args.db) as conn:
+        if args.status:
+            for status, count in summarise(conn).items():
+                print(f"{status:14} {count}")
+            return 0
+
+        tally = run(
+            conn,
+            offset=args.offset,
+            limit=args.limit,
+            shared=args.shared,
+            allow_partial=args.allow_partial,
+            dry_run=args.dry_run,
+            force=args.force,
+            include_errors=not args.skip_errors,
+            tags=args.tags,
+            names=args.names,
+            resolve=not args.no_resolve,
+            retry_failed=args.retry_failed,
+            config=config,
+        )
     print(
         "\nDone. "
         + ", ".join(f"{count} {status}" for status, count in tally.items() if count)

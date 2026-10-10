@@ -11,3 +11,26 @@ max_stalled_passes: 3
 # session for subtitle requests, which lifts the throttling.
 # Set to chrome, firefox, safari, edge or brave. Null means stay anonymous.
 cookies_from_browser: null
+
+# --- product resolution -----------------------------------------------------
+# Matching an ingredient name to a Fitatu product. Only products Fitatu has
+# marked verified are ever stored, which is enforced by the schema and is not
+# configurable here.
+
+# Locales to try, in order. Fitatu's catalogue is Polish, so pl_PL first; null
+# means "whatever this account defaults to".
+search_locales: [pl_PL, null]
+
+# Candidates to ask Fitatu for per query.
+search_limit: 10
+
+# How closely a candidate's name must match the query, 0 to 1. Raising this
+# trades coverage for safety, which is the right direction when in doubt: a
+# blank is better than a wrong id.
+match_min_score: 0.62
+
+# How far ahead of the runner-up the winner must be. Two *different* products
+# scoring within this of each other are treated as ambiguous and neither is
+# taken -- the catalogue is full of near-duplicates, and picking one by
+# coin-flip is how a wrong product gets in.
+match_min_gap: 0.08

@@ -7,8 +7,12 @@ mcp/**/node_modules/
 .env
 *.env
 
-# yt-dlp full metadata dumps (~620KB each). Only pruned meta.json is kept.
-raw/**/*.info.json
+# SQLite's transient sidecars. state/library.db itself IS committed: it is the
+# library, and the only copy. Checkpoint the WAL before committing so the .db
+# holds everything:
+#   uv run python -c "import sqlite3; sqlite3.connect('state/library.db').execute('PRAGMA wal_checkpoint(TRUNCATE)')"
+state/library.db-wal
+state/library.db-shm
 
 __pycache__/
 *.py[cod]
@@ -18,5 +22,6 @@ __pycache__/
 
 # Editor-local
 .vscode/
+.idea/
 
 docs/superpowers/**

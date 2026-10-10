@@ -1,132 +1,94 @@
 ---
 name: resolve-fitatu-products
-description: Use when mapping recipe ingredient names to Fitatu product ids via the fitatu MCP server - fills state/fitatu_products.yaml so that recipe creation can run deterministically. Covers querying search_food in batches, picking between candidates, English ingredients in a Polish catalogue, and when to give up on a name.
+description: Use when ingredient names will not match a verified Fitatu product - reviews what the automatic resolver rejected and fixes it with a search-phrase alias or a hand-recorded mapping. Covers English ingredients in a Polish catalogue, why ambiguity is refused, and when to leave a name unresolved.
 ---
 
-# Resolving ingredient names to Fitatu product ids
+# Fixing ingredient names the resolver could not match
 
-You are the matching step, and the only step here that needs judgment. Everything
-after it is deterministic: `products apply` writes the ids into the recipe files
-and recipe creation reads them straight off the ingredients.
-
-Resolve **once per distinct ingredient name**, not once per recipe. The cache
-makes an ingredient used in thirty recipes cost one lookup.
-
-## Before you start
-
-The `fitatu` MCP server must be connected. It validates its environment at
-startup and will not boot until `mcp/fitatu/.env` holds real credentials. If
-`search_food` is unavailable, stop and say so — do not guess ids.
+**Resolution itself is no longer your job.** It runs programmatically as the
+first phase of every import: search Fitatu, discard everything unverified, score
+what remains, and take the winner only if it is clearly the winner
+(`recipe_library/resolve/`). You are here for the leftovers.
 
 ```bash
-uv run python -m recipe_library.products pending   # what needs resolving
-uv run python -m recipe_library.products status    # coverage summary
+uv run python -m recipe_library.products status     # coverage
+uv run python -m recipe_library.products pending    # names with no product yet
+uv run python -m recipe_library.products failures   # names the matcher refused
 ```
 
-`pending` lists the most widely used names first, so working top-down maximises
-the number of recipes fixed per lookup.
+`failures` is the interesting one: it shows each name, why it was refused, and
+the candidates it rejected with their scores and verification flags.
 
-## Querying
+## Read the reason before doing anything
 
-`search_food` takes an **array** of queries and returns results grouped by
-`queryIndex`, so batch roughly 10–20 names per call rather than one at a time.
+The four refusals mean different things and only two are yours to fix.
 
-```
-search_food(queries: ["cebula", "masło", ...], limit: 5)
-```
+| Reason | What it means | What to do |
+|---|---|---|
+| `none of the N candidate(s) is verified by Fitatu` | Fitatu has the product but has not verified its nutrition data | **Nothing.** This is the rule working. Leave it unresolved. |
+| `no candidates returned by Fitatu` | The phrase found nothing in a Polish catalogue | Add an alias (below) |
+| `best verified candidate ... below the threshold` | Something was found but does not look like this ingredient | Add an alias; the query is probably in the wrong language |
+| `ambiguous: ... different products scoring within ...` | Two genuinely different products look equally good | Read both and map by hand, or leave it |
 
-Useful parameters: `limit` (default 5 per query per source), `includeDetails`
-(default false) and `detailsLimit`. Set `includeDetails: true` only when the
-default measure is unusable and you need the full `measures` list.
+## Aliases: the usual fix
 
-### English ingredients in a Polish catalogue
-
-This matters: 48 of the 70 recipes are English, giving 319 English ingredient
-names against 177 Polish ones, with only 4 shared. Fitatu is a Polish product and
-`search_food` defaults to `locale: pl_PL`, so `self-rising flour` will not match
-as written.
-
-Send **both the original and a Polish equivalent in the same call** — the tool's
-own documentation recommends submitting plausible variants together, and extra
-queries are nearly free:
-
-```
-queries: ["self-rising flour", "mąka samorosnąca", "ground beef", "mięso mielone wołowe"]
-```
-
-When a Polish phrase is what found the product, record it with `--query` so the
-match stays auditable.
-
-The server **does not infer brand or retailer aliases**. If an ingredient might
-appear under a producer or private-label name, supply those variants yourself.
-
-## Choosing between candidates
-
-Each query returns two separate lists, `userItems` (your own Fitatu products) and
-`publicItems` (the public catalogue), in Fitatu's order. They are **not merged or
-deduplicated** — judge them together.
-
-Prefer, in roughly this order:
-
-1. **The generic raw ingredient** over a branded or prepared product. Recipes say
-   `cebula`, not `Cebula Biedronka`. Pick the branded item only when the recipe
-   names a brand.
-2. **`verified: true`**, which is Fitatu's own quality signal.
-3. **A gram-based measure**, because recipe quantities are mostly in grams and
-   millilitres. A product whose only measure is `opakowanie` forces a conversion
-   you cannot make safely.
-
-Watch for these:
-
-- **Raw versus cooked matters enormously.** `pierś z kurczaka` raw and grilled
-  differ by a lot per 100 g. Recipes list raw weights, so prefer raw.
-- **US fat ratios have no Polish equivalent.** `93/7 ground beef` will only match
-  a generic `mięso mielone wołowe`. Record it, and note the imprecision — do not
-  invent a product that encodes the ratio.
-- **Do not settle for a near-miss.** `jogurt grecki 0%` is not `jogurt grecki`;
-  the calorie difference is the whole point of tracking.
-
-## Recording the result
-
-Never hand-edit the cache. Use the CLI, which timestamps entries and keeps the
-file sorted:
+Fitatu's catalogue is Polish and most of these recipes are not. 50 of 72
+recipes are English, and an English ingredient name mostly does not appear in a
+Polish catalogue at all. An alias records the phrase that *does* find it:
 
 ```bash
-uv run python -m recipe_library.products record \
-  --name "self-rising flour" --query "mąka samorosnąca" \
-  --product-id 12345 --display-name "Mąka samorosnąca" \
-  --source public --verified \
-  --measure-id g --measure-name gram --weight-g 1 --kcal 3.6
+uv run python -m recipe_library.products alias \
+  --name "self-rising flour" --query "mąka z proszkiem do pieczenia"
 ```
 
-Copy `productId` and `measureId` exactly as `search_food` returned them. A
-candidate carries **either** `productId` **or** `recipeId`, never both; this cache
-is for products, so skip recipe candidates.
+That teaches the resolver permanently, clears the recorded failure, and the
+next import retries the name by itself.
 
-When nothing is an acceptable match:
+Write the Polish phrase a Polish shopper would search for, not a literal
+translation. The 405 aliases already seeded from previous resolutions are worth
+skimming for the house style:
 
 ```bash
-uv run python -m recipe_library.products unresolved \
-  --name "sos tahini domowy" --reason "no_match"
+uv run python -m recipe_library.products aliases | head -40
 ```
 
-Useful reasons: `no_match`, `ambiguous`, `compound` (an ingredient that is itself
-a recipe), `not_a_food` (`woda`, `sól do gotowania`). Unresolved names are not
-retried on later runs unless `--retry-unresolved` is passed, so a known miss does
-not come back every time.
+## Mapping by hand
 
-**An unresolved name is a perfectly good outcome.** A wrong product id is far
-worse than a blank, because it silently corrupts the nutrition data this whole
-library exists to produce. If you are unsure between two candidates, record it
-`ambiguous` and ask.
-
-## Finishing
+When an alias will not do it — usually the ambiguous case, where you have read
+both candidates and know which one is meant:
 
 ```bash
-uv run python -m recipe_library.products apply   # writes ids into recipes/*.yaml
-uv run python -m recipe_library.validate         # confirm the files stay valid
+uv run python -m recipe_library.products map --name "spray oil" --product-id 116722413
 ```
 
-`apply` is deterministic and idempotent: rerunning changes nothing, and an
-ingredient the cache does not know keeps whatever it already had rather than
-being cleared.
+**The product must already be stored, and only verified products are ever
+stored.** So this overrides the matcher, never the verification rule. If the
+product is not stored, resolve it first:
+
+```bash
+uv run python -m recipe_library.products resolve --name "spray oil"
+```
+
+## When to stop
+
+**A blank is better than a wrong id.** An unresolved name is a normal outcome,
+not a task left undone. The recipes it appears in will refuse to import and say
+which name blocked them, which is the honest result; a wrong product silently
+corrupts the nutrition data this library exists to produce, and nothing
+downstream would catch it.
+
+So: leave a name unresolved when the only candidates are unverified, when you
+cannot tell which of two products is meant, or when the ingredient is not really
+a product (`seasonings`, `sauce of choice`). Do not reach for the
+nearest-looking match to clear the list.
+
+## Checking your work
+
+```bash
+uv run python -m recipe_library.products resolve --limit 20   # work the pending list
+uv run python -m recipe_library.fitatu_import --dry-run       # what still blocks an import
+```
+
+The dry run groups its failures: recipes blocked by an unresolved name, recipes
+that would import partially, and recipes where the video stated no quantity for
+anything. Only the first group is yours.

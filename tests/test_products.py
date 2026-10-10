@@ -1,235 +1,157 @@
-"""Tests for the Fitatu product id mapping.
+"""Name normalisation and the `products` CLI.
 
-The cache exists so that choosing a product happens once per ingredient name
-rather than once per recipe, and so that everything downstream of that choice is
-deterministic. These tests pin both properties.
+The mapping tables themselves are tested in test_store.py; this covers the
+normalisation that every key depends on, and the command line a human uses to
+inspect and correct the mapping.
 """
 
-import yaml
+import pytest
 
-from recipe_library.products import (
-    apply_ids,
-    ingredient_names,
-    load_cache,
-    normalize_name,
-    pending_names,
-    record_product,
-    record_unresolved,
-    save_cache,
-)
+from conftest import make_recipe, make_video
+from recipe_library import products as cli
+from recipe_library.names import normalize_name
+from recipe_library.store import products as store
+from recipe_library.store import recipes as recipes_store
 
 
-def write_recipe(recipes_dir, recipe_id, ingredients):
-    recipes_dir.mkdir(parents=True, exist_ok=True)
-    (recipes_dir / f"{recipe_id}.yaml").write_text(
-        yaml.safe_dump(
-            {
-                "id": recipe_id,
-                "title": recipe_id,
-                "language": "pl",
-                "ingredients": ingredients,
-                "source": {
-                    "video_id": "v",
-                    "url": "https://www.youtube.com/shorts/v",
-                    "recipe_index": 1,
-                },
-                "extracted_at": "2026-10-02",
-            },
-            allow_unicode=True,
-            sort_keys=False,
-        ),
-        encoding="utf-8",
-    )
-
-
-# --- normalisation ----------------------------------------------------------
+# -------------------------------------------------------- normalize_name ----
 
 
 def test_case_and_spacing_are_normalised():
-    assert normalize_name("  Pierś   z Kurczaka ") == "pierś z kurczaka"
+    assert normalize_name("  Pierś   z  Kurczaka ") == "pierś z kurczaka"
 
 
 def test_polish_diacritics_are_preserved():
-    # The key doubles as the search_food query, and Fitatu's locale is pl_PL.
-    assert normalize_name("Łosoś") == "łosoś"
+    # The key doubles as the search_food query, and the catalogue spells them
+    # correctly: maka and mąka are different words.
+    assert normalize_name("Mąka Pszenna") == "mąka pszenna"
 
 
 def test_empty_name_normalises_to_empty():
     assert normalize_name("") == ""
     assert normalize_name(None) == ""
+    assert normalize_name("   ") == ""
 
 
-# --- cache io ---------------------------------------------------------------
+def test_newlines_and_tabs_count_as_spacing():
+    assert normalize_name("olive\toil\n") == "olive oil"
 
 
-def test_missing_cache_loads_as_empty(tmp_path):
-    cache = load_cache(tmp_path / "nope.yaml")
-    assert cache["products"] == {}
-    assert cache["unresolved"] == {}
+def test_products_module_still_exports_it():
+    # store/ and resolve/ import it from `names`, but `payload.py` and anything
+    # written against the old module path reach it here.
+    assert cli.normalize_name("  X ") == "x"
 
 
-def test_cache_round_trip_preserves_polish(tmp_path):
-    path = tmp_path / "c.yaml"
-    cache = load_cache(path)
-    record_product(cache, "Pierś z kurczaka", product_id="123", display_name="Pierś")
-    save_cache(cache, path)
-    assert "pierś z kurczaka" in path.read_text(encoding="utf-8")
-    assert load_cache(path)["products"]["pierś z kurczaka"]["fitatu_product_id"] == "123"
+# -------------------------------------------------------------------- cli ----
 
 
-def test_product_id_is_stored_as_a_string(tmp_path):
-    # Fitatu ids are opaque; coercing to int would corrupt any non-numeric id.
-    cache = load_cache(tmp_path / "c.yaml")
-    record_product(cache, "cebula", product_id=4567)
-    assert cache["products"]["cebula"]["fitatu_product_id"] == "4567"
+@pytest.fixture
+def library(db_path):
+    """A database with one recipe, one product and one recorded miss."""
+    from recipe_library.db import connect
+
+    conn = connect(db_path)
+    try:
+        make_video(conn, "vid1")
+        recipes_store.save(conn, make_recipe())
+        store.save(
+            conn,
+            product_id="111",
+            display_name="Chicken breast",
+            source="public",
+            verified=True,
+            measures=[{"measure_id": "1", "measure_name": "g", "weight_g": 1}],
+        )
+        store.record_failure(conn, "salt", "no_match")
+        conn.commit()
+    finally:
+        conn.close()
+    return str(db_path)
 
 
-def test_measure_details_are_kept_for_deterministic_creation(tmp_path):
-    # add_meal_items needs a measureId, so it is cached next to the product id.
-    cache = load_cache(tmp_path / "c.yaml")
-    record_product(
-        cache, "mleko", product_id="1", measure_id="m-9", measure_name="ml", weight_g=1.03
-    )
-    measure = cache["products"]["mleko"]["default_measure"]
-    assert measure["measure_id"] == "m-9"
-    assert measure["weight_g"] == 1.03
+def run(library, argv):
+    return cli.main(["--db", library, *argv])
 
 
-def test_resolving_clears_a_previous_unresolved_record(tmp_path):
-    cache = load_cache(tmp_path / "c.yaml")
-    record_unresolved(cache, "dziwny składnik", "no_match")
-    record_product(cache, "dziwny składnik", product_id="77")
-    assert "dziwny składnik" not in cache["unresolved"]
-    assert "dziwny składnik" in cache["products"]
+def test_status_reports_coverage(library, capsys):
+    assert run(library, ["status"]) == 0
+    out = capsys.readouterr().out
+    assert "products" in out
+    assert "pending names" in out
 
 
-# --- pending ----------------------------------------------------------------
+def test_pending_lists_unmapped_names(library, capsys):
+    assert run(library, ["pending"]) == 0
+    out = capsys.readouterr().out
+    assert "chicken breast" in out
+    # Recorded misses are skipped, so a known miss does not come back each run.
+    assert "salt" not in out
 
 
-def test_each_distinct_name_is_pending_once(tmp_path):
-    # The whole point of the cache: an ingredient in thirty recipes costs one
-    # lookup, not thirty.
-    recipes = tmp_path / "recipes"
-    write_recipe(recipes, "a", [{"name": "cebula"}])
-    write_recipe(recipes, "b", [{"name": "Cebula"}])
-    cache = load_cache(tmp_path / "c.yaml")
-    assert pending_names(cache, recipes) == ["cebula"]
+def test_pending_can_include_known_misses(library, capsys):
+    run(library, ["pending", "--retry-failed"])
+    assert "salt" in capsys.readouterr().out
 
 
-def test_most_used_names_come_first(tmp_path):
-    recipes = tmp_path / "recipes"
-    write_recipe(recipes, "a", [{"name": "cebula"}, {"name": "masło"}])
-    write_recipe(recipes, "b", [{"name": "cebula"}])
-    cache = load_cache(tmp_path / "c.yaml")
-    assert pending_names(cache, recipes)[0] == "cebula"
+def test_failures_explain_themselves(library, capsys):
+    assert run(library, ["failures"]) == 0
+    out = capsys.readouterr().out
+    assert "salt" in out
+    assert "no_match" in out
 
 
-def test_resolved_names_are_not_pending(tmp_path):
-    recipes = tmp_path / "recipes"
-    write_recipe(recipes, "a", [{"name": "cebula"}])
-    cache = load_cache(tmp_path / "c.yaml")
-    record_product(cache, "cebula", product_id="1")
-    assert pending_names(cache, recipes) == []
+def test_mapping_by_hand_requires_a_stored_product(library, capsys):
+    # The product table holds verified products only, so this is an escape
+    # hatch for the matcher rather than for the verification rule.
+    assert run(library, ["map", "--name", "salt", "--product-id", "999"]) == 1
+    assert "verified" in capsys.readouterr().err
 
 
-def test_known_misses_are_not_retried_by_default(tmp_path):
-    recipes = tmp_path / "recipes"
-    write_recipe(recipes, "a", [{"name": "coś dziwnego"}])
-    cache = load_cache(tmp_path / "c.yaml")
-    record_unresolved(cache, "coś dziwnego", "no_match")
-    assert pending_names(cache, recipes) == []
-    assert pending_names(cache, recipes, retry_unresolved=True) == ["coś dziwnego"]
+def test_mapping_by_hand_works_for_a_stored_product(library, capsys):
+    assert run(library, ["map", "--name", "chicken breast", "--product-id", "111"]) == 0
+    capsys.readouterr()  # discard the mapping confirmation
+    assert run(library, ["pending"]) == 0
+    assert "Nothing pending" in capsys.readouterr().out
 
 
-def test_ingredient_usage_maps_to_recipe_ids(tmp_path):
-    recipes = tmp_path / "recipes"
-    write_recipe(recipes, "placki", [{"name": "cebula"}])
-    write_recipe(recipes, "zupa", [{"name": "cebula"}])
-    assert sorted(ingredient_names(recipes)["cebula"]) == ["placki", "zupa"]
+def test_a_manual_mapping_is_recorded_as_manual(library):
+    from recipe_library.db import connect
+
+    run(library, ["map", "--name", "chicken breast", "--product-id", "111"])
+    conn = connect(library)
+    try:
+        assert store.mapping(conn, "chicken breast")["method"] == "manual"
+    finally:
+        conn.close()
 
 
-# --- apply ------------------------------------------------------------------
+def test_unmapping_reports_whether_there_was_anything(library, capsys):
+    run(library, ["map", "--name", "chicken breast", "--product-id", "111"])
+    run(library, ["unmap", "--name", "chicken breast"])
+    assert "Removed" in capsys.readouterr().out
+    run(library, ["unmap", "--name", "chicken breast"])
+    assert "No mapping" in capsys.readouterr().out
 
 
-def test_apply_writes_ids_into_recipe_files(tmp_path):
-    recipes = tmp_path / "recipes"
-    write_recipe(recipes, "a", [{"name": "cebula", "quantity": 1, "unit": "piece"}])
-    cache = load_cache(tmp_path / "c.yaml")
-    record_product(cache, "cebula", product_id="555")
-
-    stats = apply_ids(cache, recipes)
-    assert stats["ingredients_set"] == 1
-
-    data = yaml.safe_load((recipes / "a.yaml").read_text(encoding="utf-8"))
-    assert data["ingredients"][0]["fitatu_product_id"] == "555"
+def test_an_alias_is_recorded_and_clears_the_miss(library, capsys):
+    assert run(library, ["alias", "--name", "salt", "--query", "sól biała"]) == 0
+    run(library, ["aliases"])
+    assert "sól biała" in capsys.readouterr().out
+    run(library, ["failures"])
+    assert "No recorded resolution failures" in capsys.readouterr().out
 
 
-def test_apply_is_idempotent(tmp_path):
-    recipes = tmp_path / "recipes"
-    write_recipe(recipes, "a", [{"name": "cebula"}])
-    cache = load_cache(tmp_path / "c.yaml")
-    record_product(cache, "cebula", product_id="555")
-
-    apply_ids(cache, recipes)
-    before = (recipes / "a.yaml").read_text(encoding="utf-8")
-    stats = apply_ids(cache, recipes)
-    assert stats["recipes_changed"] == 0
-    assert (recipes / "a.yaml").read_text(encoding="utf-8") == before
+def test_resolve_dry_run_contacts_nothing(library, capsys):
+    assert run(library, ["resolve", "--dry-run"]) == 0
+    out = capsys.readouterr().out
+    assert "chicken breast" in out
+    assert "no Fitatu client" in out
 
 
-def test_apply_preserves_other_ingredient_fields(tmp_path):
-    recipes = tmp_path / "recipes"
-    write_recipe(
-        recipes,
-        "a",
-        [{"name": "curry", "quantity": None, "unit": None, "note": "do smaku"}],
-    )
-    cache = load_cache(tmp_path / "c.yaml")
-    record_product(cache, "curry", product_id="9")
-    apply_ids(cache, recipes)
-
-    ing = yaml.safe_load((recipes / "a.yaml").read_text(encoding="utf-8"))["ingredients"][0]
-    assert ing["note"] == "do smaku"
-    assert ing["quantity"] is None
-    assert ing["fitatu_product_id"] == "9"
-
-
-def test_unknown_ingredients_are_counted_not_cleared(tmp_path):
-    recipes = tmp_path / "recipes"
-    write_recipe(recipes, "a", [{"name": "cebula"}, {"name": "nieznane"}])
-    cache = load_cache(tmp_path / "c.yaml")
-    record_product(cache, "cebula", product_id="1")
-
-    stats = apply_ids(cache, recipes)
-    assert stats["ingredients_unresolved"] == 1
-    ings = yaml.safe_load((recipes / "a.yaml").read_text(encoding="utf-8"))["ingredients"]
-    assert "fitatu_product_id" not in ings[1]
-
-
-def test_dry_run_changes_nothing_on_disk(tmp_path):
-    recipes = tmp_path / "recipes"
-    write_recipe(recipes, "a", [{"name": "cebula"}])
-    cache = load_cache(tmp_path / "c.yaml")
-    record_product(cache, "cebula", product_id="1")
-
-    before = (recipes / "a.yaml").read_text(encoding="utf-8")
-    stats = apply_ids(cache, recipes, dry_run=True)
-    assert stats["ingredients_set"] == 1
-    assert (recipes / "a.yaml").read_text(encoding="utf-8") == before
-
-
-def test_matching_query_is_recorded_when_it_differs_from_the_name(tmp_path):
-    """Fitatu's catalogue is Polish, so an English ingredient is usually found by
-    its Polish equivalent. Keeping that phrase makes the match auditable."""
-    cache = load_cache(tmp_path / "c.yaml")
-    record_product(
-        cache, "self-rising flour", product_id="1", query="mąka samorosnąca"
-    )
-    entry = cache["products"]["self-rising flour"]
-    assert entry["query"] == "mąka samorosnąca"
-
-
-def test_query_defaults_to_the_ingredient_name(tmp_path):
-    cache = load_cache(tmp_path / "c.yaml")
-    record_product(cache, "Cebula", product_id="1")
-    assert cache["products"]["cebula"]["query"] == "cebula"
+def test_there_is_no_apply_command():
+    # `apply` used to copy resolved ids into 72 YAML files and had to be re-run
+    # whenever the mapping grew. It is a join now: nothing to run, nothing to
+    # forget. See the ingredients_resolved view in schema.sql.
+    with pytest.raises(SystemExit):
+        cli.main(["apply"])

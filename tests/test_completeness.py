@@ -11,7 +11,7 @@ from recipe_library.completeness import (
     describe_missing,
     is_complete,
     missing_lang,
-    subtitle_langs_on_disk,
+    normalise_langs,
     wanted_lang,
 )
 
@@ -65,80 +65,65 @@ def test_empty_allowlist_accepts_any_original_language():
 # --- what is on disk --------------------------------------------------------
 
 
-def test_languages_are_read_from_filenames(tmp_path):
-    (tmp_path / "subs.pl.txt").touch()
-    (tmp_path / "subs.en.vtt").touch()
-    assert subtitle_langs_on_disk(tmp_path) == {"pl", "en"}
+def test_held_codes_reduce_to_bare_languages():
+    assert normalise_langs(["pl", "en-US"]) == {"pl", "en"}
 
 
-def test_orig_suffixed_filenames_count_as_their_bare_language(tmp_path):
-    (tmp_path / "subs.pl-orig.txt").touch()
-    assert subtitle_langs_on_disk(tmp_path) == {"pl"}
+def test_orig_suffixed_codes_count_as_their_bare_language():
+    assert normalise_langs(["pl-orig"]) == {"pl"}
 
 
-def test_metadata_and_other_files_are_not_mistaken_for_subtitles(tmp_path):
-    (tmp_path / "meta.json").touch()
-    (tmp_path / "notes.txt").touch()
-    assert subtitle_langs_on_disk(tmp_path) == set()
+def test_nothing_held_is_not_an_error():
+    assert normalise_langs(None) == set()
+    assert normalise_langs([]) == set()
 
 
-def test_missing_directory_is_not_an_error(tmp_path):
-    assert subtitle_langs_on_disk(tmp_path / "nope") == set()
+def test_absent_metadata_is_incomplete():
+    assert is_complete({"pl"}, None, ALLOWED) is False
 
 
-# --- completeness -----------------------------------------------------------
-
-
-def test_absent_metadata_is_incomplete(tmp_path):
-    assert is_complete(tmp_path, None, ALLOWED) is False
-
-
-def test_polish_only_video_is_complete_with_polish_alone(tmp_path):
+def test_polish_only_video_is_complete_with_polish_alone():
     # Many saved shorts carry one language. Requiring both would leave them
     # permanently incomplete and the retry loop endless.
-    (tmp_path / "subs.pl.txt").touch()
-    assert is_complete(tmp_path, meta("pl", "pl-orig"), ALLOWED) is True
+    assert is_complete({"pl"}, meta("pl", "pl-orig"), ALLOWED) is True
 
 
-def test_english_only_video_is_complete_with_english_alone(tmp_path):
-    (tmp_path / "subs.en.txt").touch()
-    assert is_complete(tmp_path, meta("en-US", "en-orig"), ALLOWED) is True
+def test_english_only_video_is_complete_with_english_alone():
+    assert is_complete({"en"}, meta("en-US", "en-orig"), ALLOWED) is True
 
 
-def test_english_video_holding_only_polish_is_incomplete(tmp_path):
+def test_english_video_holding_only_polish_is_incomplete():
     # A leftover Polish translation must not be mistaken for the original.
-    (tmp_path / "subs.pl.txt").touch()
-    assert missing_lang(tmp_path, meta("en-US", "en-orig"), ALLOWED) == "en"
+    assert missing_lang({"pl"}, meta("en-US", "en-orig"), ALLOWED) == "en"
 
 
-def test_video_with_no_captions_at_all_is_complete(tmp_path):
+def test_video_with_no_captions_at_all_is_complete():
     # Nothing further is fetchable, so this must terminate rather than retry.
-    assert is_complete(tmp_path, meta("pl", None), ALLOWED) is True
+    assert is_complete(set(), meta("pl", None), ALLOWED) is True
 
 
-def test_metadata_without_its_original_track_is_incomplete(tmp_path):
-    assert is_complete(tmp_path, meta("pl", "pl-orig"), ALLOWED) is False
+def test_metadata_without_its_original_track_is_incomplete():
+    assert is_complete(set(), meta("pl", "pl-orig"), ALLOWED) is False
 
 
-def test_either_output_format_satisfies_the_language(tmp_path):
-    # subtitle_output may be vtt, text or both; any of them means we have it.
-    (tmp_path / "subs.pl.vtt").touch()
-    assert missing_lang(tmp_path, meta("pl", "pl-orig"), ALLOWED) is None
+def test_a_regional_code_satisfies_its_bare_language():
+    # The track is stored under the bare language, but a caller may hand back
+    # whatever code it has.
+    assert missing_lang({"en-US"}, meta("en-US", "en-orig"), ALLOWED) is None
 
 
-def test_skipped_language_counts_as_complete(tmp_path):
+def test_skipped_language_counts_as_complete():
     # Nothing will ever be fetched for it, so it must not stay pending.
-    assert is_complete(tmp_path, meta("de", "de-orig"), ALLOWED) is True
+    assert is_complete(set(), meta("de", "de-orig"), ALLOWED) is True
 
 
-def test_describe_missing_names_the_language(tmp_path):
-    assert "en" in describe_missing(tmp_path, meta("en-US", "en-orig"), ALLOWED)
+def test_describe_missing_names_the_language():
+    assert "en" in describe_missing(set(), meta("en-US", "en-orig"), ALLOWED)
 
 
-def test_describe_missing_reports_absent_metadata(tmp_path):
-    assert describe_missing(tmp_path, None, ALLOWED) == "metadata"
+def test_describe_missing_reports_absent_metadata():
+    assert describe_missing(set(), None, ALLOWED) == "metadata"
 
 
-def test_describe_nothing_missing(tmp_path):
-    (tmp_path / "subs.pl.txt").touch()
-    assert describe_missing(tmp_path, meta("pl", "pl-orig"), ALLOWED) == "nothing"
+def test_describe_nothing_missing():
+    assert describe_missing({"pl"}, meta("pl", "pl-orig"), ALLOWED) == "nothing"

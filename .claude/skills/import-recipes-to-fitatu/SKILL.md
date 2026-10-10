@@ -1,16 +1,29 @@
 ---
 name: import-recipes-to-fitatu
-description: Use when importing recipes from recipes/ into Fitatu as real Fitatu recipes - runs recipe_library.fitatu_import, which uses the fitatu-api HTTP client directly, and records import_status ok/error/not_imported on each recipe. Covers the duplicate hazard, gram-to-measure conversion, and reading the dry run before sending anything.
+description: Use when importing recipes from the library into Fitatu as real Fitatu recipes - runs recipe_library.fitatu_import, which resolves products against verified Fitatu entries and then uses the fitatu-api HTTP client directly, recording import_status ok/error/not_imported. Covers the duplicate hazard, gram-to-measure conversion, and reading the dry run before sending anything.
 ---
 
 # Importing recipes into Fitatu
 
-This step is **deterministic**. No model decides anything: the product ids were
-chosen earlier by `/resolve-products` and cached, and this reads them. Your job is
-to run it, read what it reports, and decide what to do about the failures.
+This step is **deterministic**. No model decides anything. Your job is to run
+it, read what it reports, and decide what to do about the failures.
 
-Importing uses the `fitatu-api` HTTP client directly. **The MCP server is not
-involved** — its only job in this project is resolving product ids.
+It runs in two phases, and the first one used to be a separate manual step:
+
+1. **Resolve.** Every ingredient name is matched to a Fitatu product — from the
+   database if already mapped, otherwise by searching Fitatu live, discarding
+   everything Fitatu has not verified, and scoring what remains. The answer is
+   stored, so a name used in thirty recipes costs one lookup.
+2. **Import.** The resolved products' measures convert each quantity, and
+   `create_recipe` posts the result.
+
+Both phases use the `fitatu-api` HTTP client directly. **No MCP server is
+involved in either one.**
+
+**Only verified Fitatu products are ever used.** That is a constraint on the
+`products` table, not a filter in the import path, so there is no code path that
+can bypass it. A name whose only candidates are unverified stays unresolved, and
+the recipe using it refuses to import.
 
 ## Read this before sending anything
 
@@ -37,8 +50,17 @@ uv run python -m recipe_library.fitatu_import --status      # the tally
 uv run python -m recipe_library.fitatu_import --dry-run     # build, report, send nothing
 ```
 
-A dry run builds every payload, reports every problem, and contacts nothing. It
-also writes nothing — not even failures — so it is free to repeat.
+A dry run reports every problem, **contacts nothing and writes nothing** — not
+even failures — so it is free to repeat.
+
+The trade-off: with no Fitatu connection, phase 1 can only consult what is
+already mapped. So a dry run tells you a name is unresolved, but not whether a
+live search *would* resolve it. To find that out, resolve first and then dry-run:
+
+```bash
+uv run python -m recipe_library.products resolve --limit 20
+uv run python -m recipe_library.fitatu_import --dry-run
+```
 
 Then import for real, starting small:
 
@@ -48,8 +70,9 @@ uv run python -m recipe_library.fitatu_import
 ```
 
 Check the first few in the Fitatu app before importing all of them. Quantities
-are the thing to verify: a conversion error is invisible in the YAML and obvious
-in the app.
+are the thing to verify: a conversion error is invisible in the database and
+obvious in the app. So is a wrong product — `products resolve` prints which
+product each name matched and at what score, and that is the moment to read it.
 
 ## Why recipes fail, and what to do
 
@@ -60,7 +83,8 @@ product cache.
 
 | Reported problem | What it means | Fix |
 |---|---|---|
-| `no Fitatu product mapped` | the ingredient is not in the cache | run `/resolve-products` |
+| `unresolved ingredient(s): NAME (...)` | no verified product matched that name | `/resolve-fitatu-products` |
+| `no Fitatu product mapped` | resolution was skipped with `--no-resolve` | drop the flag |
 | `no quantity stated in the source video` | the recipe genuinely has none | nothing to fix automatically; see below |
 | `unit 'piece' has no mass` | a count, not a weight | resolve a product whose measure is a piece, or accept the loss |
 | `the Fitatu measure is not millilitre-based` | ml against a gram measure | re-resolve the product choosing an ml measure |
@@ -87,12 +111,14 @@ exactly the corruption this project is built to avoid.
 | `--allow-partial` | import with ingredients missing (under-reports) |
 | `--skip-errors` | do not retry recipes that failed before |
 | `--force` | re-send already-imported recipes (**duplicates them**) |
+| `--no-resolve` | import only what is already mapped; skips phase 1 |
+| `--retry-failed` | re-search names previously recorded as having no match |
 
 Failed recipes are retried automatically on the next run, since an `error` is
 usually a missing mapping or a transient API problem.
 
-`--recipe` takes the recipe id, which is the file name without `.yaml`, and is
-the way to retry one recipe after fixing its products:
+`--recipe` takes the recipe id, and is the way to retry one recipe after fixing
+its products:
 
 ```bash
 uv run python -m recipe_library.fitatu_import --recipe tteok-bokki --dry-run
@@ -100,7 +126,7 @@ uv run python -m recipe_library.fitatu_import --recipe tteok-bokki
 ```
 
 It narrows the list, it does not widen it: a named recipe already marked `ok` is
-still skipped, and an id with no file is refused before anything is sent.
+still skipped, and an unknown id is refused before anything is sent.
 
 ## Credentials
 
@@ -115,6 +141,13 @@ uv run python -m recipe_library.validate    # the schema checks import_status to
 uv run python -m recipe_library.fitatu_import --status
 ```
 
-Then commit: `import_status` and `fitatu_recipe_id` live in the recipe files and
-are the record of what is already in Fitatu. Losing them means losing the
-duplicate protection.
+Then commit `state/library.db`. `import_status` and `fitatu_recipe_id` live in
+it and are the record of what is already in Fitatu — losing them means losing
+the duplicate protection, and the database is the only copy.
+
+The `-wal` and `-shm` files beside it are transient and gitignored. If the `-wal`
+file is large, checkpoint it first so the commit holds the whole database:
+
+```bash
+uv run python -c "import sqlite3; sqlite3.connect('state/library.db').execute('PRAGMA wal_checkpoint(TRUNCATE)')"
+```

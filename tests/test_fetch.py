@@ -14,6 +14,25 @@ from recipe_library.fetch import (
     prune_metadata,
 )
 
+class _FakeScratch:
+    """Stands in for `tempfile.TemporaryDirectory`, pointing at tmp_path.
+
+    yt-dlp can only write subtitles to files, so fetch gives it a throwaway
+    directory and reads the text back out. These tests need to see what landed
+    in it, so the directory is one pytest cleans up rather than one fetch
+    deletes on the way out.
+    """
+
+    def __init__(self, path):
+        self.path = path
+
+    def __enter__(self):
+        return str(self.path)
+
+    def __exit__(self, *exc):
+        return False
+
+
 # Shaped like a real yt-dlp dump: a few useful keys buried in bulk that must go.
 FULL_DUMP = {
     "id": "abc123",
@@ -147,61 +166,91 @@ def test_cookies_use_the_four_tuple_yt_dlp_expects():
     assert opts["cookiesfrombrowser"] == ("chrome", None, None, None)
 
 
-def test_existing_subtitle_files_are_never_deleted(tmp_path, monkeypatch):
-    """A re-run must not destroy what an earlier run paid for.
+def test_throttled_subtitles_return_nothing_rather_than_raising(monkeypatch):
+    """A 429 must not abort the batch.
 
-    The return value is a before/after diff rather than a directory listing, so
-    provenance stays honest without deleting anything.
+    Absent subtitles are not fatal -- the description alone is often enough to
+    extract a recipe -- and returning nothing leaves the language genuinely
+    missing so the next pass retries it.
     """
-    out_dir = tmp_path / "vid"
-    out_dir.mkdir()
-    existing = out_dir / "subs.en.txt"
-    existing.write_text("already fetched", encoding="utf-8")
-
-    monkeypatch.setattr(fetch_module, "video_dir", lambda _: out_dir)
     monkeypatch.setattr(fetch_module.time, "sleep", lambda _: None)
 
     def throttled(*_args, **_kwargs):
         raise DownloadError("HTTP Error 429: Too Many Requests")
 
     monkeypatch.setattr(fetch_module, "_with_backoff", throttled)
-
-    new_files = fetch_module.fetch_subtitles("vid", "pl-orig", "pl")
-    assert new_files == []  # nothing arrived this call
-    assert existing.read_text(encoding="utf-8") == "already fetched"
+    assert fetch_module.fetch_subtitles("vid", "pl-orig", "pl") == {}
 
 
-def test_orig_track_filename_is_normalised_to_the_bare_language(tmp_path, monkeypatch):
-    """yt-dlp names the file after the track asked for, so pl-orig lands as
-    subs.pl-orig.vtt. Stage 2 expects subs.pl.txt, so it is renamed."""
-    out_dir = tmp_path / "vid"
-    out_dir.mkdir()
-    monkeypatch.setattr(fetch_module, "video_dir", lambda _: out_dir)
+def test_the_timed_original_is_converted_to_prose(monkeypatch, tmp_path):
+    """yt-dlp can only emit timed formats, so the conversion happens in fetch.
 
-    def write_orig_file(_what, _call):
-        (out_dir / "subs.pl-orig.vtt").write_text(
+    Timings are noise for ingredient extraction, so `text` is the default and
+    the only variant normally stored.
+    """
+    monkeypatch.setattr(
+        fetch_module.tempfile,
+        "TemporaryDirectory",
+        lambda **kwargs: _FakeScratch(tmp_path),
+    )
+
+    def write_vtt(_what, _call):
+        (tmp_path / "subs.pl-orig.vtt").write_text(
             "WEBVTT\n\n00:00:01.000 --> 00:00:02.000\nmąka\n", encoding="utf-8"
         )
 
-    monkeypatch.setattr(fetch_module, "_with_backoff", write_orig_file)
+    monkeypatch.setattr(fetch_module, "_with_backoff", write_vtt)
 
-    new_files = fetch_module.fetch_subtitles("vid", "pl-orig", "pl", None, "text")
-    assert new_files == ["subs.pl.txt"]
-    assert (out_dir / "subs.pl.txt").read_text(encoding="utf-8").strip() == "mąka"
+    out = fetch_module.fetch_subtitles("vid", "pl-orig", "pl", None, "text")
+    assert out == {"text": "mąka"}
 
 
-def test_bare_track_needs_no_rename(tmp_path, monkeypatch):
-    out_dir = tmp_path / "vid"
-    out_dir.mkdir()
-    monkeypatch.setattr(fetch_module, "video_dir", lambda _: out_dir)
+def test_both_keeps_the_timed_original_as_well(monkeypatch, tmp_path):
+    monkeypatch.setattr(
+        fetch_module.tempfile,
+        "TemporaryDirectory",
+        lambda **kwargs: _FakeScratch(tmp_path),
+    )
 
-    def write_file(_what, _call):
-        (out_dir / "subs.pl.vtt").write_text(
+    def write_vtt(_what, _call):
+        (tmp_path / "subs.pl.vtt").write_text(
             "WEBVTT\n\n00:00:01.000 --> 00:00:02.000\nsól\n", encoding="utf-8"
         )
 
-    monkeypatch.setattr(fetch_module, "_with_backoff", write_file)
-    assert fetch_module.fetch_subtitles("vid", "pl", "pl", None, "text") == ["subs.pl.txt"]
+    monkeypatch.setattr(fetch_module, "_with_backoff", write_vtt)
+
+    out = fetch_module.fetch_subtitles("vid", "pl", "pl", None, "both")
+    assert out["text"] == "sól"
+    assert "WEBVTT" in out["vtt"]
+
+
+def test_vtt_only_stores_no_prose(monkeypatch, tmp_path):
+    monkeypatch.setattr(
+        fetch_module.tempfile,
+        "TemporaryDirectory",
+        lambda **kwargs: _FakeScratch(tmp_path),
+    )
+
+    def write_vtt(_what, _call):
+        (tmp_path / "subs.pl.vtt").write_text("WEBVTT\n\nsól\n", encoding="utf-8")
+
+    monkeypatch.setattr(fetch_module, "_with_backoff", write_vtt)
+    assert set(fetch_module.fetch_subtitles("vid", "pl", "pl", None, "vtt")) == {"vtt"}
+
+
+def test_an_unknown_subtitle_output_is_refused():
+    with pytest.raises(SystemExit):
+        fetch_module.fetch_subtitles("vid", "pl", "pl", None, "srt")
+
+
+def test_a_fetch_that_produced_no_file_returns_nothing(monkeypatch, tmp_path):
+    monkeypatch.setattr(
+        fetch_module.tempfile,
+        "TemporaryDirectory",
+        lambda **kwargs: _FakeScratch(tmp_path),
+    )
+    monkeypatch.setattr(fetch_module, "_with_backoff", lambda *a, **k: None)
+    assert fetch_module.fetch_subtitles("vid", "pl", "pl") == {}
 
 
 def test_original_track_is_the_orig_suffixed_one():
@@ -248,36 +297,32 @@ def test_original_language_is_inferred_from_the_orig_key_when_absent():
     assert pick_caption_track(dump) == ("es", "es-orig")
 
 
-def test_metadata_from_an_older_schema_is_treated_as_absent(tmp_path, monkeypatch):
+def test_metadata_without_an_original_language_is_treated_as_absent(conn):
     """Self-healing upgrade path.
 
-    Metadata predating original-track selection cannot say which track is the
-    original. Treating it as valid would mark every old video complete and never
-    fetch its subtitles, so it is reported absent and refetched instead.
+    A row that cannot say which track is the original must be reported absent.
+    Treating it as valid would mark the video complete and never fetch its
+    subtitles.
     """
-    out_dir = tmp_path / "vid"
-    out_dir.mkdir()
-    legacy = out_dir / "meta.json"
-    legacy.write_text('{"id": "vid", "title": "T", "manual_sub_langs": []}', encoding="utf-8")
-    monkeypatch.setattr(fetch_module, "meta_path", lambda _: legacy)
+    from recipe_library.store import videos as videos_store
 
-    assert fetch_module.read_meta("vid") is None
+    videos_store.save_meta(conn, "vid", {"title": "T", "manual_sub_langs": []})
+    conn.commit()
+    assert fetch_module.read_meta(conn, "vid") is None
 
 
-def test_current_metadata_is_returned(tmp_path, monkeypatch):
-    out_dir = tmp_path / "vid"
-    out_dir.mkdir()
-    current = out_dir / "meta.json"
-    current.write_text(
-        '{"id": "vid", "original_lang": "pl", "caption_track": "pl-orig"}', encoding="utf-8"
-    )
-    monkeypatch.setattr(fetch_module, "meta_path", lambda _: current)
+def test_current_metadata_is_returned(conn):
+    from conftest import make_video
 
-    assert fetch_module.read_meta("vid")["caption_track"] == "pl-orig"
+    make_video(conn, "vid", original_lang="pl", caption_track="pl-orig")
+    assert fetch_module.read_meta(conn, "vid")["caption_track"] == "pl-orig"
 
 
-def test_corrupt_metadata_is_treated_as_absent(tmp_path, monkeypatch):
-    bad = tmp_path / "meta.json"
-    bad.write_text("{not json", encoding="utf-8")
-    monkeypatch.setattr(fetch_module, "meta_path", lambda _: bad)
-    assert fetch_module.read_meta("vid") is None
+def test_an_unknown_video_has_no_metadata(conn):
+    assert fetch_module.read_meta(conn, "never-seen") is None
+
+
+def test_a_ledger_stub_has_no_metadata(conn):
+    conn.execute("INSERT INTO videos (video_id, title) VALUES ('stub', 'T')")
+    conn.commit()
+    assert fetch_module.read_meta(conn, "stub") is None

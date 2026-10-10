@@ -266,7 +266,7 @@ def build_recipe_kwargs(
     `products` is the `products` mapping of `state/fitatu_products.yaml`, keyed by
     normalised ingredient name.
     """
-    from ..products import normalize_name
+    from ..names import normalize_name
 
     problems: list[Problem] = []
     warnings: list[str] = []

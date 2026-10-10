@@ -1,23 +1,27 @@
 """Repository layout. One place that knows where things live."""
 
+import os
 from pathlib import Path
 
 import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG = ROOT / "config.yaml"
-RAW = ROOT / "raw"
-RECIPES = ROOT / "recipes"
 STATE = ROOT / "state"
-LEDGER = STATE / "processed.yaml"
+SCHEMA = Path(__file__).resolve().parent / "schema.sql"
 
+# The library itself: ledger, raw video text, recipes and products.
+# RECIPE_LIBRARY_DB overrides it, which is what the tests and a second checkout
+# use instead of hardcoding this one.
+DB = Path(os.environ.get("RECIPE_LIBRARY_DB") or STATE / "library.db")
 
-def video_dir(video_id: str) -> Path:
-    return RAW / video_id
-
-
-def meta_path(video_id: str) -> Path:
-    return video_dir(video_id) / "meta.json"
+# Where the YAML tree used to live. Still named because migrate_yaml.py reads
+# it, and because `raw/` remains in git history as the provenance for every
+# recipe extracted before the move.
+LEGACY_RAW = ROOT / "raw"
+LEGACY_RECIPES = ROOT / "recipes"
+LEGACY_LEDGER = STATE / "processed.yaml"
+LEGACY_PRODUCTS = STATE / "fitatu_products.yaml"
 
 
 def load_config() -> dict:
@@ -39,4 +43,10 @@ def load_config() -> dict:
     config.setdefault("max_passes", 20)
     config.setdefault("pass_delay_seconds", 60)
     config.setdefault("max_stalled_passes", 3)
+    # Product resolution. `search_locales` is tried in order: the catalogue is
+    # Polish, so pl_PL first, then whatever the account defaults to.
+    config.setdefault("search_locales", ["pl_PL", None])
+    config.setdefault("search_limit", 10)
+    config.setdefault("match_min_score", 0.62)
+    config.setdefault("match_min_gap", 0.08)
     return config

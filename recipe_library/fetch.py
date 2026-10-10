@@ -1,13 +1,18 @@
-"""Stage 1: fetch playlist metadata and subtitles to disk. No LLM involved.
+"""Stage 1: fetch playlist metadata and subtitles into the database. No LLM.
 
 Uses the yt_dlp Python API (the PyPI package) rather than shelling out to its
 console script, so options are passed as data and errors arrive as exceptions.
 
 The stage is **additive and resumable**. It never deletes what an earlier run
-fetched, it re-reads an existing `meta.json` instead of refetching it, and it
-requests only the subtitle languages actually missing from disk. Re-running it is
-therefore always safe and always cheap. With `fetch_until_complete` it keeps
-making passes until every video has everything available for it.
+fetched, it re-reads stored metadata instead of refetching it, and it requests
+only the subtitle languages actually missing. Re-running it is therefore always
+safe and always cheap. With `fetch_until_complete` it keeps making passes until
+every video has everything available for it.
+
+yt-dlp can only write subtitles to files, so each fetch gets a throwaway
+temporary directory; the text is read out of it, stored, and the directory goes
+away. Nothing accumulates on disk, and `--subtitle-output vtt` now means "keep
+the timed original in the database" rather than "leave a file behind".
 
 Design notes grounded in measurements against real videos, not assumptions:
 
@@ -26,10 +31,11 @@ Design notes grounded in measurements against real videos, not assumptions:
 """
 
 import argparse
-import json
 import shutil
 import sys
+import tempfile
 import time
+from pathlib import Path
 from typing import Any, Callable, TypeVar
 
 from yt_dlp import YoutubeDL
@@ -37,8 +43,10 @@ from yt_dlp.utils import DownloadError, ExtractorError
 
 from . import completeness, ledger
 from .completeness import base_lang
-from .paths import load_config, meta_path, video_dir
-from .subtitles import vtt_file_to_text_file
+from .db import open_db
+from .paths import load_config
+from .store import videos as videos_store
+from .subtitles import vtt_to_text
 
 T = TypeVar("T")
 
@@ -162,27 +170,15 @@ def prune_metadata(full: dict) -> dict:
     return meta
 
 
-# A meta.json written before original-track selection existed lacks this key.
-# Treating it as absent makes the upgrade self-healing: the next run refetches it.
-SCHEMA_MARKER = "caption_track"
+def read_meta(conn, video_id: str) -> dict | None:
+    """Return usable stored metadata, or None.
 
-
-def read_meta(video_id: str) -> dict | None:
-    """Return usable metadata already on disk, or None.
-
-    None also covers metadata written by an older version of this code. Such a
-    file cannot say which caption track is the original, and silently treating
-    that as "no captions available" would mark every old video complete and never
-    fetch its subtitles.
+    None also covers a row that has no caption track recorded. Such a row cannot
+    say which track is the original, and silently treating that as "no captions
+    available" would mark the video complete and never fetch its subtitles.
     """
-    path = meta_path(video_id)
-    if not path.exists():
-        return None
-    try:
-        data = json.loads(path.read_text(encoding="utf-8"))
-    except (json.JSONDecodeError, OSError):
-        return None
-    if not isinstance(data, dict) or SCHEMA_MARKER not in data:
+    data = videos_store.meta(conn, video_id)
+    if not data or not data.get("original_lang"):
         return None
     return data
 
@@ -225,19 +221,21 @@ def fetch_subtitles(
     lang: str,
     cookies_from_browser: str | None = None,
     subtitle_output: str = DEFAULT_SUBTITLE_OUTPUT,
-) -> list[str]:
-    """Fetch one caption track; return the filenames newly added.
+) -> dict[str, str]:
+    """Fetch one caption track; return what to store, by variant.
+
+    Returns `{"text": ..., "vtt": ...}` with only the variants asked for, or an
+    empty dict when nothing arrived -- throttled, or the video genuinely has no
+    captions for that track.
 
     `track` is yt-dlp's key for the original captions (often `pl-orig`) and
-    `lang` is the bare language it is stored under, so files are predictably
-    named `subs.pl.txt` whatever YouTube called the track.
-
-    Nothing already on disk is touched or removed, and the return value is a
-    before/after diff rather than a directory listing. That keeps provenance
-    honest without deleting work an earlier run paid for.
+    `lang` is the bare language it is stored under, so the result is keyed
+    predictably whatever YouTube called the track.
 
     `download=True` combined with `skip_download` is what makes yt-dlp write
-    subtitle files without fetching any media.
+    subtitle files without fetching any media. It can only write files, so this
+    writes into a temporary directory that is removed on the way out; the
+    database is the only thing that keeps anything.
     """
     if subtitle_output not in SUBTITLE_OUTPUTS:
         raise SystemExit(
@@ -245,63 +243,53 @@ def fetch_subtitles(
             f"got {subtitle_output!r}"
         )
 
-    out_dir = video_dir(video_id)
-    out_dir.mkdir(parents=True, exist_ok=True)
-    before = {p.name for p in out_dir.iterdir()}
-
     url = f"https://www.youtube.com/watch?v={video_id}"
-    opts = base_opts(cookies_from_browser) | {
-        "writesubtitles": True,
-        "writeautomaticsub": True,
-        "subtitleslangs": [track],
-        "sleep_interval_requests": 1,
-        "outtmpl": {"default": "subs.%(ext)s"},
-        "paths": {"home": str(out_dir)},
-        "postprocessors": [
-            {"key": "FFmpegSubtitlesConvertor", "format": "vtt", "when": "before_dl"}
-        ],
-    }
 
-    def call() -> None:
-        with YoutubeDL(opts) as ydl:
-            ydl.extract_info(url, download=True)
+    with tempfile.TemporaryDirectory(prefix=f"recipe-subs-{video_id}-") as scratch:
+        out_dir = Path(scratch)
+        opts = base_opts(cookies_from_browser) | {
+            "writesubtitles": True,
+            "writeautomaticsub": True,
+            "subtitleslangs": [track],
+            "sleep_interval_requests": 1,
+            "outtmpl": {"default": "subs.%(ext)s"},
+            "paths": {"home": str(out_dir)},
+            "postprocessors": [
+                {"key": "FFmpegSubtitlesConvertor", "format": "vtt", "when": "before_dl"}
+            ],
+        }
 
-    try:
-        _with_backoff("subtitles", call)
-    except (DownloadError, ExtractorError) as exc:
-        # Absent or throttled subtitles are not fatal: the description alone is
-        # often enough to extract a recipe.
-        print(f"  no subtitles for {video_id}: {exc}", file=sys.stderr)
+        def call() -> None:
+            with YoutubeDL(opts) as ydl:
+                ydl.extract_info(url, download=True)
 
-    # yt-dlp names the file after the track it was asked for, so pl-orig lands as
-    # subs.pl-orig.vtt. Normalise to the bare language.
-    if track != lang:
-        for path in sorted(out_dir.glob(f"subs.{track}.*")):
-            if path.name in before:
-                continue
-            target = path.with_name(path.name.replace(f".{track}.", f".{lang}.", 1))
-            path.replace(target)
+        try:
+            _with_backoff("subtitles", call)
+        except (DownloadError, ExtractorError) as exc:
+            # Absent or throttled subtitles are not fatal: the description alone
+            # is often enough to extract a recipe.
+            print(f"  no subtitles for {video_id}: {exc}", file=sys.stderr)
+            return {}
 
-    # yt-dlp can only emit timed formats, so the plain-text conversion happens
-    # here. Timings are noise for ingredient extraction, so text is the default.
+        vtt_files = sorted(out_dir.glob("subs.*.vtt"))
+        if not vtt_files:
+            return {}
+
+        raw = vtt_files[0].read_text(encoding="utf-8")
+
+    out: dict[str, str] = {}
     if subtitle_output in ("text", "both"):
-        for vtt in sorted(out_dir.glob("subs.*.vtt")):
-            if vtt.name in before:
-                continue  # left deliberately by an earlier vtt/both run
-            vtt_file_to_text_file(vtt, keep_vtt=subtitle_output == "both")
-
-    after = {p.name for p in out_dir.iterdir()}
-    return sorted(after - before)
-
-
-def all_subtitle_files(video_id: str) -> list[str]:
-    out_dir = video_dir(video_id)
-    if not out_dir.is_dir():
-        return []
-    return sorted(p.name for p in out_dir.iterdir() if p.name.startswith("subs."))
+        # yt-dlp can only emit timed formats, so the plain-text conversion
+        # happens here. Timings are noise for ingredient extraction, which is
+        # why text is the default and the only thing normally kept.
+        out["text"] = vtt_to_text(raw)
+    if subtitle_output in ("vtt", "both"):
+        out["vtt"] = raw
+    return out
 
 
 def fetch_one(
+    conn,
     video_id: str,
     allowed_langs: list[str] | None,
     videos: dict,
@@ -312,76 +300,84 @@ def fetch_one(
     """Fetch whatever is missing for one video.
 
     Returns `{"ok": bool, "progress": int}`, where progress counts artifacts
-    newly written. Zero progress on a pending video means the fetch is blocked
+    newly stored. Zero progress on a pending video means the fetch is blocked
     (throttled, or the content is genuinely unavailable).
     """
     progress = 0
 
-    meta = None if refresh else read_meta(video_id)
+    meta = None if refresh else read_meta(conn, video_id)
     if meta is None:
         meta = fetch_metadata(video_id)
         if meta is None:
             ledger.record_unavailable(videos, video_id, "metadata extraction failed")
             print(f"  unavailable: {video_id}")
             return {"ok": False, "progress": 0}
-        video_dir(video_id).mkdir(parents=True, exist_ok=True)
-        meta_path(video_id).write_text(
-            json.dumps(meta, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
-        )
+        videos_store.save_meta(conn, video_id, meta)
+        conn.commit()
         progress += 1
         print(f"  metadata: {meta.get('title')!r}")
 
-    out_dir = video_dir(video_id)
-    missing = completeness.missing_lang(out_dir, meta, allowed_langs)
+    held = videos_store.subtitle_langs(conn, video_id)
+    missing = completeness.missing_lang(held, meta, allowed_langs)
     if missing:
-        new_files = fetch_subtitles(
+        fetched = fetch_subtitles(
             video_id,
             meta["caption_track"],
             missing,
             cookies_from_browser,
             subtitle_output,
         )
-        progress += len(new_files)
-        if new_files:
-            print(f"  subtitles ({meta['caption_track']}): +{', '.join(new_files)}")
+        # Prefer the prose; the timed original is stored under its own language
+        # key only when it is the one variant asked for.
+        content = fetched.get("text") or fetched.get("vtt") or ""
+        if content.strip():
+            videos_store.save_subtitles(
+                conn, video_id, missing, content, track=meta["caption_track"]
+            )
+            conn.commit()
+            held = held | {missing}
+            progress += 1
+            print(f"  subtitles ({meta['caption_track']}): +{missing}")
 
-    complete = completeness.is_complete(out_dir, meta, allowed_langs)
+    complete = completeness.is_complete(held, meta, allowed_langs)
     ledger.record_fetch(
         videos,
         video_id,
         title=meta.get("title") or "",
         description_sha256=ledger.description_hash(meta.get("description") or ""),
-        subtitles=all_subtitle_files(video_id),
+        subtitles=sorted(f"subs.{lang}.txt" for lang in held),
         status="complete" if complete else "partial",
     )
     if not complete:
         print(
             f"  still missing -> "
-            f"{completeness.describe_missing(out_dir, meta, allowed_langs)}"
+            f"{completeness.describe_missing(held, meta, allowed_langs)}"
         )
     return {"ok": True, "progress": progress}
 
 
 def select_pending(
-    ids: list[str], videos: dict, allowed_langs: list[str] | None = None
+    conn, ids: list[str], videos: dict, allowed_langs: list[str] | None = None
 ) -> list[str]:
     """Videos that still have something fetchable.
 
-    Driven by what is on disk, never by the description hash — that gate belongs
-    to re-extraction, and the description is unknown when a playlist is listed.
-    Videos recorded `unavailable` are terminal and excluded.
+    Driven by what is actually stored, never by the description hash -- that gate
+    belongs to re-extraction, and the description is unknown when a playlist is
+    listed. Videos recorded `unavailable` are terminal and excluded.
     """
     pending = []
     for video_id in ids:
-        if (videos.get(video_id) or {}).get("status") == "unavailable":
+        if (videos.get(video_id) or {}).get("fetch_status") == "unavailable":
             continue
-        meta = read_meta(video_id)
-        if not completeness.is_complete(video_dir(video_id), meta, allowed_langs):
+        meta = read_meta(conn, video_id)
+        held = videos_store.subtitle_langs(conn, video_id)
+        if not completeness.is_complete(held, meta, allowed_langs):
             pending.append(video_id)
     return pending
 
 
 def run_passes(
+    conn,
     ids: list[str],
     videos: dict,
     *,
@@ -407,7 +403,7 @@ def run_passes(
     stalled = 0
 
     for pass_no in range(1, max_passes + 1):
-        pending = select_pending(ids, videos, allowed_langs)
+        pending = select_pending(conn, ids, videos, allowed_langs)
         if refresh and pass_no == 1:
             pending = list(ids)
         if not pending:
@@ -423,6 +419,7 @@ def run_passes(
                 print(f"[{i}/{len(batch)}] {video_id}")
                 try:
                     result = fetch_one(
+                        conn,
                         video_id,
                         allowed_langs,
                         videos,
@@ -435,7 +432,7 @@ def run_passes(
                     print(f"  error on {video_id}: {exc}", file=sys.stderr)
         finally:
             # Persist progress even on interrupt, so a run is always resumable.
-            ledger.save(videos)
+            ledger.save(conn, videos)
 
         if not until_complete:
             break
@@ -449,17 +446,18 @@ def run_passes(
         else:
             stalled = 0
 
-        if select_pending(ids, videos, allowed_langs) and pass_no < max_passes:
+        if select_pending(conn, ids, videos, allowed_langs) and pass_no < max_passes:
             print(f"Waiting {pass_delay}s before the next pass")
             time.sleep(pass_delay)
 
-    return len(select_pending(ids, videos, allowed_langs))
+    return len(select_pending(conn, ids, videos, allowed_langs))
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description="Fetch recipe shorts metadata and subtitles."
     )
+    parser.add_argument("--db", help="use this database instead of the default")
     parser.add_argument("--limit", type=int, help="fetch at most this many videos per pass")
     parser.add_argument(
         "--refresh", action="store_true", help="re-fetch metadata even when it is on disk"
@@ -477,8 +475,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--subtitle-output",
         choices=SUBTITLE_OUTPUTS,
-        help="text: plain prose with no timestamps (default); vtt: keep the "
-        "timed original; both. Overrides config.yaml",
+        help="text: plain prose with no timestamps (default); vtt: store the "
+        "timed original instead; both. Overrides config.yaml",
     )
     parser.add_argument(
         "--cookies-from-browser",
@@ -493,8 +491,6 @@ def main(argv: list[str] | None = None) -> int:
         sys.stdout.reconfigure(line_buffering=True)
     except (AttributeError, ValueError):
         pass
-
-    videos = ledger.load()
 
     if args.video:
         # Explicit ids bypass config, so the playlist need not be set yet.
@@ -521,19 +517,24 @@ def main(argv: list[str] | None = None) -> int:
         ids = list_playlist(config["playlist_url"])
         print(f"Playlist has {len(ids)} video(s)")
 
-    remaining = run_passes(
-        ids,
-        videos,
-        allowed_langs=allowed_langs,
-        cookies=cookies,
-        subtitle_output=sub_output,
-        until_complete=until_complete,
-        max_passes=max_passes,
-        pass_delay=pass_delay,
-        max_stalled_passes=max_stalled,
-        limit=args.limit,
-        refresh=args.refresh,
-    )
+    # `create=True`: a first fetch into a fresh checkout should not need a
+    # migration run before it can store anything.
+    with open_db(args.db, create=True) as conn:
+        videos = ledger.load(conn)
+        remaining = run_passes(
+            conn,
+            ids,
+            videos,
+            allowed_langs=allowed_langs,
+            cookies=cookies,
+            subtitle_output=sub_output,
+            until_complete=until_complete,
+            max_passes=max_passes,
+            pass_delay=pass_delay,
+            max_stalled_passes=max_stalled,
+            limit=args.limit,
+            refresh=args.refresh,
+        )
 
     complete = len(ids) - remaining
     print(f"Done. {complete}/{len(ids)} video(s) complete, {remaining} incomplete.")

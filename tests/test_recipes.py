@@ -1,165 +1,147 @@
-"""Tests for reading the recipe collection, which the recipes-library MCP serves."""
+"""The read-side facade and the MCP server's listing.
 
-import yaml
+`recipes.py` is what the MCP server and anything else wanting "the collection"
+in one call go through. The SQL it delegates to is tested in test_store.py, so
+this covers the facade's own job: opening a connection, and the shape the MCP
+tool hands back.
+"""
 
-from recipe_library.recipes import (
-    collection_stats,
-    list_recipes,
-    read_recipe,
-    summarise,
-)
+import pytest
 
-
-def write(recipes_dir, recipe_id, **overrides):
-    recipes_dir.mkdir(parents=True, exist_ok=True)
-    data = {
-        "id": recipe_id,
-        "title": recipe_id.replace("-", " ").title(),
-        "language": "pl",
-        "servings": 2,
-        "ingredients": [{"name": "mąka", "quantity": 100, "unit": "g"}],
-        "source": {
-            "video_id": "v1",
-            "url": "https://www.youtube.com/shorts/v1",
-            "channel": "Kanał",
-            "recipe_index": 1,
-        },
-        "extracted_at": "2026-10-02",
-    }
-    data.update(overrides)
-    (recipes_dir / f"{recipe_id}.yaml").write_text(
-        yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8"
-    )
+from conftest import make_recipe, make_video, source_for
+from recipe_library import recipes as facade
+from recipe_library.db import connect
+from recipe_library.store import products as products_store
+from recipe_library.store import recipes as recipes_store
 
 
-# --- reading -----------------------------------------------------------------
+@pytest.fixture
+def library(db_path, monkeypatch):
+    """Three recipes across both languages, one with a product mapped."""
+    conn = connect(db_path)
+    try:
+        make_video(conn, "vid1")
+        recipes_store.save(conn, make_recipe("placki", language="pl"))
+        recipes_store.save(
+            conn, make_recipe("pancakes", language="en", source=source_for(recipe_index=2))
+        )
+        recipes_store.save(
+            conn,
+            make_recipe(
+                "imported",
+                language="en",
+                source=source_for(recipe_index=3),
+                import_status="ok",
+                fitatu_recipe_id="555",
+            ),
+        )
+        products_store.save(
+            conn,
+            product_id="111",
+            display_name="Chicken breast",
+            verified=True,
+            measures=[{"measure_id": "1", "measure_name": "g", "weight_g": 1}],
+        )
+        products_store.map_name(conn, "chicken breast", "111")
+        conn.commit()
+    finally:
+        conn.close()
+
+    # The facade opens its own connection, so point the default at this one.
+    monkeypatch.setattr("recipe_library.paths.DB", db_path)
+    monkeypatch.setattr("recipe_library.db.DB", db_path)
+    return db_path
 
 
-def test_unparseable_file_reads_as_none(tmp_path):
-    bad = tmp_path / "bad.yaml"
-    bad.write_text("ingredients: [unclosed", encoding="utf-8")
-    assert read_recipe(bad) is None
+def test_recipes_are_ordered_by_id(library):
+    assert [r["id"] for r in facade.list_recipes()] == [
+        "imported",
+        "pancakes",
+        "placki",
+    ]
 
 
-def test_non_mapping_file_reads_as_none(tmp_path):
-    path = tmp_path / "list.yaml"
-    path.write_text("- just\n- a list\n", encoding="utf-8")
-    assert read_recipe(path) is None
+def test_an_empty_collection_lists_nothing(db_path, monkeypatch):
+    monkeypatch.setattr("recipe_library.db.DB", db_path)
+    assert facade.list_recipes() == []
+    assert facade.collection_stats()["recipes"] == 0
 
 
-def test_one_corrupt_file_does_not_hide_the_others(tmp_path):
-    write(tmp_path, "good")
-    (tmp_path / "bad.yaml").write_text("{unclosed", encoding="utf-8")
-    assert [r["id"] for r in list_recipes(tmp_path)] == ["good"]
+def test_ingredients_are_omitted_by_default(library):
+    assert "ingredients" not in facade.list_recipes()[0]
+    assert "ingredients" in facade.list_recipes(include_ingredients=True)[0]
 
 
-# --- summarising -------------------------------------------------------------
+def test_counts_describe_the_ingredient_list(library):
+    row = next(r for r in facade.list_recipes() if r["id"] == "placki")
+    assert row["ingredient_count"] == 2
+    # One of the two ingredients has no stated quantity.
+    assert row["unquantified_count"] == 1
+    assert row["mapped_count"] == 1
 
 
-def test_ingredients_are_omitted_by_default(tmp_path):
-    # The collection holds hundreds of ingredients; listing them all would bury
-    # the overview a caller is after.
-    write(tmp_path, "a")
-    assert "ingredients" not in list_recipes(tmp_path)[0]
+def test_language_filter(library):
+    assert [r["id"] for r in facade.list_recipes(language="pl")] == ["placki"]
 
 
-def test_ingredients_can_be_requested(tmp_path):
-    write(tmp_path, "a")
-    recipes = list_recipes(tmp_path, include_ingredients=True)
-    assert recipes[0]["ingredients"][0]["name"] == "mąka"
+def test_import_status_filter(library):
+    assert [r["id"] for r in facade.list_recipes(import_status="ok")] == ["imported"]
+    assert [r["id"] for r in facade.list_recipes(import_status="not_imported")] == [
+        "pancakes",
+        "placki",
+    ]
 
 
-def test_counts_describe_the_ingredient_list():
-    data = {
-        "ingredients": [
-            {"name": "mąka", "quantity": 100, "unit": "g", "fitatu_product_id": "1"},
-            {"name": "sól", "quantity": None, "unit": None},
-            {"name": "cebula", "quantity": 1, "unit": "piece"},
-        ]
-    }
-    summary = summarise(data)
-    assert summary["ingredient_count"] == 3
-    assert summary["unquantified_count"] == 1
-    assert summary["mapped_count"] == 1
+def test_limit_caps_the_listing(library):
+    assert len(facade.list_recipes(limit=2)) == 2
 
 
-def test_absent_import_status_reads_as_not_imported():
-    assert summarise({})["import_status"] == "not_imported"
+def test_a_recipe_id_is_surfaced_only_when_there_is_one(library):
+    rows = {r["id"]: r for r in facade.list_recipes()}
+    assert rows["imported"]["fitatu_recipe_id"] == "555"
+    assert "fitatu_recipe_id" not in rows["placki"]
 
 
-def test_import_status_and_recipe_id_are_surfaced():
-    summary = summarise({"import_status": "ok", "fitatu_recipe_id": "42"})
-    assert summary["import_status"] == "ok"
-    assert summary["fitatu_recipe_id"] == "42"
+def test_source_is_included_without_empty_keys(library):
+    source = facade.list_recipes()[0]["source"]
+    assert source["video_id"] == "vid1"
+    assert None not in source.values()
 
 
-def test_absent_recipe_id_is_left_out():
-    assert "fitatu_recipe_id" not in summarise({})
+def test_getting_one_recipe_returns_the_whole_document(library):
+    data = facade.get_recipe("placki")
+    assert data["title"] == "Test Recipe"
+    assert len(data["ingredients"]) == 2
 
 
-def test_optional_fields_are_only_included_when_present():
-    assert "title_en" not in summarise({"title": "T"})
-    assert summarise({"title_en": "Chicken"})["title_en"] == "Chicken"
+def test_getting_a_missing_recipe_returns_none(library):
+    assert facade.get_recipe("nope") is None
 
 
-def test_source_is_included_without_empty_keys():
-    summary = summarise({"source": {"url": "https://x", "channel": None}})
-    assert summary["source"] == {"url": "https://x"}
+def test_stats_summarise_the_collection(library):
+    stats = facade.collection_stats()
+    assert stats["recipes"] == 3
+    assert stats["ingredients"] == 6
+    assert stats["by_language"] == {"en": 2, "pl": 1}
+    assert stats["by_import_status"] == {"not_imported": 2, "ok": 1}
 
 
-def test_recipe_without_ingredients_counts_zero():
-    assert summarise({})["ingredient_count"] == 0
+# ------------------------------------------------------------ mcp server ----
 
 
-# --- listing and filtering ---------------------------------------------------
+def test_the_mcp_tool_returns_a_listing_with_totals(library):
+    from recipe_library import mcp_server
+
+    result = mcp_server.list_tool()
+    assert result["count"] == 3
+    assert result["collection"]["recipes"] == 3
+    assert "ingredients" not in result["recipes"][0]
 
 
-def test_recipes_are_ordered_by_id(tmp_path):
-    write(tmp_path, "zupa")
-    write(tmp_path, "placki")
-    assert [r["id"] for r in list_recipes(tmp_path)] == ["placki", "zupa"]
+def test_the_mcp_tool_passes_its_filters_through(library):
+    from recipe_library import mcp_server
 
-
-def test_empty_collection_lists_nothing(tmp_path):
-    assert list_recipes(tmp_path) == []
-
-
-def test_language_filter(tmp_path):
-    write(tmp_path, "pl-one", language="pl")
-    write(tmp_path, "en-one", language="en")
-    assert [r["id"] for r in list_recipes(tmp_path, language="en")] == ["en-one"]
-
-
-def test_import_status_filter_matches_absent_as_not_imported(tmp_path):
-    write(tmp_path, "fresh")
-    write(tmp_path, "done", import_status="ok", fitatu_recipe_id="1")
-    assert [r["id"] for r in list_recipes(tmp_path, import_status="not_imported")] == ["fresh"]
-    assert [r["id"] for r in list_recipes(tmp_path, import_status="ok")] == ["done"]
-
-
-def test_limit_caps_the_listing(tmp_path):
-    for name in ("a", "b", "c"):
-        write(tmp_path, name)
-    assert len(list_recipes(tmp_path, limit=2)) == 2
-
-
-# --- stats -------------------------------------------------------------------
-
-
-def test_stats_summarise_the_collection(tmp_path):
-    write(tmp_path, "a", language="pl")
-    write(tmp_path, "b", language="en", import_status="ok", fitatu_recipe_id="1")
-    stats = collection_stats(tmp_path)
-    assert stats["recipes"] == 2
-    assert stats["ingredients"] == 2
-    assert stats["by_language"] == {"en": 1, "pl": 1}
-    assert stats["by_import_status"] == {"not_imported": 1, "ok": 1}
-
-
-def test_stats_on_an_empty_collection(tmp_path):
-    assert collection_stats(tmp_path) == {
-        "recipes": 0,
-        "ingredients": 0,
-        "by_language": {},
-        "by_import_status": {},
-    }
+    result = mcp_server.list_tool(language="pl", include_ingredients=True)
+    assert result["count"] == 1
+    assert result["recipes"][0]["id"] == "placki"
+    assert len(result["recipes"][0]["ingredients"]) == 2

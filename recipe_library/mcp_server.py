@@ -1,14 +1,19 @@
 """The `recipes-library` MCP server.
 
 Exposes this repository's recipe collection over MCP so a client can browse it
-without reading 70 YAML files. Read-only: nothing here writes to `recipes/`.
+without querying the database itself. Read-only: every statement it issues is a
+SELECT.
+
+This is the narrow, read-only view. The FastAPI server in `api/` is the one
+that also writes -- extraction, product resolution and Fitatu import all go
+through it.
 
 Run it with:
 
     uv run python -m recipe_library.mcp_server
 
-The listing logic lives in `recipes.py`, so it is tested directly without a
-protocol in the way.
+The listing logic lives in `recipes.py` and `store/recipes.py`, so it is tested
+directly without a protocol in the way.
 """
 
 import sys
@@ -26,7 +31,9 @@ server = MCPServer(
         "A personal recipe collection extracted from YouTube Shorts. Each recipe "
         "holds a title and ingredients only, never preparation steps. A null "
         "ingredient quantity means the source video did not state one and is "
-        "never a placeholder for a guess."
+        "never a placeholder for a guess. An ingredient with no "
+        "fitatu_product_id has not been matched to a verified Fitatu product; "
+        "only verified products are ever stored."
     ),
 )
 

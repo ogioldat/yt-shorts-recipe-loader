@@ -1,289 +1,237 @@
-"""Mapping ingredient names to Fitatu product ids, cached on disk.
+"""CLI for the ingredient-name to Fitatu-product mapping.
 
-The split here is deliberate. Choosing which Fitatu product corresponds to
-"pierś z kurczaka" is judgment work: `search_food` returns separate user and
-public candidate lists, in Fitatu's order, without merging or deduplicating, and
-the server explicitly does not infer brand or retailer aliases. So resolution
-happens once, in a Claude session, through the MCP server.
+What changed when this moved into the database: **there is no `apply` command
+any more.** It used to be a separate deterministic pass that copied resolved ids
+into 72 YAML files, and it had to be re-run whenever the mapping grew. An
+ingredient's product is now a join -- `ingredients_resolved` in schema.sql -- so
+there is nothing to apply and nothing to forget to apply.
 
-Everything after that is deterministic. The cache is the record of those
-decisions, `apply_ids` writes them into the recipe files with no model involved,
-and recipe creation can then read ids straight off the ingredients.
+Resolution itself is no longer a judgement call made in a model session either.
+`resolve` runs the scored matcher in `resolve/` against `search_food`, keeping
+only products Fitatu has verified. `map` remains for the case the matcher
+cannot handle: a name you know the answer to, recorded by hand.
 
-The cache is keyed by the normalised ingredient name, so the same ingredient
-appearing in thirty recipes costs one lookup.
+    uv run python -m recipe_library.products status
+    uv run python -m recipe_library.products pending
+    uv run python -m recipe_library.products resolve --limit 20
+    uv run python -m recipe_library.products map --name "salt" --product-id 5270094
+    uv run python -m recipe_library.products alias --name "self-rising flour" \
+        --query "mąka z proszkiem do pieczenia"
 """
 
 import argparse
-import re
 import sys
-from datetime import date
-from pathlib import Path
 
-import yaml
+from .db import open_db
+from .names import normalize_name
+from .paths import load_config
+from .store import products as store
 
-from .paths import RECIPES, STATE
-
-CACHE = STATE / "fitatu_products.yaml"
-
-CACHE_VERSION = 1
+__all__ = ["normalize_name", "main"]
 
 
-def normalize_name(name: str) -> str:
-    """The cache key for an ingredient name.
+def _resolution_options() -> dict:
+    from .resolve.resolver import options_from_config
 
-    Case and spacing are noise; Polish diacritics are not, and are preserved
-    because the key doubles as the `search_food` query.
+    try:
+        config = load_config()
+    except SystemExit:
+        config = {}
+    return options_from_config(config)
+
+
+def _cmd_status(args) -> int:
+    with open_db(args.db) as conn:
+        stats = store.stats(conn)
+    width = max(len(k) for k in stats if k != "by_method")
+    for key, value in stats.items():
+        if key == "by_method":
+            continue
+        print(f"{key.replace('_', ' '):{width}}  {value}")
+    if stats["by_method"]:
+        print("\nby how the mapping was made:")
+        for method, count in stats["by_method"].items():
+            print(f"  {method:8} {count}")
+    return 0
+
+
+def _cmd_pending(args) -> int:
+    with open_db(args.db) as conn:
+        pending = store.pending_names(conn, retry_failed=args.retry_failed)
+    if not pending:
+        print("Nothing pending.")
+        return 0
+    print(f"{len(pending)} ingredient name(s) need a Fitatu product id:\n")
+    for row in pending:
+        print(f"  {row['name']}  ({row['recipe_count']} recipe(s))")
+    return 0
+
+
+def _cmd_failures(args) -> int:
+    with open_db(args.db) as conn:
+        failures = store.failures(conn)
+    if not failures:
+        print("No recorded resolution failures.")
+        return 0
+    print(f"{len(failures)} name(s) with no acceptable verified match:\n")
+    for row in failures:
+        print(f"  {row['name']}")
+        print(f"    {row['reason']}  (attempts: {row['attempts']})")
+        for cand in (row["candidates"] or [])[:3]:
+            flag = "verified" if cand.get("verified") else "UNVERIFIED"
+            print(
+                f"      rejected {cand.get('name')!r} [{flag}] "
+                f"score {cand.get('score')}"
+            )
+    return 0
+
+
+def _cmd_resolve(args) -> int:
+    from .fitatu_import.client import connect as fitatu_connect
+    from .resolve.resolver import resolve_name
+
+    options = _resolution_options()
+    with open_db(args.db) as conn:
+        names = (
+            [normalize_name(n) for n in args.names]
+            if args.names
+            else [r["name"] for r in store.pending_names(conn, retry_failed=args.retry_failed)]
+        )
+        if args.limit:
+            names = names[: args.limit]
+        if not names:
+            print("Nothing to resolve.")
+            return 0
+
+        client = None if args.dry_run else fitatu_connect()
+        print(f"Resolving {len(names)} name(s) against verified Fitatu products")
+        resolved = unresolved = 0
+        for i, name in enumerate(names, 1):
+            outcome = resolve_name(
+                conn, client, name, refresh=args.refresh, **options
+            )
+            marker = "ok " if outcome.ok else "-- "
+            print(f"[{i}/{len(names)}] {marker}{name}")
+            print(f"           {outcome.reason}")
+            if outcome.ok:
+                resolved += 1
+            else:
+                unresolved += 1
+
+    print(f"\nDone. {resolved} resolved, {unresolved} unresolved.")
+    return 0
+
+
+def _cmd_map(args) -> int:
+    """Record a mapping by hand.
+
+    The product still has to be stored first, which means it still has to be
+    verified: `store.map_name` references `products`, and that table will not
+    hold an unverified row. So this is an escape hatch for the matcher, not for
+    the verification rule.
     """
-    return re.sub(r"\s+", " ", (name or "").strip()).lower()
+    with open_db(args.db) as conn:
+        if store.get(conn, args.product_id) is None:
+            print(
+                f"Product {args.product_id} is not in the database. Resolve it "
+                f"first, or add it with `resolve --name`; only verified Fitatu "
+                f"products can be stored.",
+                file=sys.stderr,
+            )
+            return 1
+        key = store.map_name(
+            conn, args.name, args.product_id, query=args.query, method="manual"
+        )
+    print(f"Mapped {key!r} -> product {args.product_id}")
+    return 0
 
 
-# --- cache io ---------------------------------------------------------------
-
-
-def load_cache(path: Path | None = None) -> dict:
-    path = path or CACHE
-    if not path.exists():
-        return {"version": CACHE_VERSION, "products": {}, "unresolved": {}}
-    data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
-    data.setdefault("version", CACHE_VERSION)
-    data.setdefault("products", {})
-    data.setdefault("unresolved", {})
-    return data
-
-
-def save_cache(cache: dict, path: Path | None = None) -> None:
-    path = path or CACHE
-    path.parent.mkdir(parents=True, exist_ok=True)
-    out = {
-        "version": cache.get("version", CACHE_VERSION),
-        "products": dict(sorted((cache.get("products") or {}).items())),
-        "unresolved": dict(sorted((cache.get("unresolved") or {}).items())),
-    }
-    path.write_text(
-        yaml.safe_dump(out, allow_unicode=True, sort_keys=False, width=100),
-        encoding="utf-8",
+def _cmd_unmap(args) -> int:
+    with open_db(args.db) as conn:
+        removed = store.unmap_name(conn, args.name)
+    print(
+        f"Removed the mapping for {normalize_name(args.name)!r}"
+        if removed
+        else f"No mapping for {normalize_name(args.name)!r}"
     )
+    return 0
 
 
-def record_product(
-    cache: dict,
-    name: str,
-    *,
-    product_id: str,
-    display_name: str | None = None,
-    brand: str | None = None,
-    source: str | None = None,
-    verified: bool | None = None,
-    measure_id: str | None = None,
-    measure_name: str | None = None,
-    weight_g: float | None = None,
-    kcal: float | None = None,
-    measures: list[dict] | None = None,
-    query: str | None = None,
-) -> None:
-    """Record a resolved match. `measure_id` is what add_meal_items needs.
-
-    `query` is the phrase that actually found the product, which is not always
-    the ingredient name: Fitatu's catalogue is Polish, so an English ingredient
-    like "self-rising flour" is found by its Polish equivalent. Keeping it makes
-    the match auditable.
-    """
-    key = normalize_name(name)
-    cache.setdefault("products", {})[key] = {
-        "fitatu_product_id": str(product_id),
-        "display_name": display_name,
-        "brand": brand,
-        "source": source,
-        "verified": verified,
-        "default_measure": {
-            "measure_id": measure_id,
-            "measure_name": measure_name,
-            "weight_g": weight_g,
-            "kcal": kcal,
-        },
-        "measures": measures or [],
-        "query": normalize_name(query) if query else key,
-        "resolved_at": date.today().isoformat(),
-    }
-    (cache.get("unresolved") or {}).pop(key, None)
+def _cmd_alias(args) -> int:
+    with open_db(args.db) as conn:
+        store.add_alias(conn, args.name, args.query, locale=args.locale)
+        store.clear_failure(conn, args.name)
+    print(
+        f"Alias added: {normalize_name(args.name)!r} will also be searched as "
+        f"{normalize_name(args.query)!r}"
+    )
+    return 0
 
 
-def record_unresolved(cache: dict, name: str, reason: str) -> None:
-    """Record that a name has no acceptable match, so it is not retried blindly."""
-    key = normalize_name(name)
-    cache.setdefault("unresolved", {})[key] = {
-        "reason": reason,
-        "checked_at": date.today().isoformat(),
-    }
-
-
-# --- recipes ----------------------------------------------------------------
-
-
-def _recipe_files(recipes_dir: Path | None = None) -> list[Path]:
-    return sorted((recipes_dir or RECIPES).glob("*.yaml"))
-
-
-def ingredient_names(recipes_dir: Path | None = None) -> dict[str, list[str]]:
-    """Map normalised ingredient name -> recipe ids that use it."""
-    usage: dict[str, list[str]] = {}
-    for path in _recipe_files(recipes_dir):
-        data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
-        for ing in data.get("ingredients") or []:
-            if not isinstance(ing, dict) or not ing.get("name"):
-                continue
-            usage.setdefault(normalize_name(ing["name"]), []).append(path.stem)
-    return usage
-
-
-def pending_names(
-    cache: dict, recipes_dir: Path | None = None, *, retry_unresolved: bool = False
-) -> list[str]:
-    """Ingredient names with no cache entry yet, most widely used first.
-
-    Names previously recorded unresolved are skipped unless `retry_unresolved`,
-    so a known miss does not come back every run.
-    """
-    usage = ingredient_names(recipes_dir)
-    known = set(cache.get("products") or {})
-    if not retry_unresolved:
-        known |= set(cache.get("unresolved") or {})
-    pending = [n for n in usage if n not in known]
-    return sorted(pending, key=lambda n: (-len(usage[n]), n))
-
-
-def apply_ids(
-    cache: dict, recipes_dir: Path | None = None, *, dry_run: bool = False
-) -> dict[str, int]:
-    """Write `fitatu_product_id` onto every ingredient the cache can resolve.
-
-    Deterministic and idempotent: no model involved, and rerunning changes
-    nothing once applied. An ingredient the cache does not know keeps whatever it
-    has rather than being cleared.
-    """
-    products = cache.get("products") or {}
-    stats = {"recipes_changed": 0, "ingredients_set": 0, "ingredients_unresolved": 0}
-
-    for path in _recipe_files(recipes_dir):
-        data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
-        changed = False
-        for ing in data.get("ingredients") or []:
-            if not isinstance(ing, dict) or not ing.get("name"):
-                continue
-            entry = products.get(normalize_name(ing["name"]))
-            if entry is None:
-                if not ing.get("fitatu_product_id"):
-                    stats["ingredients_unresolved"] += 1
-                continue
-            product_id = entry["fitatu_product_id"]
-            if ing.get("fitatu_product_id") != product_id:
-                ing["fitatu_product_id"] = product_id
-                changed = True
-            stats["ingredients_set"] += 1
-        if changed:
-            stats["recipes_changed"] += 1
-            if not dry_run:
-                path.write_text(
-                    yaml.safe_dump(data, allow_unicode=True, sort_keys=False, width=100),
-                    encoding="utf-8",
-                )
-    return stats
-
-
-# --- cli --------------------------------------------------------------------
+def _cmd_aliases(args) -> int:
+    with open_db(args.db) as conn:
+        rows = conn.execute(
+            "SELECT name, query, locale FROM query_aliases ORDER BY name, query"
+        ).fetchall()
+    if not rows:
+        print("No query aliases.")
+        return 0
+    print(f"{len(rows)} alias(es):\n")
+    for row in rows:
+        locale = f"  [{row['locale']}]" if row["locale"] else ""
+        print(f"  {row['name']}  ->  {row['query']}{locale}")
+    return 0
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Fitatu product id mapping.")
+    parser.add_argument("--db", help="use this database instead of the default")
     sub = parser.add_subparsers(dest="command", required=True)
 
-    p_pending = sub.add_parser("pending", help="ingredient names still needing a Fitatu product id")
-    p_pending.add_argument("--retry-unresolved", action="store_true")
+    sub.add_parser("status", help="summarise coverage").set_defaults(func=_cmd_status)
 
-    sub.add_parser("status", help="summarise coverage")
+    p = sub.add_parser("pending", help="ingredient names still needing a product id")
+    p.add_argument("--retry-failed", action="store_true")
+    p.set_defaults(func=_cmd_pending)
 
-    p_apply = sub.add_parser("apply", help="write cached ids into recipes/*.yaml")
-    p_apply.add_argument("--dry-run", action="store_true")
-
-    # `record` exists so that resolution never hand-edits YAML: the session calls
-    # search_food, then hands the chosen candidate's fields to this.
-    p_rec = sub.add_parser("record", help="cache one resolved ingredient -> product match")
-    p_rec.add_argument("--name", required=True, help="ingredient name as written in recipes")
-    p_rec.add_argument("--product-id", required=True)
-    p_rec.add_argument("--display-name")
-    p_rec.add_argument("--brand")
-    p_rec.add_argument("--source", choices=["user", "public"])
-    p_rec.add_argument("--verified", action="store_true")
-    p_rec.add_argument("--measure-id")
-    p_rec.add_argument("--measure-name")
-    p_rec.add_argument("--weight-g", type=float)
-    p_rec.add_argument("--kcal", type=float)
-    p_rec.add_argument(
-        "--query", help="the phrase that found it, when different from --name"
+    sub.add_parser("failures", help="names with no acceptable verified match").set_defaults(
+        func=_cmd_failures
     )
 
-    p_un = sub.add_parser("unresolved", help="record that a name has no acceptable match")
-    p_un.add_argument("--name", required=True)
-    p_un.add_argument("--reason", default="no_match")
+    p = sub.add_parser("resolve", help="match pending names against verified products")
+    p.add_argument("--name", action="append", dest="names", help="resolve just this name")
+    p.add_argument("--limit", type=int, help="resolve at most this many names")
+    p.add_argument("--retry-failed", action="store_true", help="include recorded misses")
+    p.add_argument("--refresh", action="store_true", help="re-resolve names already mapped")
+    p.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="report what is still unmapped without contacting Fitatu",
+    )
+    p.set_defaults(func=_cmd_resolve)
+
+    p = sub.add_parser("map", help="record one name -> product mapping by hand")
+    p.add_argument("--name", required=True)
+    p.add_argument("--product-id", required=True)
+    p.add_argument("--query", help="the phrase that found it, when different")
+    p.set_defaults(func=_cmd_map)
+
+    p = sub.add_parser("unmap", help="forget one name -> product mapping")
+    p.add_argument("--name", required=True)
+    p.set_defaults(func=_cmd_unmap)
+
+    p = sub.add_parser("alias", help="add a search phrase for an ingredient name")
+    p.add_argument("--name", required=True)
+    p.add_argument("--query", required=True)
+    p.add_argument("--locale", help="only search this phrase at this locale")
+    p.set_defaults(func=_cmd_alias)
+
+    sub.add_parser("aliases", help="list every search phrase").set_defaults(
+        func=_cmd_aliases
+    )
 
     args = parser.parse_args(argv)
-    cache = load_cache()
-
-    if args.command == "pending":
-        pending = pending_names(cache, retry_unresolved=args.retry_unresolved)
-        if not pending:
-            print("Nothing pending.")
-            return 0
-        usage = ingredient_names()
-        print(f"{len(pending)} ingredient name(s) need a Fitatu product id:\n")
-        for name in pending:
-            print(f"  {name}  ({len(usage[name])} recipe(s))")
-        return 0
-
-    if args.command == "status":
-        usage = ingredient_names()
-        products = cache.get("products") or {}
-        unresolved = cache.get("unresolved") or {}
-        print(f"distinct ingredient names : {len(usage)}")
-        print(f"resolved to a product     : {len(set(usage) & set(products))}")
-        print(f"recorded unresolved       : {len(set(usage) & set(unresolved))}")
-        print(f"pending                   : {len(pending_names(cache))}")
-        return 0
-
-    if args.command == "record":
-        record_product(
-            cache,
-            args.name,
-            product_id=args.product_id,
-            display_name=args.display_name,
-            brand=args.brand,
-            source=args.source,
-            verified=args.verified or None,
-            measure_id=args.measure_id,
-            measure_name=args.measure_name,
-            weight_g=args.weight_g,
-            kcal=args.kcal,
-            query=args.query,
-        )
-        save_cache(cache)
-        print(f"Recorded {normalize_name(args.name)!r} -> product {args.product_id}")
-        return 0
-
-    if args.command == "unresolved":
-        record_unresolved(cache, args.name, args.reason)
-        save_cache(cache)
-        print(f"Recorded {normalize_name(args.name)!r} as unresolved ({args.reason})")
-        return 0
-
-    stats = apply_ids(cache, dry_run=args.dry_run)
-    prefix = "Would set" if args.dry_run else "Set"
-    print(
-        f"{prefix} ids on {stats['ingredients_set']} ingredient(s) "
-        f"across {stats['recipes_changed']} recipe file(s); "
-        f"{stats['ingredients_unresolved']} still unresolved."
-    )
-    return 0
+    return args.func(args)
 
 
 if __name__ == "__main__":

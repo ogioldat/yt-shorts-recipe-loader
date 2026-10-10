@@ -1,8 +1,8 @@
 """What counts as a fully fetched video, and what is still missing.
 
 Stage 1 is additive and resumable: a run never deletes what an earlier run
-fetched, and it only requests what is actually absent. That needs a definition of
-"complete" precise enough to drive a retry loop, which is what this provides.
+fetched, and it only requests what is actually absent. That needs a definition
+of "complete" precise enough to drive a retry loop, which is what this provides.
 
 **Only the original caption track counts.** YouTube offers auto-captions in ~157
 languages for a typical short, but exactly one of them is the real speech
@@ -11,15 +11,16 @@ entry is machine-translated from it. Asking for `pl` on an English video returns
 a Polish translation of English speech, which is a measurably worse source for
 ingredient names than the English original.
 
-A video is complete when `meta.json` exists and its original track is on disk, or
-when it has no captions at all. That last clause is what keeps the retry loop
-terminating.
+A video is complete when its metadata is stored and its original track is
+stored, or when it has no captions at all. That last clause is what keeps the
+retry loop terminating.
+
+These functions take the set of languages already held rather than a directory
+to scan. Nothing lives on disk any more, and a set is also what makes the rules
+testable without any storage at all.
 """
 
-from pathlib import Path
-
-SUBTITLE_SUFFIXES = (".txt", ".vtt")
-
+from typing import Iterable
 
 def base_lang(code: str | None) -> str | None:
     """Reduce a caption code to its bare language: en-US and en-orig -> en."""
@@ -45,41 +46,35 @@ def wanted_lang(meta: dict, allowed: list[str] | None = None) -> str | None:
     return lang
 
 
-def subtitle_langs_on_disk(out_dir: Path) -> set[str]:
-    """Languages already present as subtitle files, in either format."""
-    langs: set[str] = set()
-    if not out_dir.is_dir():
-        return langs
-    for path in out_dir.iterdir():
-        # subs.pl.txt -> pl
-        if not path.name.startswith("subs.") or path.suffix not in SUBTITLE_SUFFIXES:
-            continue
-        parts = path.name.split(".")
-        if len(parts) >= 3:
-            langs.add(base_lang(parts[1]))
-    return langs
+def normalise_langs(langs: Iterable[str] | None) -> set[str]:
+    """Reduce held caption codes to bare languages."""
+    return {base for lang in (langs or ()) if (base := base_lang(lang))}
 
 
-def missing_lang(out_dir: Path, meta: dict, allowed: list[str] | None = None) -> str | None:
-    """The original language still absent from disk, or None."""
+def missing_lang(
+    held: Iterable[str] | None, meta: dict, allowed: list[str] | None = None
+) -> str | None:
+    """The original language still absent, or None."""
     lang = wanted_lang(meta, allowed)
     if lang is None:
         return None
-    return None if lang in subtitle_langs_on_disk(out_dir) else lang
+    return None if lang in normalise_langs(held) else lang
 
 
-def is_complete(out_dir: Path, meta: dict | None, allowed: list[str] | None = None) -> bool:
+def is_complete(
+    held: Iterable[str] | None, meta: dict | None, allowed: list[str] | None = None
+) -> bool:
     """True when nothing further can be fetched for this video."""
     if meta is None:
         return False
-    return missing_lang(out_dir, meta, allowed) is None
+    return missing_lang(held, meta, allowed) is None
 
 
 def describe_missing(
-    out_dir: Path, meta: dict | None, allowed: list[str] | None = None
+    held: Iterable[str] | None, meta: dict | None, allowed: list[str] | None = None
 ) -> str:
     """A short human-readable account of what is still absent."""
     if meta is None:
         return "metadata"
-    lang = missing_lang(out_dir, meta, allowed)
+    lang = missing_lang(held, meta, allowed)
     return f"original subtitles ({lang})" if lang else "nothing"
