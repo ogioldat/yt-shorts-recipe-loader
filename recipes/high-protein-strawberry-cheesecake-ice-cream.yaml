@@ -6,7 +6,7 @@ ingredients:
 - name: full-fat cottage cheese
   quantity: 2
   unit: cup
-  fitatu_product_id: '148549731'
+  fitatu_product_id: '14369199'
 - name: maple syrup
   quantity: 0.25
   unit: cup
@@ -23,7 +23,7 @@ ingredients:
 - name: crushed graham crackers
   quantity: 0.5
   unit: cup
-  fitatu_product_id: '98623400'
+  fitatu_product_id: '1909'
 - name: strawberries
   quantity: null
   unit: null
@@ -33,7 +33,7 @@ ingredients:
   quantity: null
   unit: null
   note: optional, extra for topping
-  fitatu_product_id: '98623400'
+  fitatu_product_id: '1909'
 source:
   video_id: c-GTYrwkRv8
   url: https://www.youtube.com/shorts/c-GTYrwkRv8
@@ -46,5 +46,9 @@ extracted_at: '2026-10-02'
 prep_time_minutes: 15
 prep_time_source: estimated during import; not stated in the video
 import_status: ok
-fitatu_recipe_id: '176264409'
+previous_imports:
+- fitatu_recipe_id: '176264409'
+  fitatu_account_id: '22426661'
+fitatu_recipe_id: '176304237'
+fitatu_account_id: '56744730'
 imported_at: '2026-10-02'

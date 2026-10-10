@@ -29,7 +29,7 @@ ingredients:
 - name: cumin
   quantity: null
   unit: null
-  fitatu_product_id: '74562866'
+  fitatu_product_id: '116965449'
 - name: Tajín
   quantity: null
   unit: null
@@ -56,7 +56,7 @@ ingredients:
 - name: low carb tortillas
   quantity: 14
   unit: piece
-  fitatu_product_id: '63390294'
+  fitatu_product_id: '31942825'
 - name: canned corn
   quantity: null
   unit: null
@@ -76,7 +76,9 @@ source:
   - description
   - subtitles
 extracted_at: '2026-10-02'
-import_status: ok
-fitatu_recipe_id: '176257131'
+import_status: error
+previous_imports:
+- fitatu_recipe_id: '176257131'
+  fitatu_account_id: '22426661'
+import_error: 'FitatuApiError: Fitatu API request failed: POST /recipes'
 imported_at: '2026-10-02'
-import_note: imported outside this session; id recovered from Fitatu by matching the title

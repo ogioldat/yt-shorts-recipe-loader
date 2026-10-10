@@ -37,7 +37,7 @@ ingredients:
   quantity: null
   unit: null
   note: to fry the paste
-  fitatu_product_id: '118230735'
+  fitatu_product_id: '1651'
 - name: dry spices
   quantity: null
   unit: null
@@ -58,7 +58,7 @@ ingredients:
 - name: palm sugar
   quantity: null
   unit: null
-  fitatu_product_id: '32068695'
+  fitatu_product_id: '53837101'
 - name: beef chuck
   quantity: null
   unit: null

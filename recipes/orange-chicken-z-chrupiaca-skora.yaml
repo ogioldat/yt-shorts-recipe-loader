@@ -8,7 +8,7 @@ ingredients:
   quantity: 3
   unit: piece
   note: skórę zachowaj i upiecz osobno
-  fitatu_product_id: '89311698'
+  fitatu_product_id: '81306870'
 - name: białko jajka
   quantity: 1
   unit: piece
@@ -17,7 +17,7 @@ ingredients:
   quantity: 1
   unit: tbsp
   note: marynata
-  fitatu_product_id: '149649810'
+  fitatu_product_id: '117075611'
 - name: sos ostrygowy
   quantity: 1
   unit: tbsp
@@ -69,7 +69,7 @@ ingredients:
   quantity: 1
   unit: tbsp
   note: sos
-  fitatu_product_id: '149649810'
+  fitatu_product_id: '117075611'
 - name: sos ostrygowy
   quantity: 1
   unit: tbsp
@@ -138,5 +138,9 @@ extracted_at: '2026-10-02'
 prep_time_minutes: 50
 prep_time_source: estimated during import; not stated in the video
 import_status: ok
-fitatu_recipe_id: '176264421'
+previous_imports:
+- fitatu_recipe_id: '176264421'
+  fitatu_account_id: '22426661'
+fitatu_recipe_id: '176304276'
+fitatu_account_id: '56744730'
 imported_at: '2026-10-02'

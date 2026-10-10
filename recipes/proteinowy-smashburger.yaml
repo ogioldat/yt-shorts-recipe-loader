@@ -20,7 +20,7 @@ ingredients:
 - name: bułka do burgerów
   quantity: 1
   unit: piece
-  fitatu_product_id: '31832535'
+  fitatu_product_id: '146810135'
 - name: warzywa
   quantity: null
   unit: null
@@ -50,7 +50,7 @@ ingredients:
   quantity: 100
   unit: g
   note: sos
-  fitatu_product_id: '147761856'
+  fitatu_product_id: '119359354'
 - name: ketchup
   quantity: 60
   unit: g
@@ -70,7 +70,7 @@ ingredients:
   quantity: 1
   unit: tsp
   note: sos
-  fitatu_product_id: '147786378'
+  fitatu_product_id: '47244157'
 - name: czosnek
   quantity: 0.5
   unit: tsp
@@ -97,6 +97,9 @@ source:
   - subtitles
 extracted_at: '2026-10-02'
 import_status: ok
-fitatu_recipe_id: '176257110'
+previous_imports:
+- fitatu_recipe_id: '176257110'
+  fitatu_account_id: '22426661'
+fitatu_recipe_id: '176304315'
+fitatu_account_id: '56744730'
 imported_at: '2026-10-02'
-import_note: imported outside this session; id recovered from Fitatu by matching the title

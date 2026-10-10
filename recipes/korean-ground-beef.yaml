@@ -7,7 +7,7 @@ ingredients:
   quantity: null
   unit: null
   note: for the pan
-  fitatu_product_id: '118230735'
+  fitatu_product_id: '1651'
 - name: minced garlic
   quantity: null
   unit: null
@@ -23,11 +23,11 @@ ingredients:
 - name: dark soy sauce
   quantity: null
   unit: null
-  fitatu_product_id: '114226559'
+  fitatu_product_id: '59977775'
 - name: light soy sauce
   quantity: null
   unit: null
-  fitatu_product_id: '149649810'
+  fitatu_product_id: '117075611'
 - name: sesame oil
   quantity: null
   unit: null

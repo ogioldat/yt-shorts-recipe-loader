@@ -6,7 +6,7 @@ ingredients:
 - name: boneless skinless chicken thighs
   quantity: 1000
   unit: g
-  fitatu_product_id: '89311698'
+  fitatu_product_id: '81306870'
 - name: green onions
   quantity: 3
   unit: piece
@@ -44,7 +44,7 @@ ingredients:
 - name: soy sauce
   quantity: 1
   unit: tbsp
-  fitatu_product_id: '149649810'
+  fitatu_product_id: '117075611'
 - name: brown sugar
   quantity: 1
   unit: tbsp
@@ -64,7 +64,7 @@ ingredients:
 - name: vinegar
   quantity: 0.5
   unit: tbsp
-  fitatu_product_id: '49137480'
+  fitatu_product_id: '58140061'
 - name: lime
   quantity: 0.5
   unit: piece
@@ -89,6 +89,9 @@ source:
   - description
 extracted_at: '2026-10-02'
 import_status: ok
-fitatu_recipe_id: '176257065'
+previous_imports:
+- fitatu_recipe_id: '176257065'
+  fitatu_account_id: '22426661'
+fitatu_recipe_id: '176304249'
+fitatu_account_id: '56744730'
 imported_at: '2026-10-02'
-import_note: imported outside this session; id recovered from Fitatu by matching the title

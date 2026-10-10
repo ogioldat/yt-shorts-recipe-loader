@@ -69,7 +69,7 @@ ingredients:
   quantity: 1
   unit: tsp
   note: kurczak
-  fitatu_product_id: '103420935'
+  fitatu_product_id: '75531888'
 - name: sól
   quantity: null
   unit: null
@@ -106,6 +106,9 @@ source:
   - subtitles
 extracted_at: '2026-10-02'
 import_status: ok
-fitatu_recipe_id: '176257074'
+previous_imports:
+- fitatu_recipe_id: '176257074'
+  fitatu_account_id: '22426661'
+fitatu_recipe_id: '176304261'
+fitatu_account_id: '56744730'
 imported_at: '2026-10-02'
-import_note: imported outside this session; id recovered from Fitatu by matching the title

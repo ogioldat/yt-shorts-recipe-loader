@@ -41,7 +41,7 @@ ingredients:
 - name: Italian seasoning
   quantity: 2
   unit: tsp
-  fitatu_product_id: '119426535'
+  fitatu_product_id: '53836941'
 - name: bay leaves
   quantity: 2
   unit: piece
@@ -66,6 +66,9 @@ source:
   - description
 extracted_at: '2026-10-02'
 import_status: ok
-fitatu_recipe_id: '176257056'
+previous_imports:
+- fitatu_recipe_id: '176257056'
+  fitatu_account_id: '22426661'
+fitatu_recipe_id: '176304228'
+fitatu_account_id: '56744730'
 imported_at: '2026-10-02'
-import_note: imported outside this session; id recovered from Fitatu by matching the title

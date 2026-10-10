@@ -28,7 +28,7 @@ ingredients:
 - name: cumin
   quantity: 0.5
   unit: tsp
-  fitatu_product_id: '74562866'
+  fitatu_product_id: '116965449'
 - name: chili
   quantity: 0.25
   unit: tsp
@@ -51,8 +51,11 @@ source:
   - description
 extracted_at: '2026-10-02'
 import_status: ok
-fitatu_recipe_id: '176257038'
-imported_at: '2026-10-02'
-import_note: imported outside this session; id recovered from Fitatu by matching the title
 prep_time_minutes: 10
 prep_time_source: estimated during import; not stated in the video
+previous_imports:
+- fitatu_recipe_id: '176257038'
+  fitatu_account_id: '22426661'
+fitatu_recipe_id: '176304201'
+fitatu_account_id: '56744730'
+imported_at: '2026-10-02'

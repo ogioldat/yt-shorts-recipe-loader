@@ -64,6 +64,9 @@ source:
   - description
 extracted_at: '2026-10-02'
 import_status: ok
-fitatu_recipe_id: '176257116'
+previous_imports:
+- fitatu_recipe_id: '176257116'
+  fitatu_account_id: '22426661'
+fitatu_recipe_id: '176304324'
+fitatu_account_id: '56744730'
 imported_at: '2026-10-02'
-import_note: imported outside this session; id recovered from Fitatu by matching the title

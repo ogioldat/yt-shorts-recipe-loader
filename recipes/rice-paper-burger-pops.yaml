@@ -56,7 +56,7 @@ ingredients:
   quantity: 0.5
   unit: cup
   note: dipping sauce
-  fitatu_product_id: '147981666'
+  fitatu_product_id: '40769'
 - name: ketchup
   quantity: 3
   unit: tbsp
@@ -99,5 +99,9 @@ extracted_at: '2026-10-02'
 prep_time_minutes: 35
 prep_time_source: estimated during import; not stated in the video
 import_status: ok
-fitatu_recipe_id: '176264439'
+previous_imports:
+- fitatu_recipe_id: '176264439'
+  fitatu_account_id: '22426661'
+fitatu_recipe_id: '176304318'
+fitatu_account_id: '56744730'
 imported_at: '2026-10-02'

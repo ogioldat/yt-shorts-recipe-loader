@@ -8,17 +8,17 @@ ingredients:
   quantity: 25
   unit: g
   note: spód; 5 sztuk
-  fitatu_product_id: '120351021'
+  fitatu_product_id: '9068989'
 - name: skyr naturalny
   quantity: 150
   unit: g
   note: masa; 1 opakowanie
-  fitatu_product_id: '147761856'
+  fitatu_product_id: '119359354'
 - name: twaróg półtłusty
   quantity: 125
   unit: g
   note: masa; ½ opakowania, w kostce
-  fitatu_product_id: '32068479'
+  fitatu_product_id: '61427821'
 - name: aromat waniliowy
   quantity: 1
   unit: g
@@ -52,5 +52,6 @@ extracted_at: '2026-10-02'
 prep_time_minutes: 15
 prep_time_source: estimated during extraction; not stated in the video
 import_status: ok
-fitatu_recipe_id: '176290545'
+fitatu_recipe_id: '176304186'
+fitatu_account_id: '56744730'
 imported_at: '2026-10-02'

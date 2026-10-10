@@ -42,7 +42,7 @@ ingredients:
   quantity: 1
   unit: tsp
   note: kebab
-  fitatu_product_id: '74562866'
+  fitatu_product_id: '116965449'
 - name: coriander
   quantity: 1
   unit: tsp
@@ -57,7 +57,7 @@ ingredients:
   quantity: 1
   unit: tsp
   note: kebab
-  fitatu_product_id: '147786378'
+  fitatu_product_id: '47244157'
 - name: salt
   quantity: 1.5
   unit: tsp
@@ -107,7 +107,7 @@ ingredients:
   quantity: 0.5
   unit: tsp
   note: chutney mayo
-  fitatu_product_id: '74562866'
+  fitatu_product_id: '116965449'
 - name: coriander
   quantity: 0.5
   unit: tsp
@@ -132,7 +132,7 @@ ingredients:
   quantity: null
   unit: null
   note: bread of choice
-  fitatu_product_id: '106313688'
+  fitatu_product_id: '61163749'
 - name: pickles
   quantity: null
   unit: null
@@ -170,5 +170,9 @@ extracted_at: '2026-10-02'
 prep_time_minutes: 50
 prep_time_source: estimated during import; not stated in the video
 import_status: ok
-fitatu_recipe_id: '176264442'
+previous_imports:
+- fitatu_recipe_id: '176264442'
+  fitatu_account_id: '22426661'
+fitatu_recipe_id: '176304333'
+fitatu_account_id: '56744730'
 imported_at: '2026-10-02'

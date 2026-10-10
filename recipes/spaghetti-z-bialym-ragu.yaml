@@ -36,7 +36,7 @@ ingredients:
 - name: parmezan
   quantity: 40
   unit: g
-  fitatu_product_id: '119062248'
+  fitatu_product_id: '15148898'
 - name: natka pietruszki
   quantity: null
   unit: null
@@ -73,6 +73,9 @@ source:
   - subtitles
 extracted_at: '2026-10-02'
 import_status: ok
-fitatu_recipe_id: '176257128'
+previous_imports:
+- fitatu_recipe_id: '176257128'
+  fitatu_account_id: '22426661'
+fitatu_recipe_id: '176304342'
+fitatu_account_id: '56744730'
 imported_at: '2026-10-02'
-import_note: imported outside this session; id recovered from Fitatu by matching the title

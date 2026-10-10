@@ -177,7 +177,7 @@ Every recipe carries `import_status`: `not_imported` (the default, including whe
 absent), `ok` with a `fitatu_recipe_id`, or `error` with an `import_error`.
 
 **`POST /recipes` is not idempotent** — the same body twice creates two Fitatu
-recipes. `import_status: ok` is the only thing preventing duplicates, which is why
+recipes. `import_status: not_imported` is the only thing preventing duplicates, which is why
 the schema requires `fitatu_recipe_id` alongside it and why `--force` is dangerous.
 
 **Fitatu takes measures, not grams.** Each item is `{itemId, measureId,

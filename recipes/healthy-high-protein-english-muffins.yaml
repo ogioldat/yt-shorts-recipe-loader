@@ -29,8 +29,11 @@ source:
   - description
 extracted_at: '2026-10-02'
 import_status: ok
-fitatu_recipe_id: '176257053'
-imported_at: '2026-10-02'
-import_note: imported outside this session; id recovered from Fitatu by matching the title
 prep_time_minutes: 45
 prep_time_source: estimated during import; not stated in the video
+previous_imports:
+- fitatu_recipe_id: '176257053'
+  fitatu_account_id: '22426661'
+fitatu_recipe_id: '176304222'
+fitatu_account_id: '56744730'
+imported_at: '2026-10-02'

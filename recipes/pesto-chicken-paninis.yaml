@@ -17,7 +17,7 @@ ingredients:
   quantity: 2000
   unit: g
   note: 2 kg, fat trimmed
-  fitatu_product_id: '89311698'
+  fitatu_product_id: '81306870'
 - name: kosher salt
   quantity: 1.5
   unit: tbsp
@@ -62,12 +62,12 @@ ingredients:
   quantity: 10
   unit: g
   note: pesto
-  fitatu_product_id: '8381'
+  fitatu_product_id: '116236892'
 - name: parmesan cheese
   quantity: 30
   unit: g
   note: pesto
-  fitatu_product_id: '119062248'
+  fitatu_product_id: '15148898'
 - name: salt
   quantity: null
   unit: null
@@ -94,6 +94,9 @@ source:
   - subtitles
 extracted_at: '2026-10-02'
 import_status: ok
-fitatu_recipe_id: '176257098'
+previous_imports:
+- fitatu_recipe_id: '176257098'
+  fitatu_account_id: '22426661'
+fitatu_recipe_id: '176304294'
+fitatu_account_id: '56744730'
 imported_at: '2026-10-02'
-import_note: imported outside this session; id recovered from Fitatu by matching the title

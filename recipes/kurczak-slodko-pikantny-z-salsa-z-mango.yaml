@@ -7,7 +7,7 @@ ingredients:
 - name: mięso z uda kurczaka
   quantity: 200
   unit: g
-  fitatu_product_id: '89311698'
+  fitatu_product_id: '81306870'
 - name: oliwa
   quantity: 2
   unit: g
@@ -27,7 +27,7 @@ ingredients:
   quantity: 5
   unit: g
   note: marynata
-  fitatu_product_id: '149649810'
+  fitatu_product_id: '117075611'
 - name: ketchup
   quantity: 10
   unit: g
@@ -93,6 +93,9 @@ source:
   - subtitles
 extracted_at: '2026-10-02'
 import_status: ok
-fitatu_recipe_id: '176257080'
+previous_imports:
+- fitatu_recipe_id: '176257080'
+  fitatu_account_id: '22426661'
+fitatu_recipe_id: '176304267'
+fitatu_account_id: '56744730'
 imported_at: '2026-10-02'
-import_note: imported outside this session; id recovered from Fitatu by matching the title

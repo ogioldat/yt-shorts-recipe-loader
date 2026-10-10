@@ -16,7 +16,7 @@ ingredients:
   quantity: 15
   unit: g
   note: optional
-  fitatu_product_id: '75274591'
+  fitatu_product_id: '62597192'
 - name: chia seeds
   quantity: 30
   unit: g
@@ -71,6 +71,9 @@ source:
   - subtitles
 extracted_at: '2026-10-02'
 import_status: ok
-fitatu_recipe_id: '176257083'
+previous_imports:
+- fitatu_recipe_id: '176257083'
+  fitatu_account_id: '22426661'
+fitatu_recipe_id: '176304270'
+fitatu_account_id: '56744730'
 imported_at: '2026-10-02'
-import_note: imported outside this session; id recovered from Fitatu by matching the title

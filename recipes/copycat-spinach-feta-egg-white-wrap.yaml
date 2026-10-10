@@ -11,7 +11,7 @@ ingredients:
   quantity: 0.667
   unit: cup
   note: ⅔ cup, lightly packed
-  fitatu_product_id: '64972635'
+  fitatu_product_id: '35990090'
 - name: sun dried tomatoes in oil
   quantity: 2
   unit: tbsp
@@ -24,7 +24,7 @@ ingredients:
 - name: Italian seasoning
   quantity: 0.25
   unit: tsp
-  fitatu_product_id: '119426535'
+  fitatu_product_id: '53836941'
 - name: salt
   quantity: null
   unit: null
@@ -56,5 +56,9 @@ extracted_at: '2026-10-02'
 prep_time_minutes: 10
 prep_time_source: estimated during import; not stated in the video
 import_status: ok
-fitatu_recipe_id: '176264379'
+previous_imports:
+- fitatu_recipe_id: '176264379'
+  fitatu_account_id: '22426661'
+fitatu_recipe_id: '176304207'
+fitatu_account_id: '56744730'
 imported_at: '2026-10-02'

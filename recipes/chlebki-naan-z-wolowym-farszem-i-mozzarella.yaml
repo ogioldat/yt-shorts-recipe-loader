@@ -13,7 +13,7 @@ ingredients:
   quantity: 15
   unit: g
   note: rozczyn
-  fitatu_product_id: '117031623'
+  fitatu_product_id: '116882128'
 - name: letnia woda
   quantity: 50
   unit: ml
@@ -158,6 +158,9 @@ source:
   - subtitles
 extracted_at: '2026-10-02'
 import_status: ok
-fitatu_recipe_id: '176257035'
+previous_imports:
+- fitatu_recipe_id: '176257035'
+  fitatu_account_id: '22426661'
+fitatu_recipe_id: '176304198'
+fitatu_account_id: '56744730'
 imported_at: '2026-10-02'
-import_note: imported outside this session; id recovered from Fitatu by matching the title

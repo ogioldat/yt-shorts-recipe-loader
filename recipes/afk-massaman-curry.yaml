@@ -61,5 +61,9 @@ extracted_at: '2026-10-02'
 prep_time_minutes: 180
 prep_time_source: estimated during import; not stated in the video
 import_status: ok
-fitatu_recipe_id: '176264370'
+previous_imports:
+- fitatu_recipe_id: '176264370'
+  fitatu_account_id: '22426661'
+fitatu_recipe_id: '176304192'
+fitatu_account_id: '56744730'
 imported_at: '2026-10-02'

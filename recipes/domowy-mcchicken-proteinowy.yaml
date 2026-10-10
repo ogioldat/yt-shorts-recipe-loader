@@ -15,11 +15,11 @@ ingredients:
 - name: czosnek granulowany
   quantity: 0.5
   unit: tsp
-  fitatu_product_id: '103420935'
+  fitatu_product_id: '75531888'
 - name: wędzona papryka
   quantity: 0.5
   unit: tsp
-  fitatu_product_id: '147786378'
+  fitatu_product_id: '47244157'
 - name: pieprz
   quantity: 0.25
   unit: tsp
@@ -27,7 +27,7 @@ ingredients:
 - name: kmin rzymski
   quantity: 0.25
   unit: tsp
-  fitatu_product_id: '74562866'
+  fitatu_product_id: '116965449'
 - name: płatki kukurydziane
   quantity: 50
   unit: g
@@ -47,7 +47,7 @@ ingredients:
   quantity: 20
   unit: g
   note: sos
-  fitatu_product_id: '147761856'
+  fitatu_product_id: '119359354'
 - name: musztarda angielska
   quantity: 5
   unit: g
@@ -57,11 +57,11 @@ ingredients:
   quantity: 0.5
   unit: tsp
   note: sos
-  fitatu_product_id: '103420935'
+  fitatu_product_id: '75531888'
 - name: bułka do burgerów
   quantity: 1
   unit: piece
-  fitatu_product_id: '31832535'
+  fitatu_product_id: '146810135'
 - name: sałata lodowa lub rzymska
   quantity: null
   unit: null
@@ -81,6 +81,9 @@ source:
   - subtitles
 extracted_at: '2026-10-02'
 import_status: ok
-fitatu_recipe_id: '176257047'
+previous_imports:
+- fitatu_recipe_id: '176257047'
+  fitatu_account_id: '22426661'
+fitatu_recipe_id: '176304210'
+fitatu_account_id: '56744730'
 imported_at: '2026-10-02'
-import_note: imported outside this session; id recovered from Fitatu by matching the title

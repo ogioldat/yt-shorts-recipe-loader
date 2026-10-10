@@ -6,7 +6,7 @@ ingredients:
 - name: neutral oil
   quantity: 3
   unit: tbsp
-  fitatu_product_id: '118230735'
+  fitatu_product_id: '1651'
 - name: Korean black bean paste
   quantity: 0.75
   unit: cup
@@ -15,7 +15,7 @@ ingredients:
   quantity: 454
   unit: g
   note: 1 lbs, sliced
-  fitatu_product_id: '62908760'
+  fitatu_product_id: '9098'
 - name: onion
   quantity: 1
   unit: cup
@@ -79,7 +79,7 @@ ingredients:
   quantity: null
   unit: null
   note: cook 1 minute less than the packet says
-  fitatu_product_id: '104136930'
+  fitatu_product_id: '53819076'
 - name: cucumber
   quantity: null
   unit: null
@@ -103,5 +103,7 @@ extracted_at: '2026-10-02'
 prep_time_minutes: 30
 prep_time_source: stated in the video series title (30 minute meals)
 import_status: ok
-fitatu_recipe_id: '176293758'
+import_note: 'status restored: the recipe is live in Fitatu under this id'
+fitatu_recipe_id: '176304258'
+fitatu_account_id: '56744730'
 imported_at: '2026-10-02'

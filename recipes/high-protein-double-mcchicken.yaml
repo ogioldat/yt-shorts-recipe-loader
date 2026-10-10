@@ -65,7 +65,7 @@ ingredients:
   quantity: null
   unit: null
   note: toasted
-  fitatu_product_id: '31832535'
+  fitatu_product_id: '146810135'
 source:
   video_id: -eG-4lLMOj8
   url: https://www.youtube.com/shorts/-eG-4lLMOj8
@@ -78,5 +78,9 @@ extracted_at: '2026-10-02'
 prep_time_minutes: 35
 prep_time_source: estimated during import; not stated in the video
 import_status: ok
-fitatu_recipe_id: '176264403'
+previous_imports:
+- fitatu_recipe_id: '176264403'
+  fitatu_account_id: '22426661'
+fitatu_recipe_id: '176304231'
+fitatu_account_id: '56744730'
 imported_at: '2026-10-02'

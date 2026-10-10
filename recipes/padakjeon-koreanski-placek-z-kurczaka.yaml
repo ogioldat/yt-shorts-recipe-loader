@@ -43,7 +43,7 @@ ingredients:
   quantity: 20
   unit: g
   note: sos
-  fitatu_product_id: '149649810'
+  fitatu_product_id: '117075611'
 - name: ocet ryżowy
   quantity: 4
   unit: g
@@ -85,6 +85,9 @@ source:
   - subtitles
 extracted_at: '2026-10-02'
 import_status: ok
-fitatu_recipe_id: '176257095'
+previous_imports:
+- fitatu_recipe_id: '176257095'
+  fitatu_account_id: '22426661'
+fitatu_recipe_id: '176304288'
+fitatu_account_id: '56744730'
 imported_at: '2026-10-02'
-import_note: imported outside this session; id recovered from Fitatu by matching the title

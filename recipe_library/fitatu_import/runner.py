@@ -62,7 +62,7 @@ def extract_recipe_id(response: dict) -> str | None:
 
 def _set_status(data: dict, status: str, **extra) -> None:
     data["import_status"] = status
-    for key in ("fitatu_recipe_id", "import_error", "imported_at"):
+    for key in ("fitatu_recipe_id", "fitatu_account_id", "import_error", "imported_at"):
         data.pop(key, None)
     data.update({k: v for k, v in extra.items() if v is not None})
 
@@ -107,10 +107,17 @@ def select_pending(
 
     pending = []
     for path in candidates:
-        status = recipe_status(read_recipe(path))
+        data = read_recipe(path)
+        status = recipe_status(data)
         if force:
             pending.append(path)
-        elif status == STATUS_NOT_IMPORTED:
+            continue
+        # A recorded Fitatu id outranks the status. Hand-editing `import_status`
+        # back to not_imported is an easy way to ask for 53 duplicates, and the
+        # id is the evidence that the recipe is already there.
+        if data.get("fitatu_recipe_id"):
+            continue
+        if status == STATUS_NOT_IMPORTED:
             pending.append(path)
         elif status == STATUS_ERROR and include_errors:
             pending.append(path)
@@ -126,6 +133,7 @@ def import_one(
     allow_partial: bool = False,
     dry_run: bool = False,
     tags: list[str] | None = None,
+    account: str | None = None,
 ) -> dict:
     """Import a single recipe and record the outcome on it.
 
@@ -177,6 +185,7 @@ def import_one(
         data,
         STATUS_OK,
         fitatu_recipe_id=recipe_id,
+        fitatu_account_id=account,
         imported_at=date.today().isoformat(),
     )
     write_recipe(path, data)
@@ -265,12 +274,16 @@ def run(
         print(f"Pending: {total} recipe(s); taking {start}-{end - 1}")
 
     client = None
+    account = None
     if not dry_run:
-        from .client import connect
+        from .client import account_id, connect
 
         client = connect()
+        account = account_id(client)
+        print(f"Importing as Fitatu account {account or 'unknown'}")
 
     print(f"Importing {len(pending)} recipe(s)")
+    failed: list[Path] = []
     for i, path in enumerate(pending, 1):
         print(f"[{i}/{len(pending)}] {path.stem}")
         result = import_one(
@@ -281,11 +294,53 @@ def run(
             allow_partial=allow_partial,
             dry_run=dry_run,
             tags=tags,
+            account=account,
         )
         tally[result["status"]] = tally.get(result["status"], 0) + 1
         for warning in result["warnings"]:
             print(f"  warning: {warning}")
         marker = "ok" if result["status"] == STATUS_OK else result["status"]
         print(f"  {marker}: {result['detail']}")
+        if result["status"] == STATUS_ERROR:
+            failed.append(path)
+
+    if failed and not allow_partial:
+        _report_failures(failed, products)
 
     return tally
+
+
+def _report_failures(paths: list[Path], products: dict) -> None:
+    """Split the failures into the ones worth acting on and the ones that are not.
+
+    A long list of identical "no quantity stated" lines reads like a broken tool,
+    when it is the opposite: the source video never said how much, and the import
+    refused to invent it. These two groups need different answers, so they are
+    counted separately.
+    """
+    salvageable, hopeless = [], []
+    for path in paths:
+        data = read_recipe(path)
+        built = build_recipe_kwargs(data, products, allow_partial=True)
+        total = len([i for i in data.get("ingredients") or [] if i.get("name")])
+        if built.ok:
+            salvageable.append((path.stem, len(built.kwargs["items"]), total))
+        else:
+            hopeless.append((path.stem, total))
+
+    if salvageable:
+        print(
+            f"\n{len(salvageable)} recipe(s) would import with --allow-partial, "
+            "keeping the ingredients that convert:"
+        )
+        for stem, kept, total in salvageable:
+            print(f"  {stem}  ({kept}/{total} ingredients)")
+    if hopeless:
+        print(
+            f"\n{len(hopeless)} recipe(s) cannot be imported at all: the source "
+            "video stated no quantity for any ingredient, and Fitatu needs at "
+            "least one item. Filling those numbers in is the one thing this "
+            "library will not do."
+        )
+        for stem, total in hopeless:
+            print(f"  {stem}  (0/{total} ingredients convert)")

@@ -12,7 +12,7 @@ ingredients:
 - name: makaron ryżowy 5 mm
   quantity: 200
   unit: g
-  fitatu_product_id: '149919354'
+  fitatu_product_id: '66152611'
 - name: jajko
   quantity: 4
   unit: piece
@@ -28,12 +28,12 @@ ingredients:
 - name: olej do smażenia
   quantity: 20
   unit: g
-  fitatu_product_id: '118230735'
+  fitatu_product_id: '1651'
 - name: sos sojowy
   quantity: 20
   unit: g
   note: do mięsa
-  fitatu_product_id: '149649810'
+  fitatu_product_id: '117075611'
 - name: sól
   quantity: null
   unit: null
@@ -51,7 +51,7 @@ ingredients:
   quantity: 40
   unit: g
   note: sos
-  fitatu_product_id: '149649810'
+  fitatu_product_id: '117075611'
 - name: sos rybny
   quantity: 40
   unit: g
@@ -76,12 +76,12 @@ ingredients:
   quantity: 120
   unit: g
   note: dodatki
-  fitatu_product_id: '14364'
+  fitatu_product_id: '116696573'
 - name: orzechy arachidowe
   quantity: 40
   unit: g
   note: dodatki, rozdrobnione
-  fitatu_product_id: '69945303'
+  fitatu_product_id: '32081487'
 - name: limonka
   quantity: 1
   unit: piece
@@ -103,6 +103,9 @@ source:
   - subtitles
 extracted_at: '2026-10-02'
 import_status: ok
-fitatu_recipe_id: '176257092'
+previous_imports:
+- fitatu_recipe_id: '176257092'
+  fitatu_account_id: '22426661'
+fitatu_recipe_id: '176304282'
+fitatu_account_id: '56744730'
 imported_at: '2026-10-02'
-import_note: imported outside this session; id recovered from Fitatu by matching the title

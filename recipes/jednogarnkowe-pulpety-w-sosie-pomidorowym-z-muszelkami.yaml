@@ -33,7 +33,7 @@ ingredients:
   quantity: 2
   unit: tbsp
   note: lub Szama Tuning
-  fitatu_product_id: '20764082'
+  fitatu_product_id: '53833075'
 - name: sól
   quantity: null
   unit: null
@@ -63,7 +63,7 @@ ingredients:
   quantity: 100
   unit: g
   note: pół paczki
-  fitatu_product_id: '64972635'
+  fitatu_product_id: '35990090'
 - name: przecier pomidorowy
   quantity: null
   unit: null
@@ -100,7 +100,7 @@ ingredients:
 - name: makaron muszelki
   quantity: 240
   unit: g
-  fitatu_product_id: '31760817'
+  fitatu_product_id: '62981347'
 - name: woda
   quantity: 320
   unit: ml
@@ -121,6 +121,9 @@ source:
   - subtitles
 extracted_at: '2026-10-02'
 import_status: ok
-fitatu_recipe_id: '176257062'
+previous_imports:
+- fitatu_recipe_id: '176257062'
+  fitatu_account_id: '22426661'
+fitatu_recipe_id: '176304246'
+fitatu_account_id: '56744730'
 imported_at: '2026-10-02'
-import_note: imported outside this session; id recovered from Fitatu by matching the title

@@ -19,7 +19,7 @@ ingredients:
 - name: smoked paprika
   quantity: 1
   unit: tbsp
-  fitatu_product_id: '147786378'
+  fitatu_product_id: '47244157'
 - name: ground cumin
   quantity: 2
   unit: tsp
@@ -67,7 +67,7 @@ ingredients:
   quantity: 1.5
   unit: cup
   note: herb yogurt sauce
-  fitatu_product_id: '147981666'
+  fitatu_product_id: '40769'
 - name: lemon
   quantity: 1
   unit: piece
@@ -91,7 +91,7 @@ ingredients:
 - name: large low carb tortillas
   quantity: 12
   unit: piece
-  fitatu_product_id: '63390294'
+  fitatu_product_id: '31942825'
 - name: long grain white or basmati rice
   quantity: 2
   unit: cup
@@ -109,6 +109,9 @@ source:
 extracted_at: '2026-10-02'
 prep_time_minutes: 60
 prep_time_source: estimated during import; not stated in the video
-import_status: ok
-fitatu_recipe_id: '176264397'
+import_status: error
+previous_imports:
+- fitatu_recipe_id: '176264397'
+  fitatu_account_id: '22426661'
+import_error: 'FitatuApiError: Fitatu API request failed: POST /recipes'
 imported_at: '2026-10-02'

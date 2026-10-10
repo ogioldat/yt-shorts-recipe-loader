@@ -7,7 +7,7 @@ ingredients:
   quantity: 2400
   unit: g
   note: 150 g per sandwich, about 2400 g total
-  fitatu_product_id: '89311698'
+  fitatu_product_id: '81306870'
 - name: AP flour
   quantity: 300
   unit: g
@@ -82,7 +82,7 @@ ingredients:
   quantity: 6
   unit: tbsp
   note: glaze
-  fitatu_product_id: '149649810'
+  fitatu_product_id: '117075611'
 - name: honey
   quantity: 0.25
   unit: cup
@@ -108,6 +108,9 @@ source:
   - subtitles
 extracted_at: '2026-10-02'
 import_status: ok
-fitatu_recipe_id: '176257077'
+previous_imports:
+- fitatu_recipe_id: '176257077'
+  fitatu_account_id: '22426661'
+fitatu_recipe_id: '176304264'
+fitatu_account_id: '56744730'
 imported_at: '2026-10-02'
-import_note: imported outside this session; id recovered from Fitatu by matching the title

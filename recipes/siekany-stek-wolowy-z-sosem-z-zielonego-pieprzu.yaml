@@ -11,7 +11,7 @@ ingredients:
 - name: tłuszcz do smażenia
   quantity: 1
   unit: tbsp
-  fitatu_product_id: '118230735'
+  fitatu_product_id: '1651'
 - name: masło
   quantity: null
   unit: null
@@ -35,7 +35,7 @@ ingredients:
   quantity: 60
   unit: ml
   note: sos
-  fitatu_product_id: '146947734'
+  fitatu_product_id: '1442'
 - name: sos worcestershire
   quantity: 1
   unit: tsp
@@ -54,7 +54,7 @@ ingredients:
   quantity: 200
   unit: g
   note: do całej partii puree
-  fitatu_product_id: '148402083'
+  fitatu_product_id: '41050609'
 - name: musztarda francuska
   quantity: 1
   unit: tsp
@@ -79,7 +79,7 @@ ingredients:
   quantity: null
   unit: null
   note: puree
-  fitatu_product_id: '103420935'
+  fitatu_product_id: '75531888'
 source:
   video_id: mHprniQUjzk
   url: https://www.youtube.com/shorts/mHprniQUjzk
@@ -91,6 +91,9 @@ source:
   - subtitles
 extracted_at: '2026-10-02'
 import_status: ok
-fitatu_recipe_id: '176257125'
+previous_imports:
+- fitatu_recipe_id: '176257125'
+  fitatu_account_id: '22426661'
+fitatu_recipe_id: '176304336'
+fitatu_account_id: '56744730'
 imported_at: '2026-10-02'
-import_note: imported outside this session; id recovered from Fitatu by matching the title

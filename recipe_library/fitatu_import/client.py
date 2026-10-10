@@ -47,6 +47,18 @@ def credentials() -> tuple[str, str]:
     return email, password
 
 
+def account_id(client) -> str | None:
+    """The Fitatu account the client is logged in as.
+
+    Which account a recipe landed on is not cosmetic: the same library imported
+    under two accounts leaves two disjoint sets, and an id recorded under one
+    account says nothing about the other. `login` decodes it out of the JWT.
+    """
+    auth = getattr(client, "auth", None) or getattr(client, "_auth", None)
+    value = getattr(auth, "fitatu_user_id", None)
+    return str(value) if value else None
+
+
 def connect():
     """Log in and return a ready `FitatuApiClient`.
 

@@ -7,7 +7,7 @@ ingredients:
 - name: serek wiejski proteinowy
   quantity: 200
   unit: g
-  fitatu_product_id: '148402083'
+  fitatu_product_id: '41050609'
 - name: jajko
   quantity: 1
   unit: piece
@@ -24,7 +24,7 @@ ingredients:
 - name: czosnek granulowany
   quantity: 0.5
   unit: tsp
-  fitatu_product_id: '103420935'
+  fitatu_product_id: '75531888'
 - name: proszek do pieczenia
   quantity: 0.5
   unit: tsp
@@ -41,7 +41,7 @@ ingredients:
 - name: parmezan
   quantity: 10
   unit: g
-  fitatu_product_id: '119062248'
+  fitatu_product_id: '15148898'
 - name: ser mozzarella
   quantity: 60
   unit: g
@@ -62,6 +62,9 @@ source:
   - subtitles
 extracted_at: '2026-10-02'
 import_status: ok
-fitatu_recipe_id: '176257107'
+previous_imports:
+- fitatu_recipe_id: '176257107'
+  fitatu_account_id: '22426661'
+fitatu_recipe_id: '176304303'
+fitatu_account_id: '56744730'
 imported_at: '2026-10-02'
-import_note: imported outside this session; id recovered from Fitatu by matching the title

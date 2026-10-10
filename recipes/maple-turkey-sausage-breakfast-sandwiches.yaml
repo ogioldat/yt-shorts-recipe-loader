@@ -75,7 +75,7 @@ ingredients:
 - name: light English muffins
   quantity: 14
   unit: piece
-  fitatu_product_id: '102369899'
+  fitatu_product_id: '40281161'
 - name: green apple
   quantity: 0.5
   unit: piece
@@ -96,7 +96,9 @@ source:
   - description
   - subtitles
 extracted_at: '2026-10-02'
-import_status: ok
-fitatu_recipe_id: '176257086'
+import_status: error
+previous_imports:
+- fitatu_recipe_id: '176257086'
+  fitatu_account_id: '22426661'
+import_error: 'FitatuApiError: Fitatu API request failed: POST /recipes'
 imported_at: '2026-10-02'
-import_note: imported outside this session; id recovered from Fitatu by matching the title

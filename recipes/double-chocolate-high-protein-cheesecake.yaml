@@ -7,7 +7,7 @@ ingredients:
   quantity: 454
   unit: g
   note: 16 oz, softened
-  fitatu_product_id: '120257871'
+  fitatu_product_id: '18377919'
 - name: fat-free cottage cheese
   quantity: 2
   unit: cup
@@ -25,7 +25,7 @@ ingredients:
   quantity: null
   unit: null
   note: 2 scoops
-  fitatu_product_id: '75274591'
+  fitatu_product_id: '62597192'
 - name: unsweetened cocoa powder
   quantity: 0.25
   unit: cup
@@ -52,5 +52,9 @@ extracted_at: '2026-10-02'
 prep_time_minutes: 70
 prep_time_source: estimated during import; not stated in the video
 import_status: ok
-fitatu_recipe_id: '176264388'
+previous_imports:
+- fitatu_recipe_id: '176264388'
+  fitatu_account_id: '22426661'
+fitatu_recipe_id: '176304213'
+fitatu_account_id: '56744730'
 imported_at: '2026-10-02'

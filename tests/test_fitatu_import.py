@@ -3,7 +3,7 @@
 Two things here could do real damage and both are covered deliberately.
 
 Fitatu's `POST /recipes` is **not idempotent**, so a recipe sent twice appears
-twice. `import_status: ok` is the only thing preventing that.
+twice. `import_status: not_imported` is the only thing preventing that.
 
 And a recipe imported with some ingredients missing would silently under-report
 calories — the one failure mode nobody notices. So conversion refuses to guess,
@@ -19,6 +19,7 @@ from recipe_library.fitatu_import.payload import (
 )
 from recipe_library.fitatu_import.runner import (
     STATUS_ERROR,
+    read_recipe,
     STATUS_NOT_IMPORTED,
     STATUS_OK,
     extract_recipe_id,
@@ -728,3 +729,47 @@ def test_a_millilitre_measure_is_preferred_when_no_exact_one_exists():
         ],
     }
     assert select_measure(entry, "tbsp")["measure_id"] == "17"
+
+
+def test_a_recorded_fitatu_id_outranks_a_hand_edited_status(tmp_path):
+    # Setting import_status back to not_imported by hand is an easy way to ask
+    # for a duplicate of every recipe already in Fitatu. The id is the evidence
+    # that it is there, so it wins.
+    write(
+        tmp_path / "already.yaml",
+        recipe([], import_status=STATUS_NOT_IMPORTED, fitatu_recipe_id="176264367"),
+    )
+    assert select_pending(tmp_path) == []
+    assert select_pending(tmp_path, names=["already"]) == []
+    # --force is still the deliberate way through
+    assert [p.stem for p in select_pending(tmp_path, force=True)] == ["already"]
+
+
+def test_an_error_with_an_id_is_not_retried_either(tmp_path):
+    # `error` after a successful create -- Fitatu answered without an id, say --
+    # must not be retried blindly, because the recipe may well be there.
+    write(
+        tmp_path / "half.yaml",
+        recipe([], import_status=STATUS_ERROR, fitatu_recipe_id="999"),
+    )
+    assert select_pending(tmp_path) == []
+
+
+def test_a_successful_import_records_which_account_it_landed_on(tmp_path):
+    # The same library imported under two accounts leaves two disjoint sets, and
+    # an id alone cannot tell them apart.
+    class Client:
+        def create_recipe(self, **kwargs):
+            return {"id": "4242"}
+
+    path = tmp_path / "r.yaml"
+    write(path, recipe([{"name": "mąka", "quantity": 100, "unit": "g"}]))
+    import_one(
+        path,
+        Client(),
+        products(mąka=("1", GRAM)),
+        account="56743546",
+    )
+    data = read_recipe(path)
+    assert data["fitatu_recipe_id"] == "4242"
+    assert data["fitatu_account_id"] == "56743546"
